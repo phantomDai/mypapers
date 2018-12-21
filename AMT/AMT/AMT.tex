@@ -213,7 +213,7 @@ It has been pointed out that fault-detecting inputs tend to cluster into ``conti
 
 \subsubsection{Dynamic Random Testing}
 \label{section:drt}
-Dynamic Random Testing (DRT) \cite{cai2009random} combines RT and PT, with the goal of benefitting from the advantages of both. Given a test suite $TS$ classified into $m$ partitions (denoted $s_1, s_2, \ldots, s_m$), and DRT is employed to update the values of the selection probabilities $p_i$. Assume that a source test case $stc_i$ from $s_i$ ($i = 1, 2, \ldots, m$) is selected, and an metamorphic relation $MR_h$ that is selected according to some strategies, is used to generate follow-up test case $ftc_i$ from $stc_i$. If $stc_i$ and $ftc_i$ belong to $s_i$, and their results violate the $MR_h$, $\forall j = 1, 2, \ldots, m$ and $j \neq i$, we then set
+Dynamic Random Testing (DRT) \cite{cai2009random} combines RT and PT, with the goal of benefitting from the advantages of both. Given a test suite $TS$ classified into $m$ ($m \ge 2$) partitions (denoted $s_1, s_2, \ldots, s_m$), and DRT is employed to update the values of the selection probabilities $p_i$. Assume that a source test case $stc$ from $s_i$ ($i = 1, 2, \ldots, m$) is selected, and an metamorphic relation $MR_h$ that is selected according to some strategies, is used to generate follow-up test case $ftc$ from $stc$. If $stc$ and $ftc$ belong to $s_i$, and their results violate the $MR_h$, $\forall j = 1, 2, \ldots, m$ and $j \neq i$, we then set
 
 \begin{equation}
 \label{eq:DRThitJ}
@@ -254,8 +254,8 @@ p_j + \displaystyle\frac{p'_i}{m-1} & \text{if } p_i < \epsilon
 \end{equation}
 
  The detailed DRT algorithm is given in Algorithm \ref{alg:drt}. In DRT, the source test case is selected from a partition that has been randomly selected according to the testing profile $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$, and an metamorphic relation is select according to some strategies (Lines 2 to 4 in Algorithm \ref{alg:drt}). During the testing, if the source and follow-up test cases are belonging to same partition, then the testing profile is updated by changing the $p_i$: If a fault is detected, then Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI} are used to adjust the values of $p_i$ (Line 8), otherwise Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ} are used (Line 10). This process is repeated until a termination condition is satisfied (Line 1). Examples of termination conditions can be ``when the testing resources are exhausted,'' ``when a certain number of test cases have been executed,'' ``when the first faults is detected,'' etc.
- 
- \begin{algorithm}
+
+\begin{algorithm}
 \caption{DRT}
 \label{alg:drt}
     \begin{algorithmic}[1]
@@ -265,11 +265,11 @@ p_j + \displaystyle\frac{p'_i}{m-1} & \text{if } p_i < \epsilon
     \REQUIRE $\epsilon, p_1, p_2, \ldots, p_m, MR_1, MR_2, \ldots, MR_n$
     \WHILE {termination condition is not satisfied}
     \STATE Select a partition $s_i$ according to the testing profile $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$.
-    \STATE Select a source test case $stc_i$ from $s_i$, and an metamorphic relation $MR_h$ ($h \in \{1, 2, \ldots, n\}$).
-    \STATE $MR_h$ is used to generate follow-up test case $ftc_i$ from $stc_i$.
-    \STATE Test the SUT using $stc_i$ and $ftc_i$.
-    \IF {both $stc_i$ and $ftc_i$ belong to $s_i$}
-    \IF {the results of $stc_i$ and $ftc_i$ violate the MR}
+    \STATE Select a source test case $stc$ from $s_i$, and an metamorphic relation $MR_h$ ($h \in \{1, 2, \ldots, n\}$).
+    \STATE $MR_h$ is used to generate follow-up test case $ftc$ from $stc$.
+    \STATE Test the SUT using $stc$ and $ftc$.
+    \IF {both $stc$ and $ftc$ belong to $s_i$}
+    \IF {the results of $stc$ and $ftc$ violate the MR}
     \STATE Update $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$ according to Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI}.
     \ELSE
     \STATE Update $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$ according to Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ}
@@ -283,12 +283,83 @@ p_j + \displaystyle\frac{p'_i}{m-1} & \text{if } p_i < \epsilon
 \label{section:mdrt}
 
 When the source test case $stc_i$ and follow-up test case $ftc_i$ related to an metamorphic relation $MR_h$ belong to same partition $s_i$, DRT is suitable to adjust the testing profile. However, during the testing process, there are some scenarios where the $stc_i$ is not in the same partition as $ftc_i$. In such scenarios, DRT cannot be used to adjust the testing profile. To solve this problem, a new strategy, named  Metamorphic Dynamic Random Testing (MDRT), is proposed.
- 
 
+In MDRT, we consider the scenarios, in which source test case $stc$ and follow-up test case $ftc$ related to an metamorphic relation $MR_h$, belong to $s_i$ and $s_f$ ($f \in \{1, 2, \ldots, m\}, f \ne i$), respectively. Suppose that $stc$ and $ftc$ is executed. If their results violate the $MR_h$, $\forall j = 1, 2, \ldots, m$ and $j \ne i, f$, we set
 
+\begin{equation}
+\label{eq:MDRThitJ}
+p'_j =
+\begin{cases}
+p_j - \displaystyle\frac{2\epsilon}{m-2} & \text{if } p_j \geq \displaystyle\frac{2\epsilon}{m-2} \\
+0 & \text{if } p_j < \displaystyle\frac{2\epsilon}{m-2}
+\end{cases},
+\end{equation}
+where $\epsilon$ is a probability adjusting factor, and then
+
+\begin{equation}
+\label{eq:MDRThitI}
+  p'_i = p_i + \displaystyle\frac{(1-\sum_{\substack{j = 1, j \ne i,m}}^m p_j^{'}) - p_i - p_f}{2},
+\end{equation}
+
+\begin{equation}
+\label{eq:MDRThitF}
+  p'_f = p_f + \displaystyle\frac{(1-\sum_{\substack{j = 1, j \ne i,m}}^m p_j^{'}) - p_i - p_f}{2}.
+\end{equation}
+
+Alternatively, if their results hold the $MR_h$, we set
+
+\begin{equation}
+\label{eq:MDRTmissI}
+p'_i =
+\begin{cases}
+p_i - \epsilon & \text{if } p_i \geq \epsilon \\
+0 & \text{if } p_i < \epsilon
+\end{cases},
+\end{equation}
+
+\begin{equation}
+\label{eq:MDRTmissF}
+p'_f =
+\begin{cases}
+p_f - \epsilon & \text{if } p_f \geq \epsilon \\
+0 & \text{if } p_f < \epsilon
+\end{cases},
+\end{equation}
+and then for $\forall j = 1, 2, \ldots, m$ and $j \neq i, f$, we set
+
+\begin{equation}
+\label{eq:MDRTmissJ}
+p'_j = p_j + \displaystyle\frac{(p_i - p_i^{'}) + (p_f - p_f^{'})}{m - 2}
+\end{equation}
+
+The detailed MDRT algorithm is given in Algorithm \ref{alg:mdrt}. In MDRT, the source test case is selected from a partition that has been randomly selected according to the testing profile $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$, and an metamorphic relation is select according to some strategies (Lines 2 to 4 in Algorithm \ref{alg:drt}). During the testing, if the source and follow-up test cases are not in same partition, then the testing profile is updated by changing the $p_i$: If a fault is detected, then Formulas \ref{eq:MDRThitJ}, \ref{eq:MDRThitI}, and \ref{eq:MDRThitF} are used to adjust the values of $p_i$ (Line 8), otherwise Formulas \ref{eq:MDRTmissI}, \ref{eq:MDRTmissF}, and \ref{eq:MDRTmissJ} are used (Line 10). The testing process is stopped as long as the termination condition is satisfied.  
+
+\begin{algorithm}
+\caption{MDRT}
+\label{alg:mdrt}
+    \begin{algorithmic}[1]
+    \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+    \renewcommand{\algorithmicendwhile}{\algorithmicend\_\algorithmicwhile}
+    \renewcommand{\algorithmicendif}{\algorithmicend\_\algorithmicif}
+    \REQUIRE $\epsilon, p_1, p_2, \ldots, p_m, MR_1, MR_2, \ldots, MR_n$
+    \WHILE {termination condition is not satisfied}
+    \STATE Select a partition $s_i$ according to the testing profile $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$.
+    \STATE Select a source test case $stc_i$ from $s_i$, and an metamorphic relation $MR_h$ ($h \in \{1, 2, \ldots, n\}$).
+    \STATE Based on the $MR_h$, follow-up test case $ftc_i$ is generated from $stc_i$, belonging to partition $s_f$.
+    \STATE Test the SUT using $stc_i$ and $ftc_i$.
+    \IF {$i \ne f$}
+    \IF {the results of $stc_i$ and $ftc_i$ violate the MR}
+    \STATE Update $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$ according to Formulas \ref{eq:MDRThitJ}, \ref{eq:MDRThitI}, and \ref{eq:MDRThitF}.
+    \ELSE
+    \STATE Update $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$ according to Formulas \ref{eq:MDRTmissI}, \ref{eq:MDRTmissF}, and \ref{eq:MDRTmissJ}.
+    \ENDIF
+    \ENDIF
+    \ENDWHILE
+    \end{algorithmic}
+\end{algorithm}
 \subsection{M-AMT}
 \label{section:m-amt}
-
+several independent researchers from different areas have individually observed that the fault-detecting inputs tend to cluster into ``continuous regions'' \cite{ammann1988data, finelli1991nasa}, which indicates  that if a fault is detected by a test case in a partition $s_i$, the execution of more tests from $s_i$ will more likely lead to fault detection. Based above observation, M-AMT attempts to give a higher chance to the fault-detecting MRs and test cases.
 
 
 \subsection{Prototype}
