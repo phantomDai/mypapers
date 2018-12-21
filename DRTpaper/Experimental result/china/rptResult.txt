@@ -1,0 +1,23 @@
+
+变异体分布：LowFailureRate
+分区数目为：20
+Fmeasure =21.96
+NFmeasure =28.74
+Tmeasure =2590.38
+sdr_Fmeasure =20.36
+sdr_NFmeasure =27.56
+sdr_Tmeasure =1768.49
+ftime：13.84
+f2time：14.34
+ttime：1331.54
+变异体分布：LowFailureRate
+分区数目为：3
+Fmeasure =23.44
+NFmeasure =26.60
+Tmeasure =4190.39
+sdr_Fmeasure =23.40
+sdr_NFmeasure =24.81
+sdr_Tmeasure =2466.12
+ftime：13.72
+f2time：13.74
+ttime：2036.33

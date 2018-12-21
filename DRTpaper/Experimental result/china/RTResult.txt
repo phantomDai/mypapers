@@ -1,0 +1,11 @@
+
+变异体分布：LowFailureRate
+Fmeasure =21.93
+NFmeasure =38.17
+Tmeasure =4203.07
+sdr_Fmeasure =20.37
+sdr_NFmeasure =38.17
+sdr_Tmeasure =3219.40
+ftime：13.78
+f2time：19.07
+ttime：2067.46

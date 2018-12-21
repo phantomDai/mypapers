@@ -1,0 +1,145 @@
+\begin{thebibliography}{10}
+
+\bibitem{Ammann1988Data}
+Paul~E Ammann and John~C Knight.
+\newblock Data diversity: An approach to software fault tolerance.
+\newblock {\em IEEE Transactions on Computers}, 37(4):418--425, 1988.
+
+\bibitem{Cai2002Optimal}
+K.~Y. Cai.
+\newblock Optimal software testing and adaptive software testing in the context
+  of software cybernetics ¡î.
+\newblock {\em Information and Software Technology}, 44(14):841--855, 2002.
+
+\bibitem{Cai2007Adaptive}
+Kai~Yuan Cai, Bo~Gu, Hai Hu, and Yong~Chao Li.
+\newblock Adaptive software testing with fixed-memory feedback.
+\newblock {\em Journal of Systems \& Software}, 80(8):1328--1348, 2007.
+
+\bibitem{Cai2005Partition}
+Kai~Yuan Cai, Tao Jing, and Cheng~Gang Bai.
+\newblock Partition testing with dynamic partitioning.
+\newblock In {\em Computer Software and Applications Conference, 2005. COMPSAC
+  2005. International}, pages 113--116 Vol. 1, 2005.
+
+\bibitem{Canfora2006Service}
+Gerardo Canfora and Massimiliano Penta.
+\newblock Service-oriented architectures testing: A survey.
+\newblock {\em Software Engineering}, 5413:78--105, 2006.
+
+\bibitem{Canfora2009Service}
+Gerardo Canfora and Massimiliano~Di Penta.
+\newblock {\em Service-Oriented Architectures Testing: A Survey}.
+\newblock Springer Berlin Heidelberg, 2009.
+
+\bibitem{Chen1994On}
+T.~Y. Chen and Y.~T. Yu.
+\newblock On the relationship between partition and random testing.
+\newblock {\em Software Engineering IEEE Transactions on}, 20(12):977--980,
+  1994.
+
+\bibitem{Chen2016METRIC}
+Tsong~Yueh Chen, Pak~Lok Poon, and Xiaoyuan Xie.
+\newblock Metric: Metamorphic relation identification based on the
+  category-choice framework ¡î.
+\newblock {\em Journal of Systems \& Software}, 116:0000, 2016.
+
+\bibitem{Chen1996On}
+Tsong~Yueh Chen and Yuen~Tak Yu.
+\newblock {\em On the Expected Number of Failures Detected by Subdomain Testing
+  and Random Testing}.
+\newblock IEEE Press, 1996.
+
+\bibitem{Finelli1991NASA}
+George~B. Finelli.
+\newblock Nasa software failure characterization experiments.
+\newblock {\em Reliability Engineering \& System Safety}, 32(1¨C2):155--169,
+  1991.
+
+\bibitem{Gutjahr1999Partition}
+Walter~J. Gutjahr.
+\newblock Partition testing vs. random testing: The influence of uncertainty.
+\newblock {\em IEEE Transactions on Software Engineering}, 25(5):661--674,
+  1999.
+
+\bibitem{Hamlet1990Partition}
+D.~Hamlet and R.~Taylor.
+\newblock Partition testing does not inspire confidence.
+\newblock In {\em The Workshop on Software Testing}, pages 206--215, 1990.
+
+\bibitem{Hamlet1994Random}
+Richard Hamlet.
+\newblock Random testing.
+\newblock {\em Encyclopedia of Software Engineering}, pages 970--978, 1994.
+
+\bibitem{Sture1979A}
+Sture Holm.
+\newblock A simple sequentially rejective multiple test procedure.
+\newblock {\em Scandinavian Journal of Statistics}, 6(2):65--70, 1979.
+
+\bibitem{Koru2008Theory}
+A.~G¨¹ne? Koru, Khaled~El Emam, Dongsong Zhang, Hongfang Liu, and Divya Mathew.
+\newblock Theory of relative defect proneness.
+\newblock {\em Empirical Software Engineering}, 13(5):473--498, 2008.
+
+\bibitem{Li2015Approach}
+Ye~Li, Bei~Bei Yin, Junpeng Lv, and Kai~Yuan Cai.
+\newblock Approach for test profile optimization in dynamic random testing.
+\newblock In {\em Computer Software and Applications Conference}, pages
+  466--471, 2015.
+
+\bibitem{Lv}
+Junpeng Lv, Hai Hu, and Kai-Yuan Cai.
+\newblock A sufficient condition for parameter estimation in dynamic random
+  testing.
+
+\bibitem{Lv2011A}
+Junpeng Lv, Hai Hu, and Kai~Yuan Cai.
+\newblock A sufficient condition for parameters estimation in dynamic random
+  testing.
+\newblock In {\em Computer Software and Applications Conference Workshops},
+  pages 19--24, 2011.
+
+\bibitem{aviation.org}
+Timothy~I Murphy.
+\newblock Line spacing in latex documents.
+\newblock \url{http://www.bcia.com.cn/server/notice/package.shtml}.
+\newblock Accessed December 25, 2017.
+
+\bibitem{billcaculation.org}
+Timothy~I Murphy.
+\newblock Line spacing in latex documents.
+\newblock
+  \url{https://baike.baidu.com/item/%E8%81%94%E9%80%9A3G/5882691?fr=aladdin}.
+\newblock Accessed December 25, 2017.
+
+\bibitem{MICHAEL2008SERVICE}
+MICHAEL~P. PAPAZOGLOU, PAOLO TRAVERSO, SCHAHRAM DUSTDAR, and FRANK LEYMANN.
+\newblock Service-oriented computing: A research roadmap.
+\newblock {\em International Journal of Cooperative Information Systems},
+  17(02):223--255, 2008.
+
+\bibitem{Peltz2003Web}
+Chris Peltz.
+\newblock Web services orchestration: A review of emerging technologies.
+\newblock 2003.
+
+\bibitem{Sun2012Towards}
+Chang~Ai Sun, Guan Wang, Kai~Yuan Cai, and Tsong~Yueh Chen.
+\newblock Towards dynamic random testing for web services.
+\newblock In {\em Computer Software and Applications Conference}, pages
+  164--169, 2012.
+
+\bibitem{Weyuker1991Analyzing}
+Elaine~J Weyuker and Bingchiang Jeng.
+\newblock Analyzing partition testing strategies.
+\newblock {\em IEEE Transactions on Software Engineering}, 17(7):703--711,
+  1991.
+
+\bibitem{Yang2014Dynamic}
+Zijiang Yang, Beibei Yin, Junpeng Lv, Kaiyuan Cai, Stephen~S. Yau, and Jia Yu.
+\newblock Dynamic random testing with parameter adjustment.
+\newblock In {\em Computer Software and Applications Conference Workshops},
+  pages 37--42, 2014.
+
+\end{thebibliography}

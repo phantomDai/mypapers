@@ -1,0 +1,12 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: technicalReport.aux
+The style file: plain.bst
+Database file #1: references.bib
+I was expecting a `,' or a `}'---line 189 of file references.bib
+ : 
+ : journal={2011 IEEE 35th Annual Computer Software and Applications Conference Workshops},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty journal in Lv
+Warning--empty year in Lv
+Warning--empty journal in Peltz2003Web
+(There was 1 error message)
