@@ -1,6 +1,5 @@
 \documentclass[conference]{IEEEtran}
 \IEEEoverridecommandlockouts
-% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithm}
@@ -44,9 +43,9 @@ tychen@swin.edu.au}
   Metamorphic testing (MT) is a promising technique to alleviate the oracle problem, which fist defines metamorphic relations (MRs) to generate new test cases (i.e. follow-up
   test cases) from the original test cases (i.e. source test cases), then the results of source and follow-up test cases are verified against the relevant MRs.
   To improve the effectiveness of MT, researchers have focused their effort on generating or selecting better MRs, while ignoring the impact of test execution.
-  Most of MT techniques employ random testing strategy (RT) to select source test cases. It may not be efficient because RT does not use any information of the software under test. 
+  Most of MT techniques employ random testing strategy (RT) to select source test cases. It may not be efficient because RT does not use any information of the software under test.
   This study aims to improve the efficiency of MT through controlling the execution process of MT, and proposes a adaptive metamorphic
-  testing (AMT) technique. We conduct a empirical study where AMT is employed to test three real-life programs. The results of empirical study show that AMT outperforms traditional 
+  testing (AMT) technique. We conduct a empirical study where AMT is employed to test three real-life programs. The results of empirical study show that AMT outperforms traditional
   MT in terms of fault-detecting efficiency.
 \end{abstract}
 
@@ -58,14 +57,14 @@ metamorphic testing, control test process, random testing
 \label{section:introduction}
 Test result verification is an important part of software testing. A test oracle \cite{weyuker1982testing} is a mechanism that can exactly decide whether the output
 produced by a programs is correct. However, there are situations where it is difficult to decide whether the result of the software under test (SUT) agrees with the expected
-result. This situation is known as oracle problem \cite{barr2015oracle, patel2018mapping}. In order to alleviate the test oracle, several techniques have been proposed such as 
-N-version testing \cite{brilliant1990performance}, metamorphic testing (MT) \cite{chen1998metamorphic, chen2018metamorphic}, assertions \cite{sim2014eliminating}, machine 
-learning \cite{chan2009pat}, etc. Among of them, MT obtains metamorphic relations (MRs) according to the properties of SUT. Then, MRs are used to generate new test cases called 
+result. This situation is known as oracle problem \cite{barr2015oracle, patel2018mapping}. In order to alleviate the test oracle, several techniques have been proposed such as
+N-version testing \cite{brilliant1990performance}, metamorphic testing (MT) \cite{chen1998metamorphic, chen2018metamorphic}, assertions \cite{sim2014eliminating}, machine
+learning \cite{chan2009pat}, etc. Among of them, MT obtains metamorphic relations (MRs) according to the properties of SUT. Then, MRs are used to generate new test cases called
 follow-up test cases from original test cases known as source test cases. Next, both source and follow-up test cases are executed and their result are verified against the corresponding MRs.
 
 The fault-detecting effectiveness of MT relies on the quality of MRs and the source test cases. There are astronomically large number of studies to investigate generate
-good MRs \cite{chen2004case, cao2013correlation, chen2004metamorphic, sun2011metamorphic, chen2014metric, xie2016looking} or the source test cases \cite{chen2004metamorphic, batra2011efficient, 
-dong2013security}. However, Researchers ignore the 
+good MRs \cite{chen2004case, cao2013correlation, chen2004metamorphic, sun2011metamorphic, chen2014metric, xie2016looking} or the source test cases \cite{chen2004metamorphic, batra2011efficient,
+dong2013security}. However, Researchers ignore the
 impact of test execution on the efficiency of MT. Random testing (RT) that randomly selects test cases from input domain (which refers to the set of all possible inputs of SUT), which is most
 commonly used technique in traditional MT \cite{segura2016survey}. Although RT is simple to implement, RT does not make use of any execution information about SUT or the test history. Thus,
 traditional MT may be inefficient in some situations.
@@ -73,24 +72,18 @@ traditional MT may be inefficient in some situations.
 In contrast to RT, partition testing (PT) attempts to generate test cases in a more systematic way, aiming to use fewer test cases to reveal more faults. When conducting
 PT, the input domain of SUT is divided into disjoint partitions, with test cases then selected from each and every one. Each partition is expected to have a certain degree
 of homogeneity, that is, test cases in the same partition should have similar software execution behavior: If one input can detect a fault, then all other inputs in the same partition should also be able to detect a fault.
-RT and PT have their own characteristics. Therefore, it is a nature thought to investigate the integration of them for developing new testing techniques. 
-Sun et al. \cite{sun2018adaptive} proposed adaptive partition testing (APT) that takes advantages of testing information to control the testing process, with the goal of benefitting from 
-the advantages of RT and PT. 
+RT and PT have their own characteristics. Therefore, it is a nature thought to investigate the integration of them for developing new testing techniques.
+Sun et al. \cite{sun2018adaptive} proposed adaptive partition testing (APT) that takes advantages of testing information to control the testing process, with the goal of benefitting from
+the advantages of RT and PT.
 
-%Based on different intuitions, RT and PT have their own advantages and disadvantages. It is likely that they can be complementary to each other, detecting different faults.
-%Therefore, it is intuitively appealing to investigate the their integration. Based on software cybernetics \cite{cai2002optimal}, Cai et al. proposed dynamic random testing (DRT)
-%\cite{cai2009random} that takes advantages of testing information to control the testing process, improving both RT and PT. DRT attempts to dynamically adjust testing profile:
-%If a test case from a partition $s_i$ reveals a fault, the corresponding $p_i$ will be increased by a constant $\epsilon$; otherwise, it is decreased by $\epsilon$.
-
-
-In this study, we investigate how to make use of feedback information in the previous tests to control the execution process of MT, and propose a adaptive metamorphic testing framework based on PT to 
+In this study, we investigate how to make use of feedback information in the previous tests to control the execution process of MT, and propose a adaptive metamorphic testing framework based on PT to
 improve the fault-detecting efficiency of MT. We conduct an empirical study to evaluate proposed technique. The paper makes the following contributions:
 
 \begin{enumerate}[1)]
   \item
   An adaptive metamorphic testing framework is proposed, which combines the basic principle of MT and software cybernetics \cite{cai2002optimal}.
   \item
-  An MRs-centric adaptive metamorphic testing technique (M-AMT) which used a feedback mechanism to control the execution process of MT. 
+  An MRs-centric adaptive metamorphic testing technique (M-AMT) which used a feedback mechanism to control the execution process of MT.
 %  First, M-AMT randomly selects an
 %  MR to generate follow-up test cases depended on source test case, and then updates the test profile of input partitions according to the results of test execution.
 %  Second, a partition is selected according to updated test profile, and an MR is randomly selected from the set of MRs whose source test cases belong to selected partition.
@@ -100,8 +93,8 @@ improve the fault-detecting efficiency of MT. We conduct an empirical study to e
 \end{enumerate}
 
 The rest of the paper is organized as follows. Section \ref{section:background} introduces the underlying concepts related to MT and DRT.
-Section \ref{section:amt} presents the motivation of this study, the framework and algorithms of AMT. Section \ref{section:empirical} describes an empirical study where the proposed 
-AMT is used to test three real-life programs, the results of which are summarized in Section \ref{section:result}. The related work is reviewed in Section \ref{section:related}. 
+Section \ref{section:amt} presents the motivation of this study, the framework and algorithms of AMT. Section \ref{section:empirical} describes an empirical study where the proposed
+AMT is used to test three real-life programs, the results of which are summarized in Section \ref{section:result}. The related work is reviewed in Section \ref{section:related}.
 Finally, we summarize our work in Section \ref{section:conclusion}.
 
 
@@ -114,14 +107,14 @@ In this section, we present the basics to understand our approach. we start with
 Let us use a simple example to illustrate how MT works. For instance, consider the mathematic function $f(x,y)$ that can calculate the maximal value of two integers $x$ and $y$.
 There is a simple yet obvious property: the order of two parameters $x$ and $y$ does not affect the output, which can be described as the follow metamorphic relation
 (MR): $f(x,y) = f(y,x)$. In this MR, $(x,y)$ is source test case, and $(y,x)$ is considered as follow-up test case. Suppose \texttt{P} denotes a program that implements the
-function $f(x,y)$, \texttt{P} is executed with a test cases $(1,2)$ and $(2,1)$. Then we check $P(1,2) = P(2,1)$: If the equality does not hold, then we consider that \texttt{P} at 
+function $f(x,y)$, \texttt{P} is executed with a test cases $(1,2)$ and $(2,1)$. Then we check $P(1,2) = P(2,1)$: If the equality does not hold, then we consider that \texttt{P} at
 least has one fault.
 
 \subsection{Dynamic Random Testing}
 \label{section:drt}
-Cai et al \cite{cai2009random} proposed dynamic random testing (DRT), which adjusts the test profile according to the result of current test. In DRT, the input domain is first divided 
-into $m$ partitions (denoted $s_1, s_2, \ldots, s_m$), and each $s_i$ is assigned a probability $p_i$. During the test process, the selection probabilities of partitions are dynamically 
-updated. Suppose that a test case $tc$ from $s_i$ ($i = 1,2,\ldots,m$) is selected and executed. The process of DRT adjusting the value of $p_i$ is as follows: If $tc$ detects a fault, 
+Cai et al \cite{cai2009random} proposed dynamic random testing (DRT), which adjusts the test profile according to the result of current test. In DRT, the input domain is first divided
+into $m$ partitions (denoted $s_1, s_2, \ldots, s_m$), and each $s_i$ is assigned a probability $p_i$. During the test process, the selection probabilities of partitions are dynamically
+updated. Suppose that a test case $tc$ from $s_i$ ($i = 1,2,\ldots,m$) is selected and executed. The process of DRT adjusting the value of $p_i$ is as follows: If $tc$ detects a fault,
 $\forall j = 1, 2, \ldots, m$ and $j \neq i$, we then set
 
 \begin{equation}
@@ -190,18 +183,18 @@ p_j + \displaystyle\frac{p'_i}{m-1} & \text{if } p_i < \epsilon
 
 \section{Adaptive Metamorphic Testing}
 \label{section:amt}
-In this section, we first describe the motivation, then present a framework for improving the efficiency of MT, and finally present an algorithm for AMT, namely MRs-centric adaptive 
+In this section, we first describe the motivation, then present a framework for improving the efficiency of MT, and finally present an algorithm for AMT, namely MRs-centric adaptive
 metamorphic testing (M-AMT).
 
 \subsection{Motivation}
 \label{section:motivation}
-Since MT was first published, a considerable number of studies have been reported from various aspects \cite{segura2016survey}. To improve the effectiveness of MT, most of studies 
+Since MT was first published, a considerable number of studies have been reported from various aspects \cite{segura2016survey}. To improve the effectiveness of MT, most of studies
 have paid their
 attention to identify the better MRs, which are more likely to be violated. For the effectiveness of MRs, several factors such as the difference between the source and follow-up
 test cases \cite{chen2004case, cao2013correlation} and the the detecting-faults capacity of MRs compared to existing test oracles \cite{liu2014effectively}, have been investigated.
 
 Since the follow-up test cases are generated based on source test cases and MRs, in addition to the so-called good MRs, source test cases also have an impact on the efficiency of MT.
-However, 57\% of existing studies employed RT to select test cases, and 34\% of existing studies used existing test suites according to a survey report by Segura et al. in their Journal 
+However, 57\% of existing studies employed RT to select test cases, and 34\% of existing studies used existing test suites according to a survey report by Segura et al. in their Journal
 \cite{segura2016survey}. In this study, we investigate
 the use of feedback information to select the next MR and source test case, and its impacts on the fault-detecting efficiency of MT.
 
@@ -220,8 +213,8 @@ components and the PT components are depicted in the framework. We next discuss 
   Partition testing (PT) refers to a class of testing techniques that break the input domain into a number of partitions \cite{weyuker1991analyzing}. Various approaches and principles
    for achieving convenient and effective partitions have been discussed
   in the literature \cite{weyuker1991analyzing, cai2005partition, chen1994relationship, chen1996expected}. The input domain of the SUT can be partitioned based on the SUT specifications.
-   Once partitioned, testers can assign probability distributions to the partitions as an initial test profile. This initial test profile can be assigned in different ways, 
-   including using a uniform probability distribution, or one that sets probabilities according to the importance of the partition. For instance, a partition should be given a higher 
+   Once partitioned, testers can assign probability distributions to the partitions as an initial test profile. This initial test profile can be assigned in different ways,
+   including using a uniform probability distribution, or one that sets probabilities according to the importance of the partition. For instance, a partition should be given a higher
    priority if more faults have been detected within it in the previous testing history.
   \item
   \emph{Partition Selection}
@@ -238,9 +231,9 @@ components and the PT components are depicted in the framework. We next discuss 
   \item
   \emph{Test Profile Adjustment.}
   After executing the source and follow-up test cases, its pass or fail status is determined by verifying the results of source and follow-up test cases against the corresponding MR.
-  The pass or fail status is then collected to make adjustments to prepare for the selection of next partition. It has been pointed out that 
-  fault-detecting inputs tend to cluster into ``continuous regions'' \cite{ammann1988data, finelli1991nasa}, that is, the test cases in some partition are more likely to detect faults 
-  than the test cases in other partitions. Following the above idea, AMT source test cases and MRs selection are in accordance with the test profile that is dynamically updated 
+  The pass or fail status is then collected to make adjustments to prepare for the selection of next partition. It has been pointed out that
+  fault-detecting inputs tend to cluster into ``continuous regions'' \cite{ammann1988data, finelli1991nasa}, that is, the test cases in some partition are more likely to detect faults
+  than the test cases in other partitions. Following the above idea, AMT source test cases and MRs selection are in accordance with the test profile that is dynamically updated
   according to the feedback information. The strategies updating test profile will be described in Section \ref{section:drt} and \ref{section:mdrt}.
 \end{enumerate}
 
@@ -258,8 +251,8 @@ components and the PT components are depicted in the framework. We next discuss 
 
 \label{section:mdrt}
 
-When the source test case $stc$ and follow-up test case $ftc$ related to an metamorphic relation $MR$ belong to the same partition $s_i$, DRT is suitable to adjust the test profile. 
-However, during the test process, there are some scenarios where the $stc$ is not in the same partition as $ftc$. In such scenarios, DRT cannot be used to adjust the test profile. 
+When the source test case $stc$ and follow-up test case $ftc$ related to an metamorphic relation $MR$ belong to the same partition $s_i$, DRT is suitable to adjust the test profile.
+However, during the test process, there are some scenarios where the $stc$ is not in the same partition as $ftc$. In such scenarios, DRT cannot be used to adjust the test profile.
 To solve this problem, we proposed metamorphic dynamic random testing (MDRT).
 
 Suppose that source test case $stc$ and follow-up test case $ftc$ related to an metamorphic relation $MR$, belong to $s_i$ and $s_f$ ($f \in \{1, 2, \ldots, m\}, f \ne i$), respectively. If their results violate the $MR$, $\forall j = 1, 2, \ldots, m$ and $j \ne i, f$, we set
@@ -358,12 +351,12 @@ Alternatively, if their results satisfy the $MR$, there are following two situat
   If $i \ne f$, then the test profile is updated according to Formulas \ref{eq:MDRTmissI}, \ref{eq:MDRTmissF}, and \ref{eq:MDRTmissJ}.
 \end{enumerate}
 
-Next, M-AMT randomly selects a partition according to updated test profile, then a source test case is randomly selected from the selected partition and an metamorphic relation is 
-randomly selected from a $MR_{s_i}$ ($i \in \{1,2,\ldots,m\}$) whose source test cases belong to the selected partition. On the basis of $MR_{s_i}$, the follow-up test case is 
-generated from the source test case (Lines 22 and 23). After the execution of the source and follow-up test cases, their results are verified against the $MR_{s_i}$, then the test 
+Next, M-AMT randomly selects a partition according to updated test profile, then a source test case is randomly selected from the selected partition and an metamorphic relation is
+randomly selected from a $MR_{s_i}$ ($i \in \{1,2,\ldots,m\}$) whose source test cases belong to the selected partition. On the basis of $MR_{s_i}$, the follow-up test case is
+generated from the source test case (Lines 22 and 23). After the execution of the source and follow-up test cases, their results are verified against the $MR_{s_i}$, then the test
 profile is updated (Lines 24 to 35). This process is repeated until a termination condition is satisfied (Line 2).
 
-We developed a tool called AMTesting to the best of our knowledge. AMTesting  has features such as termination condition setting, partition setting, test execution, and test report 
+We developed a tool called AMTesting to the best of our knowledge. AMTesting  has features such as termination condition setting, partition setting, test execution, and test report
 generation.
 
 \begin{algorithm}
@@ -425,21 +418,29 @@ We reported a series of empirical studies to evaluate the performance of M-AMT. 
 
 \begin{description}
   \item [RQ1]
-  How efficient and effective is M-AMT at detecting faults?
-  Fault-detection efficiency and effectiveness are key criterions for evaluating the performance of a testing technique. In our study, we chose three real-life programs, and applied mutation analysis to evaluate them.
+  How efficient is M-AMT at detecting faults? \\
+  Fault-detection efficiency is a key criterion for evaluating the performance of a testing technique. In our study, we chose three real-life programs, and applied mutation analysis to evaluate the fault-detecting efficiency.
   \item [RQ2]
-  What is the actual test case selection overhead when using the M-AMT strategy?
-  We empirically evaluate the test case generation overhead of M-AMT in detecting software faults.
+  What is the actual test case selection overhead when using the M-AMT strategy?\\
+  We evaluate the test case selection overhead of M-AMT and compare with traditional MT in detecting software faults.
 \end{description}
 
-\subsection{Object Programs}
-We selected three real-life systems as the subject programs for our study: \texttt{China Unicom Billing System (CUBS)},
- \texttt{Aviation Consignment Management System (ACMS)},
- and \texttt{Expense Reimbursement System (ERS)}.
-
-\subsubsection{China Unicom Billing System (CUBS)}
-\label{section:cubs}
-CUBS provides an interface through which customers can know how much they need to pay according to plans, month charge, calls, and data usage. The details of two cell-phone plans are summarized in Tables \ref{table:chinaA} and \ref{table:chinaB}.
+\subsection{Subjects Programs}
+We selected three real-life systems as the subject programs for our study:
+ \texttt{China Unicom Billing System (CUBS)},
+ \texttt{Aviation Consignment Management System (ACMS)}, and
+ \texttt{Expense Reimbursement System (ERS)}.
+ A detailed description of each subject program is given in the following.
+ 
+ \begin{enumerate}[1)]
+   \item
+   \texttt{CUBS} provides an interface through which customers can know how much they need to pay according to plans, month charge, calls, and data usage. The details of two cell-phone plans are summarized in Tables \ref{table:chinaA} and \ref{table:chinaB}.
+   \item
+   \texttt{ACMS} aims to help airline companies check the allowance (weight) of free baggage, and the cost of additional baggage. Based on the destination, flights are categorised as either domestic or international. For international flights, the baggage allowance is greater if the passenger is a student (30kg), otherwise it is 20kg. Each aircraft offers three cabins classes from
+   which to choose (economy, business, and first), with passengers in different classes having different allowances. The detailed price rules are summarized in Table~\ref{table:acms}, where $price_0$ means economy class fare.
+   \item
+   \texttt{ERS} assists the sales Supervisor of a company with handling the following tasks: \rmnum{1}) Calculating the cost of the employee who use the cars based on their titles and the number of miles actually traveled; \rmnum{2}) accepting the requests of reimbursement that include airfare, hotel accommodation, food and cell-phone expenses of the employee.
+ \end{enumerate}
 
 \begin{table}[!htp]
   \centering
@@ -469,11 +470,6 @@ CUBS provides an interface through which customers can know how much they need t
   \end{tabular}
 \end{table}
 
-\subsubsection{Aviation Consignment Management System (ACMS)}
-\label{section:acms}
-ACMS aims to help airline companies check the allowance (weight) of free baggage, and the cost of additional baggage. Based on the destination, flights are categorised as either domestic or international. For international flights, the baggage allowance is greater if the passenger is a student (30kg), otherwise it is 20kg. Each aircraft offers three cabins classes from
-which to choose (economy, business, and first), with passengers in different classes having different allowances. The detailed price rules are summarized in Table~\ref{table:acms},
-where $price_0$ means economy class fare.
 
 \begin{table*}[!htp]
   \caption{ACMS Baggage Allowance and Pricing Rules}
@@ -488,9 +484,6 @@ where $price_0$ means economy class fare.
   \end{tabular}
 \end{table*}
 
-\subsubsection{Expense Reimbursement System (ERS)}
-
-ERS assists the sales Supervisor of a company with handling the following tasks: \rmnum{1}) Calculating the cost of the employee who use the cars based on their titles and the number of miles actually traveled; \rmnum{2}) accepting the requests of reimbursement that include airfare, hotel accommodation, food and cell-phone expenses of the employee.
 
 \subsection{Variables}
 
@@ -498,7 +491,7 @@ ERS assists the sales Supervisor of a company with handling the following tasks:
 The independent variable in our study is the testing technique. The M-AMT is the independent variable. In addition, we selected traditional MT that randomly selects source test cases as the baseline technique for comparison.
 
 \subsubsection{Dependent Variables}
-To answer our research question, F-measure \cite{sun2018adaptive} is used to evaluate the efficiency of MT and A-AMT strategies, which is defined as the expected number of test cases executions required to detect the first fault. In addition, to better illustrate the effectiveness improvement of M-AMT over traditional MT, N-measure, referred to the expected number of faults detected by a number of test cases that is preset before the test, is proposed. The N-measure is following the practical situation where there are not enough test resources to execute all test cases. In this study, we execute half, quarter, and quarter test cases of the CUBS, ACMS, and ERS, respectively (Note that the half test cases of ACMS and ERS have detected all faults).
+To answer our research question, F-measure \cite{sun2018adaptive} is used to evaluate the efficiency of MT and A-AMT strategies, which is defined as the expected number of test cases executions required to detect the first fault. In addition, to better illustrate the effectiveness improvement of M-AMT over traditional MT, N-measure, referred to the expected number of faults detected by a number of test cases that is preset before the test, is proposed. The N-measure is following the practical situation where there are not enough test resources to execute all test cases. In this study, we execute half, quarter, and quarter test cases of the \texttt{CUBS}, \texttt{ACMS}, and \texttt{ERS}, respectively (Note that the half test cases of \texttt{ACMS} and \texttt{ERS} have detected all faults).
 
 For RQ2, an obvious metric is the time required to select test cases. In this study, corresponding to the F-measure and N-measure, we used the F-time and N-time to measure the time to select test cases for detecting the first fault and select a preset number of test cases, respectively.
 
@@ -533,7 +526,7 @@ In our study, to obtain metamorphic relations, we made use of METRIC \cite{chen2
 \end{description}
 
 Following the above guidelines, we identified MRs for studied programs and the number metamorphic relations of programs is summarized in Table \ref{table:programs} (the fourth column).
-\subsubsection{Partitioning}
+\subsubsection{Partitioning scheme}
 We used the category--partition method (CPM) \cite{ostrand1988category}, a typical PT technique based on \emph{Specified As Equivalent}, to conduct the partitioning. In
 CPM, a functional requirement is decomposed into a set of categories, which are major properties or characteristics of the input parameters or environment conditions. Each category is further divided into disjoint choices, which include all the different kinds of values that are possible for the category. As a consequence, we obtained categories and choices for every studied programs. With those categories$\backslash$choices and constraints among choices, we further generated a set of complete test frames and each of them corresponds to a partition. Note that the number of partitions may vary with the granularity level. In our study, we only consider two categories to conduct partition, and the results of partitioning is recorded in Table \ref{table:programs} (the fifth column).
 
@@ -543,13 +536,13 @@ other hand, testers may also use past experience to guide a different probabilit
 \subsubsection{Constants}
 Previous studies \cite{yang2014dynamic, li2015approach} set a relatively small DRT parameter $\epsilon$ (e.g. $\epsilon = 0.05$). We followed these studies to set $\epsilon = 0.05$.
 
-\subsection{Experimental Environment}
+\subsubsection{Experimental Environment}
 
 Our experiments were conducted on a virtual machine running the Ubuntu 18.04 64-bit operating system, with two CPUs, and a memory of 4GB. The test scripts were written in
 Java. To ensure statistically reliable values of the metrics (F-measure, N-measure, F-time, N-time), each testing session was repeated 30 times with 30 different
 seeds following the guidelines proposed in \cite{arcuri2011practical}, and the average value calculated.
 
-\section{Experimental Results}
+\subsection{Experimental Results and Analysis}
 \label{section:result}
 \subsubsection{RQ1: Fault Detection Effectiveness}
 Tables \ref{table:results} shows the experimental results of F-measure and N-measure, and the distribution of them on each object program are displayed by the boxplots in
@@ -583,8 +576,8 @@ the middle line denotes the median value. The upper and lower whiskers respectiv
   \end{tabular}
 \end{table}
 
-From Table \ref{table:results} and Figures \ref{figure:fmeasure}, and \ref{figure:nmeasure}, we have the following observations:
-\begin{enumerate}[1]
+From Table \ref{table:results} and Figures \ref{figure:fmeasure} and \ref{figure:nmeasure}, we have the following observations:
+\begin{enumerate}[1)]
   \item
   MT executes test cases in a random manner, that is, MT randomly selects test cases from input domain as source test cases, which does not use of any information returned from the testing process. Based on MT, M-AMT introduces software cybernetics \cite{cai2002optimal} into MT, analyzing the current test results to select ``better'' test cases that is more likely to detect faults.
   \item
@@ -617,12 +610,12 @@ The detailed results of F-time and N-time are summarized in the Table \ref{table
   \emph{In terms of F-time and N-time:} In most of scenarios (except for F-time of ERS), MT selection test cases consumes less time than M-AMT. M-AMT require additional computation compared to MT and such additional computation is compensated by having fewer program executions. When the test case execution time saved by M-AMT is sufficient to cover the additional computation, M-AMT will have a better performance. To detect the first fault of ERS, M-AMT requires far fewer test cases than MT, hence M-AMT selection test cases consumes less time than MT.
 \end{enumerate}
 
-In summary, M-AMT was shown to be the better testing technique than MT across F- and N-measure, which means that The fault detection efficiency of M-AMT is higher than MT. Meanwhile, M-AMT takes extra time to adjust the test profile and select a partition, while such additional time can be compensated by having fewer programs executions.  This further indicates that between the proposed M-AMT and MT, M-AMT should be used.
+In summary, M-AMT outperformed tradition MT across F- and N-measure, which means that The fault detection efficiency of M-AMT is higher than MT. Meanwhile, M-AMT takes extra time to adjust the test profile and select a partition, while such additional time can be compensated by having fewer programs executions.  This further indicates that between the proposed M-AMT and traditional MT, M-AMT should be used.
 
 
 \section{Related Work}
 \label{section:related}
-In this section, we describe related work from two perspectives: \rmnum{1}) related to MT; \rmnum{2}) related to improving RT and PT.
+In this section, we describe related work from two perspectives: related to MT; \rmnum{2}) related to improving RT and PT.
 
 \subsection{Metamorphic Testing}
 When testing a software system, the oracle problem appears in some situations where either an oracle does not exist for the tester to verify the correctness of the computed results; or an oracle does exist but cannot be used. The oracle problem often occurs in software testing, which renders many testing techniques inapplicable \cite{barr2015oracle}. To alleviate the oracle problem, Chen et al. \cite{chen1998metamorphic} proposed a technique named metamorphic testing (MT) that has been receiving increasing attention in the software testing community\cite{barr2015oracle, segura2016survey, chen2018metamorphic}. The main contributions to MT in the literature focused on the following aspects: \rmnum{1}) MT theory; \rmnum{2}) combination with other techniques; \rmnum{3}) application of MT.
@@ -657,11 +650,6 @@ When testing a software system, the oracle problem appears in some situations wh
 
 \end{enumerate}
 
-
-
-
-
-
 \subsection{Dynamic Random Testing}
 Cai et al. introduced software cybernetics \cite{cai2002optimal} to software testing, and proposed Adaptive Testing (AT) \cite{Cai07, hu2005case, hu2009improved}, which takes
 advantage of feedback information to control the execution process, has been shown that AT outperforms RT in terms of T-measure and increasing the number of faults, which means
@@ -674,16 +662,17 @@ Based on DRT, Sun et al. \cite{sun2018adaptive} proposed a new technique named a
 
 \section{Conclusion}
 \label{section:conclusion}
-Metamorphic testing (MT) is a promising technique that alleviates the oracle problem. To improve the efficiency of MT, the most of researchers focused on generating and selecting the ``better'' metamorphic relations (the execution results of the test cases are more likely to violate them), ignoring the impact of the source test cases.  Differently, based on the partition testing, we proposed an adaptive metamorphic testing technique that aim to control the execution process of MT and make use of the feedback information, improving the fault detection efficiency of MT. Furthermore, We implement the proposed technique in APT2MT, to the best of our knowledge. Empirical studies have been conducted to evaluate the performance of M-AMT and MT using three real-life programs associated with 17 distinct faults that covered different types of mutation operators and whose detection needs more than 20 randomly generated test cases. It has been shown that M-AMT could use significantly fewer test cases to detect the first fault than MT. Moreover, Executing the same number of test cases, M-AMT detected more faults than MT.
+Metamorphic testing (MT) is a promising technique that alleviates the oracle problem. To improve the efficiency of MT, the most of researchers focused on generating and selecting the ``better'' metamorphic relations (the execution results of the test cases are more likely to violate them), ignoring the impact of the source test cases.  Differently, based on the partition testing, we proposed an adaptive metamorphic testing technique that aim to control the execution process of MT and make use of the feedback information, improving the fault detection efficiency of MT. Furthermore, We implement the proposed technique in AMTesting, to the best of our knowledge. Empirical studies have been conducted to evaluate the performance of M-AMT and MT using three real-life programs. It has been shown that M-AMT could use significantly fewer test cases to detect the first fault than tradition MT. Moreover, Executing the same number of test cases, M-AMT detected more faults than traditional MT.
 
 In our future work, we plan to conduct experiments on more real-life programs to further validate the effectiveness of M-AMT, and identify the limitations of our approach.
 
 \section*{Acknowledgment}
 
-This research is supported by the Beijing Natural Science Foundation (Grant No. 4162040), the National Natural Science Foundation of China (Grant No. 61370061),
-the Aeronautical Science Foundation of China (Grant No.
-2016ZD74004), and the Fundamental Research Funds for the
-Central Universities (Grant No. FRF-GF-17-B29).
+This research is supported by the 
+the National Natural Science Foundation of China (Grant No. 61872039),
+Beijing Natural Science Foundation (Grant No. 4162040), 
+the Aeronautical Science Foundation of China (Grant No. 2016ZD74004), and 
+the Fundamental Research Funds for the Central Universities (Grant No. FRF-GF-17-B29).
 
 \newcommand{\BIBdecl}{\setlength{\itemsep}{0.2 em}}
 
