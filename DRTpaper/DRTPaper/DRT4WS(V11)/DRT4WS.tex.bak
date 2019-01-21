@@ -356,7 +356,7 @@ We next discuss the individual framework components.
   \emph{Partition Construction}.
   Partition testing (PT) refers to a class of testing techniques that break the input domain into a number of partitions~\cite{weyuker1991analyzing}.
   Because DRT is a black-box testing technique, combining RT and PT, the PT approaches used are at the specification level.
-  Various approaches andprinciples for achieving convenient and effective partitions have been discussed in the literature~\cite{weyuker1991analyzing, cai2005partition, chen1994relationship, chen1996expected}.
+  Various approaches and principles for achieving convenient and effective partitions have been discussed in the literature~\cite{weyuker1991analyzing, cai2005partition, chen1994relationship, chen1996expected}.
   The input domain of the web service under test (WSUT) can be partitioned based on the WSUT specifications and the parsed parameters.
   Once partitioned, testers can assign probability distributions to the partitions as an initial testing profile.
   This initial testing profile can be assigned in different ways, including using a uniform probability distribution, or one that sets probabilities according to the importance of the partition. \textcolor{red}{For instance, a partition should be given higher priority if more faults have been detected within it in the previous testing history.}. \dpt{How is the importance determined?}
@@ -864,7 +864,7 @@ The details of several cell-phone plans are summarized in Tables~\ref{table:chin
   \caption{Plan C}
   \label{table:chinaC}
   \centering
-  \begin{tabular}{|c|c|c|c|c|} \hline
+  \begin{tabular*}{|c|c|c|c|c|} \hline
   \multicolumn{2}{|c|}{\multirow{2}{*}{Plan details}}  &\multicolumn{3}{|c|}{Month charge~(CNY)} \\ \cline{3-5}
   \multicolumn{2}{|c|}{}                                  &$option_1$  &$option_2$  &$option_3$ \\ \hline
    \multirow{3}{*}{\rotatebox{90}{Basic}} &Free calls~(min)  &260  &380  &550 \\ \cline{2-5}
@@ -873,7 +873,7 @@ The details of several cell-phone plans are summarized in Tables~\ref{table:chin
    \multirow{3}{*}{\rotatebox{90}{Extra}} &Incoming calls~(CNY/min)  &0.25 &0.20  &0.15 \\ \cline{2-5}
                                             &Data~(CNY/KB)  &\multicolumn{3}{c|}{0.0003} \\ \cline{2-5}
                                             &Video calls~(CNY/min)  &\multicolumn{3}{c|}{0.60} \\ \hline
-  \end{tabular}
+  \end{tabular*}
 \end{table}
 
 
@@ -958,7 +958,7 @@ For each of these metrics, smaller values indicate a better performance.
 \textcolor{red}{$$ SP(C) = CO_1 \times CO_2 \times \ldots \times CO_n.$$
 Each element in the $SP(C)$ is a condition entry ($CE$) with the ordered $n$-tuple.}
 \textcolor{red}{(3) The lower-left part shows all possible actions, representing as $A_j$ ($j = 1, \ldots, m$), where $m$ is the number of possible actions and $m \ge 1$. Similar to $CO_i$, for a action $A_j$, it contains a set of possible options $O_{j,p}^{'} \in AO_j = \{O_{j,1}^{'}, \ldots, O_{j,k_{j}}^{'}\}$, where $k_j$ is the number of alternatives for $A_j$, and $p = \{1,\ldots,k_j\}$. (4) The lower-right part shows its action space $SP(A)$, which is also a Cartesian product of all the $AO_j$,}
-\textcolor{red}{$$ SP(A) = AO_1 \times AO_2 \times \ldots \times AO_m.$$ 
+\textcolor{red}{$$ SP(A) = AO_1 \times AO_2 \times \ldots \times AO_m.$$
 Similar to \emph{CE}, each element in the $SP(A)$ is an action entry (\emph{AE}) with the ordered $m$-tuple. Finally, a \emph{rule} in DT is composed of an \emph{CE} and its corresponding \emph{AE}.}
 
 %According to the above description, a complete DT is a matrix, and each column is called a \emph{rule}.

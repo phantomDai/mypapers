@@ -1,10 +1,15 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.1.16)  20 DEC 2018 11:08
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.1.16)  7 JAN 2019 11:40
 entering extended mode
-**D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/DRT4WS.tex
-(D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/DRT4WS.tex
+**C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11
+)/DRT4WS.tex
+
+(C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)
+/DRT4WS.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-(D:\fileRepository\DRTpaper\DRTPaper\DRT4WS(V11)\IEEEtran.cls
+
+(C:\Users\Administrator\Desktop\MyPapers\mypapers\DRTpaper\DRTPaper\DRT4WS(V11)
+\IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -311,7 +316,8 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
 )
 \c@DaveCommentCounter=\count118
 
-(D:\fileRepository\DRTpaper\DRTPaper\DRT4WS(V11)\DRT4WS.aux)
+(C:\Users\Administrator\Desktop\MyPapers\mypapers\DRTpaper\DRTPaper\DRT4WS(V11)
+\DRT4WS.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 38.
 LaTeX Font Info:    ... okay on input line 38.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 38.
@@ -428,14 +434,14 @@ $\OMS/cmsy/m/n/10 f[] \OML/cmm/m/it/10 ; [] ; [] ; []\OMS/cmsy/m/n/10 g$\OT1/pp
 l/m/n/9.53561 . Dur-ing the test-ing
  []
 
-[4 <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig//framework.pdf>]
+[4 <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V
+11)/fig//framework.pdf>]
 \c@lem=\count125
 \c@theo=\count126
-
-[5] [6] <fig//prototype.png, id=56, 642.90187pt x 283.0575pt>
+ [5] [6]
+<fig//prototype.png, id=56, 642.90187pt x 283.0575pt>
 File: fig//prototype.png Graphic file (type png)
-
-<use fig//prototype.png>
+ <use fig//prototype.png>
 Package pdftex.def Info: fig//prototype.png used on input line 700.
 (pdftex.def)             Requested size: 258.9675pt x 114.02002pt.
 
@@ -468,7 +474,8 @@ m/n/9.53561 Parking billing
 LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 755.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 764.
-[7 <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig//prototype.png>]
+[7 <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V
+11)/fig//prototype.png>]
 LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 906
 .
 
@@ -584,17 +591,20 @@ Package pdftex.def Info: fig/drtparemeter/parking.pdf used on input line 1262.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12 <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtresultbox/aviaresu
-ltf.pdf> <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtresultbox/chin
-aresultf.pdf> <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtresultbox
-/parkingresultf.pdf> <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtre
-sultbox/aviaresultf2.pdf> <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/
-drtresultbox/chinaresultf2.pdf> <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11
-)/fig/drtresultbox/parkingresultf2.pdf> <D:/fileRepository/DRTpaper/DRTPaper/DR
-T4WS(V11)/fig/drtresultbox/aviaresultt.pdf> <D:/fileRepository/DRTpaper/DRTPape
-r/DRT4WS(V11)/fig/drtresultbox/chinaresultt.pdf> <D:/fileRepository/DRTpaper/DR
-TPaper/DRT4WS(V11)/fig/drtresultbox/parkingresultt.pdf>]
-<fig/drttime/aviatimef.pdf, id=191, 578.16pt x 471.7625pt>
+ [12 <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS
+(V11)/fig/drtresultbox/aviaresultf.pdf> <C:/Users/Administrator/Desktop/MyPaper
+s/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtresultbox/chinaresultf.pdf> <C:
+/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)/fi
+g/drtresultbox/parkingresultf.pdf> <C:/Users/Administrator/Desktop/MyPapers/myp
+apers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtresultbox/aviaresultf2.pdf> <C:/User
+s/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drt
+resultbox/chinaresultf2.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypapers/
+DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtresultbox/parkingresultf2.pdf> <C:/Users/A
+dministrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtres
+ultbox/aviaresultt.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpa
+per/DRTPaper/DRT4WS(V11)/fig/drtresultbox/chinaresultt.pdf> <C:/Users/Administr
+ator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtresultbox/p
+arkingresultt.pdf>] <fig/drttime/aviatimef.pdf, id=191, 578.16pt x 471.7625pt>
 File: fig/drttime/aviatimef.pdf Graphic file (type pdf)
 
 <use fig/drttime/aviatimef.pdf>
@@ -657,33 +667,39 @@ File: fig/drttime/parkingtimet.pdf Graphic file (type pdf)
 <use fig/drttime/parkingtimet.pdf>
 Package pdftex.def Info: fig/drttime/parkingtimet.pdf used on input line 1392.
 (pdftex.def)             Requested size: 165.7389pt x 113.81114pt.
- [13 <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtparemeter/avia.pdf
-> <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtparemeter/china.pdf> 
-<D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtparemeter/parking.pdf>]
-
+ [13 <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS
+(V11)/fig/drtparemeter/avia.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypap
+ers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtparemeter/china.pdf> <C:/Users/Adminis
+trator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drtparemeter
+/parking.pdf>]
 
 LaTeX Warning: Citation `ghannoudi2015formal' on page 14 undefined on input lin
 e 1463.
 
-[14 <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/aviatimef.pdf>
- <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/chinatimef.pdf> <
-D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/parkingtimef.pdf> <
-D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/aviatimef2.pdf> <D:
-/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/chinatimef2.pdf> <D:/
-fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/parkingtimef2.pdf> <D:
-/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/aviatimet.pdf> <D:/fi
-leRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/chinatimet.pdf> <D:/file
-Repository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/parkingtimet.pdf>]
-[15] (D:\fileRepository\DRTpaper\DRTPaper\DRT4WS(V11)\DRT4WS.bbl
+[14 <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(
+V11)/fig/drttime/aviatimef.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypape
+rs/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/chinatimef.pdf> <C:/Users/Administ
+rator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/parki
+ngtimef.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPape
+r/DRT4WS(V11)/fig/drttime/aviatimef2.pdf> <C:/Users/Administrator/Desktop/MyPap
+ers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/chinatimef2.pdf> <C:/Use
+rs/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/dr
+ttime/parkingtimef2.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTp
+aper/DRTPaper/DRT4WS(V11)/fig/drttime/aviatimet.pdf> <C:/Users/Administrator/De
+sktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/drttime/chinatimet.pd
+f> <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V
+11)/fig/drttime/parkingtimet.pdf>] [15]
+(C:\Users\Administrator\Desktop\MyPapers\mypapers\DRTpaper\DRTPaper\DRT4WS(V11)
+\DRT4WS.bbl
 Missing character: There is no ¡ in font pplr7t!
  [16]
 Missing character: There is no ¡ in font pplri7t!
 Missing character: There is no ¯ in font pplri7t!
 )
 
-pdfTeX warning: pdflatex.exe (file D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V
-11)/fig/authors/CASun.pdf): PDF inclusion: found PDF version <1.6>, but at most
- version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file C:/Users/Administrator/Desktop/MyPapers/mypa
+pers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/authors/CASun.pdf): PDF inclusion: found
+ PDF version <1.6>, but at most version <1.5> allowed
 <fig/authors/CASun.pdf, id=446, 74.43811pt x 99.4917pt>
 File: fig/authors/CASun.pdf Graphic file (type pdf)
 
@@ -705,8 +721,9 @@ File: fig/authors/HPDai.jpg Graphic file (type jpg)
  <use fig/authors/HPDai.jpg>
 Package pdftex.def Info: fig/authors/HPDai.jpg used on input line 1549.
 (pdftex.def)             Requested size: 64.52457pt x 90.33441pt.
- [17 <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/authors/CASun.pdf> <D
-:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/authors/HPDai.jpg>]
+ [17 <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS
+(V11)/fig/authors/CASun.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypapers/
+DRTpaper/DRTPaper/DRT4WS(V11)/fig/authors/HPDai.jpg>]
 <fig/authors/GWang.jpg, id=463, 215.30438pt x 263.48438pt>
 File: fig/authors/GWang.jpg Graphic file (type jpg)
 
@@ -730,9 +747,9 @@ Package pdftex.def Info: fig/authors/DaveTowey.png used on input line 1556.
 (pdftex.def)             Requested size: 72.2694pt x 86.17691pt.
 
 
-pdfTeX warning: pdflatex.exe (file D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V
-11)/fig/authors/TYChen.pdf): PDF inclusion: found PDF version <1.6>, but at mos
-t version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file C:/Users/Administrator/Desktop/MyPapers/mypa
+pers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/authors/TYChen.pdf): PDF inclusion: foun
+d PDF version <1.6>, but at most version <1.5> allowed
 <fig/authors/TYChen.pdf, id=469, 310.15875pt x 371.3875pt>
 File: fig/authors/TYChen.pdf Graphic file (type pdf)
 
@@ -745,9 +762,9 @@ Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 1558.
 (pdftex.def)             Requested size: 72.26733pt x 86.5337pt.
 
 
-pdfTeX warning: pdflatex.exe (file D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V
-11)/fig/authors/KYCai.pdf): PDF inclusion: found PDF version <1.6>, but at most
- version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file C:/Users/Administrator/Desktop/MyPapers/mypa
+pers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/authors/KYCai.pdf): PDF inclusion: found
+ PDF version <1.6>, but at most version <1.5> allowed
 <fig/authors/KYCai.pdf, id=472, 72.27pt x 101.17801pt>
 File: fig/authors/KYCai.pdf Graphic file (type pdf)
 
@@ -760,23 +777,26 @@ Package pdftex.def Info: fig/authors/KYCai.pdf used on input line 1561.
 (pdftex.def)             Requested size: 64.5296pt x 90.34146pt.
  [18
 
- <D:/fileRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/authors/GWang.jpg> <D:/fi
-leRepository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/authors/DaveTowey.png> <D:/fileR
-epository/DRTpaper/DRTPaper/DRT4WS(V11)/fig/authors/TYChen.pdf> <D:/fileReposit
-ory/DRTpaper/DRTPaper/DRT4WS(V11)/fig/authors/KYCai.pdf>]
-(D:\fileRepository\DRTpaper\DRTPaper\DRT4WS(V11)\DRT4WS.aux)
+ <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11
+)/fig/authors/GWang.jpg> <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTp
+aper/DRTPaper/DRT4WS(V11)/fig/authors/DaveTowey.png> <C:/Users/Administrator/De
+sktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)/fig/authors/TYChen.pdf> <
+C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V11)/
+fig/authors/KYCai.pdf>]
+(C:\Users\Administrator\Desktop\MyPapers\mypapers\DRTpaper\DRTPaper\DRT4WS(V11)
+\DRT4WS.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
  4481 strings out of 495354
- 65271 string characters out of 3183075
+ 65612 string characters out of 3183075
  188618 words of memory out of 3000000
  7524 multiletter control sequences out of 15000+200000
  64187 words of font info for 150 fonts, out of 3000000 for 9000
  17 hyphenation exceptions out of 8191
- 31i,15n,35p,1222b,482s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 31i,15n,35p,1253b,482s stack positions out of 5000i,500n,10000p,200000b,50000s
 {F:/Program Files/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<F:/Program Fil
 es/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><F:/Program Files/CTEX
 /MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><F:/Program Files/CTEX/MiKTeX
@@ -803,7 +823,7 @@ a.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><F:/Pro
 gram Files/CTEX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><F:/Program Files/CT
 EX/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><F:/Program Files/CTEX/MiKTeX/fo
 nts/type1/urw/zapfding/uzdr.pfb>
-Output written on DRT4WS.pdf (18 pages, 2266940 bytes).
+Output written on DRT4WS.pdf (18 pages, 2267715 bytes).
 PDF statistics:
  579 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
