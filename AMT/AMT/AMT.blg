@@ -38,9 +38,21 @@ Repeated entry---line 436 of file AMT.bib
  : @inproceedings{batra2011efficient
  :                                  ,
 I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 510 of file AMT.bib
+ :   
+ :   year={2015},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 517 of file AMT.bib
+ :   
+ :   year={2013},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 -- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty year in Jameel2015Test
+Warning--empty year in Jiang2013Testing
 
 Done.
-(There were 9 error messages)
+(There were 11 error messages)

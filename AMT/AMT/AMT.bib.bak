@@ -510,18 +510,8 @@
   year={2015},
 }
 @inproceedings{Jiang2013Testing,
-  title={Testing central processing unit scheduling algorithms using metamorphic testing},
+  title={Testing Central Processing Unit scheduling algorithms using Metamorphic Testing},
   author={Jiang, Mingyue and Chen, Tsong Yueh and Kuo, Fei Ching and Ding, Zuohua},
-  booktitle={Proceedings of the 4th International Conference on Software Engineering \& Service Science (ICSESS'13)},
-  pages={530--536}
+  booktitle={IEEE International Conference on Software Engineering & Service Science},
   year={2013},
-}
-@inproceedings{le2014compiler,
-  title={Compiler validation via equivalence modulo inputs},
-  author={Le, Vu and Afshari, Mehrdad and Su, Zhendong},
-  booktitle={ACM SIGPLAN Notices},
-  volume={49},
-  number={6},
-  pages={216--226},
-  year={2014},
 }

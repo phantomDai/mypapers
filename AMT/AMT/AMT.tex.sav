@@ -17,6 +17,9 @@
 \begin{document}
 
 \title{Adaptive Metamorphic Testing\\
+%{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
+%should not be used}
+%\thanks{Identify applicable funding agency here. If none, delete this.}
 \thanks{}
 }
 
@@ -88,6 +91,9 @@ improve the fault-detecting efficiency of MT. We conduct an empirical study to e
   An adaptive metamorphic testing framework is proposed, which combines the basic principle of MT and software cybernetics \cite{cai2002optimal}.
   \item
   An MRs-centric adaptive metamorphic testing technique (M-AMT) which used a feedback mechanism to control the execution process of MT.
+%  First, M-AMT randomly selects an
+%  MR to generate follow-up test cases depended on source test case, and then updates the test profile of input partitions according to the results of test execution.
+%  Second, a partition is selected according to updated test profile, and an MR is randomly selected from the set of MRs whose source test cases belong to selected partition.
   \item
   An empirical study has been conducted to evaluate the fault detection efficiency of the proposed AMT, where three Java programs are selected as subjects to
   compare the performance of traditional MT and AMT in terms of fault detection efficiency and time overhead.
@@ -104,21 +110,7 @@ In this section, we present the basics to understand our approach. we start with
 \label{section:background}
 \subsection{Metamorphic Testing}
 \label{section:mt}
-MT is a novel technique to alleviate the oracle problem: Instead of applying an oracle, MT uses a set of MRs (corresponding to some specific properties of the SUT) to verify the 
-test results. MT is normally conducted according to the following steps:
-\begin{description}
-  \item [Step1.]
-  Identify an MR from the specification of the SUT. 
-  \item [Step2.]
-  Generate the source test case $stc$ using the traditional test cases generation techniques.
-  \item [Step3.]
-  Derive the follow-up test case $ftc$ from the $stc$ based on the MR.
-  \item [Step3.]
-  execute $stc$ and $ftc$ and get their outputs $O_s$ and $O_f$.
-  \item [Step4.]
-  Verify $stc$, $ftc$, $O_s$, and $O_f$ against the MR: If the MR does not hold, a fault is said to be detected.
-\end{description}  
-The above steps can be repeated for a set of MRs.
+MT is a 
 
 Let us use a simple example to illustrate how MT works. For instance, consider the mathematic function $f(x,y)$ that can calculate the maximal value of two integers $x$ and $y$.
 There is a simple yet obvious property: the order of two parameters $x$ and $y$ does not affect the output, which can be described as the follow metamorphic relation

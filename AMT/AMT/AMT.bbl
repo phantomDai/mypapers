@@ -75,12 +75,6 @@ Y.~Cao, Z.~Q. Zhou, and T.~Y. Chen, ``On the correlation between the
   executions,'' in \emph{Proceedings of the 13th International Conference on
   Quality Software (QSIC'13)}, 2013, pp. 153--162.
 
-\bibitem{chen2004metamorphic}
-T.~Y. Chen, F.-C. Kuo, Y.~Liu, and A.~Tang, ``Metamorphic testing and testing
-  with special values.'' in \emph{Proceedings of the 5th ACIS International
-  Conference on Software Engineering, Artificial Intelligence, Networking and
-  Parallel/Distributed Computing (SNPD'04)}, 2004, pp. 128--134.
-
 \bibitem{sun2011metamorphic}
 C.-A. Sun, G.~Wang, B.~Mu, H.~Liu, Z.~Wang, and T.~Y. Chen, ``Metamorphic
   testing for web services: Framework and a case study,'' in \emph{Proceedings
@@ -97,6 +91,12 @@ X.~Xie, J.~Li, C.~Wang, and T.~Y. Chen, ``Looking for an mr? try metwiki
   today,'' in \emph{Proceedings of the 1st International Workshop on
   Metamorphic Testing (MET'16), Co-located with the 38th International
   Conference on Software Engineering (ICSE'16)}, 2016, pp. 1--4.
+
+\bibitem{chen2004metamorphic}
+T.~Y. Chen, F.-C. Kuo, Y.~Liu, and A.~Tang, ``Metamorphic testing and testing
+  with special values.'' in \emph{Proceedings of the 5th ACIS International
+  Conference on Software Engineering, Artificial Intelligence, Networking and
+  Parallel/Distributed Computing (SNPD'04)}, 2004, pp. 128--134.
 
 \bibitem{batra2011efficient}
 G.~Batra and J.~Sengupta, ``An efficient metamorphic testing technique using
@@ -133,6 +133,16 @@ H.~Liu, F.-C. Kuo, D.~Towey, and T.~Y. Chen, ``How effectively does metamorphic
   testing alleviate the oracle problem?'' \emph{IEEE Transactions on Software
   Engineering}, vol.~40, no.~1, pp. 4--22, 2014.
 
+\bibitem{ammann1988data}
+P.~E. Ammann and J.~C. Knight, ``Data diversity: An approach to software fault
+  tolerance,'' \emph{IEEE Transactions on Computers}, no.~4, pp. 418--425,
+  1988.
+
+\bibitem{finelli1991nasa}
+G.~B. Finelli, ``Nasa software failure characterization experiments,''
+  \emph{Reliability Engineering \& System Safety}, vol.~32, no. 1-2, pp.
+  155--169, 1991.
+
 \bibitem{weyuker1991analyzing}
 E.~J. Weyuker and B.~Jeng, ``Analyzing partition testing strategies,''
   \emph{IEEE Transactions on Software Engineering}, vol.~17, no.~7, pp.
@@ -152,16 +162,6 @@ T.~Y. Chen and Y.-T. Yu, ``On the relationship between partition and random
 ------, ``On the expected number of failures detected by subdomain testing and
   random testing,'' \emph{IEEE Transactions on Software Engineering}, vol.~22,
   no.~2, pp. 109--119, 1996.
-
-\bibitem{ammann1988data}
-P.~E. Ammann and J.~C. Knight, ``Data diversity: An approach to software fault
-  tolerance,'' \emph{IEEE Transactions on Computers}, no.~4, pp. 418--425,
-  1988.
-
-\bibitem{finelli1991nasa}
-G.~B. Finelli, ``Nasa software failure characterization experiments,''
-  \emph{Reliability Engineering \& System Safety}, vol.~32, no. 1-2, pp.
-  155--169, 1991.
 
 \bibitem{demillo1978hints}
 R.~A. DeMillo, R.~J. Lipton, and F.~G. Sayward, ``Hints on test data selection:
@@ -271,6 +271,21 @@ C.-A. Sun, G.~Wang, B.~Mu, H.~Liu, Z.~Wang, and T.~Y. Chen, ``A metamorphic
 S.~Segura, J.~A. Parejo, J.~Troya, and A.~Ruiz-Cort{\'e}s, ``Metamorphic
   testing of restful web apis,'' \emph{IEEE Transactions on Software
   Engineering}, vol.~44, no.~11, pp. 1083--1099, 2018.
+
+\bibitem{Jameel2015Test}
+T.~Jameel, M.~Lin, and C.~Liu, ``Test oracles based on metamorphic relations
+  for image processing applications,'' in \emph{Proceedings of the 37th
+  International Conference on Software Engineering (ICSE'15)}, pp. 1--6.
+
+\bibitem{Jiang2013Testing}
+M.~Jiang, T.~Y. Chen, F.~C. Kuo, and Z.~Ding, ``Testing central processing unit
+  scheduling algorithms using metamorphic testing,'' in \emph{Proceedings of
+  the 4th International Conference on Software Engineering \& Service Science
+  (ICSESS'13)}, pp. 530--536.
+
+\bibitem{le2014compiler}
+V.~Le, M.~Afshari, and Z.~Su, ``Compiler validation via equivalence modulo
+  inputs,'' in \emph{ACM SIGPLAN Notices}, vol.~49, no.~6, 2014, pp. 216--226.
 
 \bibitem{Cai07}
 K.-Y. Cai, B.~Gu, H.~Hu, and Y.-C. Li, ``Adaptive software testing with
