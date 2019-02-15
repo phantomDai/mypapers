@@ -1,0 +1,19 @@
+@article{Chen1998Metamorphic,
+  title={Metamorphic testing: a new approach for generating next test cases},
+  author={Chen, T. Y. and Cheung, S. C. and Yiu, S. M.},
+  year={1998},
+}
+@inproceedings{Bradbury2006Mutation,
+  title={Mutation Operators for Concurrent Java (J2SE 5.0)},
+  author={Bradbury, Jeremy S. and Cordy, James R. and Dingel, Juergen},
+  booktitle={The Workshop on Mutation Analysis},
+  pages={11},
+  year={2006},
+}
+@article{article,
+author = {Ma, Yu-seung},
+year = {2017},
+month = {12},
+pages = {},
+title = {Description of Method-level Mutation Operators for Java}
+}

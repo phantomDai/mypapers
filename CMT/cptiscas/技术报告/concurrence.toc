@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}内容简介}{2}
+\contentsline {section}{\numberline {2}变异分析}{2}
+\contentsline {section}{\numberline {3}运用的变异算子介绍}{3}
+\contentsline {subsection}{\numberline {3.1}并发变异算子}{3}
+\contentsline {subsubsection}{\numberline {3.1.1}SimpleLinear\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{3}
+\contentsline {subsubsection}{\numberline {3.1.2}SimpleTree\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{4}
+\contentsline {subsubsection}{\numberline {3.1.3}SequentialHeap\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{4}
+\contentsline {subsubsection}{\numberline {3.1.4}PrioritySkiplist\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{4}
+\contentsline {subsubsection}{\numberline {3.1.5}FineGrainedHeap\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{5}
+\contentsline {subsection}{\numberline {3.2}传统变异算子}{7}
+\contentsline {subsubsection}{\numberline {3.2.1}SimpleLinear\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{7}
+\contentsline {subsubsection}{\numberline {3.2.2}SimpleTree\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{7}
+\contentsline {subsubsection}{\numberline {3.2.3}SequentialHeap\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{7}
+\contentsline {subsubsection}{\numberline {3.2.4}PrioritySkiplist\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{8}
+\contentsline {subsubsection}{\numberline {3.2.5}FineGrainedHeap\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{8}
+\contentsline {section}{\numberline {4}所有变异体}{9}

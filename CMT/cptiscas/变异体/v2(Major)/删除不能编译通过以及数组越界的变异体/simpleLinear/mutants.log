@@ -1,0 +1,17 @@
+1:STD:<ASSIGN>:<NO-OP>:SimpleLinear@<init>(int):21:this.range = range |==> <NO-OP>
+2:STD:<ASSIGN>:<NO-OP>:SimpleLinear@<init>(int):22:pqueue = (Bin<T>[])new Bin[range] |==> <NO-OP>
+3:LVR:0:POS:SimpleLinear@<init>(int):23:0 |==> 1
+4:LVR:0:NEG:SimpleLinear@<init>(int):23:0 |==> -1
+5:ROR:<(int,int):!=(int,int):SimpleLinear@<init>(int):23:i < pqueue.length |==> i != pqueue.length
+6:ROR:<(int,int):<=(int,int):SimpleLinear@<init>(int):23:i < pqueue.length |==> i <= pqueue.length
+7:ROR:<(int,int):FALSE(int,int):SimpleLinear@<init>(int):23:i < pqueue.length |==> false
+8:STD:<ASSIGN>:<NO-OP>:SimpleLinear@<init>(int):24:pqueue[i] = new Bin<T>() |==> <NO-OP>
+9:STD:<CALL>:<NO-OP>:SimpleLinear@add(T,int):34:pqueue[key].put(item) |==> <NO-OP>
+10:LVR:0:POS:SimpleLinear@removeMin():42:0 |==> 1
+11:LVR:0:NEG:SimpleLinear@removeMin():42:0 |==> -1
+12:ROR:<(int,int):!=(int,int):SimpleLinear@removeMin():42:i < range |==> i != range
+13:ROR:<(int,int):<=(int,int):SimpleLinear@removeMin():42:i < range |==> i <= range
+14:ROR:<(int,int):FALSE(int,int):SimpleLinear@removeMin():42:i < range |==> false
+15:EVR:<METHOD_INVOCATION(T)>:<DEFAULT>:SimpleLinear@removeMin():43:pqueue[i].get() |==> null
+16:ROR:!=(java.lang.Object,java.lang.Object):TRUE(java.lang.Object,java.lang.Object):SimpleLinear@removeMin():44:item != null |==> true
+17:STD:<RETURN>:<NO-OP>:SimpleLinear@removeMin():45:return item; |==> <NO-OP>
