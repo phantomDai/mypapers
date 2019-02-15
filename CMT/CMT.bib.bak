@@ -512,12 +512,4 @@
   year         = 2012,
   publisher    = "Elsevier",
 }
-@article{demillo1978hints,
-  title={Hints on test data selection: help for the practicing programmer},
-  author={DeMillo, Richard A and Lipton, Richard J and Sayward, Frederick G},
-  journal={Computer},
-  volume={11},
-  number={4},
-  pages={34--41},
-  year={1978},
-}
+

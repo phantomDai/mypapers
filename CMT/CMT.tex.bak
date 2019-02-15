@@ -3,6 +3,9 @@
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
 \usepackage{amsmath,amssymb,amsfonts}
+\usepackage{amsthm}
+\theoremstyle{remark}
+\newtheorem*{rmk*}{Remark}
 \usepackage{algorithm}
 \usepackage{algorithmic}
 \usepackage{graphicx}
@@ -13,11 +16,12 @@
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
 
-
 \newcommand{\rmnum}[1]{\expandafter{\romannumeral #1\relax}}
+\newcommand{\Fn}{\textsc{top}}
+\newcommand{\MR}{\textit{MR}}
 \begin{document}
 
-\title{Adaptive Metamorphic Testing*\\
+\title{Towards Metamorphic Testing of Concurrent Programs\\
 %{\footnotesize \textsuperscript{*}Note: Sub-titles are not captured in Xplore and
 %should not be used}
 %\thanks{Identify applicable funding agency here. If none, delete this.}
@@ -27,19 +31,25 @@ the Aeronautical Science Foundation of China (Grant No. 2016ZD74004), and
 the Fundamental Research Funds for the Central Universities (Grant No. FRF-GF-17-B29).}
 }
 
-\author{\IEEEauthorblockN{1\textsuperscript{st} Peng~Wu}
-\IEEEauthorblockA{\textit{a State Key Laboratory of Computer Science, Institute of Software, Chinese Academy of Sciences} \\
+\author{\IEEEauthorblockN{Peng~Wu}
+\IEEEauthorblockA{\textit{State Key Laboratory of Computer Science} \\
+\textit{Institute of Software, Chinese Academy of Sciences} \\
 \textit{University of Chinese Academy of Sciences}\\
-Beijing, China \\
-wp@ios.ac.cn}
+Beijing, China, wp@ios.ac.cn}
 \and
-\IEEEauthorblockN{2\textsuperscript{nd} Hepeng~Dai}
+\IEEEauthorblockN{Hepeng~Dai}
 \IEEEauthorblockA{\textit{School of Computer and Communication Engineering} \\
 \textit{University of Science and Technology Beijing}\\
 Beijing, China \\
 daihepeng@sina.cn}
 \and
-\IEEEauthorblockN{3\textsuperscript{st} Chang-ai~Sun,~\IEEEmembership{Senior Member,~IEEE,}}
+\IEEEauthorblockN{Tsong Yueh Chen}
+\IEEEauthorblockA{\textit{Department of Computer Science and Software Engineering} \\
+\textit{Swinburne University of Technology}\\
+Melbourne, Australia \\
+tychen@swin.edu.au}
+\and
+\IEEEauthorblockN{Chang-ai~Sun,~\IEEEmembership{Member,~IEEE}}
 \IEEEauthorblockA{\textit{School of Computer and Communication Engineering} \\
 \textit{University of Science and Technology Beijing}\\
 Beijing, China \\
@@ -60,64 +70,164 @@ metamorphic testing, control test process, partition
 
 \section{Introduction}
 \label{section:introduction}
-Test result verification is an important part of software testing. A test oracle \cite{weyuker1982testing} is mechanism that can exactly decide whether or not the output
-produced by a programs is correct. However, there are situations, where it is difficult to decide whether the result of the software under test (SUT) agrees with the expected
-result. This situation is known as oracle problem \cite{barr2015oracle, patel2018mapping}.
+Testing of a concurrent program, e.g., a multi-threaded program, is still a challenging task due to its nature of nondeterminism. Moreover, a concurrent program typically consists of multiple threads that cooperate closely to fulfill a functional assignment with high efficiency, e.g., computing, sorting, or searching a large volume of static or dynamic data. A test oracle \cite{weyuker1982testing} usually provides an exact mechanism of deciding whether an output
+produced by a program is correct or not. This oracle problem \cite{barr2015oracle, patel2018mapping} also arises for concurrent programs as it can be very difficult or expensive, if not impossible, to determine their expected outputs \textit{a priori}.
 
-Metamorphic testing (MT) \cite{chen1998metamorphic, chen2018metamorphic} is one of several techniques to alleviate oracle problem. MT first define metamorphic relations (MRs)
-through using some properties of SUT. Then, MRs are used to generate new test cases called follow-up test cases from original test cases known as source test cases. Next,
-both source and follow-up test cases are executed and their result are verified against the corresponding MRs.
+Metamorphic testing (MT) \cite{chen1998metamorphic, chen2018metamorphic} has been a successful technique to tackle oracle problems in various domains. It first defines metamorphic relations (MRs)
+based on the necessary properties about the inputs and outputs of the program under test. Then, MRs are exploited in two ways: a new test case (i.e., a follow-up test case) can be generated from an original test case (i.e., a source test case) based on an MR; the outputs resulted by executing the source and follow-up test cases can be verified against the corresponding MR. If the MR is violated, the program under test is shown to be incorrect, as witnessed by the pair of the source and follow-up test cases.
 
+Let us use a simple example to illustrate how MT works. For instance, consider the function $max(x,y)$ that returns the maximum value between two integers $x$ and $y$. It enjoys a simple and obvious property that the order of the two parameters $x$ and $y$ shall not affect the outputs. This can be identified as the metamorphic relation $\MR_{max}: max(x,y) = max(y,x)$, where $(x,y)$ and $(y,x)$ constitutes the source and the follow-up test case, respectively. Then, given a program $P(x,y)$ that implements the function $max(x,y)$, and a source test case $(1,2)$, if the outputs of $P$ running with this source test case and the follow-up test case $(2,1)$ do not equal, i.e, $P(1,2)\neq P(2,1)$, a fault is detected in $P$.
 
+In this paper we aim at investigating the applicability of metamorphic testing to concurrent programs. This is motivated by the observation that the functional requirement or user expectation to a concurrent program can be identified as metamorphic relations for verifying the outputs of its nondeterministic executions under different inputs.
 
+The rest of the paper is organized as follows.
 
+\section{Metamorphic Testing of Concurrent Programs}
+\subsection{Concurrent Programs}
 
-The rest of the paper is organized as follows. Section \ref{section:background} introduces underlying concepts related to MT and DRT.
-Section \ref{section:amt} presents the motivation of this study, the framework of AMT, and related algorithms.  Section \ref{section:empirical} describes an empirical study where the proposed AMT is used to test three real-life programs, the results of which are summarized in Section \ref{section:result}. The related work is reviewed in Section \ref{section:related}. Finally, we summarize our conclusions in Section \ref{section:conclusion}.
+Consider a function \Fn$(V,n)$ that returns in the ascending order the minimal $n$ values in a list $V$, while $V$ may contain duplicate elements. For a list of large size, a sequential search program may not implement this function in a highly efficient way. Many concurrent search structures have been proposed to take advantages of multi-processor architectures, which are already very popular nowadays. Concurrent implementations of the \emph{priority queue} data structure are typically adopted to implement multi-threaded programs for the function \Fn$(V,n)$. In this work, we use the 5 concurrent priority queue classes presented in the textbook \cite{PQUEUE}: SimpleLinear, SimpleTree, SequentialHeap, FineGrainedHeap, and SkipQueue.
 
+The SimpleLinear class is an array-based bounded implementation, while the SimpleTree class is a tree-based one. The SequentialHeap class is a coarse-grained implementation based on a unbounded heap, while the FineGrainedHeap class is a fine-grained one. These four classes all explicitly use locks for synchronization, while the SkipQueue class does not. It is based on a skiplist that uses atomic primitives (i.e., compareAndSet) for synchronization.
 
-\section{Background}
-In this section, we present the basics to understand our approach. we start with a brief introduction to metamorphic testing, and then describe dynamic random testing.
-\label{section:background}
-\subsection{Metamorphic Testing}
-\label{section:mt}
-A test oracle is a mechanism used to verify the correctness of outputs of a program \cite{weyuker1982testing}. However, there are test oracle problem
-\cite{barr2015oracle, patel2018mapping} in testing, that is, there are not an oracle or the application of such an oracle is very expensive. In order to alleviate the test oracle,
-several techniques have been proposed such as N-version testing \cite{brilliant1990performance}, metamorphic testing (MT) \cite{chen1998metamorphic},
-assertions \cite{sim2014eliminating}, machine learning \cite{chan2009pat}, etc. Among of them, MT obtains metamorphic relations (MRs) according to the properties of software
-under test (SUT). MRs are used to generate follow-up test cases from source test cases, then the both source and follow-up test cases are executed, and their results are
-verified against the corresponding MRs. If an MR is violated, that is, a fault is detected.
+\subsection{Metamorphic Relations}
+Let $VW$ be the concatenation of lists $V$ and $W$, and $V^k$ the concatenation of $k$ $V$'s. Let $head(V)$ denote the first element of list $V$, and $tail(V)$ the list resulted by removing the first element of list $V$. Therefore, $V=head(V)::tail(V)$. The higher-order function  (map $f$ $V$) applies the given function $f$ to each element of list $V$, returning a list of the results in the same order, i.e., (map $f$ $V$) = $f(head(V))$::(map $f$ $tail(V$)).
 
-Let us use a simple example to illustrate how MT works. For instance, consider the mathematic function $f(x,y)$ that can calculate the maximal value of two integers $x$ and $y$.
-There is a simple and obvious property: the order of two parameters $x$ and $y$ does not affect the output, which can be described as the follow metamorphic relation
-(MR): $f(x,y) = f(y,x)$. In this MR, $(x,y)$ is source test case, and $(y,x)$ is considered as follow-up test case. Letting $P$ denotes a program that implements the
-function $f(x,y)$. Suppose $P$ is executed with a test case $(1,2)$, giving an output of 2. With respect to the MR $f(x,y) = f(y,x)$, $P$ should next be executed with
-the other test case $(2,1)$. Then the output of second execution is compared with that of the first test case: does $P(1,2) = P(2,1)$? If the equality does not hold, then
-we consider that $P$ at least has one fault.
+Assume \Fn$(V,n)=[y_1,\ldots,y_n]$ with $y_1<\cdots< y_n$, where $y_1,\ldots,y_n$ are the minimal $n$ values in list $V$. Then, metamorphic relations of \Fn$(V,n)$ can be defined as follows.
 
+\subsubsection{Permutation}
+A permutation of $V$ is a rearrangement of the elements of list $V$. Such rearrangement shall not affect the result of \Fn. This property is identified as the following metamorphic relations, where $\MR_2$ constitutes a special case of $\MR_1$.
+\begin{enumerate}[\MR-1]
+\item \Fn$(V',n)=\Fn(V,n)$ for any permuation $V'$ of $V$.
+\item (Commutative Law) \Fn$(VW,n)=\Fn(WV,n)$.
+\end{enumerate}
+%Permutation can be combined with other metamorphic relations.
+
+\subsubsection{Insertion}
+Adding duplicate elements into list $V$ shall not affect the result of \Fn. This general property is  identified as the following metamorphic relations, which choose duplicate elements from different perspectives.
+\begin{enumerate}[\MR-1]
+\setcounter{enumi}{2}
+\item \Fn$(V^k,n)=\Fn(V,n)$ for any $k>1$.
+\item \Fn$(VV',n)=\Fn(V,n)$ for any $V'\subseteq V$.
+\item \Fn$(V[y],n)$=\Fn$(V,n)$ for any $y$ in \Fn$(V,n)$.
+\item \Fn$(VV_1\cdots V_k,n)=\Fn(V,n)$ for any $k\geq 1$, where $V_i\subseteq\Fn(V,n)$ for every $1\leq i\leq k$.
+\item \Fn$(V[y_1,\ldots,y_n],n)=\Fn(V,n)$.
+\item \Fn$(V[y_n,\ldots,y_1],n)=\Fn(V,n)$.
+\item \Fn$(VW,n)=\Fn(V,n)$ for any permutation $W$ of \Fn$(V,n)$.
+\item \Fn$([y_1,\ldots,y_n]V,n)=\Fn(V,n)$
+\item \Fn$([y_n,\ldots,y_1]V,n)=\Fn(V,n)$
+\item \Fn$(WV,n)=\Fn(V,n)$ for any permutation $W$ of \Fn$(V,n)$.
+\end{enumerate}
+
+The following metamorphic relations add to list $V$ fresh elements that are no greater than the last element $y_n$ of \Fn$(V,n)$. These elements shall occur in the follow-up result of \Fn.
+\begin{enumerate}[\MR-1]
+\setcounter{enumi}{12}
+\item \Fn$(V[y],n)=[y_1,\ldots,y_i,y,y_{i+1},\ldots,y_{n-1}]$ if $y\not\in\Fn(V,n)$ and there exists $1\leq i< n$ such that $y_i<y<y_{i+1}$.
+\item \Fn$(V[y_1',\ldots,y_k'],n)=[y_1',\ldots,y_k',y_1,\ldots,y_{n-k}]$, where $k\leq n$ and $y_1'<\cdots< y_k'<y_1$.
+\end{enumerate}
+
+On the contrary, the following metamorphic relation \MR-15 adds to list $V$ fresh elements that are greater than $y_n$. This insertion shall not affect the result of \Fn.
+\begin{enumerate}[\MR-1]
+\setcounter{enumi}{14}
+\item \Fn$(V[y_1'',\ldots,y_k''],n)=\Fn(V,n)$, where $y_n<y_1''\leq\cdots\leq y_k''$.
+\end{enumerate}
+
+\subsubsection{Deletion}
+Deleting an element from list $V$ will change the result of \Fn~if it also occurs in \Fn$(V,n)$. The follow-up result of \Fn~only differs from the original one in those elements deleted.
+\begin{enumerate}[\MR-1]
+\setcounter{enumi}{15}
+\item\label{mr-del}Let $X=[x_1,\ldots,x_k]$ for arbitrary $k\geq 1$  elements $x_1,\ldots,x_k$, $V'=V\backslash X$, $X'=X\cap\Fn(V,n)$.
+\begin{itemize}
+\item Then, $\Fn(V,n)\backslash\Fn(V',n)\subseteq X'$
+\item Specially, if $X'=\emptyset$, $\Fn(V',n)=\Fn(V,n)$;
+\end{itemize}
+\end{enumerate}
+where $V\backslash X$  removes from $V$ only one occurrence of each element in $X$ (if any).
+%\begin{rmk*}
+%A major concern with \textit{MR}-\ref{mr-del} is that the construction of the follow-up $V¡¯$ may be expensive.\qed
+%\end{rmk*}
+
+\subsubsection{Transformation}
+Transforming all the elements of list $V$ will make the result of \Fn~transformed in the same way.
+\begin{enumerate}[\MR-1]
+\setcounter{enumi}{16}
+\item \Fn((map $f$ $V$),n)=(map $f$ \Fn($V$,$n$)). For example, $f(x)=x+c$ for any constant $c$.
+\end{enumerate}
+
+\subsubsection{Splitting}
+Suppose $V=V_1V_2$. If $y$ is one of the minimal $n$ values in list $V$, then it is also one of the minimal $n$ values in list $V_1$ or $V_2$. This property is identified as the following metamorphic relation \MR-18.
+\begin{enumerate}[\MR-1]
+\setcounter{enumi}{17}
+\item \Fn$(V,n)\subseteq\Fn(V_1,n)\cup\Fn(V_2,n)$.
+\end{enumerate}
+
+If $y$ is one of the minimal $n$ values in list $V_1$, and also one of the minimal $m$ values in list $V_2$, then it is one of the minimal $n+m$ values in list $V$. This property is identified as the following metamorphic relations, which differ only in $m$.
+\begin{enumerate}[\MR-1]
+\setcounter{enumi}{18}
+\item \Fn$(V_1, n)\cap \Fn(V_2, n)\subseteq \Fn(V, 2n)$.
+\item \Fn$(V_1, n)\cap \Fn(V_2, m)\subseteq \Fn(V, n+m)$ for $1\leq m<n$.
+\item \Fn$(V_1, n)\cap \Fn(V_2, m)\subseteq \Fn(V, n+m)$ for $m>n$.
+\end{enumerate}
+
+The concatenation of the results of \Fn~on $V_1$ and $V_2$ preserves the result of $\Fn$ on $V$. This property is identified as the following metamorphic relation \MR-22.
+\begin{enumerate}[\MR-1]
+\setcounter{enumi}{21}
+\item \Fn$(V,n)$=$\Fn(\Fn(V_1,n)\Fn(V_2,n),n)$.
+\end{enumerate}
+
+\subsubsection{Sublisting}
+\Fn$(V,n)$ is a prefix of \Fn$(V,m)$ if $n<m$, while \Fn$(V,n)$ is an extension of \Fn$(V,m)$ if $n>m$. Specially, we consider the boundary values of $m$ in the following metamorphic relations.
+\begin{enumerate}[\MR-1]
+\setcounter{enumi}{22}
+\item \Fn$(V,n)$ is a prefix of \Fn$(V,n+1)$.
+\item \Fn$(V,n)$ is a prefix of \Fn$(V,m)$ if $m>n+1$.
+\item \Fn$(V,n)$ is an extension of \Fn$(V,n-1)$.
+\item \Fn$(V,n)$ is an extension of \Fn$(V,m)$ if $1\leq m<n-1$.
+\end{enumerate}
+
+%\begin{rmk*}
+%If the number of values contained in $V$ is less than $n$, then \Fn$(V,n)$ shall return all the values in $V$ in the ascending order. We need to check whether the above MRs still hold.\qed
+%\end{rmk*}
 
 \section{Empirical Study}
 \label{section:empirical}
-We have conducted a series of empirical studies to evaluate the performance of M-AMT. The design of experiments is described in this section.
+In this section we present the research questions concerned in this work, and the case study on the concurrent implementations of \Fn($V,n$). Then, we discuss the experimental results with detailed analysis.
 
 \subsection{Research Questions}
 \label{section:questions}
 
-\begin{description}
-  \item [RQ1]
+\begin{enumerate}[RQ-1]
+\item
+%a) effectiveness and efficiency of the MT framework for concurrent programs (mutation scores)
+%b) how concurrency affects the effectiveness and efficiency of MT? ???
+%e) performance (time consumption)
 
-  \item [RQ2]
-  
-  \item [RQ3]
-  
-  \item [RQ4]
+How effective MT is at detecting faults of concurrent programs? What is the actual overhead for MT detecting these faults, in terms of time consumption and the number of test cases executed?
 
-\end{description}
+Fault-detection effectiveness and efficiency are key for evaluating the performance of a testing technique. In our study, we adopt five state-of-the-art concurrent priority queue classes to implement the function \Fn($V,n$) within various concurrent scenarios. Then, we apply mutation analysis to evaluate the performance of MT in detecting the faults seeded, especially the concurrency faults related  to locks and atomic primitives.
+\item
+%d) relevance between MRs and mutants / bugs
+What is the fault-detecting capability of an individual metamorphic relation in different concurrent scenarios? How are metamorphic relations relevant to programs faults, especially concurrency faults?
 
+\item
+How many threads are sufficient for MT detecting a concurrency fault?
+
+\item
+%c) how many MRs are needed to detect mutants / bugs?
+How many metamorphic relations are sufficient for MT detecting the faults that remain in a concurrent program? ({\color{red}probably not in this paper})
+
+\end{enumerate}
+
+\subsection{Experimental Results}
+
+\subsubsection{Mutants}
+\subsubsection{Concurrent Scenarios}
+\subsubsection{Response to RQ-1}
+\subsubsection{Response to RQ-2}
+\subsubsection{Response to RQ-3}
 
 \section{Related Work}
 \label{section:related}
-In this section, we describe related work from two perspectives: \rmnum{1}) related to MT; \rmnum{2}) related to improving RT and PT.
+In this section, we describe related work of MT.
 
 \subsection{Metamorphic Testing}
 When testing a software system, the oracle problem appears in some situations where either an oracle does not exist for the tester to verify the correctness of the computed results; or an oracle does exist but cannot be used. The oracle problem often occurs in software testing, which renders many testing techniques inapplicable \cite{barr2015oracle}. To alleviate the oracle problem, Chen et al. \cite{chen1998metamorphic} proposed a technique named metamorphic testing (MT) that has been receiving increasing attention in the software testing community\cite{barr2015oracle, segura2016survey, chen2018metamorphic}. The main contributions to MT in the literature focused on the following aspects: \rmnum{1}) MT theory; \rmnum{2}) combination with other techniques; \rmnum{3}) application of MT.
@@ -158,14 +268,10 @@ When testing a software system, the oracle problem appears in some situations wh
 \label{section:conclusion}
 
 
-In our future work, we plan to conduct experiments on more real-life programs to further validate the effectiveness of M-AMT, and identify the limitations of our approach.
+In our future work, we plan to conduct experiments on more real-life programs to further validate the effectiveness of MT, and identify the limitations of our approach.
 
 \section*{Acknowledgment}
 
-This research is supported by the Beijing Natural Science Foundation (Grant No. 4162040), the National Natural Science Foundation of China (Grant No. 61370061),
-the Aeronautical Science Foundation of China (Grant No.
-2016ZD74004), and the Fundamental Research Funds for the
-Central Universities (Grant No. FRF-GF-17-B29).
 
 \newcommand{\BIBdecl}{\setlength{\itemsep}{0.2 em}}
 
@@ -174,3 +280,17 @@ Central Universities (Grant No. FRF-GF-17-B29).
 
 
 \end{document}
+
+\section{Background}
+In this section, we present the basics to understand our approach. we start with a brief introduction to metamorphic testing, and then describe dynamic random testing.
+\label{section:background}
+\subsection{Metamorphic Testing}
+\label{section:mt}
+A test oracle is a mechanism used to verify the correctness of outputs of a program \cite{weyuker1982testing}. However, there are test oracle problem
+\cite{barr2015oracle, patel2018mapping} in testing, that is, there are not an oracle or the application of such an oracle is very expensive. In order to alleviate the test oracle,
+several techniques have been proposed such as N-version testing \cite{brilliant1990performance}, metamorphic testing (MT) \cite{chen1998metamorphic},
+assertions \cite{sim2014eliminating}, machine learning \cite{chan2009pat}, etc. Among of them, MT obtains metamorphic relations (MRs) according to the properties of software
+under test (SUT). MRs are used to generate follow-up test cases from source test cases, then the both source and follow-up test cases are executed, and their results are
+verified against the corresponding MRs. If an MR is violated, that is, a fault is detected.
+
+

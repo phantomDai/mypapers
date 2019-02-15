@@ -90,7 +90,7 @@ Consider a function \Fn$(V,n)$ that returns in the ascending order the minimal $
 The SimpleLinear class is an array-based bounded implementation, while the SimpleTree class is a tree-based one. The SequentialHeap class is a coarse-grained implementation based on a unbounded heap, while the FineGrainedHeap class is a fine-grained one. These four classes all explicitly use locks for synchronization, while the SkipQueue class does not. It is based on a skiplist that uses atomic primitives (i.e., compareAndSet) for synchronization.
 
 \subsection{Metamorphic Relations}
-Let $VW$ be the concatenation of lists $V$ and $W$, and $V^k$ the concatenation of $k$ $V$'s. Let $head(V)$ denote the first element of list $V$, and $tail(V)$ the list resulted by removing the first element of list $V$. Therefore, $V=head(V)::tail(V)$. The higher-order function  (map $f$ $V$) applies the given function $f$ to each element of list $V$, returning a list of the results in the same order, i.e., (map $f$ $V$) = $f(head(V))$::(map $f$ $tail(V$)). 
+Let $VW$ be the concatenation of lists $V$ and $W$, and $V^k$ the concatenation of $k$ $V$'s. Let $head(V)$ denote the first element of list $V$, and $tail(V)$ the list resulted by removing the first element of list $V$. Therefore, $V=head(V)::tail(V)$. The higher-order function  (map $f$ $V$) applies the given function $f$ to each element of list $V$, returning a list of the results in the same order, i.e., (map $f$ $V$) = $f(head(V))$::(map $f$ $tail(V$)).
 
 Assume \Fn$(V,n)=[y_1,\ldots,y_n]$ with $y_1<\cdots< y_n$, where $y_1,\ldots,y_n$ are the minimal $n$ values in list $V$. Then, metamorphic relations of \Fn$(V,n)$ can be defined as follows.
 
@@ -139,11 +139,11 @@ Deleting an element from list $V$ will change the result of \Fn~if it also occur
 \begin{itemize}
 \item Then, $\Fn(V,n)\backslash\Fn(V',n)\subseteq X'$
 \item Specially, if $X'=\emptyset$, $\Fn(V',n)=\Fn(V,n)$;
-\end{itemize} 
+\end{itemize}
 \end{enumerate}
 where $V\backslash X$  removes from $V$ only one occurrence of each element in $X$ (if any).
 %\begin{rmk*}
-%A major concern with \textit{MR}-\ref{mr-del} is that the construction of the follow-up $Vâ€™$ may be expensive.\qed
+%A major concern with \textit{MR}-\ref{mr-del} is that the construction of the follow-up $V¡¯$ may be expensive.\qed
 %\end{rmk*}
 
 \subsubsection{Transformation}
@@ -151,7 +151,7 @@ Transforming all the elements of list $V$ will make the result of \Fn~transforme
 \begin{enumerate}[\MR-1]
 \setcounter{enumi}{16}
 \item \Fn((map $f$ $V$),n)=(map $f$ \Fn($V$,$n$)). For example, $f(x)=x+c$ for any constant $c$.
-\end{enumerate} 
+\end{enumerate}
 
 \subsubsection{Splitting}
 Suppose $V=V_1V_2$. If $y$ is one of the minimal $n$ values in list $V$, then it is also one of the minimal $n$ values in list $V_1$ or $V_2$. This property is identified as the following metamorphic relation \MR-18.
@@ -180,8 +180,8 @@ The concatenation of the results of \Fn~on $V_1$ and $V_2$ preserves the result 
 \setcounter{enumi}{22}
 \item \Fn$(V,n)$ is a prefix of \Fn$(V,n+1)$.
 \item \Fn$(V,n)$ is a prefix of \Fn$(V,m)$ if $m>n+1$.
-\item \Fn$(V,n)$ is an extension of \Fn$(V,n-1)$.  
-\item \Fn$(V,n)$ is an extension of \Fn$(V,m)$ if $1\leq m<n-1$.  
+\item \Fn$(V,n)$ is an extension of \Fn$(V,n-1)$.
+\item \Fn$(V,n)$ is an extension of \Fn$(V,m)$ if $1\leq m<n-1$.
 \end{enumerate}
 
 %\begin{rmk*}
@@ -197,29 +197,27 @@ In this section we present the research questions concerned in this work, and th
 
 \begin{enumerate}[RQ-1]
 \item
-%a) effectiveness and efficiency of the MT framework for concurrent programs (mutation scores)
-%b) how concurrency affects the effectiveness and efficiency of MT? ???
-%e) performance (time consumption)
-
 How effective MT is at detecting faults of concurrent programs? What is the actual overhead for MT detecting these faults, in terms of time consumption and the number of test cases executed?
 
-Fault-detection effectiveness and efficiency are key for evaluating the performance of a testing technique. In our study, we adopt five state-of-the-art concurrent priority queue classes to implement the function \Fn($V,n$) within various concurrent scenarios. Then, we apply mutation analysis to evaluate the performance of MT in detecting the faults seeded, especially the concurrency faults related  to locks and atomic primitives.
+Fault-detection effectiveness and efficiency are key for evaluating the performance of a testing technique. In our study, we adopt three state-of-the-art concurrent priority queue classes to implement the function \Fn($V,n$) within various concurrent scenarios. Then, we apply mutation analysis to evaluate the performance of MT in detecting the faults seeded, especially the concurrency faults related  to locks and atomic primitives.
 \item
-%d) relevance between MRs and mutants / bugs
 What is the fault-detecting capability of an individual metamorphic relation in different concurrent scenarios? How are metamorphic relations relevant to programs faults, especially concurrency faults?
 
 \item
-How many threads are sufficient for MT detecting a concurrency fault? 
+How many threads are sufficient for MT detecting a concurrency fault?
 
-\item
-%c) how many MRs are needed to detect mutants / bugs?
-How many metamorphic relations are sufficient for MT detecting the faults that remain in a concurrent program? ({\color{red}probably not in this paper})
+%\item
+%How many metamorphic relations are sufficient for MT detecting the faults that remain in a concurrent program? ({\color{red}probably not in this paper})
 
 \end{enumerate}
 
 \subsection{Experimental Results}
 
 \subsubsection{Mutants}
+
+We selected three state-of-the-art concurrent priority queue classes as the subject programs for our study: \texttt{SimpleLinear}, \texttt{SimpleTree}, and \texttt{SequentialHeap}. We used mutation analysis \cite{demillo1978hints} to generate a total of 320 mutants, which includes 312 traditional mutants and 8 concurrent mutants. Each mutants was created by applying a syntactic change (i.e. traditional mutation operator and concurrent mutation operator)
+
+
 \subsubsection{Concurrent Scenarios}
 \subsubsection{Response to RQ-1}
 \subsubsection{Response to RQ-2}
@@ -292,6 +290,5 @@ several techniques have been proposed such as N-version testing \cite{brilliant1
 assertions \cite{sim2014eliminating}, machine learning \cite{chan2009pat}, etc. Among of them, MT obtains metamorphic relations (MRs) according to the properties of software
 under test (SUT). MRs are used to generate follow-up test cases from source test cases, then the both source and follow-up test cases are executed, and their results are
 verified against the corresponding MRs. If an MR is violated, that is, a fault is detected.
-
 
 

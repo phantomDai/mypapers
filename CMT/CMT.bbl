@@ -46,22 +46,15 @@ T.~Y. Chen, F.-C. Kuo, H.~Liu, P.-L. Poon, D.~Towey, T.~Tse, and Z.~Q. Zhou,
   ``Metamorphic testing: A review of challenges and opportunities,'' \emph{ACM
   Computing Surveys}, vol.~51, no.~1, p.~4, 2018.
 
-\bibitem{brilliant1990performance}
-S.~S. Brilliant, J.~C. Knight, and P.~Ammann, ``On the performance of software
-  testing using multiple versions,'' in \emph{Proceedings of the 20th
-  International Symposium on Fault-Tolerant Computing (FTCS'90)}, 1990, pp.
-  408--415.
+\bibitem{PQUEUE}
+M.~Herlihy and N.~Shavit, ``Priority queues,'' in \emph{The Art of
+  Multiprocessor Programming}.\hskip 1em plus 0.5em minus 0.4em\relax Elsevier,
+  2012, ch.~15, pp. 351--368.
 
-\bibitem{sim2014eliminating}
-K.~Y. Sim, C.~S. Low, and F.-C. Kuo, ``Eliminating human visual judgment from
-  testing of financial charting software,'' \emph{Journal of Software}, vol.~9,
-  no.~2, pp. 298--312, 2014.
-
-\bibitem{chan2009pat}
-W.~K. Chan, S.-C. Cheung, J.~C. Ho, and T.~Tse, ``Pat: A pattern classification
-  approach to automatic reference oracles for the testing of mesh
-  simplification programs,'' \emph{Journal of Systems and Software}, vol.~82,
-  no.~3, pp. 422--434, 2009.
+\bibitem{demillo1978hints}
+R.~A. DeMillo, R.~J. Lipton, and F.~G. Sayward, ``Hints on test data selection:
+  Help for the practicing programmer,'' \emph{Computer}, vol.~11, no.~4, pp.
+  34--41, 1978.
 
 \bibitem{segura2016survey}
 S.~Segura, G.~Fraser, A.~B. Sanchez, and A.~Ruiz-Cort{\'e}s, ``A survey on
