@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+
+\bibitem{Bradbury2006Mutation}
+Jeremy~S. Bradbury, James~R. Cordy, and Juergen Dingel.
+\newblock Mutation operators for concurrent java (j2se 5.0).
+\newblock In {\em The Workshop on Mutation Analysis}, page~11, 2006.
+
+\bibitem{Chen1998Metamorphic}
+T.~Y. Chen, S.~C. Cheung, and S.~M. Yiu.
+\newblock Metamorphic testing: a new approach for generating next test cases.
+\newblock 1998.
+
+\end{thebibliography}

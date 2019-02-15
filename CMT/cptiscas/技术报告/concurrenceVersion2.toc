@@ -1,0 +1,14 @@
+\contentsline {section}{\numberline {1}内容简介}{2}
+\contentsline {section}{\numberline {2}变异分析}{2}
+\contentsline {section}{\numberline {3}生成变异体的详细报告}{3}
+\contentsline {subsection}{\numberline {3.1}非并发变异体}{3}
+\contentsline {subsubsection}{\numberline {3.1.1}变异分析工具：Major}{3}
+\contentsline {subsubsection}{\numberline {3.1.2}变异算子}{3}
+\contentsline {subsubsection}{\numberline {3.1.3}变异体信息}{3}
+\contentsline {subsection}{\numberline {3.2}并发变异体}{4}
+\contentsline {subsubsection}{\numberline {3.2.1}并发变异算子}{4}
+\contentsline {subsubsection}{\numberline {3.2.2}SimpleLinear\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{5}
+\contentsline {subsubsection}{\numberline {3.2.3}SimpleTree\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{5}
+\contentsline {subsubsection}{\numberline {3.2.4}FineGrainedHeap\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{6}
+\contentsline {subsubsection}{\numberline {3.2.5}PrioritySkiplist\hspace {0.25em plus 0.125em minus 0.08em}\ignorespaces 程序}{7}
+\contentsline {subsubsection}{\numberline {3.2.6}并发变异体数量汇总}{8}

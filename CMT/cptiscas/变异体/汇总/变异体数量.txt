@@ -1,0 +1,5 @@
+SimpleLinear: 24
+SimpleTree:   54
+SequetialHeap:242
+FinefrainedHeap:262
+SkipQueue:137

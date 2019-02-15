@@ -1,0 +1,23 @@
+\begin{thebibliography}{1}
+
+\bibitem{Bradbury2006Mutation}
+Jeremy~S. Bradbury, James~R. Cordy, and Juergen Dingel.
+\newblock Mutation operators for concurrent java (j2se 5.0).
+\newblock In {\em The Workshop on Mutation Analysis}, page~11, 2006.
+
+\bibitem{Chen1998Metamorphic}
+T.~Y. Chen, S.~C. Cheung, and S.~M. Yiu.
+\newblock Metamorphic testing: a new approach for generating next test cases.
+\newblock 1998.
+
+\bibitem{article}
+Yu-seung Ma.
+\newblock Description of method-level mutation operators for java.
+\newblock 12 2017.
+
+\bibitem{Offutt2004An}
+Jeff Offutt, Yu~Seung Ma, and Yong~Rae Kwon.
+\newblock An experimental mutation system for java.
+\newblock {\em Acm Sigsoft Software Engineering Notes}, 29(5):1--4, 2004.
+
+\end{thebibliography}

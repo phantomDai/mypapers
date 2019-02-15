@@ -1,0 +1,230 @@
+1:LVR:POS:0:FineGrainedHeap:23:1 |==> 0
+2:LVR:POS:NEG:FineGrainedHeap:23:1 |==> -1
+3:LVR:NEG:0:FineGrainedHeap:24:-1 |==> 0
+4:LVR:NEG:POS:FineGrainedHeap:24:-1 |==> 1
+5:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@<init>(int):35:heapLock = new ReentrantLock() |==> <NO-OP>
+6:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@<init>(int):36:next = ROOT |==> <NO-OP>
+7:LVR:POS:0:FineGrainedHeap@<init>(int):37:1 |==> 0
+8:LVR:POS:NEG:FineGrainedHeap@<init>(int):37:1 |==> -1
+9:AOR:+(int,int):%(int,int):FineGrainedHeap@<init>(int):37:capacity + 1 |==> capacity % 1
+10:AOR:+(int,int):*(int,int):FineGrainedHeap@<init>(int):37:capacity + 1 |==> capacity * 1
+11:AOR:+(int,int):-(int,int):FineGrainedHeap@<init>(int):37:capacity + 1 |==> capacity - 1
+12:AOR:+(int,int):/(int,int):FineGrainedHeap@<init>(int):37:capacity + 1 |==> capacity / 1
+13:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@<init>(int):37:heap = (HeapNode<T>[])new HeapNode[capacity + 1] |==> <NO-OP>
+14:LVR:0:POS:FineGrainedHeap@<init>(int):38:0 |==> 1
+15:LVR:0:NEG:FineGrainedHeap@<init>(int):38:0 |==> -1
+16:LVR:POS:0:FineGrainedHeap@<init>(int):38:1 |==> 0
+17:LVR:POS:NEG:FineGrainedHeap@<init>(int):38:1 |==> -1
+18:AOR:+(int,int):%(int,int):FineGrainedHeap@<init>(int):38:capacity + 1 |==> capacity % 1
+19:AOR:+(int,int):*(int,int):FineGrainedHeap@<init>(int):38:capacity + 1 |==> capacity * 1
+20:AOR:+(int,int):-(int,int):FineGrainedHeap@<init>(int):38:capacity + 1 |==> capacity - 1
+21:AOR:+(int,int):/(int,int):FineGrainedHeap@<init>(int):38:capacity + 1 |==> capacity / 1
+22:ROR:<(int,int):!=(int,int):FineGrainedHeap@<init>(int):38:i < capacity + 1 |==> i != capacity + 1
+23:ROR:<(int,int):<=(int,int):FineGrainedHeap@<init>(int):38:i < capacity + 1 |==> i <= capacity + 1
+24:ROR:<(int,int):FALSE(int,int):FineGrainedHeap@<init>(int):38:i < capacity + 1 |==> false
+25:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@<init>(int):39:heap[i] = new HeapNode<T>() |==> <NO-OP>
+26:STD:<CALL>:<NO-OP>:FineGrainedHeap@add(T,int):49:heapLock.lock() |==> <NO-OP>
+27:EVR:<POSTFIX_INCREMENT(int)>:<DEFAULT>:FineGrainedHeap@add(T,int):50:next++ |==> 0
+28:STD:<CALL>:<NO-OP>:FineGrainedHeap@add(T,int):51:heap[child].lock() |==> <NO-OP>
+29:STD:<CALL>:<NO-OP>:FineGrainedHeap@add(T,int):52:heapLock.unlock() |==> <NO-OP>
+30:STD:<CALL>:<NO-OP>:FineGrainedHeap@add(T,int):53:heap[child].init(item, priority) |==> <NO-OP>
+31:STD:<CALL>:<NO-OP>:FineGrainedHeap@add(T,int):54:heap[child].unlock() |==> <NO-OP>
+32:ROR:>(int,int):!=(int,int):FineGrainedHeap@add(T,int):55:child > ROOT |==> child != ROOT
+33:ROR:>(int,int):>=(int,int):FineGrainedHeap@add(T,int):55:child > ROOT |==> child >= ROOT
+34:ROR:>(int,int):FALSE(int,int):FineGrainedHeap@add(T,int):55:child > ROOT |==> false
+35:LVR:POS:0:FineGrainedHeap@add(T,int):56:2 |==> 0
+36:LVR:POS:NEG:FineGrainedHeap@add(T,int):56:2 |==> -2
+37:AOR:/(int,int):%(int,int):FineGrainedHeap@add(T,int):56:child / 2 |==> child % 2
+38:AOR:/(int,int):*(int,int):FineGrainedHeap@add(T,int):56:child / 2 |==> child * 2
+39:AOR:/(int,int):+(int,int):FineGrainedHeap@add(T,int):56:child / 2 |==> child + 2
+40:AOR:/(int,int):-(int,int):FineGrainedHeap@add(T,int):56:child / 2 |==> child - 2
+41:STD:<CALL>:<NO-OP>:FineGrainedHeap@add(T,int):57:heap[parent].lock() |==> <NO-OP>
+42:STD:<CALL>:<NO-OP>:FineGrainedHeap@add(T,int):58:heap[child].lock() |==> <NO-OP>
+43:EVR:<IDENTIFIER(int)>:<DEFAULT>:FineGrainedHeap@add(T,int):59:child |==> 0
+44:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):FineGrainedHeap@add(T,int):61:heap[parent].tag == Status.AVAILABLE |==> false
+45:COR:&&(boolean,boolean):==(boolean,boolean):FineGrainedHeap@add(T,int):61:heap[parent].tag == Status.AVAILABLE && heap[child].amOwner() |==> heap[parent].tag == Status.AVAILABLE == heap[child].amOwner()
+46:COR:&&(boolean,boolean):FALSE(boolean,boolean):FineGrainedHeap@add(T,int):61:heap[parent].tag == Status.AVAILABLE && heap[child].amOwner() |==> false
+47:COR:&&(boolean,boolean):LHS(boolean,boolean):FineGrainedHeap@add(T,int):61:heap[parent].tag == Status.AVAILABLE && heap[child].amOwner() |==> heap[parent].tag == Status.AVAILABLE
+48:COR:&&(boolean,boolean):RHS(boolean,boolean):FineGrainedHeap@add(T,int):61:heap[parent].tag == Status.AVAILABLE && heap[child].amOwner() |==> heap[child].amOwner()
+49:ROR:<(int,int):!=(int,int):FineGrainedHeap@add(T,int):62:heap[child].score < heap[parent].score |==> heap[child].score != heap[parent].score
+50:ROR:<(int,int):<=(int,int):FineGrainedHeap@add(T,int):62:heap[child].score < heap[parent].score |==> heap[child].score <= heap[parent].score
+51:ROR:<(int,int):FALSE(int,int):FineGrainedHeap@add(T,int):62:heap[child].score < heap[parent].score |==> false
+52:STD:<CALL>:<NO-OP>:FineGrainedHeap@add(T,int):63:swap(child, parent) |==> <NO-OP>
+53:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@add(T,int):64:child = parent |==> <NO-OP>
+54:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@add(T,int):66:heap[child].tag = Status.AVAILABLE |==> <NO-OP>
+55:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@add(T,int):67:heap[child].owner = NO_ONE |==> <NO-OP>
+56:STD:<RETURN>:<NO-OP>:FineGrainedHeap@add(T,int):68:return; |==> <NO-OP>
+57:COR:heap[child].amOwner():TRUE:FineGrainedHeap@add(T,int):70:heap[child].amOwner() |==> false
+58:COR:heap[child].amOwner():FALSE:FineGrainedHeap@add(T,int):70:heap[child].amOwner() |==> true
+59:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@add(T,int):71:child = parent |==> <NO-OP>
+60:STD:<CALL>:<NO-OP>:FineGrainedHeap@add(T,int):74:heap[oldChild].unlock() |==> <NO-OP>
+61:STD:<CALL>:<NO-OP>:FineGrainedHeap@add(T,int):75:heap[parent].unlock() |==> <NO-OP>
+62:ROR:==(int,int):<=(int,int):FineGrainedHeap@add(T,int):78:child == ROOT |==> child <= ROOT
+63:ROR:==(int,int):>=(int,int):FineGrainedHeap@add(T,int):78:child == ROOT |==> child >= ROOT
+64:ROR:==(int,int):FALSE(int,int):FineGrainedHeap@add(T,int):78:child == ROOT |==> false
+65:STD:<CALL>:<NO-OP>:FineGrainedHeap@add(T,int):79:heap[ROOT].lock() |==> <NO-OP>
+66:COR:heap[ROOT].amOwner():TRUE:FineGrainedHeap@add(T,int):80:heap[ROOT].amOwner() |==> false
+67:COR:heap[ROOT].amOwner():FALSE:FineGrainedHeap@add(T,int):80:heap[ROOT].amOwner() |==> true
+68:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@add(T,int):81:heap[ROOT].tag = Status.AVAILABLE |==> <NO-OP>
+69:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@add(T,int):82:heap[child].owner = NO_ONE |==> <NO-OP>
+70:STD:<CALL>:<NO-OP>:FineGrainedHeap@add(T,int):84:heap[ROOT].unlock() |==> <NO-OP>
+71:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():93:heapLock.lock() |==> <NO-OP>
+72:EVR:<PREFIX_DECREMENT(int)>:<DEFAULT>:FineGrainedHeap@removeMin():94:--next |==> 0
+73:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():95:heap[bottom].lock() |==> <NO-OP>
+74:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():96:heap[ROOT].lock() |==> <NO-OP>
+75:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():97:heapLock.unlock() |==> <NO-OP>
+76:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):FineGrainedHeap@removeMin():98:heap[ROOT].tag == Status.EMPTY |==> false
+77:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():99:heap[ROOT].unlock() |==> <NO-OP>
+78:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():100:heap[bottom].lock() |==> <NO-OP>
+79:STD:<RETURN>:<NO-OP>:FineGrainedHeap@removeMin():101:return null; |==> <NO-OP>
+80:EVR:<MEMBER_SELECT(T)>:<DEFAULT>:FineGrainedHeap@removeMin():103:heap[ROOT].item |==> null
+81:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@removeMin():104:heap[ROOT].tag = Status.EMPTY |==> <NO-OP>
+82:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():105:swap(bottom, ROOT) |==> <NO-OP>
+83:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@removeMin():106:heap[bottom].owner = NO_ONE |==> <NO-OP>
+84:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():107:heap[bottom].unlock() |==> <NO-OP>
+85:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):FineGrainedHeap@removeMin():108:heap[ROOT].tag == Status.EMPTY |==> false
+86:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():109:heap[ROOT].unlock() |==> <NO-OP>
+87:STD:<RETURN>:<NO-OP>:FineGrainedHeap@removeMin():110:return item; |==> <NO-OP>
+88:LVR:0:POS:FineGrainedHeap@removeMin():112:0 |==> 1
+89:LVR:0:NEG:FineGrainedHeap@removeMin():112:0 |==> -1
+90:EVR:<IDENTIFIER(int)>:<DEFAULT>:FineGrainedHeap@removeMin():113:ROOT |==> 0
+91:LVR:POS:0:FineGrainedHeap@removeMin():114:2 |==> 0
+92:LVR:POS:NEG:FineGrainedHeap@removeMin():114:2 |==> -2
+93:AOR:/(int,int):%(int,int):FineGrainedHeap@removeMin():114:heap.length / 2 |==> heap.length % 2
+94:AOR:/(int,int):*(int,int):FineGrainedHeap@removeMin():114:heap.length / 2 |==> heap.length * 2
+95:AOR:/(int,int):+(int,int):FineGrainedHeap@removeMin():114:heap.length / 2 |==> heap.length + 2
+96:AOR:/(int,int):-(int,int):FineGrainedHeap@removeMin():114:heap.length / 2 |==> heap.length - 2
+97:ROR:<(int,int):!=(int,int):FineGrainedHeap@removeMin():114:parent < heap.length / 2 |==> parent != heap.length / 2
+98:ROR:<(int,int):<=(int,int):FineGrainedHeap@removeMin():114:parent < heap.length / 2 |==> parent <= heap.length / 2
+99:ROR:<(int,int):FALSE(int,int):FineGrainedHeap@removeMin():114:parent < heap.length / 2 |==> false
+100:LVR:POS:0:FineGrainedHeap@removeMin():115:2 |==> 0
+101:LVR:POS:NEG:FineGrainedHeap@removeMin():115:2 |==> -2
+102:AOR:*(int,int):%(int,int):FineGrainedHeap@removeMin():115:parent * 2 |==> parent % 2
+103:AOR:*(int,int):+(int,int):FineGrainedHeap@removeMin():115:parent * 2 |==> parent + 2
+104:AOR:*(int,int):-(int,int):FineGrainedHeap@removeMin():115:parent * 2 |==> parent - 2
+105:AOR:*(int,int):/(int,int):FineGrainedHeap@removeMin():115:parent * 2 |==> parent / 2
+106:LVR:POS:0:FineGrainedHeap@removeMin():116:2 |==> 0
+107:LVR:POS:NEG:FineGrainedHeap@removeMin():116:2 |==> -2
+108:AOR:*(int,int):%(int,int):FineGrainedHeap@removeMin():116:parent * 2 |==> parent % 2
+109:AOR:*(int,int):+(int,int):FineGrainedHeap@removeMin():116:parent * 2 |==> parent + 2
+110:AOR:*(int,int):-(int,int):FineGrainedHeap@removeMin():116:parent * 2 |==> parent - 2
+111:AOR:*(int,int):/(int,int):FineGrainedHeap@removeMin():116:parent * 2 |==> parent / 2
+112:LVR:POS:0:FineGrainedHeap@removeMin():116:1 |==> 0
+113:LVR:POS:NEG:FineGrainedHeap@removeMin():116:1 |==> -1
+114:AOR:+(int,int):%(int,int):FineGrainedHeap@removeMin():116:(parent * 2) + 1 |==> (parent * 2) % 1
+115:AOR:+(int,int):*(int,int):FineGrainedHeap@removeMin():116:(parent * 2) + 1 |==> (parent * 2) * 1
+116:AOR:+(int,int):-(int,int):FineGrainedHeap@removeMin():116:(parent * 2) + 1 |==> (parent * 2) - 1
+117:AOR:+(int,int):/(int,int):FineGrainedHeap@removeMin():116:(parent * 2) + 1 |==> (parent * 2) / 1
+118:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():117:heap[left].lock() |==> <NO-OP>
+119:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():118:heap[right].lock() |==> <NO-OP>
+120:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):FineGrainedHeap@removeMin():119:heap[left].tag == Status.EMPTY |==> false
+121:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():120:heap[right].unlock() |==> <NO-OP>
+122:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():121:heap[left].unlock() |==> <NO-OP>
+123:STD:<BREAK>:<NO-OP>:FineGrainedHeap@removeMin():122:break; |==> <NO-OP>
+124:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):FineGrainedHeap@removeMin():123:heap[right].tag == Status.EMPTY |==> false
+125:ROR:<(int,int):!=(int,int):FineGrainedHeap@removeMin():123:heap[left].score < heap[right].score |==> heap[left].score != heap[right].score
+126:ROR:<(int,int):<=(int,int):FineGrainedHeap@removeMin():123:heap[left].score < heap[right].score |==> heap[left].score <= heap[right].score
+127:ROR:<(int,int):FALSE(int,int):FineGrainedHeap@removeMin():123:heap[left].score < heap[right].score |==> false
+128:COR:||(boolean,boolean):!=(boolean,boolean):FineGrainedHeap@removeMin():123:heap[right].tag == Status.EMPTY || heap[left].score < heap[right].score |==> heap[right].tag == Status.EMPTY != heap[left].score < heap[right].score
+129:COR:||(boolean,boolean):LHS(boolean,boolean):FineGrainedHeap@removeMin():123:heap[right].tag == Status.EMPTY || heap[left].score < heap[right].score |==> heap[right].tag == Status.EMPTY
+130:COR:||(boolean,boolean):RHS(boolean,boolean):FineGrainedHeap@removeMin():123:heap[right].tag == Status.EMPTY || heap[left].score < heap[right].score |==> heap[left].score < heap[right].score
+131:COR:||(boolean,boolean):TRUE(boolean,boolean):FineGrainedHeap@removeMin():123:heap[right].tag == Status.EMPTY || heap[left].score < heap[right].score |==> true
+132:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():124:heap[right].unlock() |==> <NO-OP>
+133:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@removeMin():125:child = left |==> <NO-OP>
+134:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():127:heap[left].unlock() |==> <NO-OP>
+135:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@removeMin():128:child = right |==> <NO-OP>
+136:ROR:<(int,int):!=(int,int):FineGrainedHeap@removeMin():130:heap[child].score < heap[parent].score |==> heap[child].score != heap[parent].score
+137:ROR:<(int,int):<=(int,int):FineGrainedHeap@removeMin():130:heap[child].score < heap[parent].score |==> heap[child].score <= heap[parent].score
+138:ROR:<(int,int):FALSE(int,int):FineGrainedHeap@removeMin():130:heap[child].score < heap[parent].score |==> false
+139:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():131:swap(parent, child) |==> <NO-OP>
+140:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():132:heap[parent].unlock() |==> <NO-OP>
+141:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@removeMin():133:parent = child |==> <NO-OP>
+142:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():135:heap[child].unlock() |==> <NO-OP>
+143:STD:<BREAK>:<NO-OP>:FineGrainedHeap@removeMin():136:break; |==> <NO-OP>
+144:STD:<CALL>:<NO-OP>:FineGrainedHeap@removeMin():139:heap[parent].unlock() |==> <NO-OP>
+145:EVR:<IDENTIFIER(T)>:<DEFAULT>:FineGrainedHeap@removeMin():140:item |==> null
+146:EVR:<MEMBER_SELECT(int)>:<DEFAULT>:FineGrainedHeap@swap(int,int):144:heap[i].owner |==> 0
+147:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@swap(int,int):145:heap[i].owner = heap[j].owner |==> <NO-OP>
+148:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@swap(int,int):146:heap[j].owner = _owner |==> <NO-OP>
+149:EVR:<MEMBER_SELECT(T)>:<DEFAULT>:FineGrainedHeap@swap(int,int):147:heap[i].item |==> null
+150:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@swap(int,int):148:heap[i].item = heap[j].item |==> <NO-OP>
+151:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@swap(int,int):149:heap[j].item = _item |==> <NO-OP>
+152:EVR:<MEMBER_SELECT(int)>:<DEFAULT>:FineGrainedHeap@swap(int,int):150:heap[i].score |==> 0
+153:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@swap(int,int):151:heap[i].score = heap[j].score |==> <NO-OP>
+154:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@swap(int,int):152:heap[j].score = _priority |==> <NO-OP>
+155:EVR:<MEMBER_SELECT(FineGrainedHeap.Status)>:<DEFAULT>:FineGrainedHeap@swap(int,int):153:heap[i].tag |==> null
+156:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@swap(int,int):154:heap[i].tag = heap[j].tag |==> <NO-OP>
+157:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap@swap(int,int):155:heap[j].tag = _tag |==> <NO-OP>
+158:EVR:<IDENTIFIER(int)>:<DEFAULT>:FineGrainedHeap@sanityCheck():159:next |==> 0
+159:EVR:<IDENTIFIER(int)>:<DEFAULT>:FineGrainedHeap@sanityCheck():160:ROOT |==> 0
+160:ROR:<(int,int):!=(int,int):FineGrainedHeap@sanityCheck():160:i < stop |==> i != stop
+161:ROR:<(int,int):<=(int,int):FineGrainedHeap@sanityCheck():160:i < stop |==> i <= stop
+162:ROR:<(int,int):FALSE(int,int):FineGrainedHeap@sanityCheck():160:i < stop |==> false
+163:LVR:POS:0:FineGrainedHeap@sanityCheck():161:2 |==> 0
+164:LVR:POS:NEG:FineGrainedHeap@sanityCheck():161:2 |==> -2
+165:AOR:*(int,int):%(int,int):FineGrainedHeap@sanityCheck():161:i * 2 |==> i % 2
+166:AOR:*(int,int):+(int,int):FineGrainedHeap@sanityCheck():161:i * 2 |==> i + 2
+167:AOR:*(int,int):-(int,int):FineGrainedHeap@sanityCheck():161:i * 2 |==> i - 2
+168:AOR:*(int,int):/(int,int):FineGrainedHeap@sanityCheck():161:i * 2 |==> i / 2
+169:LVR:POS:0:FineGrainedHeap@sanityCheck():162:2 |==> 0
+170:LVR:POS:NEG:FineGrainedHeap@sanityCheck():162:2 |==> -2
+171:AOR:*(int,int):%(int,int):FineGrainedHeap@sanityCheck():162:i * 2 |==> i % 2
+172:AOR:*(int,int):+(int,int):FineGrainedHeap@sanityCheck():162:i * 2 |==> i + 2
+173:AOR:*(int,int):-(int,int):FineGrainedHeap@sanityCheck():162:i * 2 |==> i - 2
+174:AOR:*(int,int):/(int,int):FineGrainedHeap@sanityCheck():162:i * 2 |==> i / 2
+175:LVR:POS:0:FineGrainedHeap@sanityCheck():162:1 |==> 0
+176:LVR:POS:NEG:FineGrainedHeap@sanityCheck():162:1 |==> -1
+177:AOR:+(int,int):%(int,int):FineGrainedHeap@sanityCheck():162:(i * 2) + 1 |==> (i * 2) % 1
+178:AOR:+(int,int):*(int,int):FineGrainedHeap@sanityCheck():162:(i * 2) + 1 |==> (i * 2) * 1
+179:AOR:+(int,int):-(int,int):FineGrainedHeap@sanityCheck():162:(i * 2) + 1 |==> (i * 2) - 1
+180:AOR:+(int,int):/(int,int):FineGrainedHeap@sanityCheck():162:(i * 2) + 1 |==> (i * 2) / 1
+181:ROR:<(int,int):!=(int,int):FineGrainedHeap@sanityCheck():163:left < stop |==> left != stop
+182:ROR:<(int,int):<=(int,int):FineGrainedHeap@sanityCheck():163:left < stop |==> left <= stop
+183:ROR:<(int,int):FALSE(int,int):FineGrainedHeap@sanityCheck():163:left < stop |==> false
+184:ROR:<(int,int):!=(int,int):FineGrainedHeap@sanityCheck():163:heap[left].score < heap[i].score |==> heap[left].score != heap[i].score
+185:ROR:<(int,int):<=(int,int):FineGrainedHeap@sanityCheck():163:heap[left].score < heap[i].score |==> heap[left].score <= heap[i].score
+186:ROR:<(int,int):FALSE(int,int):FineGrainedHeap@sanityCheck():163:heap[left].score < heap[i].score |==> false
+187:COR:&&(boolean,boolean):==(boolean,boolean):FineGrainedHeap@sanityCheck():163:left < stop && heap[left].score < heap[i].score |==> left < stop == heap[left].score < heap[i].score
+188:COR:&&(boolean,boolean):FALSE(boolean,boolean):FineGrainedHeap@sanityCheck():163:left < stop && heap[left].score < heap[i].score |==> false
+189:COR:&&(boolean,boolean):LHS(boolean,boolean):FineGrainedHeap@sanityCheck():163:left < stop && heap[left].score < heap[i].score |==> left < stop
+190:COR:&&(boolean,boolean):RHS(boolean,boolean):FineGrainedHeap@sanityCheck():163:left < stop && heap[left].score < heap[i].score |==> heap[left].score < heap[i].score
+191:STD:<CALL>:<NO-OP>:FineGrainedHeap@sanityCheck():164:System.out.println("Heap property violated:") |==> <NO-OP>
+192:STD:<CALL>:<NO-OP>:FineGrainedHeap@sanityCheck():165:System.out.printf("\theap[%d] = %d, left child heap[%d] = %d\n", i, heap[i].score, left, heap[left].score) |==> <NO-OP>
+193:ROR:<(int,int):!=(int,int):FineGrainedHeap@sanityCheck():167:right < stop |==> right != stop
+194:ROR:<(int,int):<=(int,int):FineGrainedHeap@sanityCheck():167:right < stop |==> right <= stop
+195:ROR:<(int,int):FALSE(int,int):FineGrainedHeap@sanityCheck():167:right < stop |==> false
+196:ROR:<(int,int):!=(int,int):FineGrainedHeap@sanityCheck():167:heap[right].score < heap[i].score |==> heap[right].score != heap[i].score
+197:ROR:<(int,int):<=(int,int):FineGrainedHeap@sanityCheck():167:heap[right].score < heap[i].score |==> heap[right].score <= heap[i].score
+198:ROR:<(int,int):FALSE(int,int):FineGrainedHeap@sanityCheck():167:heap[right].score < heap[i].score |==> false
+199:COR:&&(boolean,boolean):==(boolean,boolean):FineGrainedHeap@sanityCheck():167:right < stop && heap[right].score < heap[i].score |==> right < stop == heap[right].score < heap[i].score
+200:COR:&&(boolean,boolean):FALSE(boolean,boolean):FineGrainedHeap@sanityCheck():167:right < stop && heap[right].score < heap[i].score |==> false
+201:COR:&&(boolean,boolean):LHS(boolean,boolean):FineGrainedHeap@sanityCheck():167:right < stop && heap[right].score < heap[i].score |==> right < stop
+202:COR:&&(boolean,boolean):RHS(boolean,boolean):FineGrainedHeap@sanityCheck():167:right < stop && heap[right].score < heap[i].score |==> heap[right].score < heap[i].score
+203:STD:<CALL>:<NO-OP>:FineGrainedHeap@sanityCheck():168:System.out.println("Heap property violated:") |==> <NO-OP>
+204:STD:<CALL>:<NO-OP>:FineGrainedHeap@sanityCheck():169:System.out.printf("\theap[%d] = %d, right child heap[%d] = %d\n", i, heap[i].score, right, heap[right].score) |==> <NO-OP>
+205:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap$HeapNode@init(S,int):192:item = myItem |==> <NO-OP>
+206:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap$HeapNode@init(S,int):193:score = myPriority |==> <NO-OP>
+207:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap$HeapNode@init(S,int):194:tag = Status.BUSY |==> <NO-OP>
+208:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap$HeapNode@init(S,int):195:owner = ThreadID.get() |==> <NO-OP>
+209:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap$HeapNode@<init>():199:tag = Status.EMPTY |==> <NO-OP>
+210:STD:<ASSIGN>:<NO-OP>:FineGrainedHeap$HeapNode@<init>():200:lock = new ReentrantLock() |==> <NO-OP>
+211:STD:<CALL>:<NO-OP>:FineGrainedHeap$HeapNode@lock():204:lock.lock() |==> <NO-OP>
+212:STD:<CALL>:<NO-OP>:FineGrainedHeap$HeapNode@unlock():208:lock.unlock() |==> <NO-OP>
+213:LVR:FALSE:TRUE:FineGrainedHeap$HeapNode@amOwner():214:false |==> true
+214:STD:<RETURN>:<NO-OP>:FineGrainedHeap$HeapNode@amOwner():214:return Config.__M_NO == 0 && Config.COVERED(213, 213) ? false : Config.__M_NO == 213 ? true : false; |==> <NO-OP>
+215:LVR:FALSE:TRUE:FineGrainedHeap$HeapNode@amOwner():216:false |==> true
+216:STD:<RETURN>:<NO-OP>:FineGrainedHeap$HeapNode@amOwner():216:return Config.__M_NO == 0 && Config.COVERED(215, 215) ? false : Config.__M_NO == 215 ? true : false; |==> <NO-OP>
+217:ROR:==(int,int):<=(int,int):FineGrainedHeap$HeapNode@amOwner():218:owner == ThreadID.get() |==> owner <= ThreadID.get()
+218:ROR:==(int,int):>=(int,int):FineGrainedHeap$HeapNode@amOwner():218:owner == ThreadID.get() |==> owner >= ThreadID.get()
+219:ROR:==(int,int):FALSE(int,int):FineGrainedHeap$HeapNode@amOwner():218:owner == ThreadID.get() |==> false
+220:STD:<RETURN>:<NO-OP>:FineGrainedHeap$HeapNode@amOwner():218:return Config.__M_NO == 219 ? false : Config.__M_NO == 218 ? owner >= ThreadID.get() : Config.__M_NO == 217 ? owner <= ThreadID.get() : Config.__M_NO == 0 && Config.COVERED(217, 219) ? owner == ThreadID.get() : owner == ThreadID.get(); |==> <NO-OP>
+221:LVR:FALSE:TRUE:FineGrainedHeap$HeapNode@amOwner():220:false |==> true
+222:LVR:0:POS:ThreadID:22:0 |==> 1
+223:LVR:0:NEG:ThreadID:22:0 |==> -1
+224:EVR:<NEW_CLASS(ThreadID.ThreadLocalID)>:<DEFAULT>:ThreadID:27:new ThreadLocalID() |==> null
+225:EVR:<METHOD_INVOCATION(java.lang.Integer)>:<DEFAULT>:ThreadID@get():32:threadID.get() |==> null
+226:STD:<CALL>:<NO-OP>:ThreadID@set(int):39:threadID.set(index) |==> <NO-OP>
+227:LVR:0:POS:ThreadID@reset():45:0 |==> 1
+228:LVR:0:NEG:ThreadID@reset():45:0 |==> -1
+229:STD:<ASSIGN>:<NO-OP>:ThreadID@reset():45:nextID = 0 |==> <NO-OP>
+230:EVR:<POSTFIX_INCREMENT(int)>:<DEFAULT>:ThreadID$ThreadLocalID@initialValue():49:nextID++ |==> 0
