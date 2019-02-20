@@ -524,7 +524,7 @@
 @inproceedings{Bradbury2006,
   title={Mutation operators for concurrent Java (J2SE 5.0)},
   author={Bradbury, Jeremy S. and Cordy, James R. and Dingel, Juergen},
-  booktitle={Proceedings of the 17th International Symposium on Software Reliability Engineering (ISSRE'06), Co-located with the 2nd Workshop on Mutation Analysis},
-  pages={}
+  booktitle={Proceedings of the 2nd Workshop on Mutation Analysis, Co-located with the 17th International Symposium on Software Reliability Engineering (ISSRE'06)},
+  pages={83--92}
   year={2006},
 }

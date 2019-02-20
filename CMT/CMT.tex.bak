@@ -41,7 +41,7 @@ Beijing, China, wp@ios.ac.cn}
 \IEEEauthorblockA{\textit{School of Computer and Communication Engineering} \\
 \textit{University of Science and Technology Beijing}\\
 Beijing, China \\
-daihepeng@sina.cn}
+daihepeng@xs.ustb.edu.cn}
 \and
 \IEEEauthorblockN{Tsong Yueh Chen}
 \IEEEauthorblockA{\textit{Department of Computer Science and Software Engineering} \\
@@ -197,31 +197,58 @@ In this section we present the research questions concerned in this work, and th
 
 \begin{enumerate}[RQ-1]
 \item
-%a) effectiveness and efficiency of the MT framework for concurrent programs (mutation scores)
-%b) how concurrency affects the effectiveness and efficiency of MT? ???
-%e) performance (time consumption)
-
 How effective MT is at detecting faults of concurrent programs? What is the actual overhead for MT detecting these faults, in terms of time consumption and the number of test cases executed?
 
-Fault-detection effectiveness and efficiency are key for evaluating the performance of a testing technique. In our study, we adopt five state-of-the-art concurrent priority queue classes to implement the function \Fn($V,n$) within various concurrent scenarios. Then, we apply mutation analysis to evaluate the performance of MT in detecting the faults seeded, especially the concurrency faults related  to locks and atomic primitives.
+Fault-detection effectiveness and efficiency are key for evaluating the performance of a testing technique. In our study, we adopt three state-of-the-art concurrent priority queue classes to implement the function \Fn($V,n$) within various concurrent scenarios. Then, we apply mutation analysis to evaluate the performance of MT in detecting the faults seeded, especially the concurrency faults related  to locks and atomic primitives.
 \item
-%d) relevance between MRs and mutants / bugs
 What is the fault-detecting capability of an individual metamorphic relation in different concurrent scenarios? How are metamorphic relations relevant to programs faults, especially concurrency faults?
 
 \item
 How many threads are sufficient for MT detecting a concurrency fault?
 
-\item
-%c) how many MRs are needed to detect mutants / bugs?
-How many metamorphic relations are sufficient for MT detecting the faults that remain in a concurrent program? ({\color{red}probably not in this paper})
+%\item
+%How many metamorphic relations are sufficient for MT detecting the faults that remain in a concurrent program? ({\color{red}probably not in this paper})
 
 \end{enumerate}
 
 \subsection{Experimental Results}
 
 \subsubsection{Mutants}
+\label{section:mutants}
+Mutation analysis \cite{demillo1978hints} has been widely used to asses the adequacy of test suites and the effectiveness of testing techniques. Mutation operators are used to seed various faults into the program under test, and thus generate a set of variants (i.e. mutants). If a test case causes a mutant to behave differently to the program under test, then we say that the mutant is ``killed'' by the test case. The mutation score ($MS$) is used to measure how thoroughly a test suite ``kills'' the mutants. The MS is defined as:
+
+\begin{equation}
+\label{equation:ms}
+  MS(p,ts)= \displaystyle\frac{N_k}{N_m - N_e}
+\end{equation}
+where $p$ is the source program; $ts$ is the test suite; $N_k$ is the number of killed mutants; and $N_e$ is the number of equivalent mutants whose behavior is always same as that of $p$.  
+
+We selected three state-of-the-art concurrent priority queue classes from \cite{herlihy2011art} as the subject programs for our study: \texttt{SimpleLinear}, \texttt{SimpleTree}, and \texttt{SequentialHeap}. Those programs are written in Java language, and mainly implement two functions: adding elements with corresponding priorities to the data structure and removing elements from the data structure according to the priorities. 
+
+We have generated 312 traditional mutants for studied programs using automated mutant generator tool Mujava \cite{ma2005mujava} and Major \cite{just2017inferring}. Besides, we artificially generated 8 concurrent mutants according to the concurrent mutation operators \cite{Bradbury2006}
+Table \ref{table:programs} summarizes the basic information of the used programs and their mutants.
+
+\begin{table}[hbt]
+  \caption{Object programs}
+  \label{table:programs}
+  \centering
+  \begin{tabular}{|c|c|c|c|} \hline
+    Programs                &LOC   &Number of                   &Number of   \\
+                            &      &Traditional Mutants         &Concurrent Mutants  \\ \hline
+    \texttt{SimpleLinear}   &52    &22                          &2                    \\  \hline
+    \texttt{SimpleTree}     &85    &52                          &4                   \\ \hline
+    \texttt{SequentialHeap} &131   &240                         &2                  \\ \hline
+  \end{tabular}
+
+\end{table}
 \subsubsection{Concurrent Scenarios}
+\label{section:scenarios}
+The selected programs have two main interfaces called \texttt{add} and \texttt{remove}, we thus constructed four scenarios: \romannumeral1) sequentially adding elements and sequentially removing elements; \romannumeral2) sequentially adding elements and concurrently removing elements; \romannumeral3) concurrently adding elements and sequentially removing elements; and \romannumeral4) concurrently adding elements and concurrently removing elements. We used random testing technique to construct 5 test cases as source test cases, and each test case includes 10,000 elements then corresponding follow-up test cases were generated according to each MR. To make statistical results significant, each testing session was repeated 5 times with 5 different seeds.
+
+
 \subsubsection{Response to RQ-1}
+The detailed experimental results  
+
 \subsubsection{Response to RQ-2}
 \subsubsection{Response to RQ-3}
 
@@ -230,37 +257,7 @@ How many metamorphic relations are sufficient for MT detecting the faults that r
 In this section, we describe related work of MT.
 
 \subsection{Metamorphic Testing}
-When testing a software system, the oracle problem appears in some situations where either an oracle does not exist for the tester to verify the correctness of the computed results; or an oracle does exist but cannot be used. The oracle problem often occurs in software testing, which renders many testing techniques inapplicable \cite{barr2015oracle}. To alleviate the oracle problem, Chen et al. \cite{chen1998metamorphic} proposed a technique named metamorphic testing (MT) that has been receiving increasing attention in the software testing community\cite{barr2015oracle, segura2016survey, chen2018metamorphic}. The main contributions to MT in the literature focused on the following aspects: \rmnum{1}) MT theory; \rmnum{2}) combination with other techniques; \rmnum{3}) application of MT.
-\begin{enumerate}[1]
-  \item
-  \emph{Theoretical development of MT:} The MRs and the source test cases are the most important components of MT. However, defining MRs can be difficult. Chen et al. \cite{chen2016metric} proposed a specification-based method and developed a tool called MR-GENerator for identifying MRs based on category-choice framework\cite{ostrand1988category}.
-  Zhang et al. \cite{zhang2014search} proposed a search-based approach to automatic inference of polynomial MRs for a software under test, where a set of parameters is used to represent polynomial MRs, and the problem of inferring MRs is turn into a problem of searching for suitable values of the parameters. Then, particle swarm optimization is used to solve the search problem.
-  Sun et al. \cite{sun2016mumt} proposes a data-mutation directed metamorphic relation acquisition methodology, in which data mutation is employed to construct input relations and the generic mapping rule associated with each mutation operator to construct output relations.
-  Liu et al. \cite{liu2012new} proposed to systematically construct MRs based on some already identified MRs.
 
-  Without doubt, ``good'' MRs can improve the fault detection efficiency of MT.
-  Chen et al. \cite{chen2004case} reported that good MRs are those that can make the execution of the source-test case as different as possible to its follow-up test case.
-  This perspective has been confirmed by the later studies \cite{dong2013security, batra2011efficient}.
-  Asrafi et al. \cite{asrafi2011testing} conduct a case study to analyze the relationship between the execution behavior and the fault-detection effectiveness of metamorphic relations by code coverage criteria, and the results showed a strong correlation between the code coverage achieved by a metamorphic relation and its fault-detection effectiveness.
-
-  Source test cases also have a important impact on the fault detection effectiveness of MT.
-  Chen et al. \cite{chen2004metamorphic} compared the effects of source test cases generated by special value testing and random testing on the effectiveness of MT, and found that MT can be used as a complementary test method to special value testing.
-  Batra and  Sengupta \cite{batra2011efficient} integrated genetic algorithms into MT to select source test cases maximising the the paths traversed in the software under test.
-  Dong et al. \cite{dong2013security} proposed a Path--Combination--Based MT method that first generates symbolic input for each executable paths and minis relationships among these symbolic inputs and their outputs, then constructs MRs on the basis of these relationships, and generates actual test cases corresponding to the symbolic inputs.
-
-  Different from the above investigates, we focused on performing test cases and MRs with fault revealing capabilities as quickly as possible by making use of feedback information. We first divided the input domain into disjoint partitions, and randomly selected an MR to generate follow-up test cases depended on source test case of related input partitions, then updated the test profile of input partitions according to the results of test execution. Next, a partition was selected according to updated test profile, and an MR was randomly selected from the set of MRs whose source test cases belong to selected partition.
-  \item
-  \emph{Combination with other techniques:} In order to improve the applicability and effectiveness of MT, it has been integrated into other techniques.
-  Xie et al. \cite{xie2013metamorphic} combined the MT with the spectrum-based fault localization (SBFL), extend the application of SBFL to the common situations where test oracles do not exist.
-  Dong et al. \cite{dong2010security} proposed a method for improving the efficiency of evolutionary testing (ET) by considering MR when fitness function is constructed.
-  Liu et al. \cite{liu2014metamorphic} introduced MT into fault tolerance and proposed a theoretical framework of a new technique called Metamorphic Fault Tolerance (MFT), which can
-  handle system failure without the need of oracles during failure detection. In MFT, the trustworthiness of a test case depends on the number of violations or satisfactions of metamorphic relations. The more relations are satisfied and the less relations are violated, the more trustable test case is.
-  \item
-  \emph{Application of MT:}
-  Sun et al. \cite{sun2011metamorphic, sun2012metamorphic} proposed a metamorphic testing framework for web services taking into account the unique features of SOA, in which MRs are derived from the description or Web Service Description Language (WSDL) \cite{sun2011metamorphic} of the Web service, and on the basis on of MRs, follow-up test cses are generated depended on source test cases that are randomly generated according to the WSDL.
-  Segura et al. \cite{segura2018metamorphic} present a metamorphic testing approach for the detection of faults in RESTful Web APIs where they proposed six abstract relations called Metamorphic Relation Output Patterns (MROPs) that can then be instantiated into one or more concrete metamorphic relations. To evaluate this approach, they used both automatically seeded and real faults in six subject Web APIs.
-
-\end{enumerate}
 
 
 

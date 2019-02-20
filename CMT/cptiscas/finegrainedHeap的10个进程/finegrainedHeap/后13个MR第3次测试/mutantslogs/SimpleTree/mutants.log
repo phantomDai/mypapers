@@ -1,0 +1,71 @@
+1:LVR:POS:0:SimpleTree@<init>(int):28:1 |==> 0
+2:LVR:POS:NEG:SimpleTree@<init>(int):28:1 |==> -1
+3:SOR:<<(int,int):>>(int,int):SimpleTree@<init>(int):28:1 << logRange |==> 1 >> logRange
+4:SOR:<<(int,int):>>>(int,int):SimpleTree@<init>(int):28:1 << logRange |==> 1 >>> logRange
+5:STD:<ASSIGN>:<NO-OP>:SimpleTree@<init>(int):28:range = (1 << logRange) |==> <NO-OP>
+6:STD:<ASSIGN>:<NO-OP>:SimpleTree@<init>(int):29:leaves = new ArrayList<TreeNode>(range) |==> <NO-OP>
+7:LVR:0:POS:SimpleTree@<init>(int):30:0 |==> 1
+8:LVR:0:NEG:SimpleTree@<init>(int):30:0 |==> -1
+9:STD:<ASSIGN>:<NO-OP>:SimpleTree@<init>(int):30:root = buildTree(logRange, 0) |==> <NO-OP>
+10:EVR:<NEW_CLASS(SimpleTree<T>.TreeNode)>:<DEFAULT>:SimpleTree@buildTree(int,int):34:new TreeNode() |==> null
+11:LVR:0:POS:SimpleTree@buildTree(int,int):35:0 |==> 1
+12:LVR:0:NEG:SimpleTree@buildTree(int,int):35:0 |==> -1
+13:STD:<ASSIGN>:<NO-OP>:SimpleTree@buildTree(int,int):35:root.counter = new AtomicInteger(0) |==> <NO-OP>
+14:LVR:0:POS:SimpleTree@buildTree(int,int):36:0 |==> 1
+15:LVR:0:NEG:SimpleTree@buildTree(int,int):36:0 |==> -1
+16:ROR:==(int,int):<=(int,int):SimpleTree@buildTree(int,int):36:height == 0 |==> height <= 0
+17:ROR:==(int,int):>=(int,int):SimpleTree@buildTree(int,int):36:height == 0 |==> height >= 0
+18:ROR:==(int,int):FALSE(int,int):SimpleTree@buildTree(int,int):36:height == 0 |==> false
+19:STD:<ASSIGN>:<NO-OP>:SimpleTree@buildTree(int,int):37:root.bin = new Bin<T>() |==> <NO-OP>
+20:STD:<CALL>:<NO-OP>:SimpleTree@buildTree(int,int):38:leaves.add(slot, root) |==> <NO-OP>
+21:LVR:POS:0:SimpleTree@buildTree(int,int):40:1 |==> 0
+22:LVR:POS:NEG:SimpleTree@buildTree(int,int):40:1 |==> -1
+23:AOR:-(int,int):%(int,int):SimpleTree@buildTree(int,int):40:height - 1 |==> height % 1
+24:AOR:-(int,int):*(int,int):SimpleTree@buildTree(int,int):40:height - 1 |==> height * 1
+25:AOR:-(int,int):+(int,int):SimpleTree@buildTree(int,int):40:height - 1 |==> height + 1
+26:AOR:-(int,int):/(int,int):SimpleTree@buildTree(int,int):40:height - 1 |==> height / 1
+27:LVR:POS:0:SimpleTree@buildTree(int,int):40:2 |==> 0
+28:LVR:POS:NEG:SimpleTree@buildTree(int,int):40:2 |==> -2
+29:AOR:*(int,int):%(int,int):SimpleTree@buildTree(int,int):40:2 * slot |==> 2 % slot
+30:AOR:*(int,int):+(int,int):SimpleTree@buildTree(int,int):40:2 * slot |==> 2 + slot
+31:AOR:*(int,int):-(int,int):SimpleTree@buildTree(int,int):40:2 * slot |==> 2 - slot
+32:AOR:*(int,int):/(int,int):SimpleTree@buildTree(int,int):40:2 * slot |==> 2 / slot
+33:STD:<ASSIGN>:<NO-OP>:SimpleTree@buildTree(int,int):40:root.left = buildTree(height - 1, 2 * slot) |==> <NO-OP>
+34:LVR:POS:0:SimpleTree@buildTree(int,int):41:1 |==> 0
+35:LVR:POS:NEG:SimpleTree@buildTree(int,int):41:1 |==> -1
+36:AOR:-(int,int):%(int,int):SimpleTree@buildTree(int,int):41:height - 1 |==> height % 1
+37:AOR:-(int,int):*(int,int):SimpleTree@buildTree(int,int):41:height - 1 |==> height * 1
+38:AOR:-(int,int):+(int,int):SimpleTree@buildTree(int,int):41:height - 1 |==> height + 1
+39:AOR:-(int,int):/(int,int):SimpleTree@buildTree(int,int):41:height - 1 |==> height / 1
+40:LVR:POS:0:SimpleTree@buildTree(int,int):41:2 |==> 0
+41:LVR:POS:NEG:SimpleTree@buildTree(int,int):41:2 |==> -2
+42:AOR:*(int,int):%(int,int):SimpleTree@buildTree(int,int):41:2 * slot |==> 2 % slot
+43:AOR:*(int,int):+(int,int):SimpleTree@buildTree(int,int):41:2 * slot |==> 2 + slot
+44:AOR:*(int,int):-(int,int):SimpleTree@buildTree(int,int):41:2 * slot |==> 2 - slot
+45:AOR:*(int,int):/(int,int):SimpleTree@buildTree(int,int):41:2 * slot |==> 2 / slot
+46:LVR:POS:0:SimpleTree@buildTree(int,int):41:1 |==> 0
+47:LVR:POS:NEG:SimpleTree@buildTree(int,int):41:1 |==> -1
+48:AOR:+(int,int):%(int,int):SimpleTree@buildTree(int,int):41:(2 * slot) + 1 |==> (2 * slot) % 1
+49:AOR:+(int,int):*(int,int):SimpleTree@buildTree(int,int):41:(2 * slot) + 1 |==> (2 * slot) * 1
+50:AOR:+(int,int):-(int,int):SimpleTree@buildTree(int,int):41:(2 * slot) + 1 |==> (2 * slot) - 1
+51:AOR:+(int,int):/(int,int):SimpleTree@buildTree(int,int):41:(2 * slot) + 1 |==> (2 * slot) / 1
+52:STD:<ASSIGN>:<NO-OP>:SimpleTree@buildTree(int,int):41:root.right = buildTree(height - 1, (2 * slot) + 1) |==> <NO-OP>
+53:STD:<ASSIGN>:<NO-OP>:SimpleTree@buildTree(int,int):42:root.left.parent = root.right.parent = root |==> <NO-OP>
+54:EVR:<IDENTIFIER(SimpleTree<T>.TreeNode)>:<DEFAULT>:SimpleTree@buildTree(int,int):44:root |==> null
+55:EVR:<METHOD_INVOCATION(SimpleTree<T>.TreeNode)>:<DEFAULT>:SimpleTree@add(T,int):53:leaves.get(priority) |==> null
+56:STD:<CALL>:<NO-OP>:SimpleTree@add(T,int):54:node.bin.put(item) |==> <NO-OP>
+57:ROR:!=(java.lang.Object,java.lang.Object):TRUE(java.lang.Object,java.lang.Object):SimpleTree@add(T,int):55:node != root |==> true
+58:EVR:<MEMBER_SELECT(SimpleTree<T>.TreeNode)>:<DEFAULT>:SimpleTree@add(T,int):56:node.parent |==> null
+59:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):SimpleTree@add(T,int):57:node == parent.left |==> false
+60:STD:<CALL>:<NO-OP>:SimpleTree@add(T,int):58:parent.counter.getAndIncrement() |==> <NO-OP>
+61:STD:<ASSIGN>:<NO-OP>:SimpleTree@add(T,int):60:node = parent |==> <NO-OP>
+62:EVR:<IDENTIFIER(SimpleTree<T>.TreeNode)>:<DEFAULT>:SimpleTree@removeMin():65:root |==> null
+63:LVR:0:POS:SimpleTree@removeMin():67:0 |==> 1
+64:LVR:0:NEG:SimpleTree@removeMin():67:0 |==> -1
+65:ROR:>(int,int):!=(int,int):SimpleTree@removeMin():67:node.counter.getAndDecrement() > 0 |==> node.counter.getAndDecrement() != 0
+66:ROR:>(int,int):>=(int,int):SimpleTree@removeMin():67:node.counter.getAndDecrement() > 0 |==> node.counter.getAndDecrement() >= 0
+67:ROR:>(int,int):FALSE(int,int):SimpleTree@removeMin():67:node.counter.getAndDecrement() > 0 |==> false
+68:STD:<ASSIGN>:<NO-OP>:SimpleTree@removeMin():68:node = node.left |==> <NO-OP>
+69:STD:<ASSIGN>:<NO-OP>:SimpleTree@removeMin():70:node = node.right |==> <NO-OP>
+70:EVR:<METHOD_INVOCATION(T)>:<DEFAULT>:SimpleTree@removeMin():73:node.bin.get() |==> null
+71:ROR:==(java.lang.Object,java.lang.Object):FALSE(java.lang.Object,java.lang.Object):SimpleTree$TreeNode@isLeaf():82:right == null |==> false

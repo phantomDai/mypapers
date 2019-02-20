@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  15 FEB 2019 10:56
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  16 FEB 2019 16:54
 entering extended mode
 **F:/mypapers/CMT/CMT.tex
 (F:/mypapers/CMT/CMT.tex
@@ -417,11 +417,15 @@ n/10 ,
  []
 
 [2]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 218.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 226.
 
  (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [3]
+)
+Overfull \hbox (8.51062pt too wide) in paragraph at lines 235--242
+ [][] 
+ []
+
 (F:\mypapers\CMT\CMT.bbl)
 
 ** Conference Paper **
@@ -434,29 +438,28 @@ Before submitting the final camera ready copy, remember to:
  uses only Type 1 fonts and that every step in the generation
  process uses the appropriate paper size.
 
-[4] (F:\mypapers\CMT\CMT.aux) ) 
+[3] (F:\mypapers\CMT\CMT.aux) ) 
 Here is how much of TeX's memory you used:
- 4283 strings out of 495354
- 59835 string characters out of 3183523
+ 4279 strings out of 495354
+ 59704 string characters out of 3183523
  130395 words of memory out of 3000000
- 7395 multiletter control sequences out of 15000+200000
- 41885 words of font info for 88 fonts, out of 3000000 for 9000
+ 7389 multiletter control sequences out of 15000+200000
+ 44124 words of font info for 92 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 27i,8n,35p,843b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,8n,35p,826b,271s stack positions out of 5000i,500n,10000p,200000b,50000s
 {G:/latex/CTEX/MiKTeX/fonts/enc/dvips/fontname/8
 r.enc}<G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><G:/latex
 /CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><G:/latex/CTEX/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmmi8.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/
-amsfonts/cm/cmr10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7
-.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><G:/latex/
-CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><G:/latex/CTEX/MiKTeX/font
-s/type1/urw/courier/ucrr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/times/utmb
-8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb><G:/latex/CTEX/M
-iKTeX/fonts/type1/urw/times/utmr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/ti
-mes/utmri8a.pfb>
-Output written on CMT.pdf (4 pages, 157775 bytes).
+ts/type1/public/amsfonts/cm/cmr10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmr7.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><G:/latex/
+CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type
+1/urw/times/utmb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb>
+<G:/latex/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><G:/latex/CTEX/MiKTeX/fo
+nts/type1/urw/times/utmri8a.pfb>
+Output written on CMT.pdf (3 pages, 146751 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
+ 57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

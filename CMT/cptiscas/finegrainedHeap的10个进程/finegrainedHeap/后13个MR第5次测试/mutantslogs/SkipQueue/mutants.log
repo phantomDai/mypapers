@@ -1,0 +1,253 @@
+1:LVR:POS:0:PrioritySkipList:22:256 |==> 0
+2:LVR:POS:NEG:PrioritySkipList:22:256 |==> -256
+3:LOR:|(int,int):&(int,int):PrioritySkipList:22:(int)(System.currentTimeMillis()) | 256 |==> (int)(System.currentTimeMillis()) & 256
+4:LOR:|(int,int):^(int,int):PrioritySkipList:22:(int)(System.currentTimeMillis()) | 256 |==> (int)(System.currentTimeMillis()) ^ 256
+5:EVR:<NEW_CLASS(PrioritySkipList.Node<T>)>:<DEFAULT>:PrioritySkipList:23:new Node<T>(Integer.MIN_VALUE) |==> null
+6:EVR:<NEW_CLASS(PrioritySkipList.Node<T>)>:<DEFAULT>:PrioritySkipList:24:new Node<T>(Integer.MAX_VALUE) |==> null
+7:LVR:0:POS:PrioritySkipList@<init>():26:0 |==> 1
+8:LVR:0:NEG:PrioritySkipList@<init>():26:0 |==> -1
+9:ROR:<(int,int):!=(int,int):PrioritySkipList@<init>():26:i < head.next.length |==> i != head.next.length
+10:ROR:<(int,int):<=(int,int):PrioritySkipList@<init>():26:i < head.next.length |==> i <= head.next.length
+11:ROR:<(int,int):FALSE(int,int):PrioritySkipList@<init>():26:i < head.next.length |==> false
+12:LVR:FALSE:TRUE:PrioritySkipList@<init>():28:false |==> true
+13:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@<init>():27:head.next[i] = new AtomicMarkableReference<Node<T>>(tail, false) |==> <NO-OP>
+14:EVR:<IDENTIFIER(int)>:<DEFAULT>:PrioritySkipList@randomLevel():32:randomSeed |==> 0
+15:LVR:POS:0:PrioritySkipList@randomLevel():33:13 |==> 0
+16:LVR:POS:NEG:PrioritySkipList@randomLevel():33:13 |==> -13
+17:SOR:<<(int,int):>>(int,int):PrioritySkipList@randomLevel():33:x << 13 |==> x >> 13
+18:SOR:<<(int,int):>>>(int,int):PrioritySkipList@randomLevel():33:x << 13 |==> x >>> 13
+19:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@randomLevel():33:x ^= x << 13 |==> <NO-OP>
+20:LVR:POS:0:PrioritySkipList@randomLevel():34:17 |==> 0
+21:LVR:POS:NEG:PrioritySkipList@randomLevel():34:17 |==> -17
+22:SOR:>>>(int,int):<<(int,int):PrioritySkipList@randomLevel():34:x >>> 17 |==> x << 17
+23:SOR:>>>(int,int):>>(int,int):PrioritySkipList@randomLevel():34:x >>> 17 |==> x >> 17
+24:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@randomLevel():34:x ^= x >>> 17 |==> <NO-OP>
+25:LVR:POS:0:PrioritySkipList@randomLevel():35:5 |==> 0
+26:LVR:POS:NEG:PrioritySkipList@randomLevel():35:5 |==> -5
+27:SOR:<<(int,int):>>(int,int):PrioritySkipList@randomLevel():35:x << 5 |==> x >> 5
+28:SOR:<<(int,int):>>>(int,int):PrioritySkipList@randomLevel():35:x << 5 |==> x >>> 5
+29:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@randomLevel():35:randomSeed = x ^= x << 5 |==> <NO-OP>
+30:LVR:NEG:0:PrioritySkipList@randomLevel():36:-2147483647 |==> 0
+31:LVR:NEG:POS:PrioritySkipList@randomLevel():36:-2147483647 |==> 2147483647
+32:LOR:&(int,int):^(int,int):PrioritySkipList@randomLevel():36:x & -2147483647 |==> x ^ -2147483647
+33:LOR:&(int,int):|(int,int):PrioritySkipList@randomLevel():36:x & -2147483647 |==> x | -2147483647
+34:LVR:0:POS:PrioritySkipList@randomLevel():36:0 |==> 1
+35:LVR:0:NEG:PrioritySkipList@randomLevel():36:0 |==> -1
+36:ROR:!=(int,int):<(int,int):PrioritySkipList@randomLevel():36:(x & -2147483647) != 0 |==> (x & -2147483647) < 0
+37:ROR:!=(int,int):>(int,int):PrioritySkipList@randomLevel():36:(x & -2147483647) != 0 |==> (x & -2147483647) > 0
+38:ROR:!=(int,int):TRUE(int,int):PrioritySkipList@randomLevel():36:(x & -2147483647) != 0 |==> true
+39:LVR:0:POS:PrioritySkipList@randomLevel():37:0 |==> 1
+40:LVR:0:NEG:PrioritySkipList@randomLevel():37:0 |==> -1
+41:STD:<RETURN>:<NO-OP>:PrioritySkipList@randomLevel():37:return Config.__M_NO == 0 && Config.COVERED(39, 40) ? 0 : Config.__M_NO == 40 ? -1 : Config.__M_NO == 39 ? 1 : 0; |==> <NO-OP>
+42:LVR:POS:0:PrioritySkipList@randomLevel():38:1 |==> 0
+43:LVR:POS:NEG:PrioritySkipList@randomLevel():38:1 |==> -1
+44:LVR:POS:0:PrioritySkipList@randomLevel():39:1 |==> 0
+45:LVR:POS:NEG:PrioritySkipList@randomLevel():39:1 |==> -1
+46:LVR:POS:0:PrioritySkipList@randomLevel():39:1 |==> 0
+47:LVR:POS:NEG:PrioritySkipList@randomLevel():39:1 |==> -1
+48:LOR:&(int,int):^(int,int):PrioritySkipList@randomLevel():39:(x >>>= 1) & 1 |==> (x >>>= 1) ^ 1
+49:LOR:&(int,int):|(int,int):PrioritySkipList@randomLevel():39:(x >>>= 1) & 1 |==> (x >>>= 1) | 1
+50:LVR:0:POS:PrioritySkipList@randomLevel():39:0 |==> 1
+51:LVR:0:NEG:PrioritySkipList@randomLevel():39:0 |==> -1
+52:ROR:!=(int,int):<(int,int):PrioritySkipList@randomLevel():39:((x >>>= 1) & 1) != 0 |==> ((x >>>= 1) & 1) < 0
+53:ROR:!=(int,int):>(int,int):PrioritySkipList@randomLevel():39:((x >>>= 1) & 1) != 0 |==> ((x >>>= 1) & 1) > 0
+54:ROR:!=(int,int):TRUE(int,int):PrioritySkipList@randomLevel():39:((x >>>= 1) & 1) != 0 |==> true
+55:STD:<INC>:<NO-OP>:PrioritySkipList@randomLevel():39:++level |==> <NO-OP>
+56:LVR:POS:0:PrioritySkipList@randomLevel():40:1 |==> 0
+57:LVR:POS:NEG:PrioritySkipList@randomLevel():40:1 |==> -1
+58:AOR:-(int,int):%(int,int):PrioritySkipList@randomLevel():40:MAX_LEVEL - 1 |==> MAX_LEVEL % 1
+59:AOR:-(int,int):*(int,int):PrioritySkipList@randomLevel():40:MAX_LEVEL - 1 |==> MAX_LEVEL * 1
+60:AOR:-(int,int):+(int,int):PrioritySkipList@randomLevel():40:MAX_LEVEL - 1 |==> MAX_LEVEL + 1
+61:AOR:-(int,int):/(int,int):PrioritySkipList@randomLevel():40:MAX_LEVEL - 1 |==> MAX_LEVEL / 1
+62:LVR:0:POS:PrioritySkipList@add(PrioritySkipList.Node):48:0 |==> 1
+63:LVR:0:NEG:PrioritySkipList@add(PrioritySkipList.Node):48:0 |==> -1
+64:LVR:POS:0:PrioritySkipList@add(PrioritySkipList.Node):49:1 |==> 0
+65:LVR:POS:NEG:PrioritySkipList@add(PrioritySkipList.Node):49:1 |==> -1
+66:AOR:+(int,int):%(int,int):PrioritySkipList@add(PrioritySkipList.Node):49:MAX_LEVEL + 1 |==> MAX_LEVEL % 1
+67:AOR:+(int,int):*(int,int):PrioritySkipList@add(PrioritySkipList.Node):49:MAX_LEVEL + 1 |==> MAX_LEVEL * 1
+68:AOR:+(int,int):-(int,int):PrioritySkipList@add(PrioritySkipList.Node):49:MAX_LEVEL + 1 |==> MAX_LEVEL - 1
+69:AOR:+(int,int):/(int,int):PrioritySkipList@add(PrioritySkipList.Node):49:MAX_LEVEL + 1 |==> MAX_LEVEL / 1
+70:LVR:POS:0:PrioritySkipList@add(PrioritySkipList.Node):50:1 |==> 0
+71:LVR:POS:NEG:PrioritySkipList@add(PrioritySkipList.Node):50:1 |==> -1
+72:AOR:+(int,int):%(int,int):PrioritySkipList@add(PrioritySkipList.Node):50:MAX_LEVEL + 1 |==> MAX_LEVEL % 1
+73:AOR:+(int,int):*(int,int):PrioritySkipList@add(PrioritySkipList.Node):50:MAX_LEVEL + 1 |==> MAX_LEVEL * 1
+74:AOR:+(int,int):-(int,int):PrioritySkipList@add(PrioritySkipList.Node):50:MAX_LEVEL + 1 |==> MAX_LEVEL - 1
+75:AOR:+(int,int):/(int,int):PrioritySkipList@add(PrioritySkipList.Node):50:MAX_LEVEL + 1 |==> MAX_LEVEL / 1
+76:EVR:<METHOD_INVOCATION(boolean)>:<DEFAULT>:PrioritySkipList@add(PrioritySkipList.Node):52:find(node, preds, succs) |==> false
+77:COR:found:TRUE:PrioritySkipList@add(PrioritySkipList.Node):53:found |==> false
+78:COR:found:FALSE:PrioritySkipList@add(PrioritySkipList.Node):53:found |==> true
+79:LVR:FALSE:TRUE:PrioritySkipList@add(PrioritySkipList.Node):54:false |==> true
+80:STD:<RETURN>:<NO-OP>:PrioritySkipList@add(PrioritySkipList.Node):54:return Config.__M_NO == 0 && Config.COVERED(79, 79) ? false : Config.__M_NO == 79 ? true : false; |==> <NO-OP>
+81:EVR:<IDENTIFIER(int)>:<DEFAULT>:PrioritySkipList@add(PrioritySkipList.Node):56:bottomLevel |==> 0
+82:ROR:<=(int,int):<(int,int):PrioritySkipList@add(PrioritySkipList.Node):56:level <= node.topLevel |==> level < node.topLevel
+83:ROR:<=(int,int):==(int,int):PrioritySkipList@add(PrioritySkipList.Node):56:level <= node.topLevel |==> level == node.topLevel
+84:ROR:<=(int,int):TRUE(int,int):PrioritySkipList@add(PrioritySkipList.Node):56:level <= node.topLevel |==> true
+85:EVR:<ARRAY_ACCESS(PrioritySkipList.Node<T>)>:<DEFAULT>:PrioritySkipList@add(PrioritySkipList.Node):57:succs[level] |==> null
+86:LVR:FALSE:TRUE:PrioritySkipList@add(PrioritySkipList.Node):58:false |==> true
+87:STD:<CALL>:<NO-OP>:PrioritySkipList@add(PrioritySkipList.Node):58:node.next[level].set(succ, false) |==> <NO-OP>
+88:EVR:<ARRAY_ACCESS(PrioritySkipList.Node<T>)>:<DEFAULT>:PrioritySkipList@add(PrioritySkipList.Node):61:preds[bottomLevel] |==> null
+89:EVR:<ARRAY_ACCESS(PrioritySkipList.Node<T>)>:<DEFAULT>:PrioritySkipList@add(PrioritySkipList.Node):62:succs[bottomLevel] |==> null
+90:LVR:FALSE:TRUE:PrioritySkipList@add(PrioritySkipList.Node):63:false |==> true
+91:STD:<CALL>:<NO-OP>:PrioritySkipList@add(PrioritySkipList.Node):63:node.next[bottomLevel].set(succ, false) |==> <NO-OP>
+92:LVR:FALSE:TRUE:PrioritySkipList@add(PrioritySkipList.Node):64:false |==> true
+93:LVR:FALSE:TRUE:PrioritySkipList@add(PrioritySkipList.Node):64:false |==> true
+94:COR:pred.next[bottomLevel].compareAndSet(succ, node, false, false):TRUE:PrioritySkipList@add(PrioritySkipList.Node):64:pred.next[bottomLevel].compareAndSet(succ, node, false, false) |==> false
+95:COR:pred.next[bottomLevel].compareAndSet(succ, node, false, false):FALSE:PrioritySkipList@add(PrioritySkipList.Node):64:pred.next[bottomLevel].compareAndSet(succ, node, false, false) |==> true
+96:STD:<CONT>:<NO-OP>:PrioritySkipList@add(PrioritySkipList.Node):65:continue; |==> <NO-OP>
+97:LVR:POS:0:PrioritySkipList@add(PrioritySkipList.Node):68:1 |==> 0
+98:LVR:POS:NEG:PrioritySkipList@add(PrioritySkipList.Node):68:1 |==> -1
+99:AOR:+(int,int):%(int,int):PrioritySkipList@add(PrioritySkipList.Node):68:bottomLevel + 1 |==> bottomLevel % 1
+100:AOR:+(int,int):*(int,int):PrioritySkipList@add(PrioritySkipList.Node):68:bottomLevel + 1 |==> bottomLevel * 1
+101:AOR:+(int,int):-(int,int):PrioritySkipList@add(PrioritySkipList.Node):68:bottomLevel + 1 |==> bottomLevel - 1
+102:AOR:+(int,int):/(int,int):PrioritySkipList@add(PrioritySkipList.Node):68:bottomLevel + 1 |==> bottomLevel / 1
+103:ROR:<=(int,int):<(int,int):PrioritySkipList@add(PrioritySkipList.Node):68:level <= node.topLevel |==> level < node.topLevel
+104:ROR:<=(int,int):==(int,int):PrioritySkipList@add(PrioritySkipList.Node):68:level <= node.topLevel |==> level == node.topLevel
+105:ROR:<=(int,int):TRUE(int,int):PrioritySkipList@add(PrioritySkipList.Node):68:level <= node.topLevel |==> true
+106:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@add(PrioritySkipList.Node):70:pred = preds[level] |==> <NO-OP>
+107:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@add(PrioritySkipList.Node):71:succ = succs[level] |==> <NO-OP>
+108:LVR:FALSE:TRUE:PrioritySkipList@add(PrioritySkipList.Node):72:false |==> true
+109:LVR:FALSE:TRUE:PrioritySkipList@add(PrioritySkipList.Node):72:false |==> true
+110:COR:pred.next[level].compareAndSet(succ, node, false, false):TRUE:PrioritySkipList@add(PrioritySkipList.Node):72:pred.next[level].compareAndSet(succ, node, false, false) |==> false
+111:COR:pred.next[level].compareAndSet(succ, node, false, false):FALSE:PrioritySkipList@add(PrioritySkipList.Node):72:pred.next[level].compareAndSet(succ, node, false, false) |==> true
+112:STD:<BREAK>:<NO-OP>:PrioritySkipList@add(PrioritySkipList.Node):73:break; |==> <NO-OP>
+113:STD:<CALL>:<NO-OP>:PrioritySkipList@add(PrioritySkipList.Node):74:find(node, preds, succs) |==> <NO-OP>
+114:LVR:TRUE:FALSE:PrioritySkipList@add(PrioritySkipList.Node):77:true |==> false
+115:LVR:0:POS:PrioritySkipList@remove(PrioritySkipList.Node<T>):91:0 |==> 1
+116:LVR:0:NEG:PrioritySkipList@remove(PrioritySkipList.Node<T>):91:0 |==> -1
+117:LVR:POS:0:PrioritySkipList@remove(PrioritySkipList.Node<T>):92:1 |==> 0
+118:LVR:POS:NEG:PrioritySkipList@remove(PrioritySkipList.Node<T>):92:1 |==> -1
+119:AOR:+(int,int):%(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):92:MAX_LEVEL + 1 |==> MAX_LEVEL % 1
+120:AOR:+(int,int):*(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):92:MAX_LEVEL + 1 |==> MAX_LEVEL * 1
+121:AOR:+(int,int):-(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):92:MAX_LEVEL + 1 |==> MAX_LEVEL - 1
+122:AOR:+(int,int):/(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):92:MAX_LEVEL + 1 |==> MAX_LEVEL / 1
+123:LVR:POS:0:PrioritySkipList@remove(PrioritySkipList.Node<T>):93:1 |==> 0
+124:LVR:POS:NEG:PrioritySkipList@remove(PrioritySkipList.Node<T>):93:1 |==> -1
+125:AOR:+(int,int):%(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):93:MAX_LEVEL + 1 |==> MAX_LEVEL % 1
+126:AOR:+(int,int):*(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):93:MAX_LEVEL + 1 |==> MAX_LEVEL * 1
+127:AOR:+(int,int):-(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):93:MAX_LEVEL + 1 |==> MAX_LEVEL - 1
+128:AOR:+(int,int):/(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):93:MAX_LEVEL + 1 |==> MAX_LEVEL / 1
+129:EVR:<METHOD_INVOCATION(boolean)>:<DEFAULT>:PrioritySkipList@remove(PrioritySkipList.Node<T>):96:find(node, preds, succs) |==> false
+130:COR:found:TRUE:PrioritySkipList@remove(PrioritySkipList.Node<T>):97:found |==> false
+131:COR:found:FALSE:PrioritySkipList@remove(PrioritySkipList.Node<T>):97:found |==> true
+132:LVR:FALSE:TRUE:PrioritySkipList@remove(PrioritySkipList.Node<T>):98:false |==> true
+133:STD:<RETURN>:<NO-OP>:PrioritySkipList@remove(PrioritySkipList.Node<T>):98:return Config.__M_NO == 0 && Config.COVERED(132, 132) ? false : Config.__M_NO == 132 ? true : false; |==> <NO-OP>
+134:EVR:<MEMBER_SELECT(int)>:<DEFAULT>:PrioritySkipList@remove(PrioritySkipList.Node<T>):103:node.topLevel |==> 0
+135:LVR:POS:0:PrioritySkipList@remove(PrioritySkipList.Node<T>):103:1 |==> 0
+136:LVR:POS:NEG:PrioritySkipList@remove(PrioritySkipList.Node<T>):103:1 |==> -1
+137:AOR:+(int,int):%(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):103:bottomLevel + 1 |==> bottomLevel % 1
+138:AOR:+(int,int):*(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):103:bottomLevel + 1 |==> bottomLevel * 1
+139:AOR:+(int,int):-(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):103:bottomLevel + 1 |==> bottomLevel - 1
+140:AOR:+(int,int):/(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):103:bottomLevel + 1 |==> bottomLevel / 1
+141:ROR:>=(int,int):==(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):103:level >= bottomLevel + 1 |==> level == bottomLevel + 1
+142:ROR:>=(int,int):>(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):103:level >= bottomLevel + 1 |==> level > bottomLevel + 1
+143:ROR:>=(int,int):TRUE(int,int):PrioritySkipList@remove(PrioritySkipList.Node<T>):103:level >= bottomLevel + 1 |==> true
+144:LVR:FALSE:TRUE:PrioritySkipList@remove(PrioritySkipList.Node<T>):104:false |==> true
+145:EVR:<METHOD_INVOCATION(PrioritySkipList.Node<T>)>:<DEFAULT>:PrioritySkipList@remove(PrioritySkipList.Node<T>):105:node.next[level].get(marked) |==> null
+146:LVR:0:POS:PrioritySkipList@remove(PrioritySkipList.Node<T>):106:0 |==> 1
+147:LVR:0:NEG:PrioritySkipList@remove(PrioritySkipList.Node<T>):106:0 |==> -1
+148:LVR:TRUE:FALSE:PrioritySkipList@remove(PrioritySkipList.Node<T>):107:true |==> false
+149:STD:<CALL>:<NO-OP>:PrioritySkipList@remove(PrioritySkipList.Node<T>):107:node.next[level].attemptMark(succ, true) |==> <NO-OP>
+150:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@remove(PrioritySkipList.Node<T>):108:succ = node.next[level].get(marked) |==> <NO-OP>
+151:LVR:FALSE:TRUE:PrioritySkipList@remove(PrioritySkipList.Node<T>):112:false |==> true
+152:EVR:<METHOD_INVOCATION(PrioritySkipList.Node<T>)>:<DEFAULT>:PrioritySkipList@remove(PrioritySkipList.Node<T>):113:node.next[bottomLevel].get(marked) |==> null
+153:LVR:FALSE:TRUE:PrioritySkipList@remove(PrioritySkipList.Node<T>):115:false |==> true
+154:LVR:TRUE:FALSE:PrioritySkipList@remove(PrioritySkipList.Node<T>):115:true |==> false
+155:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@remove(PrioritySkipList.Node<T>):116:succ = succs[bottomLevel].next[bottomLevel].get(marked) |==> <NO-OP>
+156:COR:iMarkedIt:TRUE:PrioritySkipList@remove(PrioritySkipList.Node<T>):117:iMarkedIt |==> false
+157:COR:iMarkedIt:FALSE:PrioritySkipList@remove(PrioritySkipList.Node<T>):117:iMarkedIt |==> true
+158:STD:<CALL>:<NO-OP>:PrioritySkipList@remove(PrioritySkipList.Node<T>):119:find(node, preds, succs) |==> <NO-OP>
+159:LVR:TRUE:FALSE:PrioritySkipList@remove(PrioritySkipList.Node<T>):120:true |==> false
+160:STD:<RETURN>:<NO-OP>:PrioritySkipList@remove(PrioritySkipList.Node<T>):120:return Config.__M_NO == 0 && Config.COVERED(159, 159) ? true : Config.__M_NO == 159 ? false : true; |==> <NO-OP>
+161:LVR:0:POS:PrioritySkipList@remove(PrioritySkipList.Node<T>):121:0 |==> 1
+162:LVR:0:NEG:PrioritySkipList@remove(PrioritySkipList.Node<T>):121:0 |==> -1
+163:LVR:FALSE:TRUE:PrioritySkipList@remove(PrioritySkipList.Node<T>):121:false |==> true
+164:STD:<RETURN>:<NO-OP>:PrioritySkipList@remove(PrioritySkipList.Node<T>):121:return Config.__M_NO == 0 && Config.COVERED(163, 163) ? false : Config.__M_NO == 163 ? true : false; |==> <NO-OP>
+165:LVR:0:POS:PrioritySkipList@findAndMarkMin():129:0 |==> 1
+166:LVR:0:NEG:PrioritySkipList@findAndMarkMin():129:0 |==> -1
+167:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@findAndMarkMin():129:curr = head.next[0].getReference() |==> <NO-OP>
+168:ROR:!=(java.lang.Object,java.lang.Object):TRUE(java.lang.Object,java.lang.Object):PrioritySkipList@findAndMarkMin():130:curr != tail |==> true
+169:COR:curr.marked.get():TRUE:PrioritySkipList@findAndMarkMin():131:curr.marked.get() |==> false
+170:COR:curr.marked.get():FALSE:PrioritySkipList@findAndMarkMin():131:curr.marked.get() |==> true
+171:LVR:FALSE:TRUE:PrioritySkipList@findAndMarkMin():132:false |==> true
+172:LVR:TRUE:FALSE:PrioritySkipList@findAndMarkMin():132:true |==> false
+173:COR:curr.marked.compareAndSet(false, true):TRUE:PrioritySkipList@findAndMarkMin():132:curr.marked.compareAndSet(false, true) |==> false
+174:COR:curr.marked.compareAndSet(false, true):FALSE:PrioritySkipList@findAndMarkMin():132:curr.marked.compareAndSet(false, true) |==> true
+175:STD:<RETURN>:<NO-OP>:PrioritySkipList@findAndMarkMin():133:return curr; |==> <NO-OP>
+176:LVR:0:POS:PrioritySkipList@findAndMarkMin():135:0 |==> 1
+177:LVR:0:NEG:PrioritySkipList@findAndMarkMin():135:0 |==> -1
+178:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@findAndMarkMin():135:curr = curr.next[0].getReference() |==> <NO-OP>
+179:LVR:0:POS:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):154:0 |==> 1
+180:LVR:0:NEG:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):154:0 |==> -1
+181:LVR:FALSE:TRUE:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):155:false |==> true
+182:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):160:pred = head |==> <NO-OP>
+183:EVR:<IDENTIFIER(int)>:<DEFAULT>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):162:MAX_LEVEL |==> 0
+184:ROR:>=(int,int):==(int,int):PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):162:level >= bottomLevel |==> level == bottomLevel
+185:ROR:>=(int,int):>(int,int):PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):162:level >= bottomLevel |==> level > bottomLevel
+186:ROR:>=(int,int):TRUE(int,int):PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):162:level >= bottomLevel |==> true
+187:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):163:curr = pred.next[level].getReference() |==> <NO-OP>
+188:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):165:succ = curr.next[level].get(marked) |==> <NO-OP>
+189:LVR:0:POS:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):166:0 |==> 1
+190:LVR:0:NEG:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):166:0 |==> -1
+191:LVR:FALSE:TRUE:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):167:false |==> true
+192:LVR:FALSE:TRUE:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):167:false |==> true
+193:COR:snip:TRUE:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):168:snip |==> false
+194:COR:snip:FALSE:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):168:snip |==> true
+195:STD:<CONT>:<NO-OP>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):168:continue retry; |==> <NO-OP>
+196:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):169:curr = pred.next[level].getReference() |==> <NO-OP>
+197:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):170:succ = curr.next[level].get(marked) |==> <NO-OP>
+198:ROR:<(int,int):!=(int,int):PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):172:curr.priority < node.priority |==> curr.priority != node.priority
+199:ROR:<(int,int):<=(int,int):PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):172:curr.priority < node.priority |==> curr.priority <= node.priority
+200:ROR:<(int,int):FALSE(int,int):PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):172:curr.priority < node.priority |==> false
+201:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):173:pred = curr |==> <NO-OP>
+202:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):174:curr = succ |==> <NO-OP>
+203:STD:<BREAK>:<NO-OP>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):176:break; |==> <NO-OP>
+204:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):179:preds[level] = pred |==> <NO-OP>
+205:STD:<ASSIGN>:<NO-OP>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):180:succs[level] = curr |==> <NO-OP>
+206:ROR:==(int,int):<=(int,int):PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):182:curr.priority == node.priority |==> curr.priority <= node.priority
+207:ROR:==(int,int):>=(int,int):PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):182:curr.priority == node.priority |==> curr.priority >= node.priority
+208:ROR:==(int,int):FALSE(int,int):PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):182:curr.priority == node.priority |==> false
+209:STD:<RETURN>:<NO-OP>:PrioritySkipList@find(PrioritySkipList.Node<T>,PrioritySkipList.Node<T>[],PrioritySkipList.Node<T>[]):182:return (Config.__M_NO == 208 ? false : Config.__M_NO == 207 ? curr.priority >= node.priority : Config.__M_NO == 206 ? curr.priority <= node.priority : Config.__M_NO == 0 && Config.COVERED(206, 208) ? curr.priority == node.priority : curr.priority == node.priority); |==> <NO-OP>
+210:EVR:<IDENTIFIER(PrioritySkipList.Node<T>)>:<DEFAULT>:PrioritySkipList$1:189:head |==> null
+211:LVR:0:POS:PrioritySkipList$1@hasNext():191:0 |==> 1
+212:LVR:0:NEG:PrioritySkipList$1@hasNext():191:0 |==> -1
+213:ROR:!=(java.lang.Object,java.lang.Object):TRUE(java.lang.Object,java.lang.Object):PrioritySkipList$1@hasNext():191:cursor.next[0].getReference() != tail |==> true
+214:LVR:0:POS:PrioritySkipList$1@next():194:0 |==> 1
+215:LVR:0:NEG:PrioritySkipList$1@next():194:0 |==> -1
+216:STD:<ASSIGN>:<NO-OP>:PrioritySkipList$1@next():194:cursor = cursor.next[0].getReference() |==> <NO-OP>
+217:EVR:<MEMBER_SELECT(T)>:<DEFAULT>:PrioritySkipList$1@next():195:cursor.item |==> null
+218:EVR:<IDENTIFIER(int)>:<DEFAULT>:PrioritySkipList$Node@<init>(int):214:myPriority |==> 0
+219:LVR:FALSE:TRUE:PrioritySkipList$Node@<init>(int):215:false |==> true
+220:STD:<ASSIGN>:<NO-OP>:PrioritySkipList$Node@<init>(int):215:marked = new AtomicBoolean(false) |==> <NO-OP>
+221:LVR:POS:0:PrioritySkipList$Node@<init>(int):216:1 |==> 0
+222:LVR:POS:NEG:PrioritySkipList$Node@<init>(int):216:1 |==> -1
+223:AOR:+(int,int):%(int,int):PrioritySkipList$Node@<init>(int):216:MAX_LEVEL + 1 |==> MAX_LEVEL % 1
+224:AOR:+(int,int):*(int,int):PrioritySkipList$Node@<init>(int):216:MAX_LEVEL + 1 |==> MAX_LEVEL * 1
+225:AOR:+(int,int):-(int,int):PrioritySkipList$Node@<init>(int):216:MAX_LEVEL + 1 |==> MAX_LEVEL - 1
+226:AOR:+(int,int):/(int,int):PrioritySkipList$Node@<init>(int):216:MAX_LEVEL + 1 |==> MAX_LEVEL / 1
+227:LVR:0:POS:PrioritySkipList$Node@<init>(int):217:0 |==> 1
+228:LVR:0:NEG:PrioritySkipList$Node@<init>(int):217:0 |==> -1
+229:ROR:<(int,int):!=(int,int):PrioritySkipList$Node@<init>(int):217:i < next.length |==> i != next.length
+230:ROR:<(int,int):<=(int,int):PrioritySkipList$Node@<init>(int):217:i < next.length |==> i <= next.length
+231:ROR:<(int,int):FALSE(int,int):PrioritySkipList$Node@<init>(int):217:i < next.length |==> false
+232:LVR:FALSE:TRUE:PrioritySkipList$Node@<init>(int):218:false |==> true
+233:STD:<ASSIGN>:<NO-OP>:PrioritySkipList$Node@<init>(int):218:next[i] = new AtomicMarkableReference<Node<T>>(null, false) |==> <NO-OP>
+234:STD:<ASSIGN>:<NO-OP>:PrioritySkipList$Node@<init>(int):220:topLevel = MAX_LEVEL |==> <NO-OP>
+235:EVR:<IDENTIFIER(T)>:<DEFAULT>:PrioritySkipList$Node@<init>(T,int):228:x |==> null
+236:EVR:<IDENTIFIER(int)>:<DEFAULT>:PrioritySkipList$Node@<init>(T,int):229:myPriority |==> 0
+237:LVR:FALSE:TRUE:PrioritySkipList$Node@<init>(T,int):230:false |==> true
+238:STD:<ASSIGN>:<NO-OP>:PrioritySkipList$Node@<init>(T,int):230:marked = new AtomicBoolean(false) |==> <NO-OP>
+239:EVR:<METHOD_INVOCATION(int)>:<DEFAULT>:PrioritySkipList$Node@<init>(T,int):231:randomLevel() |==> 0
+240:LVR:POS:0:PrioritySkipList$Node@<init>(T,int):232:1 |==> 0
+241:LVR:POS:NEG:PrioritySkipList$Node@<init>(T,int):232:1 |==> -1
+242:AOR:+(int,int):%(int,int):PrioritySkipList$Node@<init>(T,int):232:height + 1 |==> height % 1
+243:AOR:+(int,int):*(int,int):PrioritySkipList$Node@<init>(T,int):232:height + 1 |==> height * 1
+244:AOR:+(int,int):-(int,int):PrioritySkipList$Node@<init>(T,int):232:height + 1 |==> height - 1
+245:AOR:+(int,int):/(int,int):PrioritySkipList$Node@<init>(T,int):232:height + 1 |==> height / 1
+246:LVR:0:POS:PrioritySkipList$Node@<init>(T,int):233:0 |==> 1
+247:LVR:0:NEG:PrioritySkipList$Node@<init>(T,int):233:0 |==> -1
+248:ROR:<(int,int):!=(int,int):PrioritySkipList$Node@<init>(T,int):233:i < next.length |==> i != next.length
+249:ROR:<(int,int):<=(int,int):PrioritySkipList$Node@<init>(T,int):233:i < next.length |==> i <= next.length
+250:ROR:<(int,int):FALSE(int,int):PrioritySkipList$Node@<init>(T,int):233:i < next.length |==> false
+251:LVR:FALSE:TRUE:PrioritySkipList$Node@<init>(T,int):234:false |==> true
+252:STD:<ASSIGN>:<NO-OP>:PrioritySkipList$Node@<init>(T,int):234:next[i] = new AtomicMarkableReference<Node<T>>(null, false) |==> <NO-OP>
+253:STD:<ASSIGN>:<NO-OP>:PrioritySkipList$Node@<init>(T,int):236:topLevel = height |==> <NO-OP>

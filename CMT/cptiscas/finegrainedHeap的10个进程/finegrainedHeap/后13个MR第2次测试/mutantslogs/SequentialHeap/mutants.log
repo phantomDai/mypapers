@@ -1,0 +1,158 @@
+1:LVR:POS:0:SequentialHeap@<init>(int):28:1 |==> 0
+2:LVR:POS:NEG:SequentialHeap@<init>(int):28:1 |==> -1
+3:STD:<ASSIGN>:<NO-OP>:SequentialHeap@<init>(int):28:next = 1 |==> <NO-OP>
+4:LVR:POS:0:SequentialHeap@<init>(int):29:1 |==> 0
+5:LVR:POS:NEG:SequentialHeap@<init>(int):29:1 |==> -1
+6:AOR:+(int,int):%(int,int):SequentialHeap@<init>(int):29:capacity + 1 |==> capacity % 1
+7:AOR:+(int,int):*(int,int):SequentialHeap@<init>(int):29:capacity + 1 |==> capacity * 1
+8:AOR:+(int,int):-(int,int):SequentialHeap@<init>(int):29:capacity + 1 |==> capacity - 1
+9:AOR:+(int,int):/(int,int):SequentialHeap@<init>(int):29:capacity + 1 |==> capacity / 1
+10:STD:<ASSIGN>:<NO-OP>:SequentialHeap@<init>(int):29:heap = (HeapNode<T>[])new HeapNode[capacity + 1] |==> <NO-OP>
+11:LVR:0:POS:SequentialHeap@<init>(int):30:0 |==> 1
+12:LVR:0:NEG:SequentialHeap@<init>(int):30:0 |==> -1
+13:LVR:POS:0:SequentialHeap@<init>(int):30:1 |==> 0
+14:LVR:POS:NEG:SequentialHeap@<init>(int):30:1 |==> -1
+15:AOR:+(int,int):%(int,int):SequentialHeap@<init>(int):30:capacity + 1 |==> capacity % 1
+16:AOR:+(int,int):*(int,int):SequentialHeap@<init>(int):30:capacity + 1 |==> capacity * 1
+17:AOR:+(int,int):-(int,int):SequentialHeap@<init>(int):30:capacity + 1 |==> capacity - 1
+18:AOR:+(int,int):/(int,int):SequentialHeap@<init>(int):30:capacity + 1 |==> capacity / 1
+19:ROR:<(int,int):!=(int,int):SequentialHeap@<init>(int):30:i < capacity + 1 |==> i != capacity + 1
+20:ROR:<(int,int):<=(int,int):SequentialHeap@<init>(int):30:i < capacity + 1 |==> i <= capacity + 1
+21:ROR:<(int,int):FALSE(int,int):SequentialHeap@<init>(int):30:i < capacity + 1 |==> false
+22:STD:<ASSIGN>:<NO-OP>:SequentialHeap@<init>(int):31:heap[i] = new HeapNode<T>() |==> <NO-OP>
+23:EVR:<POSTFIX_INCREMENT(int)>:<DEFAULT>:SequentialHeap@add(T,int):41:next++ |==> 0
+24:STD:<CALL>:<NO-OP>:SequentialHeap@add(T,int):42:heap[child].init(item, priority) |==> <NO-OP>
+25:ROR:>(int,int):!=(int,int):SequentialHeap@add(T,int):43:child > ROOT |==> child != ROOT
+26:ROR:>(int,int):>=(int,int):SequentialHeap@add(T,int):43:child > ROOT |==> child >= ROOT
+27:ROR:>(int,int):FALSE(int,int):SequentialHeap@add(T,int):43:child > ROOT |==> false
+28:LVR:POS:0:SequentialHeap@add(T,int):44:2 |==> 0
+29:LVR:POS:NEG:SequentialHeap@add(T,int):44:2 |==> -2
+30:AOR:/(int,int):%(int,int):SequentialHeap@add(T,int):44:child / 2 |==> child % 2
+31:AOR:/(int,int):*(int,int):SequentialHeap@add(T,int):44:child / 2 |==> child * 2
+32:AOR:/(int,int):+(int,int):SequentialHeap@add(T,int):44:child / 2 |==> child + 2
+33:AOR:/(int,int):-(int,int):SequentialHeap@add(T,int):44:child / 2 |==> child - 2
+34:EVR:<IDENTIFIER(int)>:<DEFAULT>:SequentialHeap@add(T,int):45:child |==> 0
+35:ROR:<(int,int):!=(int,int):SequentialHeap@add(T,int):46:heap[child].priority < heap[parent].priority |==> heap[child].priority != heap[parent].priority
+36:ROR:<(int,int):<=(int,int):SequentialHeap@add(T,int):46:heap[child].priority < heap[parent].priority |==> heap[child].priority <= heap[parent].priority
+37:ROR:<(int,int):FALSE(int,int):SequentialHeap@add(T,int):46:heap[child].priority < heap[parent].priority |==> false
+38:STD:<CALL>:<NO-OP>:SequentialHeap@add(T,int):47:swap(child, parent) |==> <NO-OP>
+39:STD:<ASSIGN>:<NO-OP>:SequentialHeap@add(T,int):48:child = parent |==> <NO-OP>
+40:STD:<RETURN>:<NO-OP>:SequentialHeap@add(T,int):50:return; |==> <NO-OP>
+41:EVR:<MEMBER_SELECT(T)>:<DEFAULT>:SequentialHeap@getMin():60:heap[ROOT].item |==> null
+42:EVR:<PREFIX_DECREMENT(int)>:<DEFAULT>:SequentialHeap@removeMin():67:--next |==> 0
+43:EVR:<MEMBER_SELECT(T)>:<DEFAULT>:SequentialHeap@removeMin():68:heap[ROOT].item |==> null
+44:STD:<CALL>:<NO-OP>:SequentialHeap@removeMin():69:swap(ROOT, bottom) |==> <NO-OP>
+45:ROR:==(int,int):<=(int,int):SequentialHeap@removeMin():70:bottom == ROOT |==> bottom <= ROOT
+46:ROR:==(int,int):>=(int,int):SequentialHeap@removeMin():70:bottom == ROOT |==> bottom >= ROOT
+47:ROR:==(int,int):FALSE(int,int):SequentialHeap@removeMin():70:bottom == ROOT |==> false
+48:STD:<RETURN>:<NO-OP>:SequentialHeap@removeMin():71:return item; |==> <NO-OP>
+49:LVR:0:POS:SequentialHeap@removeMin():73:0 |==> 1
+50:LVR:0:NEG:SequentialHeap@removeMin():73:0 |==> -1
+51:EVR:<IDENTIFIER(int)>:<DEFAULT>:SequentialHeap@removeMin():74:ROOT |==> 0
+52:LVR:POS:0:SequentialHeap@removeMin():75:2 |==> 0
+53:LVR:POS:NEG:SequentialHeap@removeMin():75:2 |==> -2
+54:AOR:/(int,int):%(int,int):SequentialHeap@removeMin():75:heap.length / 2 |==> heap.length % 2
+55:AOR:/(int,int):*(int,int):SequentialHeap@removeMin():75:heap.length / 2 |==> heap.length * 2
+56:AOR:/(int,int):+(int,int):SequentialHeap@removeMin():75:heap.length / 2 |==> heap.length + 2
+57:AOR:/(int,int):-(int,int):SequentialHeap@removeMin():75:heap.length / 2 |==> heap.length - 2
+58:ROR:<(int,int):!=(int,int):SequentialHeap@removeMin():75:parent < heap.length / 2 |==> parent != heap.length / 2
+59:ROR:<(int,int):<=(int,int):SequentialHeap@removeMin():75:parent < heap.length / 2 |==> parent <= heap.length / 2
+60:ROR:<(int,int):FALSE(int,int):SequentialHeap@removeMin():75:parent < heap.length / 2 |==> false
+61:LVR:POS:0:SequentialHeap@removeMin():76:2 |==> 0
+62:LVR:POS:NEG:SequentialHeap@removeMin():76:2 |==> -2
+63:AOR:*(int,int):%(int,int):SequentialHeap@removeMin():76:parent * 2 |==> parent % 2
+64:AOR:*(int,int):+(int,int):SequentialHeap@removeMin():76:parent * 2 |==> parent + 2
+65:AOR:*(int,int):-(int,int):SequentialHeap@removeMin():76:parent * 2 |==> parent - 2
+66:AOR:*(int,int):/(int,int):SequentialHeap@removeMin():76:parent * 2 |==> parent / 2
+67:LVR:POS:0:SequentialHeap@removeMin():76:2 |==> 0
+68:LVR:POS:NEG:SequentialHeap@removeMin():76:2 |==> -2
+69:AOR:*(int,int):%(int,int):SequentialHeap@removeMin():76:parent * 2 |==> parent % 2
+70:AOR:*(int,int):+(int,int):SequentialHeap@removeMin():76:parent * 2 |==> parent + 2
+71:AOR:*(int,int):-(int,int):SequentialHeap@removeMin():76:parent * 2 |==> parent - 2
+72:AOR:*(int,int):/(int,int):SequentialHeap@removeMin():76:parent * 2 |==> parent / 2
+73:LVR:POS:0:SequentialHeap@removeMin():76:1 |==> 0
+74:LVR:POS:NEG:SequentialHeap@removeMin():76:1 |==> -1
+75:AOR:+(int,int):%(int,int):SequentialHeap@removeMin():76:(parent * 2) + 1 |==> (parent * 2) % 1
+76:AOR:+(int,int):*(int,int):SequentialHeap@removeMin():76:(parent * 2) + 1 |==> (parent * 2) * 1
+77:AOR:+(int,int):-(int,int):SequentialHeap@removeMin():76:(parent * 2) + 1 |==> (parent * 2) - 1
+78:AOR:+(int,int):/(int,int):SequentialHeap@removeMin():76:(parent * 2) + 1 |==> (parent * 2) / 1
+79:ROR:>=(int,int):==(int,int):SequentialHeap@removeMin():77:left >= next |==> left == next
+80:ROR:>=(int,int):>(int,int):SequentialHeap@removeMin():77:left >= next |==> left > next
+81:ROR:>=(int,int):TRUE(int,int):SequentialHeap@removeMin():77:left >= next |==> true
+82:STD:<BREAK>:<NO-OP>:SequentialHeap@removeMin():78:break; |==> <NO-OP>
+83:ROR:>=(int,int):==(int,int):SequentialHeap@removeMin():79:right >= next |==> right == next
+84:ROR:>=(int,int):>(int,int):SequentialHeap@removeMin():79:right >= next |==> right > next
+85:ROR:>=(int,int):TRUE(int,int):SequentialHeap@removeMin():79:right >= next |==> true
+86:ROR:<(int,int):!=(int,int):SequentialHeap@removeMin():79:heap[left].priority < heap[right].priority |==> heap[left].priority != heap[right].priority
+87:ROR:<(int,int):<=(int,int):SequentialHeap@removeMin():79:heap[left].priority < heap[right].priority |==> heap[left].priority <= heap[right].priority
+88:ROR:<(int,int):FALSE(int,int):SequentialHeap@removeMin():79:heap[left].priority < heap[right].priority |==> false
+89:COR:||(boolean,boolean):!=(boolean,boolean):SequentialHeap@removeMin():79:right >= next || heap[left].priority < heap[right].priority |==> right >= next != heap[left].priority < heap[right].priority
+90:COR:||(boolean,boolean):LHS(boolean,boolean):SequentialHeap@removeMin():79:right >= next || heap[left].priority < heap[right].priority |==> right >= next
+91:COR:||(boolean,boolean):RHS(boolean,boolean):SequentialHeap@removeMin():79:right >= next || heap[left].priority < heap[right].priority |==> heap[left].priority < heap[right].priority
+92:COR:||(boolean,boolean):TRUE(boolean,boolean):SequentialHeap@removeMin():79:right >= next || heap[left].priority < heap[right].priority |==> true
+93:STD:<ASSIGN>:<NO-OP>:SequentialHeap@removeMin():80:child = left |==> <NO-OP>
+94:STD:<ASSIGN>:<NO-OP>:SequentialHeap@removeMin():82:child = right |==> <NO-OP>
+95:ROR:<(int,int):!=(int,int):SequentialHeap@removeMin():85:heap[child].priority < heap[parent].priority |==> heap[child].priority != heap[parent].priority
+96:ROR:<(int,int):<=(int,int):SequentialHeap@removeMin():85:heap[child].priority < heap[parent].priority |==> heap[child].priority <= heap[parent].priority
+97:ROR:<(int,int):FALSE(int,int):SequentialHeap@removeMin():85:heap[child].priority < heap[parent].priority |==> false
+98:STD:<CALL>:<NO-OP>:SequentialHeap@removeMin():86:swap(parent, child) |==> <NO-OP>
+99:STD:<ASSIGN>:<NO-OP>:SequentialHeap@removeMin():87:parent = child |==> <NO-OP>
+100:STD:<BREAK>:<NO-OP>:SequentialHeap@removeMin():89:break; |==> <NO-OP>
+101:EVR:<IDENTIFIER(T)>:<DEFAULT>:SequentialHeap@removeMin():92:item |==> null
+102:EVR:<ARRAY_ACCESS(SequentialHeap.HeapNode<T>)>:<DEFAULT>:SequentialHeap@swap(int,int):95:heap[i] |==> null
+103:STD:<ASSIGN>:<NO-OP>:SequentialHeap@swap(int,int):96:heap[i] = heap[j] |==> <NO-OP>
+104:STD:<ASSIGN>:<NO-OP>:SequentialHeap@swap(int,int):97:heap[j] = node |==> <NO-OP>
+105:LVR:0:POS:SequentialHeap@isEmpty():100:0 |==> 1
+106:LVR:0:NEG:SequentialHeap@isEmpty():100:0 |==> -1
+107:ROR:==(int,int):<=(int,int):SequentialHeap@isEmpty():100:next == 0 |==> next <= 0
+108:ROR:==(int,int):>=(int,int):SequentialHeap@isEmpty():100:next == 0 |==> next >= 0
+109:ROR:==(int,int):FALSE(int,int):SequentialHeap@isEmpty():100:next == 0 |==> false
+110:EVR:<IDENTIFIER(int)>:<DEFAULT>:SequentialHeap@sanityCheck():103:next |==> 0
+111:EVR:<IDENTIFIER(int)>:<DEFAULT>:SequentialHeap@sanityCheck():104:ROOT |==> 0
+112:ROR:<(int,int):!=(int,int):SequentialHeap@sanityCheck():104:i < stop |==> i != stop
+113:ROR:<(int,int):<=(int,int):SequentialHeap@sanityCheck():104:i < stop |==> i <= stop
+114:ROR:<(int,int):FALSE(int,int):SequentialHeap@sanityCheck():104:i < stop |==> false
+115:LVR:POS:0:SequentialHeap@sanityCheck():105:2 |==> 0
+116:LVR:POS:NEG:SequentialHeap@sanityCheck():105:2 |==> -2
+117:AOR:*(int,int):%(int,int):SequentialHeap@sanityCheck():105:i * 2 |==> i % 2
+118:AOR:*(int,int):+(int,int):SequentialHeap@sanityCheck():105:i * 2 |==> i + 2
+119:AOR:*(int,int):-(int,int):SequentialHeap@sanityCheck():105:i * 2 |==> i - 2
+120:AOR:*(int,int):/(int,int):SequentialHeap@sanityCheck():105:i * 2 |==> i / 2
+121:LVR:POS:0:SequentialHeap@sanityCheck():105:2 |==> 0
+122:LVR:POS:NEG:SequentialHeap@sanityCheck():105:2 |==> -2
+123:AOR:*(int,int):%(int,int):SequentialHeap@sanityCheck():105:i * 2 |==> i % 2
+124:AOR:*(int,int):+(int,int):SequentialHeap@sanityCheck():105:i * 2 |==> i + 2
+125:AOR:*(int,int):-(int,int):SequentialHeap@sanityCheck():105:i * 2 |==> i - 2
+126:AOR:*(int,int):/(int,int):SequentialHeap@sanityCheck():105:i * 2 |==> i / 2
+127:LVR:POS:0:SequentialHeap@sanityCheck():105:1 |==> 0
+128:LVR:POS:NEG:SequentialHeap@sanityCheck():105:1 |==> -1
+129:AOR:+(int,int):%(int,int):SequentialHeap@sanityCheck():105:(i * 2) + 1 |==> (i * 2) % 1
+130:AOR:+(int,int):*(int,int):SequentialHeap@sanityCheck():105:(i * 2) + 1 |==> (i * 2) * 1
+131:AOR:+(int,int):-(int,int):SequentialHeap@sanityCheck():105:(i * 2) + 1 |==> (i * 2) - 1
+132:AOR:+(int,int):/(int,int):SequentialHeap@sanityCheck():105:(i * 2) + 1 |==> (i * 2) / 1
+133:ROR:<(int,int):!=(int,int):SequentialHeap@sanityCheck():106:left < stop |==> left != stop
+134:ROR:<(int,int):<=(int,int):SequentialHeap@sanityCheck():106:left < stop |==> left <= stop
+135:ROR:<(int,int):FALSE(int,int):SequentialHeap@sanityCheck():106:left < stop |==> false
+136:ROR:<(int,int):!=(int,int):SequentialHeap@sanityCheck():106:heap[left].priority < heap[i].priority |==> heap[left].priority != heap[i].priority
+137:ROR:<(int,int):<=(int,int):SequentialHeap@sanityCheck():106:heap[left].priority < heap[i].priority |==> heap[left].priority <= heap[i].priority
+138:ROR:<(int,int):FALSE(int,int):SequentialHeap@sanityCheck():106:heap[left].priority < heap[i].priority |==> false
+139:COR:&&(boolean,boolean):==(boolean,boolean):SequentialHeap@sanityCheck():106:left < stop && heap[left].priority < heap[i].priority |==> left < stop == heap[left].priority < heap[i].priority
+140:COR:&&(boolean,boolean):FALSE(boolean,boolean):SequentialHeap@sanityCheck():106:left < stop && heap[left].priority < heap[i].priority |==> false
+141:COR:&&(boolean,boolean):LHS(boolean,boolean):SequentialHeap@sanityCheck():106:left < stop && heap[left].priority < heap[i].priority |==> left < stop
+142:COR:&&(boolean,boolean):RHS(boolean,boolean):SequentialHeap@sanityCheck():106:left < stop && heap[left].priority < heap[i].priority |==> heap[left].priority < heap[i].priority
+143:STD:<CALL>:<NO-OP>:SequentialHeap@sanityCheck():107:System.out.println("Heap property violated:") |==> <NO-OP>
+144:STD:<CALL>:<NO-OP>:SequentialHeap@sanityCheck():108:System.out.printf("\theap[%d] = %d, left child heap[%d] = %d\n", i, heap[i].priority, left, heap[left].priority) |==> <NO-OP>
+145:ROR:<(int,int):!=(int,int):SequentialHeap@sanityCheck():111:right < stop |==> right != stop
+146:ROR:<(int,int):<=(int,int):SequentialHeap@sanityCheck():111:right < stop |==> right <= stop
+147:ROR:<(int,int):FALSE(int,int):SequentialHeap@sanityCheck():111:right < stop |==> false
+148:ROR:<(int,int):!=(int,int):SequentialHeap@sanityCheck():111:heap[right].priority < heap[i].priority |==> heap[right].priority != heap[i].priority
+149:ROR:<(int,int):<=(int,int):SequentialHeap@sanityCheck():111:heap[right].priority < heap[i].priority |==> heap[right].priority <= heap[i].priority
+150:ROR:<(int,int):FALSE(int,int):SequentialHeap@sanityCheck():111:heap[right].priority < heap[i].priority |==> false
+151:COR:&&(boolean,boolean):==(boolean,boolean):SequentialHeap@sanityCheck():111:right < stop && heap[right].priority < heap[i].priority |==> right < stop == heap[right].priority < heap[i].priority
+152:COR:&&(boolean,boolean):FALSE(boolean,boolean):SequentialHeap@sanityCheck():111:right < stop && heap[right].priority < heap[i].priority |==> false
+153:COR:&&(boolean,boolean):LHS(boolean,boolean):SequentialHeap@sanityCheck():111:right < stop && heap[right].priority < heap[i].priority |==> right < stop
+154:COR:&&(boolean,boolean):RHS(boolean,boolean):SequentialHeap@sanityCheck():111:right < stop && heap[right].priority < heap[i].priority |==> heap[right].priority < heap[i].priority
+155:STD:<CALL>:<NO-OP>:SequentialHeap@sanityCheck():112:System.out.println("Heap property violated:") |==> <NO-OP>
+156:STD:<CALL>:<NO-OP>:SequentialHeap@sanityCheck():113:System.out.printf("\theap[%d] = %d, right child heap[%d] = %d\n", i, heap[i].priority, right, heap[right].priority) |==> <NO-OP>
+157:STD:<ASSIGN>:<NO-OP>:SequentialHeap$HeapNode@init(S,int):127:item = myItem |==> <NO-OP>
+158:STD:<ASSIGN>:<NO-OP>:SequentialHeap$HeapNode@init(S,int):128:priority = myPriority |==> <NO-OP>
