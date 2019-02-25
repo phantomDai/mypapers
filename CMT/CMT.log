@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  16 FEB 2019 16:54
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  20 FEB 2019 18:55
 entering extended mode
 **F:/mypapers/CMT/CMT.tex
 (F:/mypapers/CMT/CMT.tex
@@ -417,12 +417,12 @@ n/10 ,
  []
 
 [2]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 226.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 225.
 
  (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Overfull \hbox (8.51062pt too wide) in paragraph at lines 235--242
+Overfull \hbox (8.51062pt too wide) in paragraph at lines 234--241
  [][] 
  []
 
@@ -457,7 +457,7 @@ CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type
 1/urw/times/utmb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/times/utmbi8a.pfb>
 <G:/latex/CTEX/MiKTeX/fonts/type1/urw/times/utmr8a.pfb><G:/latex/CTEX/MiKTeX/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on CMT.pdf (3 pages, 146751 bytes).
+Output written on CMT.pdf (3 pages, 146850 bytes).
 PDF statistics:
  57 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

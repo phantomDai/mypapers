@@ -216,7 +216,6 @@ How many threads are sufficient for MT detecting a concurrency fault?
 \subsubsection{Mutants}
 \label{section:mutants}
 Mutation analysis \cite{demillo1978hints} has been widely used to asses the adequacy of test suites and the effectiveness of testing techniques. Mutation operators are used to seed various faults into the program under test, and thus generate a set of variants (i.e. mutants). If a test case causes a mutant to behave differently to the program under test, then we say that the mutant is ``killed'' by the test case. The mutation score ($MS$) is used to measure how thoroughly a test suite ``kills'' the mutants. The MS is defined as:
-
 \begin{equation}
 \label{equation:ms}
   MS(p,ts)= \displaystyle\frac{N_k}{N_m - N_e}
@@ -245,9 +244,16 @@ Table \ref{table:programs} summarizes the basic information of the used programs
 \label{section:scenarios}
 The selected programs have two main interfaces called \texttt{add} and \texttt{remove}, we thus constructed four scenarios: \romannumeral1) sequentially adding elements and sequentially removing elements; \romannumeral2) sequentially adding elements and concurrently removing elements; \romannumeral3) concurrently adding elements and sequentially removing elements; and \romannumeral4) concurrently adding elements and concurrently removing elements. We used random testing technique to construct 5 test cases as source test cases, and each test case includes 10,000 elements then corresponding follow-up test cases were generated according to each MR. To make statistical results significant, each testing session was repeated 5 times with 5 different seeds.
 
-
 \subsubsection{Response to RQ-1}
-The detailed experimental results  
+After the execution of all test cases and all MRs in different scenarios the values of $MS$ are shown in Table
+\begin{table}
+  \caption{}
+  \label{table:ms}
+  \centering
+  \begin{tabular} 
+    
+  \end{tabular}
+\end{table}
 
 \subsubsection{Response to RQ-2}
 \subsubsection{Response to RQ-3}

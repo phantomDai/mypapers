@@ -220,9 +220,9 @@ Mutation analysis \cite{demillo1978hints} has been widely used to asses the adeq
 \label{equation:ms}
   MS(p,ts)= \displaystyle\frac{N_k}{N_m - N_e}
 \end{equation}
-where $p$ is the source program; $ts$ is the test suite; $N_k$ is the number of killed mutants; and $N_e$ is the number of equivalent mutants whose behavior is always same as that of $p$.  
+where $p$ is the source program; $ts$ is the test suite; $N_k$ is the number of killed mutants; and $N_e$ is the number of equivalent mutants whose behavior is always same as that of $p$.
 
-We selected three state-of-the-art concurrent priority queue classes from \cite{herlihy2011art} as the subject programs for our study: \texttt{SimpleLinear}, \texttt{SimpleTree}, and \texttt{SequentialHeap}. Those programs are written in Java language, and mainly implement two functions: adding elements with corresponding priorities to the data structure and removing elements from the data structure according to the priorities. 
+We selected three state-of-the-art concurrent priority queue classes from \cite{herlihy2011art} as the subject programs for our study: \texttt{SimpleLinear}, \texttt{SimpleTree}, and \texttt{SequentialHeap}. Those programs are written in Java language, and mainly implement two functions: adding elements with corresponding priorities to the data structure and removing elements from the data structure according to the priorities.
 
 We have generated 312 traditional mutants for studied programs using automated mutant generator tool Mujava \cite{ma2005mujava} and Major \cite{just2017inferring}. Besides, we artificially generated 8 concurrent mutants according to the concurrent mutation operators \cite{Bradbury2006}
 Table \ref{table:programs} summarizes the basic information of the used programs and their mutants.
@@ -246,14 +246,7 @@ The selected programs have two main interfaces called \texttt{add} and \texttt{r
 
 \subsubsection{Response to RQ-1}
 After the execution of all test cases and all MRs in different scenarios the values of $MS$ are shown in Table
-\begin{table}
-  \caption{}
-  \label{table:ms}
-  \centering
-  \begin{tabular} 
-    
-  \end{tabular}
-\end{table}
+
 
 \subsubsection{Response to RQ-2}
 \subsubsection{Response to RQ-3}
