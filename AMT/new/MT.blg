@@ -1,0 +1,61 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: MT.aux
+The style file: IEEEtran.bst
+Database file #1: MT.bib
+Repeated entry---line 181 of file MT.bib
+ : @inproceedings{chen2004case
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 188 of file MT.bib
+ : @inproceedings{cao2013correlation
+ :                                  ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 230 of file MT.bib
+ :   
+ :   %organization={IEEE}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 302 of file MT.bib
+ : @inproceedings{cai2009random
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 387 of file MT.bib
+ : @inproceedings{Yang2014Dynamic
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 401 of file MT.bib
+ : @article{sun2018adaptive
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 415 of file MT.bib
+ : @inproceedings{chen2004case
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 436 of file MT.bib
+ : @inproceedings{batra2011efficient
+ :                                  ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 510 of file MT.bib
+ :   
+ :   year={2015},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 517 of file MT.bib
+ :   
+ :   year={2013},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 546 of file MT.bib
+ : @article{xie2013metamorphic
+ :                            ,
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "sun2012towards"
+Warning--I didn't find a database entry for "chen1997optimal"
+Warning--I didn't find a database entry for "zhang2014history"
+Warning--I didn't find a database entry for "li2015"
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in grep
+
+Done.
+(There were 11 error messages)

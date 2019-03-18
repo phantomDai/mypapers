@@ -1,0 +1,7 @@
+实验对象：grep
+需要的数据：1，The Test Suite；2，之前的测试脚本（主要是想在已有的测试框架基础上增加模块）；
+3，编译后的源程序；4，所有变异体；5，失效率低于0.1的变异体。
+
+实验对象：7个西门子测试对象：printtokens, printtokens2, schedule, schedule2, replace, tcas，and totinfo
+需要的数据：相关数据能在SIR上找到，希望能有测试脚本，主要是获得原始测试用例与蜕变关系的映射关系。
+
