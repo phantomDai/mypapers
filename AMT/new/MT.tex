@@ -16,7 +16,7 @@
 
 \begin{document}
 
-\title{Dynamic Random Testing of Web Services: \\ A Methodology and Evaluation}
+\title{Process Feedback Driven Approach Towards Selection of Source Test Cases and Metamorphic Relations for Metamorphic Testing}
 
 
 \author{Chang-ai~Sun,~\IEEEmembership{Senior Member,~IEEE,}
@@ -59,15 +59,38 @@ Software Testing, Random Testing, Dynamic Random Testing, Web Service, Service O
 
 \IEEEPARstart{T}{est} result verification is an important part of software testing. A test oracle \cite{weyuker1982testing} is a mechanism that can exactly decide whether the output produced by a programs is correct. However, there are situations where it is difficult to decide whether the result of the software under test (SUT) agrees with the expected result. This situation is known as oracle problem \cite{barr2015oracle, patel2018mapping}. In order to alleviate the oracle problem, several techniques have been proposed, such as N-version testing \cite{brilliant1990performance}, metamorphic testing (MT) \cite{chen1998metamorphic, chen2018metamorphic}, assertions \cite{sim2014eliminating}, and machine learning \cite{chan2009pat}. Among of them, MT obtains metamorphic relations (MRs) according to the properties of SUT. Then, MRs are used to generate new test cases called follow-up test cases from original test cases known as source test cases. Next, both source and follow-up test cases are executed and their result are verified against the corresponding MRs.
 
-The fault-detecting efficiency of MT relies on the quality of MRs and the source test cases. There are astronomically large number of studies to investigate generate good MRs \cite{chen2004case, cao2013correlation, sun2011metamorphic, chen2014metric, xie2016looking} or the source test cases \cite{chen2004metamorphic, batra2011efficient, dong2013security}. However, Researchers ignore the impact of test execution on the efficiency of MT. Random testing (RT) that randomly selects test cases from input domain (which refers to the set of all possible inputs of SUT), which is most
-commonly used technique in traditional MT \cite{segura2016survey}. Although RT is simple to implement, RT does not make use of any execution information about SUT or the test history. Thus, traditional MT may be inefficient in some situations.
+MT has been receiving increasing attention in the software testing community, since this technique not only alleviates the oracle problem but also generates new test cases from existing test cases. MT has been successfully applied in a number of application domains and paradigms, including healthcare \cite{murphy2011effective}, bioinformatics \cite{chen2009innovative}, air traffic control \cite{hui2013metamorphic}, the web service \cite{zhou2012automated}, the RESTful web APIs \cite{segura2018metamorphic}, and testing of deep learning system \cite{tian2018deeptest}. The applications of MT emphasizes that MT is a new and promising strategy that complements the existing testing approaches.
 
-In contrast to RT, partition testing (PT) attempts to generate test cases in a more systematic way, aiming to use fewer test cases to detect more faults. When conducting PT, the input domain of SUT is divided into disjoint partitions, with test cases then selected from each and every one. Each partition is expected to have a certain degree of homogeneity, that is, test cases in the same partition should have similar software execution behavior: If one input can detect a fault, then all other inputs in the same partition should also be able to detect a fault. RT and PT have their own characteristics. Therefore, it is a nature thought to investigate the integration of them for developing new testing techniques. Sun et al. \cite{sun2018adaptive} proposed adaptive partition testing (APT) that takes advantages of testing information to control the testing process, with the goal of benefitting from the advantages of RT and PT.
+The successes in applying MT to multiple application domains and paradigms continues to stimulate researchers to develop the theoretical foundations for MT. There are two broad categories of methods to improve the effectiveness of MT: source test cases generating and MRs identifying. The former employs different test case selection strategies to generate source test cases for MT \cite{chen2004metamorphic, barus2016impact}. The latter creates MRs by combining existing relations, or by generating them automatically \cite{chen2004case, cao2013correlation, sun2011metamorphic, chen2014metric, xie2016looking}.
 
-In this study, we investigate how to make use of feedback information in the previous tests to control the execution process of MT. As a result, an adaptive metamorphic testing framework is proposed to improve the fault-detecting efficiency of MT. An empirical study was conducted to evaluate the efficiency of the proposed technique. Main contributions made in this paper are the following:
+%The fault-detecting effectiveness of MT relies on the quality of MRs and the source test cases. There are astronomically large number of studies to investigate generate good MRs \cite{chen2004case, cao2013correlation, sun2011metamorphic, chen2014metric, xie2016looking} or the source test cases \cite{chen2004metamorphic, batra2011efficient, dong2013security}. However, Researchers ignore the impact of test execution on the efficiency of MT.
 
+Random testing (RT) that randomly selects test cases from input domain (which refers to the set of all possible inputs of SUT), which is most
+commonly used strategies in traditional MT \cite{segura2016survey}. Although RT is simple to implement, RT does not make use of any execution information about SUT or the test history. Thus, traditional MT may be ineffectiveness in some situations. Barus et al. \cite{barus2016impact} employed adaptive random testing \cite{chen2004adaptive} that is a class of testing method aimed to improve the performance of RT by increasing the diversity across a program’s input domain of the test cases executed to generate source test cases for MT. The Fixed-Size Candidate Set ART technique (FSCS-ART) \cite{chen2004adaptive} was the first ART method, and is also the most widely studied, which selects a next test input from the fixed-size candidate set of tests that is farthest from all previously executed tests. Many other ART algorithms have also been proposed, including RRT \cite{chan2002restricted, chan2006restricted}, DF-FSCS \cite{mao2017out}, and ARTsum \cite{barus2016cost}, with their effectiveness examined and validated through simulations and experiments.
 
+In contrast to RT, partition testing (PT) attempts to generate test cases in a more systematic way, aiming to use fewer test cases to detect more faults. When conducting PT, the input domain of SUT is divided into disjoint partitions, with test cases then selected from each and every one. Each partition is expected to have a certain degree of homogeneity, that is, test cases in the same partition should have similar software execution behavior: If one input can detect a fault, then all other inputs in the same partition should also be able to detect a fault. RT and PT have their own characteristics. Therefore, it is a nature thought to investigate the integration of them for developing new testing techniques. Cai et al. \cite{cai2009random} proposed dynamic random testing (DRT) that takes advantages of testing information to control the testing process, with the goal of benefitting from the advantages of RT and PT. Sun et al. proposed adaptive partition testing \cite{sun2018adaptive}, where test cases are randomly selected from some partition whose probability of being selected is adaptively adjusted along the testing process, and developed two algorithms, Markov-chain based adaptive partition testing and reward-punishment based adaptive partition testing, to implement the proposed approach. 
 
+The set of identified MRs is the other foremost component of MT, which impacts the fault-detection effectiveness of MT, and that a common opinion has been identification of these MRs appears to be a manual and tough task \cite{groce2014you}: ``Even experts may find it difficult to discover metamorphic relations''. To address this question, a number of methods have been proposed such as MR composition \cite{liu2012new, dong2008case}, Machine-learning based MR detection \cite{kanewala2013using}, Graph-kernel based MR prediction \cite{kanewala2016predicting}, Search-based MR inference \cite{zhang2014search}, data-mutation-directed MR acquisition \cite{sun2016mumt}. More recently, a more systematical and effective method (METRIC) was proposed, which make use of complete test frame constructed by categories and choices \cite{chen2003choice}. Those methods help test engineers create a set of MRs, while cannot guide select the next MR during the test.
+
+In previous and existing work, researchers investigated the effectiveness of MT by either choosing different MRs alone, or choosing different test case selection strategies to generate source test cases alone. Different from the previous methods, this paper proposed an innovative method (PFMT) that makes use of feedback information to select both source test case and corresponding MR, aiming to maximize the fault-detection effectiveness of MT.
+
+PFMT is built on top of four insights: \rmnum{1}) source test cases; \rmnum{2}) there are no work that relates to select MR; \rmnum{3}) select both source test case and MR, which may be more effectiveness than one; \rmnum{4}) analyzing the feedback information can guide select "good" source test case and MR.
+
+In short, PFMT collects feedback information during the test, and makes use of those information to select source test case and .
+
+In this study, we investigate how to make use of feedback information in the previous tests to control the execution process of MT in terms of both selecting source test cases and MRs. As a result, a process-feedback metamorphic testing framework is proposed to improve the fault-detecting efficiency of MT. An empirical study was conducted to evaluate the efficiency of the proposed technique. Main contributions made in this paper are the following:
+
+\begin{enumerate}[1]
+  \item
+  From a new perspective, we proposed a process feedback metamorphic testing method. This includes a universal framework (PFMT) that indicates how to make use of history testing information to select next source test case and MR.
+  \item
+  We particular developed two kinds of algorithms, partition based PFMT (P-PFMT) and random based PFMT (R-PFMT), to implement the proposed framework. P-PFMT includes two methods: \rmnum{1}) An MRs-centric P-PFMT (MP-PFMT), which first randomly selects an MR to generate source and follow-up test cases of related input partitions, and then updates the test profile of input partitions according to the result of test execution. Second, a partition is selected according to updated test profile, and an MR is selected based on proposed strategies from the set of MRs whose source test cases belong to selected partition; \rmnum{2}) A partition-centric P-PFMT (PP-PFMT), which leverages MRs as a mechanism for verifying the test results. First, PP-PFMT selects a partition according to the test profile. Second, a test case is randomly selected in the selected partition, its follow-up test cases are generated based on the involved MRs, and their results are verified against the involved MRs. Third, PP-AMT updates the test profile based on the test results. R-PFMT include one method: we employed ARTsum to select source test cases and then an MR is selected based on proposed strategies from the set of MRs whose source test cases is selected source test case.
+  \item
+  In order to support proposed methods, we proposed two algorithms to update the test profile, and two algorithms to select an MR form the candidate MRs.
+  \item
+  We evaluated the performance of PFMT through a series of empirical studies on 12 programs. These studies show that PFMT has significantly higher fault-detection efficiency than traditional MT that randomly selects source test cases and a revised MT method that employed ART method to select source test cases, ignoring to select a ``good" MR.
+  
+\end{enumerate}
 
 
 The rest of this paper is organized as follows.
@@ -79,7 +102,7 @@ Section~\ref{sec:relatedwork} discusses related work and Section~\ref{sec:conclu
 \section{Background}
 \label{sec:background}
 
-In this section, we present some of the underlying concepts for DRT, web services, and mutation analysis.
+In this section, we present some of the underlying concepts for MT, DRT, and ART.
 
 \subsection{Metamorphic Testing (MT)}
 
@@ -103,112 +126,107 @@ The above steps can be repeated for a set of MRs.
 
 Let us use a simple example to illustrate how MT works. For instance, consider the mathematic function $f(x,y)$ that can calculate the maximal value of two integers $x$ and $y$. There is a simple yet obvious property: the order of two parameters $x$ and $y$ does not affect the output, which can be described as the follow metamorphic relation (MR): $f(x,y) = f(y,x)$. In this MR, $(x,y)$ is source test case, and $(y,x)$ is considered as follow-up test case. Suppose \texttt{P} denotes a program that implements the function $f(x,y)$, \texttt{P} is executed with a test cases $(1,2)$ and $(2,1)$. Then we check $P(1,2) = P(2,1)$: If the equality does not hold, then we consider that \texttt{P} at least has one fault.
 
-\subsection{Adaptive Partition Testing (APT)}
-\label{sec:apt}
+\subsection{METRIC}
+\label{sec:metric}
 
-DRT combines RT and PT [31], with the goal of benefitting from the advantages of both.
-Given a test suite \emph{TS} classified into $m$ partitions (denoted $s_1, s_2, \ldots, s_m$),  suppose that a test case from $s_i$ ($i = 1, 2, \ldots, m$) is selected and executed.
-If this test case reveals a fault, $\forall j = 1, 2, \ldots, m$ and $j \neq i$, we then set
 
+
+\subsection{Dynamic Random Testing (DRT)}
+\label{sec:drt}
+
+Cai et al \cite{cai2009random} proposed dynamic random testing (DRT), which adjusts the test profile according to the result of current test. In DRT, the input domain is first divided into $m$ partitions (denoted $s_1, s_2, \ldots, s_m$), and each $s_i$ is assigned a probability $p_i$. During the test process, the selection probabilities of partitions are dynamically updated. Suppose that a test case $tc$ from $s_i$ ($i = 1,2,\ldots,m$) is selected and executed. The process of DRT adjusting the value of $p_i$ is as follows: If $tc$ detects a fault, $\forall j = 1, 2, \ldots, m$ and $j \neq i$, we then set
 \begin{equation}
 \label{eq:DRThitJ}
+%\text{new} p_j =
 p'_j =
 \begin{cases}
-p_j - \displaystyle\frac{\varepsilon}{m-1} & \text{if } p_j \geq \displaystyle\frac{\varepsilon}{m-1} \\
-0 & \text{if } p_j < \displaystyle\frac{\varepsilon}{m-1}
+p_j - \displaystyle\frac{\epsilon}{m-1} & \text{if } p_j \geq \displaystyle\frac{\epsilon}{m-1} \\
+0 & \text{if } p_j < \displaystyle\frac{\epsilon}{m-1}
 \end{cases},
 \end{equation}
-where $\varepsilon$ is a probability adjusting factor, and then
+where $\epsilon$ is a probability adjusting factor, and then
 
 \begin{equation}
 \label{eq:DRThitI}
   p'_i = 1 - \sum_{\substack{j = 1 \\ j \neq i}}^m p'_j.
 \end{equation}
 
-Alternatively, if the test case does not reveal a fault, we set
-
+Alternatively, if $tc$ does not detect a fault, we set
 \begin{equation}
 \label{eq:DRTmissI}
+%\text{new } p_i =
 p'_i =
 \begin{cases}
-p_i - \varepsilon & \text{if } p_i \geq \varepsilon \\
-0 & \text{if } p_i < \varepsilon
+p_i - \epsilon & \text{if } p_i \geq \epsilon \\
+0 & \text{if } p_i < \epsilon
 \end{cases},
 \end{equation}
-
 and then for $\forall j = 1, 2, \ldots, m$ and $j \neq i$, we set
 
 \begin{equation}
 \label{eq:DRTmissJ}
 p'_j =
 \begin{cases}
-p_j + \displaystyle\frac{\varepsilon}{m-1} & \text{if } p_i \geq \varepsilon \\
-p_j + \displaystyle\frac{p'_i}{m-1} & \text{if } p_i < \varepsilon
+p_j + \displaystyle\frac{\epsilon}{m-1} & \text{if } p_i \geq \epsilon \\
+p_j + \displaystyle\frac{p'_i}{m-1} & \text{if } p_i < \epsilon
 \end{cases}.
 \end{equation}
 
-Algorithm \ref{alg:DRT} describes DRT.
-In DRT, the first test case is taken from a partition that has been randomly selected according to the initial probability profile $\{p_1, p_2, \ldots, p_m\}$ (Lines 2 and 3 in Algorithm~\ref{alg:DRT}).
-After each test case execution, the testing profile $\{ \left \langle s_1,p_1 \right \rangle, \left \langle s_2,p_2 \right \rangle, \ldots, \left \langle s_m,p_m \right \rangle\}$ is updated by changing the values of $p_i$:
-If a fault is revealed, Formulas~\ref{eq:DRThitJ} and~\ref{eq:DRThitI} are used;
-otherwise, Formulas~\ref{eq:DRTmissI} and~\ref{eq:DRTmissJ} are used.
-The updated testing profile is then used to guide the random selection of the next test case (Line 8).
-This process is repeated until a termination condition is satisfied (Line 1).
-Examples of possible termination conditions include:
- ``testing resources have been exhausted'';
- ``a certain number of test cases have been executed''; and
- ``a certain number of faults have been detected".
+ The detailed DRT algorithm is given in Algorithm \ref{alg:drt}. In DRT, a test case is selected from a partition that has been randomly selected according to the test profile  $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$ (Lines 2 to 4). If a fault is detected, then Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI} are used to adjust the values of $p_i$ (Line 6), otherwise Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ} are used (Line 8). This process is repeated until a termination condition is satisfied (Line 1). Termination conditions could be set as ``when the testing resources are consumed exhausted'', ``when a certain number of test cases have been executed'', or ``when the first fault is detected''.
+
+ In AMT, when a source test case and corresponding follow-up test case belong to same partition $s_i$, DRT is employed to update the test profile as follows: If a fault is detected (i.e., their results violate the related MR), then Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI} are used to adjust the values of $p_i$, otherwise Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ} are used. During the testing process, there is the other situation where a source test case and corresponding follow-up test case do not belong to same partition. In order to adjust the test profile in this situation, we proposed a new strategy that is described in Section \ref{sec:updatingTestProfile}.
 
 \begin{algorithm}
-    \caption{DRT}
-    \label{alg:DRT}
+\caption{DRT}
+\label{alg:drt}
     \begin{algorithmic}[1]
-        \renewcommand{\algorithmicrequire}{\textbf{Input:}} %使得原来软件包中定义的命令\REQUIRE 和\ENSURE显示为Input:和Output:
-	    \renewcommand{\algorithmicensure}{\textbf{Output:}}
-        \renewcommand{\algorithmicendwhile}{\algorithmicend\_\algorithmicwhile}
-		\renewcommand{\algorithmicendfor}{\algorithmicend\_\algorithmicfor}
-		\renewcommand{\algorithmicendif}{\algorithmicend\_\algorithmicif}
-		\renewcommand{\algorithmicthen}{}
-		\renewcommand{\algorithmicdo}{}
-        \REQUIRE $\varepsilon, p_1, p_2, \ldots, p_m$
-        \WHILE {termination condition is not satisfied}
-        \STATE Select a partition $s_i$ according to the testing profile $\{ \left \langle s_1,p_1 \right \rangle, \left \langle s_2,p_2 \right \rangle, \ldots, \left \langle s_m,p_m \right \rangle\}$.
-        \STATE Select a test case $t$ from $s_i$.
-        \STATE Test the software using $t$.
-        \IF {a fault is revealed by $t$}
-        \STATE Update $p_j$ ($j = 1, 2, \ldots, m$ and $j \neq i$) and $p_i$ according to Formulas~\ref{eq:DRThitJ} and~\ref{eq:DRThitI}.
-        \ELSE
-        \STATE Update $p_j$ ($j = 1, 2, \ldots, m$ and $j \neq i$) and $p_i$ according to Formulas~\ref{eq:DRTmissI} and~\ref{eq:DRTmissJ}.
-        \ENDIF
-        \ENDWHILE
+    \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+    \renewcommand{\algorithmicendwhile}{\algorithmicend\_\algorithmicwhile}
+    \renewcommand{\algorithmicendif}{\algorithmicend\_\algorithmicif}
+    \REQUIRE $\epsilon, p_1, p_2, \ldots, p_m$
+    \WHILE {termination condition is not satisfied}
+    \STATE Select a partition $s_i$ according to the test profile $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right
+    \rangle\}$.
+    \STATE Select a test case $tc$ from $s_i$.
+    \STATE Test SUT using $tc$.
+    \IF {a fault is detected by $tc$}
+    \STATE Update test profile according to Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI}.
+    \ELSE
+    \STATE Update test profile according to Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ}.
+    \ENDIF
+    \ENDWHILE
     \end{algorithmic}
 \end{algorithm}
-
-As can be seen from Formulas~\ref{eq:DRThitJ} to~\ref{eq:DRTmissJ},  updating the testing profile involves $m$ simple calculations, thus requiring a constant time.
-Furthermore, the selection of partition $s_i$, and subsequent selection and execution of the test case, all involve a constant time.
-The execution time for one iteration of DRT is thus a constant, and therefore the overall time complexity for DRT to select $n$ test cases is $O(m \cdot n)$.
 
 \subsection{Adaptive Random Testing (ART)}
 \label{section:art}
 
+To improve the fault-detection efficiency of RT, Chen et al. proposed adaptive random testing \cite{chen2004adaptive} based on the intuition that two test cases close to each other were more likely to have the same failure behavior than two test cases that were widely separated \cite{Ammann88}, that means faults tend to cause erroneous behaviour to occur across contiguous regions of the input domain. Hence, if a method that spread test cases more evenly would identify failures using fewer test cases.
 
+There are many possible ways to apply the principle of ART. One that has been widely used is distance-based ART, also known as Fixed-Size Candidate Set ART (FSCS-ART) \cite{chen2004adaptive}. It makes use of the Euclidean distance as a distance measure to ensure test cases are spread out evenly. 
+At first, two types of sets are defined: candidate set and executed set. The candidate set contains a predefined number n candidate inputs, whereas the later set stores all test cases that have been executed. Both sets are initially empty. Then n elements of candidate set are selected randomly from the existing input domain. For the first round, a random test case is selected, executed, and if the execution does not reveal any failures, it would be added to the executed set whilst the candidate set is reset as empty. For subsequent iterations, n test cases are randomly selected and placed again in the candidate set. Then, the minimum distance of each candidate test case to the executed test cases is calculated, that is the nearest executed test case. The candidate having maximum minimum distance is then selected as the next test case. This is known as the max-min criterion. The testing stops whenever an executed test case reveals a failure.
 
-
-
-\section{SDMT}
+\section{Process Feedback Driven Approach to Select Source Test Cases and MRs}
 \label{sec:sdmt}
 
-In this section, we describe a framework for applying DRT to web services, discuss guidelines for DRT's parameter settings, and present a prototype that partially automates  DRT for web services.
+In this section, we describe a framework for applying feedback mechanism to select source test cases and MRs for MT.
 
 \subsection{Motivation}
 \label{sec:motavation}
+
+Since MT was first published, a considerable number of studies have been reported from various aspects \cite{segura2016survey}. To improve the efficiency of MT, most of studies have paid their attention to identify the better MRs, which are more likely to be violated. For the  efficiency of MRs, several factors such as the difference between the source and follow-up test cases \cite{chen2004case, cao2013correlation} and the the detecting-faults capacity of MRs compared to existing test oracles \cite{liu2014effectively}, have been investigated.
+
+Since the follow-up test cases are generated based on source test cases and MRs, in addition to the so-called good MRs, source test cases also have an impact on the efficiency of MT. However, 57\% of existing studies employed RT to select test cases, and 34\% of existing studies used existing test suites according to a survey report by Segura et al. \cite{segura2016survey}. In this study, we investigate the strategies of selection test cases and MRs, and its impacts on the fault-detecting efficiency of MT.
+
+It has been pointed out that fault-detecting inputs tend to cluster into ``continuous regions'' \cite{ammann1988data, finelli1991nasa}, that is, the test cases in some partitions are more likely to detect faults than the test cases in other partitions. Inspired by the observation, AMT takes full advantage of feedback information to update the test profile, aiming at increasing the selection probabilities of partitions with larger failure rates. Accordingly, the MRs whose sources test cases belonging to the partitions with larger failure rates, are more likely to be selected and violated. Therefore, AMT is expected to detect faults more efficient than traditional MT.
+
 
 
 \subsection{Framework}
 \label{sec:framework}
 
 
-\begin{figure}[]
+\begin{figure}[htb]
   \centering
   \includegraphics[width = 0.5\textwidth]{fig//generateframework}
   \caption{framework}
@@ -218,7 +236,7 @@ In this section, we describe a framework for applying DRT to web services, discu
 \begin{enumerate}[1]
   \item
   \emph{Source Test Case Selection}.
-  
+
   \item
   \emph{candidate MRs Selection}.
 
@@ -235,15 +253,212 @@ In this section, we describe a framework for applying DRT to web services, discu
 
 \subsection{Updating Test Profile Strategies}
 \label{sec:updatingTestProfile}
+When the source test case $stc$ and follow-up test case $ftc$ related to an metamorphic relation $MR$ belong to the same partition $s_i$, DRT is suitable to adjust the test profile. However, during the test process, there are some scenarios where the $stc$ is not in the same partition as $ftc$. In such scenarios, DRT cannot be used to adjust the test profile. To solve this problem, we proposed metamorphic dynamic random testing (MDRT).
+
+Suppose that source test case $stc$ and follow-up test case $ftc$ related to an metamorphic relation $MR$, belong to $s_i$ and $s_f$ ($f \in \{1, 2, \ldots, m\}, f \ne i$), respectively. If their results violate the $MR$, $\forall j = 1, 2, \ldots, m$ and $j \ne i, f$, we set
+
+\begin{equation}
+\label{eq:MDRThitJ}
+p'_j =
+\begin{cases}
+p_j - \displaystyle\frac{2\epsilon}{m-2} & \text{if } p_j \geq \displaystyle\frac{2\epsilon}{m-2} \\
+0 & \text{if } p_j < \displaystyle\frac{2\epsilon}{m-2}
+\end{cases},
+\end{equation}
+where $\epsilon$ is a probability adjusting factor, and then
+
+\begin{equation}
+\label{eq:MDRThitI}
+  p'_i = p_i + \displaystyle\frac{(1-\sum_{\substack{j = 1, j \ne i,m}}^m p_j^{'}) - p_i - p_f}{2},
+\end{equation}
+
+\begin{equation}
+\label{eq:MDRThitF}
+  p'_f = p_f + \displaystyle\frac{(1-\sum_{\substack{j = 1, j \ne i,m}}^m p_j^{'}) - p_i - p_f}{2}.
+\end{equation}
+
+Alternatively, if their results hold the $MR_h$, we set
+
+\begin{equation}
+\label{eq:MDRTmissI}
+p'_i =
+\begin{cases}
+p_i - \epsilon & \text{if } p_i \geq \epsilon \\
+0 & \text{if } p_i < \epsilon
+\end{cases},
+\end{equation}
+
+\begin{equation}
+\label{eq:MDRTmissF}
+p'_f =
+\begin{cases}
+p_f - \epsilon & \text{if } p_f \geq \epsilon \\
+0 & \text{if } p_f < \epsilon
+\end{cases},
+\end{equation}
+and then for $\forall j = 1, 2, \ldots, m$ and $j \neq i, f$, we set
+
+\begin{equation}
+\label{eq:MDRTmissJ}
+p'_j = p_j + \displaystyle\frac{(p_i - p_i^{'}) + (p_f - p_f^{'})}{m - 2}
+\end{equation}
+
+The detailed MDRT algorithm is given in Algorithm \ref{alg:mdrt}. In MDRT, the source test case is selected from a partition that has been randomly selected according to the test profile $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$, and an metamorphic relation is select according to some strategies (Lines 2 to 4 in Algorithm \ref{alg:drt}). During the testing, if the source and follow-up test cases are not in same partition, then the test profile is updated by changing the $p_i$: If a fault is detected, then Formulas \ref{eq:MDRThitJ}, \ref{eq:MDRThitI}, and \ref{eq:MDRThitF} are used to adjust the values of $p_i$ (Line 8), otherwise Formulas \ref{eq:MDRTmissI}, \ref{eq:MDRTmissF}, and \ref{eq:MDRTmissJ} are used (Line 10). The testing process is stopped as long as the termination condition is satisfied.
+
+\begin{algorithm}
+\caption{MDRT}
+\label{alg:mdrt}
+    \begin{algorithmic}[1]
+    \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+    \renewcommand{\algorithmicendwhile}{\algorithmicend\_\algorithmicwhile}
+    \renewcommand{\algorithmicendif}{\algorithmicend\_\algorithmicif}
+    \REQUIRE $\epsilon, p_1, p_2, \ldots, p_m, MR_1, MR_2, \ldots, MR_n$
+    \WHILE {termination condition is not satisfied}
+    \STATE Select a partition $s_i$ according to the test profile $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m
+    \right \rangle\}$.
+    \STATE Select a source test case $stc_i$ from $s_i$, and an metamorphic relation $MR_h$ ($h \in \{1, 2, \ldots, n\}$).
+    \STATE Based on the $MR_h$, follow-up test case $ftc_i$ is generated from $stc_i$, belonging to partition $s_f$.
+    \STATE Test the SUT using $stc_i$ and $ftc_i$.
+    \IF {$i \ne f$}
+    \IF {the results of $stc_i$ and $ftc_i$ violate the MR}
+    \STATE Update $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$ according to Formulas
+    \ref{eq:MDRThitJ}, \ref{eq:MDRThitI}, and \ref{eq:MDRThitF}.
+    \ELSE
+    \STATE Update $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$ according to Formulas
+    \ref{eq:MDRTmissI}, \ref{eq:MDRTmissF}, and \ref{eq:MDRTmissJ}.
+    \ENDIF
+    \ENDIF
+    \ENDWHILE
+    \end{algorithmic}
+\end{algorithm}
 
 \subsection{Selecting MR Strategies}
 \label{sec:selectingMR}
 
-\subsection{Partition Based SDMT}
-\label{sec:partitionSDMT}
 
-\subsection{Random Based SDMT}
-\label{sec:randomSDMT}
+
+
+\subsection{Partition Based PFMT}
+\label{sec:pPFMT}
+
+\subsubsection{A partition-centric P-PFMT}
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width = 0.5\textwidth]{fig//pcenterpartitionframework}
+  \caption{framework}
+  \label{fig:The Framework of PP-PFMT}
+\end{figure}
+
+\begin{algorithm}
+\caption{PP-PFMT}
+\label{alg:pp-pfmt}
+    \begin{algorithmic}[1]
+    \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+    \renewcommand{\algorithmicendwhile}{\algorithmicend\_\algorithmicwhile}
+    \renewcommand{\algorithmicendif}{\algorithmicend\_\algorithmicif}
+    \REQUIRE $\epsilon, p_1, \ldots, p_m, MR_{s_1}, \ldots, MR_{s_m}, \mathcal{R}, counter$
+    \STATE Initialize $counter = 1$.
+    \WHILE {termination condition is not satisfied}
+    \IF {$counter = 1$}
+    \STATE Randomly select an $MR$ from $\mathcal{R}$, and $MR \in MR_{s_i}$.
+    \STATE Increment counter by 1.
+    \STATE Randomly select a source test case from the partition $s_i$, and generate the follow-up test case belonged to partition $s_f$ ($f \in {1,2,\ldots,m}$).
+    \STATE Execute the source and follow-up test cases.
+    \IF {the results of source and follow-up test cases violate $MR$}
+    \IF {$i = f$}
+    \STATE Update the test profile according to Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI}.
+    \ELSE
+    \STATE Update the test profile according to Formulas \ref{eq:MDRThitJ}, \ref{eq:MDRThitI}, and \ref{eq:MDRThitF}.
+    \ENDIF
+    \ELSE
+    \IF {$i = f$}
+    \STATE Update the test profile according to Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ}.
+    \ELSE
+    \STATE Update the test profile according to Formulas \ref{eq:MDRTmissI}, \ref{eq:MDRTmissF}, and \ref{eq:MDRTmissJ}
+    \ENDIF
+    \ENDIF
+    \ELSE
+    \STATE Select a partition $s_i$ according to the updated test profile, and then select an $MR^{'}$ from $MR_{s_i}$.
+     \STATE Randomly select a source test case from the partition $s_i$, and generate the follow-up test case belonged to partition $s_f$ ($f \in {1,2,\ldots,m}$).
+    \STATE Execute the source and follow-up test cases.
+    \IF {the results of source and follow-up test cases violate $MR^{'}$}
+    \IF {$i = f$}
+    \STATE Update the test profile according to Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI}.
+    \ELSE
+    \STATE Update the test profile according to Formulas \ref{eq:MDRThitJ}, \ref{eq:MDRThitI}, and \ref{eq:MDRThitF}.
+    \ENDIF
+    \ELSE
+    \IF {$i = f$}
+    \STATE Update the test profile according to Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ}.
+    \ELSE
+    \STATE Update the test profile according to Formulas \ref{eq:MDRTmissI}, \ref{eq:MDRTmissF}, and \ref{eq:MDRTmissJ}
+    \ENDIF
+    \ENDIF
+    \ENDIF
+    \ENDWHILE
+    \end{algorithmic}
+\end{algorithm}
+
+
+
+
+
+\subsubsection{A MRs-centric P-PFMT}
+
+\begin{algorithm}
+\caption{PM-PFMT}
+\label{alg:pm-pfmt}
+    \begin{algorithmic}[1]
+    \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+    \renewcommand{\algorithmicendwhile}{\algorithmicend\_\algorithmicwhile}
+    \renewcommand{\algorithmicendif}{\algorithmicend\_\algorithmicif}
+    \REQUIRE $\epsilon, p_1, \ldots, p_m, MR_{s_1}, \ldots, MR_{s_m}, \mathcal{R}, counter$
+    \STATE Initialize $counter = 1$.
+    \WHILE {termination condition is not satisfied}
+    \IF {$counter = 1$}
+    \STATE Randomly select an $MR$ from $\mathcal{R}$, and $MR \in MR_{s_i}$.
+    \STATE Increment counter by 1.
+    \STATE Randomly select a source test case from the partition $s_i$, and generate the follow-up test case belonged to partition $s_f$ ($f \in {1,2,\ldots,m}$).
+    \STATE Execute the source and follow-up test cases.
+    \IF {the results of source and follow-up test cases violate $MR$}
+    \IF {$i = f$}
+    \STATE Update the test profile according to Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI}.
+    \ELSE
+    \STATE Update the test profile according to Formulas \ref{eq:MDRThitJ}, \ref{eq:MDRThitI}, and \ref{eq:MDRThitF}.
+    \ENDIF
+    \ELSE
+    \IF {$i = f$}
+    \STATE Update the test profile according to Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ}.
+    \ELSE
+    \STATE Update the test profile according to Formulas \ref{eq:MDRTmissI}, \ref{eq:MDRTmissF}, and \ref{eq:MDRTmissJ}
+    \ENDIF
+    \ENDIF
+    \ELSE
+    \STATE Select a partition $s_i$ according to the updated test profile, and then select an $MR^{'}$ from $MR_{s_i}$.
+     \STATE Randomly select a source test case from the partition $s_i$, and generate the follow-up test case belonged to partition $s_f$ ($f \in {1,2,\ldots,m}$).
+    \STATE Execute the source and follow-up test cases.
+    \IF {the results of source and follow-up test cases violate $MR^{'}$}
+    \IF {$i = f$}
+    \STATE Update the test profile according to Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI}.
+    \ELSE
+    \STATE Update the test profile according to Formulas \ref{eq:MDRThitJ}, \ref{eq:MDRThitI}, and \ref{eq:MDRThitF}.
+    \ENDIF
+    \ELSE
+    \IF {$i = f$}
+    \STATE Update the test profile according to Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ}.
+    \ELSE
+    \STATE Update the test profile according to Formulas \ref{eq:MDRTmissI}, \ref{eq:MDRTmissF}, and \ref{eq:MDRTmissJ}
+    \ENDIF
+    \ENDIF
+    \ENDIF
+    \ENDWHILE
+    \end{algorithmic}
+\end{algorithm}
+
+
+
+\subsection{Random Based PFMT}
+\label{sec:rPFMT}
 
 \section{Empirical Study}
 \label{sec:empiricalStudy}
@@ -255,18 +470,18 @@ We conducted a series of empirical studies to evaluate the performance of DRT.
 In our experiments, we focused on addressing the following three research questions:
 \begin{description}
   \item [\textbf{RQ1}] \textbf{How efficient is SDMT at detecting faults?}
-  
+
   Fault-detection efficiency is a key criterion for evaluating the performance of a testing technique. In our study, we chose three real-life programs, and applied mutation analysis to evaluate the fault-detecting efficiency.
-  
-  \item [\textbf{RQ2}] \textbf{What is the actual test case selection overhead when using the M-AMT strategy?} 
-  
+
+  \item [\textbf{RQ2}] \textbf{What is the actual test case selection overhead when using the M-AMT strategy?}
+
   We evaluate the test case selection overhead of M-AMT and compare with traditional MT in detecting software faults.
 \end{description}
 
 \subsection{Object Programs}
 \label{sec:programs}
 
-In order to address our research questions, we chose to study four sets of object programs: three laboratorial programs that were developed according to corresponding specifications, seven programs from the Software-artifact Infrastructure Repository (SIR) \cite{do2005supporting}, the regular expression processor component of the larger utility program \texttt{GUN grep}, and a Java library developed by Alibaba, which can be used to convert Java Objects into their JSON representation, and convert a JSON string to an equivalent Java object. The details of twelve programs are summarized in Table \ref{table:objects}.
+In order to evaluate the fault-detection effectiveness of proposed methods in different scales, different implementation languages, and different fields, we chose to study four sets of object programs: three laboratorial programs that were developed according to corresponding specifications, seven programs from the Software-artifact Infrastructure Repository (SIR) \cite{do2005supporting}, the regular expression processor component of the larger utility program \texttt{GUN grep}, and a Java library developed by Alibaba, which can be used to convert Java Objects into their JSON representation, and convert a JSON string to an equivalent Java object. The details of twelve programs are summarized in Table \ref{table:objects}.
 \begin{table*}[hbt]
   \caption{Twelve Programs as Experimental Objects}
   \label{table:objects}
@@ -275,7 +490,7 @@ In order to address our research questions, we chose to study four sets of objec
   programs               &Source        &Language  &LOC     &All Faults &Used Faults &Number of  &Number of  \\
                          &              &          &        &           &            &MRs        &Partitions\\ \hline
   \texttt{CUBS}          &Laboratory    &Java      &107     &187        &4           &184        &8 \\ \hline
-  \texttt{ACMS}          &Laboratory    &Java      &128     &210        &9           &142        &4 \\ \hline      
+  \texttt{ACMS}          &Laboratory    &Java      &128     &210        &9           &142        &4 \\ \hline
   \texttt{ERS}           &Laboratory    &Java      &117     &180        &4           &1130       &12 \\ \hline
   \texttt{grep}          &GUN           &c         &10,068  &20         &20          &12         &-- \\ \hline
   \texttt{printtokens}   &SIR           &c         &483     &7          &7           &3          &-- \\ \hline
@@ -347,13 +562,13 @@ The seven object programs selected from the SIR [24] repository were \texttt{pri
 \begin{enumerate}[1]
   \item
   Faulty versions of the programs are available.
-  
+
   \item
   The programs are of manageable size and complexity for an initial study.
-  
+
   \item
   All programs and related materials are available from the SIR, and the MRs of each program are defined in  \cite{xie2013metamorphic}.
-  
+
 \end{enumerate}
 
 The \texttt{printtokens} and \texttt{printtokens2} are independent implementations of the same specification. They each implement a lexical analyzer. Their input files are split into lexical tokens according to a tokenizing scheme, and their output is the separated tokens. The \texttt{replace} program is a command-line utility that takes a search string, a replacement string, and an input file. The search string is a regular expression. The replacement string is text, with some metacharacters to enable certain features. The \texttt{replace} program searches for occurrences of the search string in the input file, and produces an output file where each occurrence of the search string is replaced with the replacement string. The \texttt{schedule} and \texttt{schedule2} programs are also independent implementations of the same specification. They each implement a priority scheduler that takes three non-negative integers and an input file. The integers indicate the number of initial processes at the three available scheduling priorities. The \texttt{schedule} and \texttt{schedule2} programs then take as input a command file that specifies certain actions to be taken. The \texttt{tcas} program is a small part of a much larger aeronautical collision avoidance system. It performs simple analysis on data provided by other parts of the system and returns an integer indicating what action, if any, the pilot should take to avoid collision.
@@ -369,13 +584,13 @@ The used version of the \texttt{grep} programs is 2.5.1a \cite{grep}. This progr
   The \texttt{grep} program, and its input format, are of greater complexity than the the programs in the other test sets, but still manageable as a target for automated test case generation.
 \end{enumerate}
 
-The inputs of the \texttt{grep} were categorize into three components: options, which consist of a list of commands to modify the searching process, pattern, which is the regular expression to be searched for, and files, which refers to the input files to be searched.  
+The inputs of the \texttt{grep} were categorize into three components: options, which consist of a list of commands to modify the searching process, pattern, which is the regular expression to be searched for, and files, which refers to the input files to be searched.
 
-The scope of functionality of this program is larger, which leads to construct test infrastructure to test all of functionality would have been impractical. Therefore, we restricted our focus to the regular expression analyzer of \texttt{grep}.
+The scope of functionality of this program is larger, which leads to construct test infrastructure to test all of functionality would have been impractical. Therefore, we restricted our focus to the regular expression analyzer of the \texttt{grep}.
 
 \subsubsection{Real-World Popular Programs}
 \label{sec:realPragrams}
-The \texttt{FastJson} 
+The \texttt{FastJson}
 
 
 \subsection{Variables}

@@ -30,10 +30,6 @@ Repeated entry---line 415 of file MT.bib
  : @inproceedings{chen2004case
  :                            ,
 I'm skipping whatever remains of this entry
-Repeated entry---line 436 of file MT.bib
- : @inproceedings{batra2011efficient
- :                                  ,
-I'm skipping whatever remains of this entry
 I was expecting a `,' or a `}'---line 510 of file MT.bib
  :   
  :   year={2015},
@@ -48,6 +44,38 @@ Repeated entry---line 546 of file MT.bib
  : @article{xie2013metamorphic
  :                            ,
 I'm skipping whatever remains of this entry
+Repeated entry---line 587 of file MT.bib
+ : @article{mao2017out
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 606 of file MT.bib
+ : @inproceedings{cai2009random
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 613 of file MT.bib
+ : @article{sun2018adaptive
+ :                         ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 640 of file MT.bib
+ : @inproceedings{chen2004metamorphic
+ :                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 683 of file MT.bib
+ : @article{segura2018metamorphic
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 711 of file MT.bib
+ : @inproceedings{liu2012new
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 746 of file MT.bib
+ : @inproceedings{zhang2014search
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 762 of file MT.bib
+ : @inproceedings{sun2016mumt
+ :                           ,
+I'm skipping whatever remains of this entry
 Warning--I didn't find a database entry for "sun2012towards"
 Warning--I didn't find a database entry for "chen1997optimal"
 Warning--I didn't find a database entry for "zhang2014history"
@@ -58,4 +86,4 @@ Warning--I didn't find a database entry for "li2015"
 Warning--empty journal in grep
 
 Done.
-(There were 11 error messages)
+(There were 18 error messages)

@@ -16,7 +16,7 @@
 
 \begin{document}
 
-\title{Dynamic Random Testing of Web Services: \\ A Methodology and Evaluation}
+\title{Process Feedback Driven Approach Towards Selection of Source Test Cases and Metamorphic Relations for Metamorphic Testing}
 
 
 \author{Chang-ai~Sun,~\IEEEmembership{Senior Member,~IEEE,}
@@ -59,15 +59,34 @@ Software Testing, Random Testing, Dynamic Random Testing, Web Service, Service O
 
 \IEEEPARstart{T}{est} result verification is an important part of software testing. A test oracle \cite{weyuker1982testing} is a mechanism that can exactly decide whether the output produced by a programs is correct. However, there are situations where it is difficult to decide whether the result of the software under test (SUT) agrees with the expected result. This situation is known as oracle problem \cite{barr2015oracle, patel2018mapping}. In order to alleviate the oracle problem, several techniques have been proposed, such as N-version testing \cite{brilliant1990performance}, metamorphic testing (MT) \cite{chen1998metamorphic, chen2018metamorphic}, assertions \cite{sim2014eliminating}, and machine learning \cite{chan2009pat}. Among of them, MT obtains metamorphic relations (MRs) according to the properties of SUT. Then, MRs are used to generate new test cases called follow-up test cases from original test cases known as source test cases. Next, both source and follow-up test cases are executed and their result are verified against the corresponding MRs.
 
-The fault-detecting efficiency of MT relies on the quality of MRs and the source test cases. There are astronomically large number of studies to investigate generate good MRs \cite{chen2004case, cao2013correlation, sun2011metamorphic, chen2014metric, xie2016looking} or the source test cases \cite{chen2004metamorphic, batra2011efficient, dong2013security}. However, Researchers ignore the impact of test execution on the efficiency of MT. Random testing (RT) that randomly selects test cases from input domain (which refers to the set of all possible inputs of SUT), which is most
-commonly used technique in traditional MT \cite{segura2016survey}. Although RT is simple to implement, RT does not make use of any execution information about SUT or the test history. Thus, traditional MT may be inefficient in some situations.
-
-In contrast to RT, partition testing (PT) attempts to generate test cases in a more systematic way, aiming to use fewer test cases to detect more faults. When conducting PT, the input domain of SUT is divided into disjoint partitions, with test cases then selected from each and every one. Each partition is expected to have a certain degree of homogeneity, that is, test cases in the same partition should have similar software execution behavior: If one input can detect a fault, then all other inputs in the same partition should also be able to detect a fault. RT and PT have their own characteristics. Therefore, it is a nature thought to investigate the integration of them for developing new testing techniques. Sun et al. \cite{sun2018adaptive} proposed adaptive partition testing (APT) that takes advantages of testing information to control the testing process, with the goal of benefitting from the advantages of RT and PT.
-
-In this study, we investigate how to make use of feedback information in the previous tests to control the execution process of MT. As a result, an adaptive metamorphic testing framework is proposed to improve the fault-detecting efficiency of MT. An empirical study was conducted to evaluate the efficiency of the proposed technique. Main contributions made in this paper are the following:
 
 
+There are two broad categories of methods to improve the effectiveness of MT: source test cases generating and MRs identifying. The former employs different test case selection strategies to generate source test cases for MT \cite{chen2004metamorphic, barus2016impact}. The latter creates MRs by combining existing relations, or by generating them automatically \cite{chen2004case, cao2013correlation, sun2011metamorphic, chen2014metric, xie2016looking}.
 
+%The fault-detecting effectiveness of MT relies on the quality of MRs and the source test cases. There are astronomically large number of studies to investigate generate good MRs \cite{chen2004case, cao2013correlation, sun2011metamorphic, chen2014metric, xie2016looking} or the source test cases \cite{chen2004metamorphic, batra2011efficient, dong2013security}. However, Researchers ignore the impact of test execution on the efficiency of MT.
+
+Random testing (RT) that randomly selects test cases from input domain (which refers to the set of all possible inputs of SUT), which is most
+commonly used strategies in traditional MT \cite{segura2016survey}. Although RT is simple to implement, RT does not make use of any execution information about SUT or the test history. Thus, traditional MT may be inefficient in some situations. Barus et al. \cite{barus2016impact} employed 
+adaptive random testing \cite{chen2004adaptive} that is a class of testing method aimed to improve the performance of RT by increasing the diversity across a program’s input domain of the test cases executed to generate source test cases for MT. The Fixed-Size Candidate Set ART technique (FSCS-ART) \cite{chen2004adaptive} was the first ART method, and is also the most widely studied, which selects a next test input from the fixed-size candidate set of tests that is farthest from all previously executed tests. Many other ART algorithms have also been proposed, including RRT \cite{chan2002restricted, chan2006restricted}, DF-FSCS \cite{mao2017out}, and ARTsum \cite{barus2016cost}, with their effectiveness examined and validated through simulations and experiments.
+
+In contrast to RT, partition testing (PT) attempts to generate test cases in a more systematic way, aiming to use fewer test cases to detect more faults. When conducting PT, the input domain of SUT is divided into disjoint partitions, with test cases then selected from each and every one. Each partition is expected to have a certain degree of homogeneity, that is, test cases in the same partition should have similar software execution behavior: If one input can detect a fault, then all other inputs in the same partition should also be able to detect a fault. RT and PT have their own characteristics. Therefore, it is a nature thought to investigate the integration of them for developing new testing techniques. Sun et al. \cite{cai2009random} proposed dynamic random testing (DRT) that takes advantages of testing information to control the testing process, with the goal of benefitting from the advantages of RT and PT. Sun et al. proposed adaptive partition testing \cite{sun2018adaptive}, where test cases are randomly selected from some partition whose probability of being selected is adaptively adjusted along the testing process, and developed two algorithms, Markov-chain based adaptive partition testing and reward-punishment based adaptive partition testing, to implement the proposed approach.
+
+
+%曾加本文的研究意义（可以从MT现在越来越受到人们的重视，并且AI的发展，由于它的复杂性，MT得到进一步的运用。然而目前的工作为了提高MT的故障检测效率要么单独的生成更好的测试用例，要么识别更好的蜕变关系。但是MT的潜能并没有完全发掘出来。传统的软件测试技术主要是尽快执行到具有故障检测能力测试用例，来提高测试技术的故障检测效率。然而，在MT中除了原始测试用例影响MT故障检测效率之外，好的蜕变关系依然影响MT的故障检测效率。不同于其它提高MT故障检测效率的技术，本文同时关注原始测试用例与蜕变关系的选择问题，最大化蜕变测试的故障检测效率。
+
+In this study, we investigate how to make use of feedback information in the previous tests to control the execution process of MT in terms of both selecting source test cases and MRs. As a result, a process-feedback metamorphic testing framework is proposed to improve the fault-detecting efficiency of MT. An empirical study was conducted to evaluate the efficiency of the proposed technique. Main contributions made in this paper are the following:
+
+\begin{enumerate}[1]
+  \item
+  From a new perspective, we proposed a process feedback metamorphic testing method. This includes a universal framework (PFMT) that indicates how to make use of history testing information to select next source test case and MR.
+  \item
+  We particular developed two kinds of algorithms, partition based PFMT (P-PFMT) and random based PFMT (R-PFMT), to implement the proposed framework. P-PFMT includes two methods: \rmnum{1}) An MRs-centric P-PFMT (MP-PFMT), which first randomly selects an MR to generate source and follow-up test cases of related input partitions, and then updates the test profile of input partitions according to the result of test execution. Second, a partition is selected according to updated test profile, and an MR is selected based on proposed strategies from the set of MRs whose source test cases belong to selected partition; \rmnum{2}) A partition-centric P-PFMT (PP-PFMT), which leverages MRs as a mechanism for verifying the test results. First, PP-PFMT selects a partition according to the test profile. Second, a test case is randomly selected in the selected partition, its follow-up test cases are generated based on the involved MRs, and their results are verified against the involved MRs. Third, PP-AMT updates the test profile based on the test results. R-PFMT include one method: we employed ARTsum to select source test cases and then an MR is selected based on proposed strategies from the set of MRs whose source test cases is selected source test case.
+  \item
+  In order to support proposed methods, we proposed two algorithms to update the test profile, and two algorithms to select an MR form the candidate MRs.
+  \item
+  We evaluated the performance of PFMT through a series of empirical studies on 12 programs. These studies show that PFMT has significantly higher fault-detection efficiency than traditional MT that randomly selects source test cases and a revised MT method that employed ART method to select source test cases, ignoring to select a ``good" MR.
+  
+\end{enumerate}
 
 
 The rest of this paper is organized as follows.
@@ -79,7 +98,7 @@ Section~\ref{sec:relatedwork} discusses related work and Section~\ref{sec:conclu
 \section{Background}
 \label{sec:background}
 
-In this section, we present some of the underlying concepts for DRT, web services, and mutation analysis.
+In this section, we present some of the underlying concepts for MT, DRT, and ART.
 
 \subsection{Metamorphic Testing (MT)}
 
@@ -103,105 +122,95 @@ The above steps can be repeated for a set of MRs.
 
 Let us use a simple example to illustrate how MT works. For instance, consider the mathematic function $f(x,y)$ that can calculate the maximal value of two integers $x$ and $y$. There is a simple yet obvious property: the order of two parameters $x$ and $y$ does not affect the output, which can be described as the follow metamorphic relation (MR): $f(x,y) = f(y,x)$. In this MR, $(x,y)$ is source test case, and $(y,x)$ is considered as follow-up test case. Suppose \texttt{P} denotes a program that implements the function $f(x,y)$, \texttt{P} is executed with a test cases $(1,2)$ and $(2,1)$. Then we check $P(1,2) = P(2,1)$: If the equality does not hold, then we consider that \texttt{P} at least has one fault.
 
-\subsection{Adaptive Partition Testing (APT)}
-\label{sec:apt}
+\subsection{Dynamic Random Testing (DRT)}
+\label{sec:drt}
 
-DRT combines RT and PT [31], with the goal of benefitting from the advantages of both.
-Given a test suite \emph{TS} classified into $m$ partitions (denoted $s_1, s_2, \ldots, s_m$),  suppose that a test case from $s_i$ ($i = 1, 2, \ldots, m$) is selected and executed.
-If this test case reveals a fault, $\forall j = 1, 2, \ldots, m$ and $j \neq i$, we then set
-
+Cai et al \cite{cai2009random} proposed dynamic random testing (DRT), which adjusts the test profile according to the result of current test. In DRT, the input domain is first divided into $m$ partitions (denoted $s_1, s_2, \ldots, s_m$), and each $s_i$ is assigned a probability $p_i$. During the test process, the selection probabilities of partitions are dynamically updated. Suppose that a test case $tc$ from $s_i$ ($i = 1,2,\ldots,m$) is selected and executed. The process of DRT adjusting the value of $p_i$ is as follows: If $tc$ detects a fault, $\forall j = 1, 2, \ldots, m$ and $j \neq i$, we then set
 \begin{equation}
 \label{eq:DRThitJ}
+%\text{new} p_j =
 p'_j =
 \begin{cases}
-p_j - \displaystyle\frac{\varepsilon}{m-1} & \text{if } p_j \geq \displaystyle\frac{\varepsilon}{m-1} \\
-0 & \text{if } p_j < \displaystyle\frac{\varepsilon}{m-1}
+p_j - \displaystyle\frac{\epsilon}{m-1} & \text{if } p_j \geq \displaystyle\frac{\epsilon}{m-1} \\
+0 & \text{if } p_j < \displaystyle\frac{\epsilon}{m-1}
 \end{cases},
 \end{equation}
-where $\varepsilon$ is a probability adjusting factor, and then
+where $\epsilon$ is a probability adjusting factor, and then
 
 \begin{equation}
 \label{eq:DRThitI}
   p'_i = 1 - \sum_{\substack{j = 1 \\ j \neq i}}^m p'_j.
 \end{equation}
 
-Alternatively, if the test case does not reveal a fault, we set
-
+Alternatively, if $tc$ does not detect a fault, we set
 \begin{equation}
 \label{eq:DRTmissI}
+%\text{new } p_i =
 p'_i =
 \begin{cases}
-p_i - \varepsilon & \text{if } p_i \geq \varepsilon \\
-0 & \text{if } p_i < \varepsilon
+p_i - \epsilon & \text{if } p_i \geq \epsilon \\
+0 & \text{if } p_i < \epsilon
 \end{cases},
 \end{equation}
-
 and then for $\forall j = 1, 2, \ldots, m$ and $j \neq i$, we set
 
 \begin{equation}
 \label{eq:DRTmissJ}
 p'_j =
 \begin{cases}
-p_j + \displaystyle\frac{\varepsilon}{m-1} & \text{if } p_i \geq \varepsilon \\
-p_j + \displaystyle\frac{p'_i}{m-1} & \text{if } p_i < \varepsilon
+p_j + \displaystyle\frac{\epsilon}{m-1} & \text{if } p_i \geq \epsilon \\
+p_j + \displaystyle\frac{p'_i}{m-1} & \text{if } p_i < \epsilon
 \end{cases}.
 \end{equation}
 
-Algorithm \ref{alg:DRT} describes DRT.
-In DRT, the first test case is taken from a partition that has been randomly selected according to the initial probability profile $\{p_1, p_2, \ldots, p_m\}$ (Lines 2 and 3 in Algorithm~\ref{alg:DRT}).
-After each test case execution, the testing profile $\{ \left \langle s_1,p_1 \right \rangle, \left \langle s_2,p_2 \right \rangle, \ldots, \left \langle s_m,p_m \right \rangle\}$ is updated by changing the values of $p_i$:
-If a fault is revealed, Formulas~\ref{eq:DRThitJ} and~\ref{eq:DRThitI} are used;
-otherwise, Formulas~\ref{eq:DRTmissI} and~\ref{eq:DRTmissJ} are used.
-The updated testing profile is then used to guide the random selection of the next test case (Line 8).
-This process is repeated until a termination condition is satisfied (Line 1).
-Examples of possible termination conditions include:
- ``testing resources have been exhausted'';
- ``a certain number of test cases have been executed''; and
- ``a certain number of faults have been detected".
+ The detailed DRT algorithm is given in Algorithm \ref{alg:drt}. In DRT, a test case is selected from a partition that has been randomly selected according to the test profile  $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$ (Lines 2 to 4). If a fault is detected, then Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI} are used to adjust the values of $p_i$ (Line 6), otherwise Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ} are used (Line 8). This process is repeated until a termination condition is satisfied (Line 1). Termination conditions could be set as ``when the testing resources are consumed exhausted'', ``when a certain number of test cases have been executed'', or ``when the first fault is detected''.
+
+ In AMT, when a source test case and corresponding follow-up test case belong to same partition $s_i$, DRT is employed to update the test profile as follows: If a fault is detected (i.e., their results violate the related MR), then Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI} are used to adjust the values of $p_i$, otherwise Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ} are used. During the testing process, there is the other situation where a source test case and corresponding follow-up test case do not belong to same partition. In order to adjust the test profile in this situation, we proposed a new strategy that is described in Section \ref{sec:updatingTestProfile}.
 
 \begin{algorithm}
-    \caption{DRT}
-    \label{alg:DRT}
+\caption{DRT}
+\label{alg:drt}
     \begin{algorithmic}[1]
-        \renewcommand{\algorithmicrequire}{\textbf{Input:}} %使得原来软件包中定义的命令\REQUIRE 和\ENSURE显示为Input:和Output:
-	    \renewcommand{\algorithmicensure}{\textbf{Output:}}
-        \renewcommand{\algorithmicendwhile}{\algorithmicend\_\algorithmicwhile}
-		\renewcommand{\algorithmicendfor}{\algorithmicend\_\algorithmicfor}
-		\renewcommand{\algorithmicendif}{\algorithmicend\_\algorithmicif}
-		\renewcommand{\algorithmicthen}{}
-		\renewcommand{\algorithmicdo}{}
-        \REQUIRE $\varepsilon, p_1, p_2, \ldots, p_m$
-        \WHILE {termination condition is not satisfied}
-        \STATE Select a partition $s_i$ according to the testing profile $\{ \left \langle s_1,p_1 \right \rangle, \left \langle s_2,p_2 \right \rangle, \ldots, \left \langle s_m,p_m \right \rangle\}$.
-        \STATE Select a test case $t$ from $s_i$.
-        \STATE Test the software using $t$.
-        \IF {a fault is revealed by $t$}
-        \STATE Update $p_j$ ($j = 1, 2, \ldots, m$ and $j \neq i$) and $p_i$ according to Formulas~\ref{eq:DRThitJ} and~\ref{eq:DRThitI}.
-        \ELSE
-        \STATE Update $p_j$ ($j = 1, 2, \ldots, m$ and $j \neq i$) and $p_i$ according to Formulas~\ref{eq:DRTmissI} and~\ref{eq:DRTmissJ}.
-        \ENDIF
-        \ENDWHILE
+    \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+    \renewcommand{\algorithmicendwhile}{\algorithmicend\_\algorithmicwhile}
+    \renewcommand{\algorithmicendif}{\algorithmicend\_\algorithmicif}
+    \REQUIRE $\epsilon, p_1, p_2, \ldots, p_m$
+    \WHILE {termination condition is not satisfied}
+    \STATE Select a partition $s_i$ according to the test profile $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right
+    \rangle\}$.
+    \STATE Select a test case $tc$ from $s_i$.
+    \STATE Test SUT using $tc$.
+    \IF {a fault is detected by $tc$}
+    \STATE Update test profile according to Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI}.
+    \ELSE
+    \STATE Update test profile according to Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ}.
+    \ENDIF
+    \ENDWHILE
     \end{algorithmic}
 \end{algorithm}
-
-As can be seen from Formulas~\ref{eq:DRThitJ} to~\ref{eq:DRTmissJ},  updating the testing profile involves $m$ simple calculations, thus requiring a constant time.
-Furthermore, the selection of partition $s_i$, and subsequent selection and execution of the test case, all involve a constant time.
-The execution time for one iteration of DRT is thus a constant, and therefore the overall time complexity for DRT to select $n$ test cases is $O(m \cdot n)$.
 
 \subsection{Adaptive Random Testing (ART)}
 \label{section:art}
 
+To improve the fault-detection efficiency of RT, Chen et al. proposed adaptive random testing \cite{chen2004adaptive} based on the intuition that two test cases close to each other were more likely to have the same failure behavior than two test cases that were widely separated \cite{Ammann88}, that means faults tend to cause erroneous behaviour to occur across contiguous regions of the input domain. Hence, if a method that spread test cases more evenly would identify failures using fewer test cases.
 
+There are many possible ways to apply the principle of ART. One that has been widely used is distance-based ART, also known as Fixed-Size Candidate Set ART (FSCS-ART) \cite{chen2004adaptive}. It makes use of the Euclidean distance as a distance measure to ensure test cases are spread out evenly. 
+At first, two types of sets are defined: candidate set and executed set. The candidate set contains a predefined number n candidate inputs, whereas the later set stores all test cases that have been executed. Both sets are initially empty. Then n elements of candidate set are selected randomly from the existing input domain. For the first round, a random test case is selected, executed, and if the execution does not reveal any failures, it would be added to the executed set whilst the candidate set is reset as empty. For subsequent iterations, n test cases are randomly selected and placed again in the candidate set. Then, the minimum distance of each candidate test case to the executed test cases is calculated, that is the nearest executed test case. The candidate having maximum minimum distance is then selected as the next test case. This is known as the max-min criterion. The testing stops whenever an executed test case reveals a failure.
 
-
-
-\section{SDMT}
+\section{Process Feedback Driven Approach to Select Source Test Cases and MRs}
 \label{sec:sdmt}
 
-In this section, we describe a framework for applying DRT to web services, discuss guidelines for DRT's parameter settings, and present a prototype that partially automates  DRT for web services.
+In this section, we describe a framework for applying feedback mechanism to select source test cases and MRs for MT.
 
 \subsection{Motivation}
 \label{sec:motavation}
+
+Since MT was first published, a considerable number of studies have been reported from various aspects \cite{segura2016survey}. To improve the efficiency of MT, most of studies have paid their attention to identify the better MRs, which are more likely to be violated. For the  efficiency of MRs, several factors such as the difference between the source and follow-up test cases \cite{chen2004case, cao2013correlation} and the the detecting-faults capacity of MRs compared to existing test oracles \cite{liu2014effectively}, have been investigated.
+
+Since the follow-up test cases are generated based on source test cases and MRs, in addition to the so-called good MRs, source test cases also have an impact on the efficiency of MT. However, 57\% of existing studies employed RT to select test cases, and 34\% of existing studies used existing test suites according to a survey report by Segura et al. \cite{segura2016survey}. In this study, we investigate the strategies of selection test cases and MRs, and its impacts on the fault-detecting efficiency of MT.
+
+It has been pointed out that fault-detecting inputs tend to cluster into ``continuous regions'' \cite{ammann1988data, finelli1991nasa}, that is, the test cases in some partitions are more likely to detect faults than the test cases in other partitions. Inspired by the observation, AMT takes full advantage of feedback information to update the test profile, aiming at increasing the selection probabilities of partitions with larger failure rates. Accordingly, the MRs whose sources test cases belonging to the partitions with larger failure rates, are more likely to be selected and violated. Therefore, AMT is expected to detect faults more efficient than traditional MT.
+
 
 
 \subsection{Framework}
@@ -218,7 +227,7 @@ In this section, we describe a framework for applying DRT to web services, discu
 \begin{enumerate}[1]
   \item
   \emph{Source Test Case Selection}.
-  
+
   \item
   \emph{candidate MRs Selection}.
 
@@ -235,12 +244,98 @@ In this section, we describe a framework for applying DRT to web services, discu
 
 \subsection{Updating Test Profile Strategies}
 \label{sec:updatingTestProfile}
+When the source test case $stc$ and follow-up test case $ftc$ related to an metamorphic relation $MR$ belong to the same partition $s_i$, DRT is suitable to adjust the test profile. However, during the test process, there are some scenarios where the $stc$ is not in the same partition as $ftc$. In such scenarios, DRT cannot be used to adjust the test profile. To solve this problem, we proposed metamorphic dynamic random testing (MDRT).
+
+Suppose that source test case $stc$ and follow-up test case $ftc$ related to an metamorphic relation $MR$, belong to $s_i$ and $s_f$ ($f \in \{1, 2, \ldots, m\}, f \ne i$), respectively. If their results violate the $MR$, $\forall j = 1, 2, \ldots, m$ and $j \ne i, f$, we set
+
+\begin{equation}
+\label{eq:MDRThitJ}
+p'_j =
+\begin{cases}
+p_j - \displaystyle\frac{2\epsilon}{m-2} & \text{if } p_j \geq \displaystyle\frac{2\epsilon}{m-2} \\
+0 & \text{if } p_j < \displaystyle\frac{2\epsilon}{m-2}
+\end{cases},
+\end{equation}
+where $\epsilon$ is a probability adjusting factor, and then
+
+\begin{equation}
+\label{eq:MDRThitI}
+  p'_i = p_i + \displaystyle\frac{(1-\sum_{\substack{j = 1, j \ne i,m}}^m p_j^{'}) - p_i - p_f}{2},
+\end{equation}
+
+\begin{equation}
+\label{eq:MDRThitF}
+  p'_f = p_f + \displaystyle\frac{(1-\sum_{\substack{j = 1, j \ne i,m}}^m p_j^{'}) - p_i - p_f}{2}.
+\end{equation}
+
+Alternatively, if their results hold the $MR_h$, we set
+
+\begin{equation}
+\label{eq:MDRTmissI}
+p'_i =
+\begin{cases}
+p_i - \epsilon & \text{if } p_i \geq \epsilon \\
+0 & \text{if } p_i < \epsilon
+\end{cases},
+\end{equation}
+
+\begin{equation}
+\label{eq:MDRTmissF}
+p'_f =
+\begin{cases}
+p_f - \epsilon & \text{if } p_f \geq \epsilon \\
+0 & \text{if } p_f < \epsilon
+\end{cases},
+\end{equation}
+and then for $\forall j = 1, 2, \ldots, m$ and $j \neq i, f$, we set
+
+\begin{equation}
+\label{eq:MDRTmissJ}
+p'_j = p_j + \displaystyle\frac{(p_i - p_i^{'}) + (p_f - p_f^{'})}{m - 2}
+\end{equation}
+
+The detailed MDRT algorithm is given in Algorithm \ref{alg:mdrt}. In MDRT, the source test case is selected from a partition that has been randomly selected according to the test profile $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$, and an metamorphic relation is select according to some strategies (Lines 2 to 4 in Algorithm \ref{alg:drt}). During the testing, if the source and follow-up test cases are not in same partition, then the test profile is updated by changing the $p_i$: If a fault is detected, then Formulas \ref{eq:MDRThitJ}, \ref{eq:MDRThitI}, and \ref{eq:MDRThitF} are used to adjust the values of $p_i$ (Line 8), otherwise Formulas \ref{eq:MDRTmissI}, \ref{eq:MDRTmissF}, and \ref{eq:MDRTmissJ} are used (Line 10). The testing process is stopped as long as the termination condition is satisfied.
+
+\begin{algorithm}
+\caption{MDRT}
+\label{alg:mdrt}
+    \begin{algorithmic}[1]
+    \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+    \renewcommand{\algorithmicendwhile}{\algorithmicend\_\algorithmicwhile}
+    \renewcommand{\algorithmicendif}{\algorithmicend\_\algorithmicif}
+    \REQUIRE $\epsilon, p_1, p_2, \ldots, p_m, MR_1, MR_2, \ldots, MR_n$
+    \WHILE {termination condition is not satisfied}
+    \STATE Select a partition $s_i$ according to the test profile $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m
+    \right \rangle\}$.
+    \STATE Select a source test case $stc_i$ from $s_i$, and an metamorphic relation $MR_h$ ($h \in \{1, 2, \ldots, n\}$).
+    \STATE Based on the $MR_h$, follow-up test case $ftc_i$ is generated from $stc_i$, belonging to partition $s_f$.
+    \STATE Test the SUT using $stc_i$ and $ftc_i$.
+    \IF {$i \ne f$}
+    \IF {the results of $stc_i$ and $ftc_i$ violate the MR}
+    \STATE Update $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$ according to Formulas
+    \ref{eq:MDRThitJ}, \ref{eq:MDRThitI}, and \ref{eq:MDRThitF}.
+    \ELSE
+    \STATE Update $\{\left \langle s_1, p_1 \right \rangle, \left \langle s_2, p_2 \right \rangle, \ldots, \left \langle s_m, p_m \right \rangle\}$ according to Formulas
+    \ref{eq:MDRTmissI}, \ref{eq:MDRTmissF}, and \ref{eq:MDRTmissJ}.
+    \ENDIF
+    \ENDIF
+    \ENDWHILE
+    \end{algorithmic}
+\end{algorithm}
 
 \subsection{Selecting MR Strategies}
 \label{sec:selectingMR}
 
+
+
+
 \subsection{Partition Based SDMT}
 \label{sec:partitionSDMT}
+
+
+
+
+
 
 \subsection{Random Based SDMT}
 \label{sec:randomSDMT}
@@ -255,11 +350,11 @@ We conducted a series of empirical studies to evaluate the performance of DRT.
 In our experiments, we focused on addressing the following three research questions:
 \begin{description}
   \item [\textbf{RQ1}] \textbf{How efficient is SDMT at detecting faults?}
-  
+
   Fault-detection efficiency is a key criterion for evaluating the performance of a testing technique. In our study, we chose three real-life programs, and applied mutation analysis to evaluate the fault-detecting efficiency.
-  
-  \item [\textbf{RQ2}] \textbf{What is the actual test case selection overhead when using the M-AMT strategy?} 
-  
+
+  \item [\textbf{RQ2}] \textbf{What is the actual test case selection overhead when using the M-AMT strategy?}
+
   We evaluate the test case selection overhead of M-AMT and compare with traditional MT in detecting software faults.
 \end{description}
 
@@ -275,7 +370,7 @@ In order to address our research questions, we chose to study four sets of objec
   programs               &Source        &Language  &LOC     &All Faults &Used Faults &Number of  &Number of  \\
                          &              &          &        &           &            &MRs        &Partitions\\ \hline
   \texttt{CUBS}          &Laboratory    &Java      &107     &187        &4           &184        &8 \\ \hline
-  \texttt{ACMS}          &Laboratory    &Java      &128     &210        &9           &142        &4 \\ \hline      
+  \texttt{ACMS}          &Laboratory    &Java      &128     &210        &9           &142        &4 \\ \hline
   \texttt{ERS}           &Laboratory    &Java      &117     &180        &4           &1130       &12 \\ \hline
   \texttt{grep}          &GUN           &c         &10,068  &20         &20          &12         &-- \\ \hline
   \texttt{printtokens}   &SIR           &c         &483     &7          &7           &3          &-- \\ \hline
@@ -347,18 +442,36 @@ The seven object programs selected from the SIR [24] repository were \texttt{pri
 \begin{enumerate}[1]
   \item
   Faulty versions of the programs are available.
-  
+
   \item
   The programs are of manageable size and complexity for an initial study.
-  
+
   \item
   All programs and related materials are available from the SIR, and the MRs of each program are defined in  \cite{xie2013metamorphic}.
-  
+
 \end{enumerate}
-The \texttt{printtokens} and \texttt{printtokens2} are independent implementations of the same specification. They each implement a lexical analyzer. Their input files are split into lexical tokens according to a tokenizing scheme, and their output is the separated tokens. The \texttt{replace} program is a command-line utility that takes a search string, a replacement string, and an input file. The search string is a regular expression. The replacement string is text, with some metacharacters to enable certain features. The \texttt{replace} program searches for occurrences of the search string in the input file, and produces an output file where each occurrence of the search string is replaced with the replacement string. The \texttt{schedule} and \texttt{schedule2} programs are also independent implementations of the same specification. They each implement a priority scheduler that takes three non-negative integers and an input file. The integers indicate the number of initial processes at the three available scheduling priorities. The \texttt{schedule} and \texttt{schedule2} programs then take as input a command file that specifies certain actions to be taken { for instance, adding a new process for the scheduler to manage. The programs then calculate the scheduling of the processes. The output of the programs is a list of numbers indicating the order in which processes exit from the system.
+
+The \texttt{printtokens} and \texttt{printtokens2} are independent implementations of the same specification. They each implement a lexical analyzer. Their input files are split into lexical tokens according to a tokenizing scheme, and their output is the separated tokens. The \texttt{replace} program is a command-line utility that takes a search string, a replacement string, and an input file. The search string is a regular expression. The replacement string is text, with some metacharacters to enable certain features. The \texttt{replace} program searches for occurrences of the search string in the input file, and produces an output file where each occurrence of the search string is replaced with the replacement string. The \texttt{schedule} and \texttt{schedule2} programs are also independent implementations of the same specification. They each implement a priority scheduler that takes three non-negative integers and an input file. The integers indicate the number of initial processes at the three available scheduling priorities. The \texttt{schedule} and \texttt{schedule2} programs then take as input a command file that specifies certain actions to be taken. The \texttt{tcas} program is a small part of a much larger aeronautical collision avoidance system. It performs simple analysis on data provided by other parts of the system and returns an integer indicating what action, if any, the pilot should take to avoid collision.
+
+\subsubsection{GUN grep}
+\label{sec:grep}
+
+The used version of the \texttt{grep} programs is 2.5.1a \cite{grep}. This program searches one or more input files for lines containing a match to a specified pattern. By default, grep prints the matching lines. We chose \texttt{grep} for our study for several reasons:
+\begin{enumerate}[1]
+  \item
+  The \texttt{grep} program is wide used in Unix system, providing a opportunity to demonstrate the real world relevance of our techniques.
+  \item
+  The \texttt{grep} program, and its input format, are of greater complexity than the the programs in the other test sets, but still manageable as a target for automated test case generation.
+\end{enumerate}
+
+The inputs of the \texttt{grep} were categorize into three components: options, which consist of a list of commands to modify the searching process, pattern, which is the regular expression to be searched for, and files, which refers to the input files to be searched.
+
+The scope of functionality of this program is larger, which leads to construct test infrastructure to test all of functionality would have been impractical. Therefore, we restricted our focus to the regular expression analyzer of the \texttt{grep}.
 
 \subsubsection{Real-World Popular Programs}
 \label{sec:realPragrams}
+The \texttt{FastJson}
+
 
 \subsection{Variables}
 
@@ -422,297 +535,7 @@ For each of these metrics, smaller values indicate a better performance.
 \section{Experimental Results}
 \label{sec:results}
 
-\subsection{RQ1: Fault Detection Effectiveness}
-\label{sec:1}
 
-The distributions of F-, F2-, and T-measure results for each program are displayed using boxplots in
-Figures~\ref{fig:Fmeasure} to~\ref{fig:Tmeasure}.
-In each boxplot, the upper and lower bounds of the box represent the third and first quartiles of the metric, respectively;
-the middle line represents the median value;
-the upper and lower whiskers mark, respectively, the largest and smallest data within the range of $\pm 1.5 \times IQR$ (where $IQR$ is the interquartile range);
-outliers beyond the  $IQR$ are denoted with hollow circles; and
-each solid circle represents the mean value of the metric.
-
-
-It can observed from the tables and figures that, in general, DRT is the best performer, followed by RPT.
-We also conducted statistical testing to verify the significance of this observation, using the Holm-Bonferroni method~\cite{sun2018adaptive} (with p-value equal to $0.05$) to determine which pairs of testing techniques had significant differences.
-The statistical data are shown in Table \ref{tableHlom:f/f2/t-measure}, where each cell gives the number of scenarios where the technique above (in the table) performed better than one to the left.
-Where the difference is significant, the number is underlined and in bold face.
-For example, the \underline{\textbf{75}} in the top right cell of Table~\ref{tableHlom:f/f2/t-measure} indicates that, of 78 scenarios (13 parameters $\times$ two partition schemes $\times$ three web services), DRT had lower F2-measure scores than RT for 75, with the fault-detection capabilities of these two techniques being significantly different.
-
-\begin{table}[htbp]
-  \caption{Number of Scenarios Where the Technique on the Top Wow Has a Lower Metric (F-/F2/T-measure) Score Than That on The Left Column}
-  \centering
-  \label{tableHlom:f/f2/t-measure}
-  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}  \hline
-  \multirow{2}{*}{}  &\multicolumn{3}{|c|}{F-measure}                  &\multicolumn{3}{|c|}{F2-measure}        &\multicolumn{3}{|c|}{T-measure} \\ \cline{2-10}
-                     & \!RT\!    &  \!RPT\!    &\!DRT\!                & \!RT\!    &  \!RPT\!    &\!DRT\!       & \!RT\!    &  \!RPT\!    &\!DRT\!           \\ \hline
-  RT                 & ---   &4        &\underline{\textbf{60}}        & ---   &4     &\underline{\textbf{69}}  & ---   &6   &\underline{\textbf{75}}  \\ \hline
-  RPT                &2      & ---     &\underline{\textbf{62}}        &2      & ---  &\underline{\textbf{63}}  &0      &---     &\underline{\textbf{64}} \\ \hline
-  DRT&\underline{\textbf{18}}&\underline{\textbf{16}}&---&\underline{\textbf{9}} &\underline{\textbf{15}} &--- &\underline{\textbf{3}}  &\underline{\textbf{14}} & ---  \\ \hline
-  \end{tabular}
-\end{table}
-
-
-%\begin{table}[htbp]
-%  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower F-measure Score Than That on the Left Column}
-%  \centering
-%  \label{tableHolm:fmeasure}
-%  \begin{tabular}{|c|c|c|c|} \hline
-%          &RT                      &RPT                              &DRT                          \\ \hline
-%    RT    & ---                    &4                                &\underline{\textbf{60}}      \\ \hline
-%    RPT   &2                       & ---                             &\underline{\textbf{62}}      \\ \hline
-%    DRT   &\underline{\textbf{18}} &\underline{\textbf{16}}          & ---                         \\ \hline
-%  \end{tabular}
-%\end{table}
-%
-%\begin{table}[htbp]
-%  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower F2-measure Score Than That on the Left Column}
-%  \centering
-%  \label{tableHlom:nfmeasure}
-%  \begin{tabular}{|c|c|c|c|} \hline
-%          &RT                           &RPT                                   &DRT                       \\ \hline
-%    RT    & ---                         &4                                     &\underline{\textbf{69}}   \\ \hline
-%    RPT   &2                            & ---                                  &\underline{\textbf{63}}   \\ \hline
-%    DRT   &\underline{\textbf{9}}       &\underline{\textbf{15}}               & ---                       \\ \hline
-%  \end{tabular}
-%\end{table}
-%
-%\begin{table}[htbp]
-%  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower T-measure Score Than That on the Left Column}
-%  \centering
-%  \label{tableHlom:tmeasure}
-%  \begin{tabular}{|c|c|c|c|} \hline
-%          &RT                      &RPT                              &DRT                           \\ \hline
-%    RT    & ---                    &6                                &\underline{\textbf{75}}        \\ \hline
-%    RPT   &0                       & ---                             &\underline{\textbf{64}}       \\ \hline
-%    DRT   &\underline{\textbf{3}}  &\underline{\textbf{14}}          & ---                           \\ \hline
-%  \end{tabular}
-%\end{table}
-
-
-Table~\ref{tableHlom:f/f2/t-measure} clearly shows that the difference between each pair of testing techniques is always significantly different.
-
-\subsection{RQ2: Relationship between Partition Number and $\varepsilon$}
-
-In~\ref{sec:relation}, we analyzed the relationship between the number of partitions and the DRT strategy parameter $\varepsilon$.
-In this section, we show that our theoretical analysis provides useful guidance to testers to set the value of $\varepsilon$.
-
-We used three web services to validate our theoretical analysis.
-Before starting the test, the failure rate $\theta_i$ of partition $s_i$ was obtained by executing ($k$) test cases from $s_i$ until revealing a fault, then $\theta_i = k / k_i$, where $k_i$ is the total number of test cases in $s_i$.
-According to Formula 19, the theoretically optimal values of~$\varepsilon$ in each scenario for each web service are shown in Table~\ref{tab:parameters}, where $\varepsilon^{*}$ denotes the theoretical value of $\varepsilon$.
-We ran a series of experiments with the parameters set according to those in Table~\ref{tab:parameters}:
-The F-, F2-, and T-measure results for each  program are shown in Figure~\ref{fig:theovsnontheo}, where $\varepsilon_1^{*}$ and $\varepsilon_2^{*}$ denote the theoretical values of parameter $\varepsilon$ in the two different partition schemes, respectively.
-For ease of presentation and understanding, we used $log_{100}(1.0E05 \times \varepsilon)$ for the horizontal axis in Figure \ref{fig:theovsnontheo}.
-Apart from the DRT strategy parameter $\varepsilon$, all other experimental settings remained the same as in Section~\ref{sec:1}.
-
-\begin{table}
-  \caption{Theoretical Optimal Values of DRT Parameter}
-  \centering
-  \label{tab:parameters}
-  \begin{tabular}{|c|c|c|c|} \hline
-     Web                         & Partition  &$\theta_{min}$   &$\varepsilon^{*}$             \\
-     service                   & scheme     &                 &                \\ \hline
-     \multirow{2}{*}{ACMS}       &1           &5.452E-2         &1.601E-1        \\ \cline{2-4}
-                                 &2           &2.797E-3         &1.102E-4        \\ \hline
-     \multirow{2}{*}{CUBS}       &1           &1.193E-3         &5.702E-5        \\ \cline{2-4}
-                                 &2           &1.397E-3         &1.734E-5        \\ \hline
-     \multirow{2}{*}{PBS}        &1           &1.760E-3         &1.118E-4        \\ \cline{2-4}
-                                 &2           &1.492E-3         &1.340E-5        \\ \hline
-  \end{tabular}
-\end{table}
-
-From Figure~\ref{fig:theovsnontheo}, we have the following observations:
-\begin{itemize}
-  \item
-  In most scenarios, the DRT strategy with theoretically optimum parameter value performs best.
-  Furthermore, the DRT strategy performs better when the parameter values are near the theoretically optimum value than when not.
-
-  \item
-  From Figure \ref{fig:theovsnontheo} (a), it can be observed that the DRT strategy with larger parameter values performs better than with the theoretically optimum value, in terms of the F-measure.
-  The main reason for this is that, for this scenario, the maximum failure rate ($\theta_M = 4.781E-3$) is large and the number of partitions is small:
-  When the parameter value is large, the probability of selecting partitions with lower failure rates is quickly reduced, and the probability of selecting partitions with larger failure rates is quickly increased, according to Formulas 3 and 4.
-
-\end{itemize}
-
-\begin{figure*}
-	\centering
-    \subfigure[ACMS] {\includegraphics[width=0.32\textwidth,height=5cm]{fig/drtparemeter/avia.pdf}}
-	\subfigure[CUBS] {\includegraphics[width=0.32\textwidth,height=5cm]{fig/drtparemeter/china.pdf}}
-	\subfigure[PBS] {\includegraphics[width=0.32\textwidth,height=5cm]{fig/drtparemeter/parking.pdf}}
-	\caption{Line charts of F-measure, F2-measure, and T-measure values for each program (for both the theoretically optimum parameter value, and other values}
-	\label{fig:theovsnontheo}
-\end{figure*}
-
-\subsection{RQ3: Selection Overhead}
-
-Tables~\ref{tab:timeavia} to~\ref{tab:timeparking} summarize the F-, F2-, and T-time results, respectively, and their distributions for each web service is shown in Figures~\ref{fig:Ftime} to \ref{fig:Ttime}.
-It can be observed from the figures that, in general, DRT had the best performance, and RPT just marginally outperforms RT.
-
-\begin{table}[hbt]
-  \caption{F-time, F2-time and T-time for Web Service ACMS (in ms)}
-  \label{tab:timeavia}
-  \centering
-  \setlength{\tabcolsep}{1mm}{
-  \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
-     \multicolumn{2}{|c|}{\multirow{2}{*}{Strategy}} &\multicolumn{3}{|c|}{Partition scheme 1} &\multicolumn{3}{|c|}{Partition scheme 2}\\ \cline{3-8}
-     \multicolumn{2}{|c|}{}    &F-time	&F2-time &T-time &F-time &F2-time &T-time  \\ \hline
-     \multicolumn{2}{|c|}{RT}  &0.43	&0.29	&0.85	&0.43 	&0.29	&0.85   \\ \hline
-     \multicolumn{2}{|c|}{RPT} &0.57	&0.31	&1.08	&0.33	&0.45	&0.78   \\ \hline
-         \multirow{13}{*}{DRT} &1.0E-5    &0.47	&0.28	&0.96	&0.38	&0.41	&0.95  \\ \cline{2-8}
-                               &5.0E-5	  &0.35	&0.21	&0.78	&0.30	&0.27	&0.71 \\ \cline{2-8}
-                               &1.0E-4	  &0.33	&0.19	&0.66	&0.24	&0.28	&0.65 \\ \cline{2-8}
-                               &5.0E-4	  &0.30	&0.17	&0.60	&0.27	&0.25	&0.67 \\ \cline{2-8}
-                               &1.0E-3	  &0.29	&0.19	&0.61	&0.22	&0.24	&0.60 \\ \cline{2-8}
-                               &5.0E-3	  &0.28	&0.23	&0.62	&0.21	&0.31	&0.64 \\ \cline{2-8}
-                               &1.0E-2	  &0.24	&0.17	&0.53	&0.23	&0.29	&0.66 \\ \cline{2-8}
-                               &5.0E-2	  &0.28	&0.13	&0.49	&0.23	&0.35	&0.71 \\ \cline{2-8}
-                               &1.0E-1	  &0.26	&0.08	&0.43	&0.23	&0.29	&0.63 \\ \cline{2-8}
-                               &2.0E-1	  &0.23	&0.12	&0.43	&0.30	&0.46	&0.89 \\ \cline{2-8}
-                               &3.0E-1	  &0.24	&0.11	&0.45	&0.18	&0.40	&0.69 \\ \cline{2-8}
-                               &4.0E-1	  &0.27	&0.10	&0.47	&0.16	&0.31	&0.58 \\ \cline{2-8}
-                               &5.0E-1	  &0.28	&0.11	&0.47	&0.28	&0.45	&0.86 \\ \hline
-  \end{tabular}}
-\end{table}
-
-
-\begin{table}[hbt]
-  \caption{F-time, F2-time and T-time for Web Service CUBS (in ms)}
-  \label{tab:timechina}
-  \centering
-  \setlength{\tabcolsep}{1mm}{
-  \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
-     \multicolumn{2}{|c|}{\multirow{2}{*}{Strategy}} &\multicolumn{3}{|c|}{Partition scheme 1} &\multicolumn{3}{|c|}{Partition scheme 2}\\ \cline{3-8}
-     \multicolumn{2}{|c|}{}    &F-time	&F2-time &T-time &F-time &F2-time &T-time  \\ \hline
-     \multicolumn{2}{|c|}{RT}  &0.82	&1.14	&34.69	&0.82	&1.14	&34.69   \\ \hline
-     \multicolumn{2}{|c|}{RPT} &0.91	&0.87	&30.54	&0.75	&0.79	&34.59   \\ \hline
-         \multirow{13}{*}{DRT} &1.0E-5    &0.91	&0.87	&30.14	&0.87	&0.83	&36.49  \\ \cline{2-8}
-                               &5.0E-5	  &0.95	&0.86	&30.21	&0.82	&0.75	&34.70\\ \cline{2-8}
-                               &1.0E-4	  &0.77	&0.89	&29.27	&0.86	&0.69	&35.34 \\ \cline{2-8}
-                               &5.0E-4	  &0.79	&1.00	&31.05	&0.87	&0.90	&36.85 \\ \cline{2-8}
-                               &1.0E-3	  &0.86	&0.88	&29.93	&0.92	&0.77	&36.44 \\ \cline{2-8}
-                               &5.0E-3	  &0.86	&0.83	&30.28	&0.83	&0.83	&36.27 \\ \cline{2-8}
-                               &1.0E-2	  &0.95	&0.88	&29.33	&0.84	&0.72	&35.23 \\ \cline{2-8}
-                               &5.0E-2	  &0.84	&0.82	&30.56	&0.88	&0.72	&37.07 \\ \cline{2-8}
-                               &1.0E-1	  &0.88	&0.93	&29.45	&0.82	&0.76	&37.14 \\ \cline{2-8}
-                               &2.0E-1	  &0.83	&0.83	&30.16	&0.86	&0.73	&36.79 \\ \cline{2-8}
-                               &3.0E-1	  &0.95	&0.86	&27.81	&0.84	&0.84	&36.89 \\ \cline{2-8}
-                               &4.0E-1	  &0.84	&0.84	&28.23	&0.86	&0.82	&35.22 \\ \cline{2-8}
-                               &5.0E-1	  &0.87	&0.84	&27.91	&0.90	&0.86	&38.21 \\ \hline
-  \end{tabular}}
-\end{table}
-
-\begin{table}[hbt]
-  \caption{F-time, F2-time and T-time for Web Service PBS (in ms)}
-  \label{tab:timeparking}
-  \centering
-  \setlength{\tabcolsep}{1mm}{
-  \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
-     \multicolumn{2}{|c|}{\multirow{2}{*}{Strategy}} &\multicolumn{3}{|c|}{Partition scheme 1} &\multicolumn{3}{|c|}{Partition scheme 2}\\ \cline{3-8}
-     \multicolumn{2}{|c|}{}    &F-time	&F2-time &T-time &F-time &F2-time &T-time  \\ \hline
-     \multicolumn{2}{|c|}{RT}  &0.81	&0.42	&4.12	&0.81	&0.42	&4.12   \\ \hline
-     \multicolumn{2}{|c|}{RPT} &0.85	&0.52	&3.83	&0.66	&0.35	&2.98   \\ \hline
-         \multirow{13}{*}{DRT} &1.0E-5    &0.76	&0.48	&3.85	&1.05	&0.51	&3.44  \\ \cline{2-8}
-                               &5.0E-5    &0.73	&0.35	&3.02	&0.91	&0.52	&3.79\\ \cline{2-8}
-                               &1.0E-4    &0.54	&0.36	&2.97	&0.49	&0.34	&2.26 \\ \cline{2-8}
-                               &5.0E-4    &0.68	&0.34	&3.20	&0.50	&0.30	&2.31 \\ \cline{2-8}
-                               &1.0E-3    &0.62	&0.38	&2.87	&0.52	&0.38	&2.42 \\ \cline{2-8}
-                               &5.0E-3    &0.60	&0.38	&2.99	&0.43	&0.51	&2.40 \\ \cline{2-8}
-                               &1.0E-2    &0.58	&0.42	&2.84	&0.51	&0.34	&2.41 \\ \cline{2-8}
-                               &5.0E-2    &0.64	&0.44	&3.27	&0.59	&0.36	&2.49 \\ \cline{2-8}
-                               &1.0E-1    &0.65	&0.38	&3.46	&0.60	&0.38	&2.56 \\ \cline{2-8}
-                               &2.0E-1	  &0.60	&0.36	&3.22	&0.54	&0.59	&2.47 \\ \cline{2-8}
-                               &3.0E-1	  &0.59	&0.44	&3.24	&0.57	&0.46	&2.57 \\ \cline{2-8}
-                               &4.0E-1	  &0.61	&0.33	&2.90	&0.51	&0.33	&2.54 \\ \cline{2-8}
-                               &5.0E-1	  &0.62	&0.44	&3.16	&0.56	&0.36	&2.56 \\ \hline
-  \end{tabular}}
-\end{table}
-
-\begin{figure*}
-	\centering
-    \subfigure[ACMS] {\includegraphics[width=0.32\textwidth,height=4cm]{fig/drttime/aviatimef}}
-	\subfigure[CUBS] {\includegraphics[width=0.32\textwidth,height=4cm]{fig/drttime/chinatimef}}
-	\subfigure[PBS] {\includegraphics[width=0.32\textwidth,height=4cm]{fig/drttime/parkingtimef}}
-	\caption{F-time boxplots for each program}
-	\label{fig:Ftime}
-\end{figure*}
-
-\begin{figure*}
-	\centering
-	\subfigure[ACMS] {\includegraphics[width=0.32\textwidth,height=4cm]{fig/drttime/aviatimef2}}
-	\subfigure[CUBS] {\includegraphics[width=0.32\textwidth,height=4cm]{fig/drttime/chinatimef2}}
-	\subfigure[PBS] {\includegraphics[width=0.32\textwidth,height=4cm]{fig/drttime/parkingtimef2}}
-	\caption{F2-time boxplots for each program}
-	\label{fig:F2time}
-\end{figure*}
-
-
-\begin{figure*}
-	\centering
-	\subfigure[ACMS] {\includegraphics[width=0.32\textwidth,height=4cm]{fig/drttime/aviatimet}}
-	\subfigure[CUBS] {\includegraphics[width=0.32\textwidth,height=4cm]{fig/drttime/chinatimet}}
-	\subfigure[PBS] {\includegraphics[width=0.32\textwidth,height=4cm]{fig/drttime/parkingtimet}}
-	\caption{T-time boxplots for each program}
-	\label{fig:Ttime}
-\end{figure*}
-
-As was done for the F-, F2-, and T-measure data, we used the Holm-Bonferroni method to check the difference between each pair of testing strategies in terms of F-time, F2-time, and T-time, as shown in Table \ref{tableHlom:f/f2/t-time}.
-
-In Table \ref{tableHlom:f/f2/t-time}, some entries (such as "\underline{\textbf{61}}" \& "\underline{\textbf{17}}" for DRT vs. RT, "\underline{\textbf{57}}" vs. "\underline{\textbf{21}}" for DRT vs. RPT) are in bold font and underline, meaning that, in terms of F-/F2-/T-time, DRT was significantly better than RT, and DRT only marginally outperformed RPT.
-In other words, the additional computation incurred in DRT by updating the test profile is compensated for in terms of test execution savings.
-
-\begin{table}[htbp]
-  \caption{Number of Scenarios Where the Technique on the Top Wow Has a Lower Metric (F-/F2/T-time) Score Than That on The Left Column}
-  \centering
-  \label{tableHlom:f/f2/t-time}
-  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}  \hline
-  \multirow{2}{*}{}  &\multicolumn{3}{|c|}{F-measure}                  &\multicolumn{3}{|c|}{F2-measure}        &\multicolumn{3}{|c|}{T-measure} \\ \cline{2-10}
-                     & \!RT\!    &  \!RPT\!    &\!DRT\!                & \!RT\!    &  \!RPT\!    &\!DRT\!       & \!RT\!    &  \!RPT\!    &\!DRT\!          \\ \hline
-  RT                 & ---   &5        &\underline{\textbf{53}}        & ---   &3     &\underline{\textbf{62}}  & ---   &5   &\underline{\textbf{61}}  \\ \hline
-  RPT                &1      & ---     &\underline{\textbf{59}}        &3      & ---  &\underline{\textbf{57}}  &1      &---     &\underline{\textbf{57}} \\ \hline
-  DRT&\underline{\textbf{25}}&\underline{\textbf{19}}&---&\underline{\textbf{16}} &\underline{\textbf{21}} &--- &\underline{\textbf{17}}  &\underline{\textbf{21}} & ---  \\ \hline
-  \end{tabular}
-\end{table}
-
-%\begin{table}[hbt]
-%  \caption{Number of Scenarios Where The Technique on the Top Row Has a Lower F-time Than That on the Left Column}
-%  \centering
-%  \label{tableHolm:ftime}
-%  \begin{tabular}{|c|c|c|c|} \hline
-%          &RT                      &RPT                              &DRT                       \\ \hline
-%    RT    & ---                    &5                                &\underline{\textbf{53}}   \\ \hline
-%    RPT   &1                       & ---                             &\underline{\textbf{59}}   \\ \hline
-%    DRT   &\underline{\textbf{25}} &\underline{\textbf{19}}          & ---                      \\ \hline
-%  \end{tabular}
-%\end{table}
-%
-%\begin{table}[hbt]
-%  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower F2-time Than That on the Left Column}
-%  \centering
-%  \label{tableHlom:nftime}
-%  \begin{tabular}{|c|c|c|c|} \hline
-%          &RT                      &RPT                              &DRT                       \\ \hline
-%    RT    & ---                    &3                                &\underline{\textbf{62}}   \\ \hline
-%    RPT   &3                       & ---                             &\underline{\textbf{57}}   \\ \hline
-%    DRT   &\underline{\textbf{16}} &\underline{\textbf{21}}          & ---                      \\ \hline
-%  \end{tabular}
-%\end{table}
-%
-%\begin{table}[hbt]
-%  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower T-time Than That on the Left Column}
-%  \centering
-%  \label{tableHlom:ttime}
-%  \begin{tabular}{|c|c|c|c|} \hline
-%          &RT                      &RPT                              &DRT                         \\ \hline
-%    RT    & ---                    &5                                &\underline{\textbf{61}}     \\ \hline
-%    RPT   &1                       & ---                             &\underline{\textbf{57}}     \\ \hline
-%    DRT   &\underline{\textbf{17}}  &\underline{\textbf{21}}          & ---                        \\ \hline
-%  \end{tabular}
-%\end{table}
-
-It can also be observed from Table~\ref{tableHlom:f/f2/t-time} that DRT only slightly outperformed RPT, but that DRT was significantly better than RT, especially in term of $T$-$time$.
-
-In summary, the DRT strategy is considered the best testing technique across all six metrics, and RPT marginally outperformed RT.
 
 \section{Related Work}
 \label{sec:relatedwork}
@@ -721,72 +544,6 @@ In this section, we describe related work from two perspectives:
 related to testing techniques for web services; and
 related to improving RT and PT.
 
-\subsection{Testing Techniques for Web Services}
-
-In recent years, a lot of effort has been made to test web services~\cite{canfora, bozkurt2010, li2014two, qiu2015regression}.
-Test case generation or selection is core to testing web services, and model-based~\cite{dalal1999model} and specification-based~\cite{li2009towards} techniques are two common approaches.
-Before making services available on the Internet, testers can use model-based techniques to verify whether or not the behavior of the WSUT meets their requirements.
-In these techniques, test data can be generated from a data model that specifies the inputs to the software---this data model can be built before, or in parallel to, the software development process.
-Verification methods using technologies such as theorem-proving~\cite{sinha2006model}, models~\cite{paradkar2007} and Petri-Nets~\cite{xiang2015executable} also exist.
-%Sinha et al.~\cite{sinha2006model}, for example, used theorem-proving to generate test cases, making use of existing test generation methods based on extended finite state machine (EFSM) specifications.
-%Paradkar et al. \cite{paradkar2007} proposed a model-based test data generation technique for semantic web services, where test cases are generated using pre-defined fault-models and the IOPE (Inputs, Outputs, Preconditions, Effects paradigm) information from semantic specifications.
-%Dong et al. \cite{dong2006web} proposed a web service testing technique based on fault coverage, in which a High-level Petri Net (HPN) is first constructed by analyzing the WSDL specification for each operation, and HPNs for all operations are merged into one for the service.
-%Then, a UIO (Unique Input Output) sequence is generated based on the resulting HPN through graph transformation.
-%Finally, a test case for each UIO sequence is generated to meet the fault-coverage requirements.
-%When testing web services, because it is often only the service's specification that users can receive, specification-based testing is a natural choice.
-%Typically, the web service specification is contained in the web service description language (WSDL) document, which provides information about the available operations and parameters.
-%Many methods proposed for WSDL-based test data generation are based on the XML schema data type.
-%Hanna and Munro proposed a framework that can be used to test the robustness of a web service~\cite{hanna2009approach}.
-%Their framework analyzes the WSDL documents of web services to identify what faults could impact the robustness, facilitating the design of test cases to detect those faults.
-
-All the above approaches aim to generate test cases without considering the impact of test case execution order on test efficiency.
-In contrast, Bertolino et al.~\cite{bertolino2007automatic} proposed using the category-partition method~\cite{Ostrand88} with XML schemas to perform XML-based partition testing.
-Because PT aims to find subsets of all possible test cases to adequately test a system, it can help reduce the required number of test cases.
-Our approach involved software cybernetics and PT:
-In DRT, selection of a partition is done according to the testing profile, which is updated throughout the test process.
-An advantage of DRT is that partitions with larger failure rates have higher probabilities of selection.
-Zhu and Zhang~\cite{zhu2012collaborative} proposed a collaborative testing framework, where test tasks are completed using collaborating test services---a test service is a service assigned to perform a specific testing task.
-Our framework (Section~\ref{sec:framework}) aims to find more faults in the WSUT, with the result of the current test case execution providing feedback to the control system so that the next test case selected has a greater chance to reveal faults.
-
-Most web service testing techniques assume that the computed output for any test case is verifiable, which is however not always true in practice (known as the oracle problem \cite{barr2015oracle, patel2018mapping}). Thus, many testing techniques may not be applicable in some cases.
-To address the common oracle problem for testing web services, a metamorphic testing~\cite{chen1998metamorphic,chen2018metamorphic} approach has been proposed that not only alleviates the oracle problem, but also presents a feasible and efficient option for testing web services.
-Sun et al. proposed a metamorphic testing framework for web services~\cite{sun2011} and conducted a case study that showed that up to 94.1\% of seeded faults could be detected without the need for oracles.
-
-\subsection{Improving RT and PT}
-
-Based on the observation that failure-causing inputs tend to cluster into contiguous regions in the input domain~\cite{Ammann88, Finelli91}, many works have been done to improve RT~\cite{cai2009random, chen2010adaptive}.
-Adaptive random testing~\cite{chen2010adaptive} is a family of techniques based on random testing that aim to improve the failure-detection effectiveness by evenly spreading test cases throughout the input domain.
-One well-known ART approach, FSCS-ART, selects a next test input from the fixed-size candidate set of tests that is farthest from all previously executed tests~\cite{chen2004adaptive}.
-Many other ART algorithms have also been proposed, including RRT \cite{chan2002restricted, chan2006restricted}, DF-FSCS \cite{mao2017out}, and ARTsum \cite{barus2016cost}, with their effectiveness examined and  validated through simulations and experiments.
-
-Adaptive testing (AT) \cite{Cai07, hu2005case, hu2009improved} takes advantage of feedback information to control the execution process, and has been shown to outperforms RT and RPT in terms of the T-measure and the number of detected faults, which means that AT has higher efficiency and effectiveness than RT and RPT.
-However, AT may require a very long execution time in practice.
-To alleviate this, Cai et al.~\cite{cai2009random} proposed DRT, which uses testing information to dynamically adjust the testing profile.
-There are several things that can impact on DRT's test efficiency.
-Yang et al.~\cite{Yang2014Dynamic} proposed A-DRT, which adjusts parameters during the testing process.
-%Li et al.~\cite{li2015} developed O-DRT, which uses an objective function and a pre-defined parameter $f$ which, when exceeded during the testing process (by the objective function), results in the test profile being adjusted to a theoretically optimal one.
-%Lv et al. \cite{Lv2011} introduced two parameters for adjusting the selection probability of different partitions:
-%$\varepsilon$ adjusts the probability of partitions where a test case detects a fault; and
-%$\delta$ adjusts the probability of partitions where a test case does not detect a fault.
-%($\varepsilon$ should be greater than $\delta$).
-%Furthermore, they recommended setting the $\varepsilon$ and $\delta$ values to have an interval of $\varepsilon/\delta$.
-%However, it is unclear how to set $\varepsilon$ and $\delta$ individually.
-%In this study, we only considered one parameter (i.e. $\varepsilon$) in the DRT algorithm for adjusting the probability of different partitions, and provided detailed settings guidance.
-
-\section{Conclusion}
-\label{sec:conclusion}
-
-In this paper, to address the challenges of testing SOA-based applications, we have presented a dynamic random testing (DRT) method for web services.
-Our method uses random testing to generate test cases, and selects test cases from different partitions in accordance with a testing profile that is dynamically updated in response to the test data collected.
-In this way, the proposed method includes enjoys benefits from both random testing and partition testing.
-
-We proposed a framework that examines key issues when applying DRT to test web services, and developed a prototype to make the method  feasible and effective.
-To guide testers to correctly set the DRT parameters, we used a theoretical analysis to study the relationships between the number of partitions ($m$) and the probability adjusting factor ($\varepsilon$).
-Three real web services were used as experimental subjects to validate the feasibility and effectiveness of our approach.
-Our experimental results show that, in general, DRT has better performance than both RT and RPT, in terms of the F-, F2-, and T-measures, and always outperforms when the $\varepsilon$ settings follow our guidelines.
-In other words, our theoretical analysis can provide genuinely useful guidance to use DRT.
-
-In our future work, we plan to conduct experiments on more web services to further validate its effectiveness, and identify the limitations of our method.
 
 \section*{Acknowledgment}
 

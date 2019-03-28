@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  16 MAR 2019 19:47
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  22 MAR 2019 20:11
 entering extended mode
 **F:/mypapers/AMT/new/MT.tex
 (F:/mypapers/AMT/new/MT.tex
@@ -368,216 +368,241 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
 (Font)              Font shape `OT1/phv/b/sc' tried instead on input line 57.
-
-LaTeX Warning: Reference `sec:DRTforwebserivce' on page 1 undefined on input li
-ne 75.
-
-
-LaTeX Warning: Reference `sec:empiricalstudy' on page 1 undefined on input line
- 76.
-
-
-LaTeX Warning: Reference `sec:conclusion' on page 1 undefined on input line 77.
-
-
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ¯ in font pplr7t!
 [1{G:/latex/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
 
 ]
+
+LaTeX Warning: Reference `sec:DRTforwebserivce' on page 2 undefined on input li
+ne 98.
+
+
+LaTeX Warning: Reference `sec:empiricalstudy' on page 2 undefined on input line
+ 99.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 100
+.
+
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 84.
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 94.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 107.
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 117
+.
+[2]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 127.
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 104.
-
-
-(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
+ (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-)
-
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 211.
-
-
+) [3]
 
 pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig//generateframework.p
 df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<fig//generateframework.pdf, id=13, 576.1525pt x 313.67188pt>
+<fig//generateframework.pdf, id=27, 589.70313pt x 328.72812pt>
 File: fig//generateframework.pdf Graphic file (type pdf)
 
 <use fig//generateframework.pdf>
-Package pdftex.def Info: fig//generateframework.pdf used on input line 213.
-(pdftex.def)             Requested size: 258.9675pt x 140.99309pt.
+Package pdftex.def Info: fig//generateframework.pdf used on input line 231.
+(pdftex.def)             Requested size: 258.9675pt x 144.35991pt.
 
-Overfull \hbox (6.0225pt too wide) in paragraph at lines 213--214
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 231--232
  [][] 
  []
 
-[2]
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 274.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 295.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 344.
 
-Overfull \vbox (2.87064pt too high) detected at line 308
+
+pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig//pcenterpartitionfra
+mework.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> 
+allowed
+<fig//pcenterpartitionframework.pdf, id=28, 758.33313pt x 380.42125pt>
+File: fig//pcenterpartitionframework.pdf Graphic file (type pdf)
+
+<use fig//pcenterpartitionframework.pdf>
+Package pdftex.def Info: fig//pcenterpartitionframework.pdf used on input line 
+347.
+(pdftex.def)             Requested size: 258.9675pt x 129.91037pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 347--348
+ [][] 
+ []
+
+[4 <F:/mypapers/AMT/new/fig//generateframework.pdf>] [5 <F:/mypapers/AMT/new/fi
+g//pcenterpartitionframework.pdf>]
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 489.
+
+Overfull \vbox (2.87064pt too high) detected at line 523
  []
 
 
-Overfull \vbox (3.49689pt too high) detected at line 310
+Overfull \vbox (3.49689pt too high) detected at line 525
  []
 
 
-Overfull \hbox (13.78163pt too wide) in paragraph at lines 305--313
+Overfull \hbox (13.78163pt too wide) in paragraph at lines 520--528
  [][] 
  []
 
 
-Overfull \vbox (2.87064pt too high) detected at line 322
+Overfull \vbox (2.87064pt too high) detected at line 537
  []
 
 
-Overfull \vbox (3.49689pt too high) detected at line 324
+Overfull \vbox (3.49689pt too high) detected at line 539
  []
 
 
-Overfull \hbox (13.78163pt too wide) in paragraph at lines 319--327
+Overfull \hbox (13.78163pt too wide) in paragraph at lines 534--542
  [][] 
  []
 
-[3 <F:/mypapers/AMT/new/fig//generateframework.pdf>]
+[6] [7]
 
-LaTeX Warning: Citation `chen1997optimal' on page 4 undefined on input line 392
+LaTeX Warning: Citation `chen1997optimal' on page 8 undefined on input line 607
 .
 
 
-LaTeX Warning: Citation `zhang2014history' on page 4 undefined on input line 39
-4.
+LaTeX Warning: Citation `zhang2014history' on page 8 undefined on input line 60
+9.
 
 
-LaTeX Warning: Citation `li2015' on page 4 undefined on input line 395.
+LaTeX Warning: Citation `li2015' on page 8 undefined on input line 610.
 
 
-LaTeX Warning: Citation `zhang2014history' on page 4 undefined on input line 39
-5.
+LaTeX Warning: Citation `zhang2014history' on page 8 undefined on input line 61
+0.
 
-[4] (F:\mypapers\AMT\new\MT.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 139--140
+
+LaTeX Warning: Reference `alg:DRT' on page 8 undefined on input line 612.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+(F:\mypapers\AMT\new\MT.bbl [8]
+Underfull \hbox (badness 10000) in paragraph at lines 269--270
 []\OT1/ppl/m/n/8.03 T. G. Project, ``Grep home page.
  []
 
-[5]
 Missing character: There is no ¡ in font pplri7t!
 Missing character: There is no ¯ in font pplri7t!
 )
 
 pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig/authors/CASun.pdf): 
 PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<fig/authors/CASun.pdf, id=75, 74.43811pt x 99.4917pt>
+<fig/authors/CASun.pdf, id=130, 74.43811pt x 99.4917pt>
 File: fig/authors/CASun.pdf Graphic file (type pdf)
 
 <use fig/authors/CASun.pdf>
-Package pdftex.def Info: fig/authors/CASun.pdf used on input line 466.
+Package pdftex.def Info: fig/authors/CASun.pdf used on input line 681.
 (pdftex.def)             Requested size: 67.59338pt x 90.34325pt.
 File: fig/authors/CASun.pdf Graphic file (type pdf)
  <use fig/authors/CASun.pdf>
-Package pdftex.def Info: fig/authors/CASun.pdf used on input line 466.
+Package pdftex.def Info: fig/authors/CASun.pdf used on input line 681.
 (pdftex.def)             Requested size: 67.59338pt x 90.34325pt.
-
-<fig/authors/HPDai.jpg, id=78, 296.10625pt x 414.54875pt>
+ [9 <F:/mypapers/AMT/new/fig/authors/CASun.pdf>]
+<fig/authors/HPDai.jpg, id=143, 296.10625pt x 414.54875pt>
 File: fig/authors/HPDai.jpg Graphic file (type jpg)
 
 <use fig/authors/HPDai.jpg>
-Package pdftex.def Info: fig/authors/HPDai.jpg used on input line 471.
+Package pdftex.def Info: fig/authors/HPDai.jpg used on input line 686.
 (pdftex.def)             Requested size: 64.52457pt x 90.33441pt.
 File: fig/authors/HPDai.jpg Graphic file (type jpg)
  <use fig/authors/HPDai.jpg>
-Package pdftex.def Info: fig/authors/HPDai.jpg used on input line 471.
+Package pdftex.def Info: fig/authors/HPDai.jpg used on input line 686.
 (pdftex.def)             Requested size: 64.52457pt x 90.33441pt.
 
-<fig/authors/GWang.jpg, id=81, 215.30438pt x 263.48438pt>
+<fig/authors/GWang.jpg, id=146, 215.30438pt x 263.48438pt>
 File: fig/authors/GWang.jpg Graphic file (type jpg)
 
 <use fig/authors/GWang.jpg>
-Package pdftex.def Info: fig/authors/GWang.jpg used on input line 474.
+Package pdftex.def Info: fig/authors/GWang.jpg used on input line 689.
 (pdftex.def)             Requested size: 72.2695pt x 88.44168pt.
 File: fig/authors/GWang.jpg Graphic file (type jpg)
  <use fig/authors/GWang.jpg>
-Package pdftex.def Info: fig/authors/GWang.jpg used on input line 474.
+Package pdftex.def Info: fig/authors/GWang.jpg used on input line 689.
 (pdftex.def)             Requested size: 72.2695pt x 88.44168pt.
 
-<fig/authors/DaveTowey.png, id=84, 876.27374pt x 1044.90375pt>
+<fig/authors/DaveTowey.png, id=149, 876.27374pt x 1044.90375pt>
 File: fig/authors/DaveTowey.png Graphic file (type png)
 
 <use fig/authors/DaveTowey.png>
-Package pdftex.def Info: fig/authors/DaveTowey.png used on input line 477.
+Package pdftex.def Info: fig/authors/DaveTowey.png used on input line 692.
 (pdftex.def)             Requested size: 72.2694pt x 86.17691pt.
 File: fig/authors/DaveTowey.png Graphic file (type png)
  <use fig/authors/DaveTowey.png>
-Package pdftex.def Info: fig/authors/DaveTowey.png used on input line 477.
+Package pdftex.def Info: fig/authors/DaveTowey.png used on input line 692.
 (pdftex.def)             Requested size: 72.2694pt x 86.17691pt.
 
 
 pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig/authors/TYChen.pdf):
  PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<fig/authors/TYChen.pdf, id=87, 310.15875pt x 371.3875pt>
+<fig/authors/TYChen.pdf, id=152, 310.15875pt x 371.3875pt>
 File: fig/authors/TYChen.pdf Graphic file (type pdf)
 
 <use fig/authors/TYChen.pdf>
-Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 480.
+Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 695.
 (pdftex.def)             Requested size: 72.26733pt x 86.5337pt.
 File: fig/authors/TYChen.pdf Graphic file (type pdf)
  <use fig/authors/TYChen.pdf>
-Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 480.
+Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 695.
 (pdftex.def)             Requested size: 72.26733pt x 86.5337pt.
 
 
 pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig/authors/KYCai.pdf): 
 PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<fig/authors/KYCai.pdf, id=90, 72.27pt x 101.17801pt>
+<fig/authors/KYCai.pdf, id=155, 72.27pt x 101.17801pt>
 File: fig/authors/KYCai.pdf Graphic file (type pdf)
 
 <use fig/authors/KYCai.pdf>
-Package pdftex.def Info: fig/authors/KYCai.pdf used on input line 483.
+Package pdftex.def Info: fig/authors/KYCai.pdf used on input line 698.
 (pdftex.def)             Requested size: 64.5296pt x 90.34146pt.
 File: fig/authors/KYCai.pdf Graphic file (type pdf)
  <use fig/authors/KYCai.pdf>
-Package pdftex.def Info: fig/authors/KYCai.pdf used on input line 483.
+Package pdftex.def Info: fig/authors/KYCai.pdf used on input line 698.
 (pdftex.def)             Requested size: 64.5296pt x 90.34146pt.
- [6 <F:/mypapers/AMT/new/fig/authors/CASun.pdf> <F:/mypapers/AMT/new/fig/author
-s/HPDai.jpg> <F:/mypapers/AMT/new/fig/authors/GWang.jpg> <F:/mypapers/AMT/new/f
-ig/authors/DaveTowey.png> <F:/mypapers/AMT/new/fig/authors/TYChen.pdf> <F:/mypa
-pers/AMT/new/fig/authors/KYCai.pdf>] (F:\mypapers\AMT\new\MT.aux)
+ [10
+
+ <F:/mypapers/AMT/new/fig/authors/HPDai.jpg> <F:/mypapers/AMT/new/fig/authors/G
+Wang.jpg> <F:/mypapers/AMT/new/fig/authors/DaveTowey.png> <F:/mypapers/AMT/new/
+fig/authors/TYChen.pdf> <F:/mypapers/AMT/new/fig/authors/KYCai.pdf>] (F:\mypape
+rs\AMT\new\MT.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 3820 strings out of 495354
- 54537 string characters out of 3183523
- 126609 words of memory out of 3000000
- 6901 multiletter control sequences out of 15000+200000
+ 3859 strings out of 495354
+ 55253 string characters out of 3183523
+ 138686 words of memory out of 3000000
+ 6939 multiletter control sequences out of 15000+200000
  56469 words of font info for 132 fonts, out of 3000000 for 9000
  17 hyphenation exceptions out of 8191
- 29i,12n,34p,1500b,482s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,12n,34p,1500b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
 {G:/latex/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<G:/latex/CTEX/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmex10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmmi10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmmi7.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><G:/la
-tex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><G:/latex/CTEX/MiKTeX/
-fonts/type1/public/amsfonts/cm/cmr6.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/publi
-c/amsfonts/cm/cmr7.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr
-8.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><G:/latex
-/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><G:/latex/CTEX/MiKTeX/fon
-ts/type1/public/amsfonts/cm/cmsy8.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/cou
-rier/ucrr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><G:/l
-atex/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><G:/latex/CTEX/MiKTeX/font
-s/type1/urw/helvetic/uhvro8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino
-/uplb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><G:/late
-x/CTEX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/t
-ype1/urw/palatino/uplri8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/zapfding/uz
-dr.pfb>
-Output written on MT.pdf (6 pages, 1861621 bytes).
+cmmi5.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><G:/la
+tex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><G:/latex/CTEX/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmr10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr5.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r6.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><G:/latex/
+CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><G:/latex/CTEX/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmsy5.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7
+.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><G:/latex/C
+TEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1
+/urw/helvetic/uhvb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.
+pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><G:/latex/CTEX/M
+iKTeX/fonts/type1/urw/palatino/uplb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw
+/palatino/uplbi8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb
+><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><G:/latex/CTEX/MiKT
+eX/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on MT.pdf (10 pages, 1970783 bytes).
 PDF statistics:
- 180 PDF objects out of 1000 (max. 8388607)
+ 248 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 108 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 113 words of extra memory for PDF output out of 10000 (max. 10000000)
 
