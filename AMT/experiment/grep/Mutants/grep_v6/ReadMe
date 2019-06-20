@@ -1,0 +1,9 @@
+File name : > /home/ssi/abarus/source/grep_Mutation/grep_mutant90/ReadMe
+ Modified file# : /home/ssi/abarus/source/grep-2.5.1a/src/dfa.c
+Category : <
+Modified line# : 1306
+Before Modified : 	for (i = 1; i < minrep; ++i)
+
+After Modified : 	for (i = 1; i > minrep; ++i)
+
+Created by : Arlinta Christy Barus

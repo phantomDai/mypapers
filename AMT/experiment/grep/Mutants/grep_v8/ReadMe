@@ -1,0 +1,9 @@
+File name : > /home/ssi/abarus/source/grep_Mutation/grep_mutant98/ReadMe
+ Modified file# : /home/ssi/abarus/source/grep-2.5.1a/src/dfa.c
+Category : ==
+Modified line# : 1124
+Before Modified :       if (t == MBCSET)
+
+After Modified :       if (t != MBCSET)
+
+Created by : Arlinta Christy Barus

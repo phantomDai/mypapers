@@ -1,0 +1,102 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: AMT.aux
+The style file: IEEEtran.bst
+Database file #1: AMT.bib
+Repeated entry---line 181 of file AMT.bib
+ : @inproceedings{chen2004case
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 188 of file AMT.bib
+ : @inproceedings{cao2013correlation
+ :                                  ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 230 of file AMT.bib
+ :   
+ :   %organization={IEEE}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 302 of file AMT.bib
+ : @inproceedings{cai2009random
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 404 of file AMT.bib
+ : @inproceedings{chen2004case
+ :                            ,
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 499 of file AMT.bib
+ :   
+ :   year={2015},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+I was expecting a `,' or a `}'---line 506 of file AMT.bib
+ :   
+ :   year={2013},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 535 of file AMT.bib
+ : @article{xie2013metamorphic
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 576 of file AMT.bib
+ : @article{mao2017out
+ :                    ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 595 of file AMT.bib
+ : @inproceedings{cai2009random
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 619 of file AMT.bib
+ : @inproceedings{chen2004metamorphic
+ :                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 662 of file AMT.bib
+ : @article{segura2018metamorphic
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 690 of file AMT.bib
+ : @inproceedings{liu2012new
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 725 of file AMT.bib
+ : @inproceedings{zhang2014search
+ :                               ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 759 of file AMT.bib
+ : @article{ostrand1988category
+ :                             ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 873 of file AMT.bib
+ : @inproceedings{ciupa2008artoo
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 881 of file AMT.bib
+ : @article{shahbazi2013centroidal
+ :                                ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 907 of file AMT.bib
+ :   
+ :   %organization={IEEE Computer Society}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 924 of file AMT.bib
+ : @inproceedings{arcuri2011practical
+ :                                   ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 938 of file AMT.bib
+ : @inproceedings{li2015approach
+ :                              ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 947 of file AMT.bib
+ : @phdthesis{barus2010depth
+ :                          ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 953 of file AMT.bib
+ : @article{chen2018test
+ :                      ,
+I'm skipping whatever remains of this entry
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in grep
+
+Done.
+(There were 22 error messages)

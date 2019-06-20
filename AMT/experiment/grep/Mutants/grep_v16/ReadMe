@@ -1,0 +1,9 @@
+File name : > /home/ssi/abarus/source/grep_Mutation/grep_mutant151/ReadMe
+ Modified file# : /home/ssi/abarus/source/grep-2.5.1a/src/dfa.c
+Category : ==
+Modified line# : 1247
+Before Modified :   else if (tok == LPAREN)
+
+After Modified :   else if (tok != LPAREN)
+
+Created by : Arlinta Christy Barus

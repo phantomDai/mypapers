@@ -11,39 +11,38 @@
 \usepackage{amssymb}
 \usepackage[normalem]{ulem}
 \usepackage{color}
+\usepackage{amsmath}
+\usepackage{array}
+\usepackage{booktabs}
 \hyphenation{op-tical net-works semi-conduc-tor}
 \newcommand{\rmnum}[1]{\expandafter{\romannumeral #1\relax}}
 
 \begin{document}
 
-\title{Process Feedback Driven Approach Towards Selection of Source Test Cases and Metamorphic Relations for Metamorphic Testing}
+\title{AMT: An Efficient and Novel Method to Improve the Fault-detecting Efficiency of Metamorphic Testing}
 
 
 \author{Chang-ai~Sun,~\IEEEmembership{Senior Member,~IEEE,}
         Hepeng~Dai,
-        Guan~Wang,
-        Dave~Towey,~\IEEEmembership{Member,~IEEE,}
-        Kai-Yuan~Cai,~\IEEEmembership{Member,~IEEE,}
+        Huai Liu,~\IEEEmembership{Member,~IEEE,}
         and~Tsong Yueh~Chen,~\IEEEmembership{Member,~IEEE,}
-\thanks{A preliminary version of this paper was presented at the 36th Annual IEEE Computer Software and Applications Conference (COMPSAC 2012)~\cite{sun2012towards}.}
 \thanks{C.-A. Sun, H. Dai, and G. Wang are with the School of Computer and Communication Engineering, University of Science and Technology Beijing, Beijing 100083, China. E-mail: casun@ustb.edu.cn.}% <-this % stops a space
-\thanks{D. Towey is with the School of Computer Science, University of Nottingham Ningbo China, Ningbo 315100, China. E-mail: dave.towey@nottingham.edu.cn}
-\thanks{K.-Y. Cai is with the School of Automation Science and Electrical Engineering, Beihang University, Beijing 100191, China. E-mail: kycai@buaa.edu.cn.}% <-this % stops a
+\thanks{H. Liu is with the College of Engineering and Science, Victoria University, Melbourne VIC 8001, Australia. E-mail: Huai.Liu@vu.edu.au.}
 \thanks{T.Y. Chen is with the Department of Computer Science and Software Engineering, Swinburne University of Technology, Hawthorn VIC 3122, Australia. Email: tychen@swin.edu.au.}
 }
 
 
-\markboth{IEEE TRANSACTIONS ON SERVICES COMPUTING,~submitted}%
-{Sun \MakeLowercase{\textit{Sun et al.}}: An Empirical Study on Dynamic Random Testing of Web Services: A Methodology and Evaluation}
+\markboth{IEEE TRANSACTIONS ON SOFTWARE ENGINEERING,~submitted}%
+{}
 
 
 \IEEEtitleabstractindextext{
 \begin{abstract}
-  In recent years, Service Oriented Architecture (SOA) has been increasingly adopted to develop distributed applications in the context of the Internet. To develop reliable SOA-based applications, an important issue is how to ensure the quality of web services. In this paper, we propose a dynamic random testing (DRT) technique for web services, which is an improvement over the widely-practiced random testing (RT)~and partition testing (PT). We examine key issues when adapting DRT to the context of SOA, including a framework, guidelines for parameter settings, and a prototype for such an adaptation. Empirical studies are reported where DRT is used to test three real-life web services, and mutation analysis is employed to measure the effectiveness. Our experimental results show that, compared with the two baseline techniques, RT and Random Partition Testing (RPT), DRT demonstrates higher fault-detection effectiveness with a lower test case selection overhead. Furthermore, the theoretical guidelines of parameter setting for DRT are confirmed to be effective. The proposed DRT and the prototype provide an effective and efficient approach for testing web services.
+  Metamorphic testing (MT) is a promising technique to alleviate the oracle problem, which first defines metamorphic relations (MRs) that are then used to generate new test cases (i.e. follow-up test cases) from the original test cases (i.e. source test cases), and verify the results of source and follow-up test cases. Many efforts have been reported to improve MT's efficiency by either generating better MRs that are more likely to be violated or selecting different test case selection strategies to generate source test cases. Unlike these efforts, we investigate how to improve the efficiency of MT in terms of test executions. Furthermore, traditional MT techniques often employ the random testing strategy (RT) to select source test cases for execution, which could be inefficient because the feedback information during the testing process is not leveraged. Consequently, we propose an adaptive metamorphic testing (AMT) technique to improve the efficiency of MT through controlling the execution process of MT. We conducted an empirical study to evaluate the efficiency of the proposed technique with three real-life programs. Empirical results show that AMT outperforms traditional MT in terms of fault-detecting efficiency.
 \end{abstract}
 
 \begin{IEEEkeywords}
-Software Testing, Random Testing, Dynamic Random Testing, Web Service, Service Oriented Architecture.
+metamorphic testing, control test process, feedback, random testing, adaptive random testing, partition testing, adaptive partition testing
 \end{IEEEkeywords}}
 
 \maketitle
@@ -68,28 +67,28 @@ The successes in applying MT to multiple application domains and paradigms conti
 Random testing (RT) that randomly selects test cases from input domain (which refers to the set of all possible inputs of SUT), which is most
 commonly used strategies in traditional MT \cite{segura2016survey}. Although RT is simple to implement, RT does not make use of any execution information about SUT or the test history. Thus, traditional MT may be ineffectiveness in some situations. Barus et al. \cite{barus2016impact} employed adaptive random testing \cite{chen2004adaptive} that is a class of testing method aimed to improve the performance of RT by increasing the diversity across a program¡¯s input domain of the test cases executed to generate source test cases for MT. The Fixed-Size Candidate Set ART technique (FSCS-ART) \cite{chen2004adaptive} was the first ART method, and is also the most widely studied, which selects a next test input from the fixed-size candidate set of tests that is farthest from all previously executed tests. Many other ART algorithms have also been proposed, including RRT \cite{chan2002restricted, chan2006restricted}, DF-FSCS \cite{mao2017out}, and ARTsum \cite{barus2016cost}, with their effectiveness examined and validated through simulations and experiments.
 
-In contrast to RT, partition testing (PT) attempts to generate test cases in a more systematic way, aiming to use fewer test cases to detect more faults. When conducting PT, the input domain of SUT is divided into disjoint partitions, with test cases then selected from each and every one. Each partition is expected to have a certain degree of homogeneity, that is, test cases in the same partition should have similar software execution behavior: If one input can detect a fault, then all other inputs in the same partition should also be able to detect a fault. RT and PT have their own characteristics. Therefore, it is a nature thought to investigate the integration of them for developing new testing techniques. Cai et al. \cite{cai2009random} proposed dynamic random testing (DRT) that takes advantages of testing information to control the testing process, with the goal of benefitting from the advantages of RT and PT. Sun et al. proposed adaptive partition testing \cite{sun2018adaptive}, where test cases are randomly selected from some partition whose probability of being selected is adaptively adjusted along the testing process, and developed two algorithms, Markov-chain based adaptive partition testing and reward-punishment based adaptive partition testing, to implement the proposed approach. 
+In contrast to RT, partition testing (PT) attempts to generate test cases in a more systematic way, aiming to use fewer test cases to detect more faults. When conducting PT, the input domain of SUT is divided into disjoint partitions, with test cases then selected from each and every one. Each partition is expected to have a certain degree of homogeneity, that is, test cases in the same partition should have similar software execution behavior: If one input can detect a fault, then all other inputs in the same partition should also be able to detect a fault. RT and PT have their own characteristics. Therefore, it is a nature thought to investigate the integration of them for developing new testing techniques. Cai et al. \cite{cai2009random} proposed dynamic random testing (DRT) that takes advantages of testing information to control the testing process, with the goal of benefitting from the advantages of RT and PT. Sun et al. proposed adaptive partition testing \cite{sun2018adaptive}, where test cases are randomly selected from some partition whose probability of being selected is adaptively adjusted along the testing process, and developed two algorithms, Markov-chain based adaptive partition testing and reward-punishment based adaptive partition testing, to implement the proposed approach.
 
-The set of identified MRs is the other foremost component of MT, which impacts the fault-detection effectiveness of MT, and that a common opinion has been identification of these MRs appears to be a manual and tough task \cite{groce2014you}: ``Even experts may find it difficult to discover metamorphic relations''. To address this question, a number of methods have been proposed such as MR composition \cite{liu2012new, dong2008case}, Machine-learning based MR detection \cite{kanewala2013using}, Graph-kernel based MR prediction \cite{kanewala2016predicting}, Search-based MR inference \cite{zhang2014search}, data-mutation-directed MR acquisition \cite{sun2016mumt}. More recently, a more systematical and effective method (METRIC) was proposed, which make use of complete test frame constructed by categories and choices \cite{chen2003choice}. Those methods help test engineers create a set of MRs, while cannot guide select the next MR during the test.
+The set of identified MRs is the other foremost component of MT, which impacts the fault-detection effectiveness of MT, and that a common opinion has been identification of these MRs appears to be a manual and tough task \cite{groce2014you}: ``Even experts may find it difficult to discover metamorphic relations''. To address this question, a number of methods have been proposed such as MR composition \cite{liu2012new, dong2008case}, Machine-learning based MR detection \cite{kanewala2013using}, Graph-kernel based MR prediction \cite{kanewala2016predicting}, Search-based MR inference \cite{zhang2014search}, data-mutation-directed MR acquisition \cite{sun2016mumt}. More recently, a more systematical and effective method (METRIC) \cite{chen2014metric} was proposed, which make use of complete test frame constructed by categories and choices \cite{chen2003choice}. Those methods help test engineers create a set of MRs, while cannot guide select the next MR during the test.
 
-In previous and existing work, researchers investigated the effectiveness of MT by either choosing different MRs alone, or choosing different test case selection strategies to generate source test cases alone. Different from the previous methods, this paper proposed an innovative method (PFMT) that makes use of feedback information to select both source test case and corresponding MR, aiming to maximize the fault-detection effectiveness of MT.
+In previous and existing work, researchers investigated the effectiveness of MT by either choosing different MRs alone, or choosing different test case selection strategies to generate source test cases alone. Different from the previous methods, this paper proposed an innovative method (AMT) that makes use of feedback information to select both source test case and corresponding MR, aiming to maximize the fault-detection effectiveness of MT.
 
-PFMT is built on top of four insights: \rmnum{1}) source test cases; \rmnum{2}) there are no work that relates to select MR; \rmnum{3}) select both source test case and MR, which may be more effectiveness than one; \rmnum{4}) analyzing the feedback information can guide select "good" source test case and MR.
+AMT is built on top of four insights: \rmnum{1}) source test cases is one of factors that effects the fault-detecting efficiency of MT. However, random testing is commonly used to generate source test cases, and only a little researches related to use appropriate test cases selection strategies to generate source test cases.  ; \rmnum{2}) there are no work that relates to select MR; \rmnum{3}) select both source test case and MR, which may be more effectiveness than one; \rmnum{4}) analyzing the feedback information can guide select "good" source test case and MR.
 
-In short, PFMT collects feedback information during the test, and makes use of those information to select source test case and .
+In short, AMT collects feedback information during the test, and makes use of those information to select source test case and MRs.
 
 In this study, we investigate how to make use of feedback information in the previous tests to control the execution process of MT in terms of both selecting source test cases and MRs. As a result, a process-feedback metamorphic testing framework is proposed to improve the fault-detecting efficiency of MT. An empirical study was conducted to evaluate the efficiency of the proposed technique. Main contributions made in this paper are the following:
 
 \begin{enumerate}[1]
   \item
-  From a new perspective, we proposed a process feedback metamorphic testing method. This includes a universal framework (PFMT) that indicates how to make use of history testing information to select next source test case and MR.
+  From a new perspective, we proposed a adaptive metamorphic testing method. This includes a universal framework (AMT) that indicates how to make use of history testing information to select next source test case and MR.
   \item
-  We particular developed two kinds of algorithms, partition based PFMT (P-PFMT) and random based PFMT (R-PFMT), to implement the proposed framework. P-PFMT includes two methods: \rmnum{1}) An MRs-centric P-PFMT (MP-PFMT), which first randomly selects an MR to generate source and follow-up test cases of related input partitions, and then updates the test profile of input partitions according to the result of test execution. Second, a partition is selected according to updated test profile, and an MR is selected based on proposed strategies from the set of MRs whose source test cases belong to selected partition; \rmnum{2}) A partition-centric P-PFMT (PP-PFMT), which leverages MRs as a mechanism for verifying the test results. First, PP-PFMT selects a partition according to the test profile. Second, a test case is randomly selected in the selected partition, its follow-up test cases are generated based on the involved MRs, and their results are verified against the involved MRs. Third, PP-AMT updates the test profile based on the test results. R-PFMT include one method: we employed ARTsum to select source test cases and then an MR is selected based on proposed strategies from the set of MRs whose source test cases is selected source test case.
+  We particular developed two kinds of algorithms, partition based AMT (P-AMT) and random based AMT (R-AMT), to implement the proposed framework. P-AMT includes two methods: \rmnum{1}) An MRs-centric P-AMT (MP-AMT), which first randomly selects an MR to generate source and follow-up test cases of related input partitions, and then updates the test profile of input partitions according to the result of test execution. Second, a partition is selected according to updated test profile, and an MR is selected based on proposed strategies from the set of MRs whose source test cases belong to selected partition; \rmnum{2}) A partition-centric P-AMT (PP-AMT), which leverages MRs as a mechanism for verifying the test results. First, PP-AMT selects a partition according to the test profile. Second, a test case is randomly selected in the selected partition, its follow-up test cases are generated based on the involved MRs, and their results are verified against the involved MRs. Third, PP-AMT updates the test profile based on the test results. R-AMT include one method: we employed ARTsum to select source test cases and then an MR is selected based on proposed strategies from the set of MRs whose source test cases is selected source test case.
   \item
   In order to support proposed methods, we proposed two algorithms to update the test profile, and two algorithms to select an MR form the candidate MRs.
   \item
-  We evaluated the performance of PFMT through a series of empirical studies on 12 programs. These studies show that PFMT has significantly higher fault-detection efficiency than traditional MT that randomly selects source test cases and a revised MT method that employed ART method to select source test cases, ignoring to select a ``good" MR.
-  
+  We evaluated the performance of AMT through a series of empirical studies on 12 programs. These studies show that AMT has significantly higher fault-detection efficiency than traditional MT that randomly selects source test cases and a revised MT method that employed ART method to select source test cases, ignoring to select a ``good" MR.
+
 \end{enumerate}
 
 
@@ -126,9 +125,36 @@ The above steps can be repeated for a set of MRs.
 
 Let us use a simple example to illustrate how MT works. For instance, consider the mathematic function $f(x,y)$ that can calculate the maximal value of two integers $x$ and $y$. There is a simple yet obvious property: the order of two parameters $x$ and $y$ does not affect the output, which can be described as the follow metamorphic relation (MR): $f(x,y) = f(y,x)$. In this MR, $(x,y)$ is source test case, and $(y,x)$ is considered as follow-up test case. Suppose \texttt{P} denotes a program that implements the function $f(x,y)$, \texttt{P} is executed with a test cases $(1,2)$ and $(2,1)$. Then we check $P(1,2) = P(2,1)$: If the equality does not hold, then we consider that \texttt{P} at least has one fault.
 
-\subsection{METRIC}
-\label{sec:metric}
+\subsection{Category Partition Method (CPM)}
+\label{sec:cpm}
 
+The proposed AMT selects both source test cases and corresponding MRs by making use of information which is collected during the test process that means, we need to establish a connection between the source test cases and MRs. The connection provides a guideline for us to obtain the set of candidate MRs according to a source test case or select a source test case for an MR.
+
+Category partition method (CPM) is  specification-based testing technique developed by Ostrand and Balcer \cite{ostrand1988category}. It helps software testers create test cases by refining the functional specification of a program into test specifications. The method consists of the following steps.
+
+\begin{description}
+  \item [Step1.]
+  Decompose the functional specification into functional units that can be tested independently, then Identify the parameters (the explicit inputs to a functional unit) and environment conditions (the state of the system at the time of execution) that are known as \emph{categories}.
+  \item [Step2.]
+  Partition each \emph{category} into \emph{choices}, which include all the different kinds of values that are possible for that \emph{category}.
+  \item [Step3.]
+  Determine the constraints among the \emph{choices} of different \emph{categories}, and Write the test specification (which is a list of categories, choices, and constraints in a predefined format) using the test specification language TSL.
+  \item [Step4.]
+  Use a generator to produce \emph{test frames} from the test specification. Each generated \emph{test frame} is a set of choices. Then, create a test case by selecting a single element from each \emph{choice} in each generated \emph{test frame}.
+\end{description}
+
+Based on the \emph{categories} and \emph{choices}, Chen et al. \cite{chen2014metric} proposed a systematical method (METRIC) to generate a set of MRs. In METRIC, only two distinct complete \emph{test frames} that are abstract test cases defining possible combinations of inputs, are considered by the tester to generate an MR. In general, METRIC has the following steps to identify MRs:
+
+\begin{description}
+  \item [Step1.]
+  Users select two relevant and distinct complete \emph{test frames} as a \emph{candidate pair}.
+  \item [Step2.]
+  Users determine whether or not the selected \emph{candidate pair} is useful for identifying an MR, and if it is, then provide the corresponding MR description.
+  \item [Step3.]
+  Restart from step 1, and repeat until all candidate pairs are exhausted, or the predefined number of MRs to be generated is reached.
+\end{description}
+
+In this study, we made use of CPM and METRIC to create test cases and MRs, respectively. There are relationships between source test cases and MRs, since both source test cases and MRs are built upon categories and choices.
 
 
 \subsection{Dynamic Random Testing (DRT)}
@@ -203,11 +229,82 @@ p_j + \displaystyle\frac{p'_i}{m-1} & \text{if } p_i < \epsilon
 
 To improve the fault-detection efficiency of RT, Chen et al. proposed adaptive random testing \cite{chen2004adaptive} based on the intuition that two test cases close to each other were more likely to have the same failure behavior than two test cases that were widely separated \cite{Ammann88}, that means faults tend to cause erroneous behaviour to occur across contiguous regions of the input domain. Hence, if a method that spread test cases more evenly would identify failures using fewer test cases.
 
-There are many possible ways to apply the principle of ART. One that has been widely used is distance-based ART, also known as Fixed-Size Candidate Set ART (FSCS-ART) \cite{chen2004adaptive}. It makes use of the Euclidean distance as a distance measure to ensure test cases are spread out evenly. 
+There are many possible ways to apply the principle of ART. One that has been widely used is distance-based ART, also known as Fixed-Size Candidate Set ART (FSCS-ART) \cite{chen2004adaptive}. It makes use of the Euclidean distance as a distance measure to ensure test cases are spread out evenly.
 At first, two types of sets are defined: candidate set and executed set. The candidate set contains a predefined number n candidate inputs, whereas the later set stores all test cases that have been executed. Both sets are initially empty. Then n elements of candidate set are selected randomly from the existing input domain. For the first round, a random test case is selected, executed, and if the execution does not reveal any failures, it would be added to the executed set whilst the candidate set is reset as empty. For subsequent iterations, n test cases are randomly selected and placed again in the candidate set. Then, the minimum distance of each candidate test case to the executed test cases is calculated, that is the nearest executed test case. The candidate having maximum minimum distance is then selected as the next test case. This is known as the max-min criterion. The testing stops whenever an executed test case reveals a failure.
 
-\section{Process Feedback Driven Approach to Select Source Test Cases and MRs}
-\label{sec:sdmt}
+ART has been empirically shown to be effective on software with numeric inputs \cite{chen2007favourable, chen2007quasi, liu2008experimental, mayer2005lattice, tappenden2009novel} and Non-numeric inputs \cite{barus2016impact, barus2010depth, barus2016cost}. However, as Ciupa et al. \cite{ciupa2008artoo} observe, test case selection overhead can result in FSCS-ART having poorer overall cost-effectiveness than RT. To reduce the overhead of ART, various algorithms have been proposed \cite{chan2006forgetting, chen2004mirror, shahbazi2013centroidal}. More recently, Barus et al. \cite{barus2016cost} proposed a linear-order ART algorithm called ARTsum.
+
+Before presenting the details of ARTsum, we first introduce a new metric called category-partition-based metric (CP-distance) that measures the distance between the candidate test cases and executed test cases. CP-distance makes use of the concepts of categories and choices from the CPM method described in Section \ref{sec:cpm}, which has the capacity to reflect the difference among the candidate test cases and executed test cases, since the categories and choices are defined based on the software functionalities.
+
+More formally, let us denote the set of categories by $A = \{A_1, A_2, \ldots, A_g\}$, where $g$ denotes the total number of categories. For each $A_i$, its choices are denotes by $P_i^{A_i} = \{p_1^{A_i},p_2^{A_i}, \ldots, p_h^{A_i}\}$, where $h$ denotes the number of choices for $A_i$. For input $x$, let us denote the corresponding non-empty subset by $A(x) = \{A_1^{x}, A_2^{x}, \ldots, A_q^{x}\}$, where $q$ refers to the number of categories associated with $x$. Since categories are distinct and their choices are disjoint, input $x$ in fact consists of values chosen from a non-empty subset of choices, denoted as $P(x) = \{p_1^{x}, p_2^{x}, \ldots, p_q^{x}\}$, where $p_i^x (i = 1, 2, \ldots, q)$ is the choice of the category $A_i^{x}$  for $x$.
+
+For any two inputs $x$ and $y$, we define $DP(x,y)$ as the set that contains elements in either $P(x)$ or $P(y)$ but not both. That is,
+$$DP(x,y) = (P(x) \cup P(y))\\ (P(x) \cap P(y)),$$ where ``n" is the set difference operator. Now, we define $$DA(x, y) = \{A_m|A_i if p_j^i \in DP(x, y)\}.$$ In other words, $DA(x, y)$ is the set of categories in which inputs $x$ and $y$ have different choices. Then, the distance measure between $x$ and $y$ is defined as $|DA(x, y)|$ (the size of $DA(x, y)$); that is, the number of categories that appear in either $x$ or $y$ but not both, or in which the choices in $x$ and $y$ differ.
+
+Suppose that n test cases have been selected and executed, denoted by $E = \{e_1, e_2, \ldots, e_n\}$. Each test case $e_j$ ($j = \{1, 2, \ldots, n\}$) is associated with a set of choices $P(e_j) = \{p_1^{e_j}, p_2^{e_j}, \ldots, p_q^{e_j}\}$. $P(e_j)$ can be rewritten as a tuple $V(e_j) = \{v_1^{e_j}, v_2^{e_j}, \ldots, v_g^{e_j}\}$, where $g$ is the total number of categories, $v_i^{e_j}$ means that $e_j$ is not associated with category $A_i$, and $v_i^{e_j} = l$ means that $e_j$ is associated with the $l$th choice of $A_i$. Similarly, a candidate $c$ can also be associated with the tuple $V(c) = \{v_1^{c}, v_2^{c}, \ldots, v_g^{c}\}$.
+
+Define a function as follows:
+
+\begin{equation}
+\label{equation:d_ij}
+D(i,j) =
+\begin{cases}
+0 & \text{if} ~v_i^{c} = v_i^{e_j} \\
+1 & \text{if} ~v_i^{c} \neq v_i^{e_j}
+\end{cases}
+\end{equation}
+where $i = 1, 2, \ldots, g$ and $j = 1, 2, \ldots, n$. The distance between $c$ and $e_j$ can then be calculated as $dist(c,e_j) = \sum_{\substack{i = 1}}^gD(i, j)$. Note that $dist(c,e_j)$ is effectively equal to $|DA(c,e_j)|$. Therefore, the sum of the distances from c to all executed test cases can be calculated as:
+
+\begin{equation}
+\label{equation:distance}
+sum\_dist(c,E) = \sum_{\substack{j=1}}^n(\sum_{\substack{i=1}}^gD(i,j))
+\end{equation}
+
+Then we present the Theorem \ref{theorem} that is the foundation stone of ARTsum.
+\newtheorem{theo}{Theorem}
+\label{theorem}
+\begin{theo}
+  Define a tuple of integers $S = (s_1^0, s_1^1, \ldots, s_1^{h_1}, s_2^0, s_2^1, \ldots, s_2^{h_2}, \ldots, s_g^0, s_g^1, \ldots, s_g^{h_g})$, where $g$ is the total number of categories, $h_i$ is the total number of choices for the $i$th category $A_i$ ($i = 1, 2, \ldots, g$), $s_i^0$ denotes the number of previously executed test cases that are not associated with the $i$th category $A_i$, $s_i^{l_i}$ ($l_i = 1, 2, \ldots, h_i$) denotes the number of previously executed test cases associated with the $l_i$th choice of $A_i$. Let $n$ denote the number of previously executed test cases, that is, $n = |E|$. By definition, $\sum_{\substack{y=0}}^{h_i}s_i^y = n, \forall 1 \leq i \leq g$. For a candidate $c$ associated with $V(c) = \{v_1^{c}, v_2^{c}, \ldots, v_g^{c}\}$, the sum distance between $c$ and $E$ is:
+\begin{equation}
+\label{equa:sumdistance}
+sum\_dist(c,E) = \sum_{\substack{j=1}}^n(n - s_i^{v_i^c})
+\end{equation}
+\end{theo}
+
+Theorem \ref{theorem} implies that if Equation \ref{equa:sumdistance} is used, the selection of a next test case requires a constant time. The details of the ARTsum is given in the Algorithm \ref{alg:artsum}.
+
+
+\begin{algorithm}
+\caption{ARTsum}
+\label{alg:artsum}
+    \begin{algorithmic}[1]
+    \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+    \renewcommand{\algorithmicendwhile}{\algorithmicend\_\algorithmicwhile}
+    \renewcommand{\algorithmicendif}{\algorithmicend\_\algorithmicif}
+    \STATE Initialize $S$ (as defined in Theorem \ref{theorem}) by setting each $s_i^{l_i} = 0$, where $i = 1, 2, \ldots, g$ ($g$ denotes the total number of categories).
+    \STATE Set $n = 0$ and $E = \{\}$.
+    \STATE Define an integer $k > 0$ as the number of candidates to be generated.
+    \WHILE {termination condition is not satisfied}
+    \STATE Increment $n$ by 1.
+    \IF {$n = 1$}
+    \STATE Randomly generated a test case $e_n$.
+    \ELSE
+    \STATE Randomly generate $k$ candidates $c_1, c_2, \ldots, c_k$.
+    \FOR {all $c_u$ ($u = 1,2,\ldots, k$)}
+    \STATE Calculate $sum\_dist(c,E)$ according to Equation \ref{equa:sumdistance}.
+    \ENDFOR
+    \STATE Set $e_n = c_0$, where $\forall u$, $sum\_dist(c_0,E) \geq sum\_dist(c_u,E)$.
+    \ENDIF
+    \STATE Add $e_n$ into $E$.
+    \STATE Update $S$ by incrementing each $s_i^{v_i^{e_n}}$ by 1, where $i = 1,2,\ldots,g$.
+    \ENDWHILE
+    \end{algorithmic}
+\end{algorithm}
+
+
+
+\section{Adaptive Metamorphic Testing (AMT)}
+\label{sec:amt}
 
 In this section, we describe a framework for applying feedback mechanism to select source test cases and MRs for MT.
 
@@ -220,8 +317,6 @@ Since the follow-up test cases are generated based on source test cases and MRs,
 
 It has been pointed out that fault-detecting inputs tend to cluster into ``continuous regions'' \cite{ammann1988data, finelli1991nasa}, that is, the test cases in some partitions are more likely to detect faults than the test cases in other partitions. Inspired by the observation, AMT takes full advantage of feedback information to update the test profile, aiming at increasing the selection probabilities of partitions with larger failure rates. Accordingly, the MRs whose sources test cases belonging to the partitions with larger failure rates, are more likely to be selected and violated. Therefore, AMT is expected to detect faults more efficient than traditional MT.
 
-
-
 \subsection{Framework}
 \label{sec:framework}
 
@@ -229,7 +324,7 @@ It has been pointed out that fault-detecting inputs tend to cluster into ``conti
 \begin{figure}[htb]
   \centering
   \includegraphics[width = 0.5\textwidth]{fig//generateframework}
-  \caption{framework}
+  \caption{The Framework of AMT}
   \label{fig:framework}
 \end{figure}
 
@@ -251,7 +346,7 @@ It has been pointed out that fault-detecting inputs tend to cluster into ``conti
   The relevant DRT component receives the generated test case, converts it into an input message, invokes the web service(s) through the SOAP protocol, and intercepts the test results (from the output message).
 \end{enumerate}
 
-\subsection{Updating Test Profile Strategies}
+\subsection{Updating Test Profile}
 \label{sec:updatingTestProfile}
 When the source test case $stc$ and follow-up test case $ftc$ related to an metamorphic relation $MR$ belong to the same partition $s_i$, DRT is suitable to adjust the test profile. However, during the test process, there are some scenarios where the $stc$ is not in the same partition as $ftc$. In such scenarios, DRT cannot be used to adjust the test profile. To solve this problem, we proposed metamorphic dynamic random testing (MDRT).
 
@@ -335,22 +430,65 @@ The detailed MDRT algorithm is given in Algorithm \ref{alg:mdrt}. In MDRT, the s
 \subsection{Selecting MR Strategies}
 \label{sec:selectingMR}
 
+In AMT, once a source test case is selected, the corresponding candidate MRs are available. We first proposed a simple strategy based on random mechanism to select an MR from the set of candidate MRs, then we proposed an innovative strategy to select an MR that can make the execution of follow-up test case as different as possible from the source test case.
 
 
 
-\subsection{Partition Based PFMT}
-\label{sec:pPFMT}
+\subsubsection{Randomly MR-Selection Strategy (RMRS)}
+\label{sec:rsmr}
 
-\subsubsection{A partition-centric P-PFMT}
+RSMR randomly selects an from the set of candidate MRs, which is a straightforward method without considering extra information.
+
+\subsubsection{Properties-Based strategy of MR selection (PBMR)}
+\label{sec:pbmr}
+
+The fault-detection efficiency of MT highly dependent on the specific MRs that are used, and selecting effective MRs is thus a critical step when applying MT. Chen et al. reported that good metamorphic relations are those that can make the execution of the source-test case as different as possible to its follow-up test case. Moreover, They defined the ``difference among execution" as any aspects of program runs (e.g., paths traversed).
+Before presenting the properties-based strategy of MR selection (PBMR), we first introduce a new metric called category-partition-based metric (CP-distance) that measures the distance between the source test cases and corresponding follow-up test cases. CP-distance makes use of the concepts of categories and choices from the CPM method described in Section \ref{sec:cpm}. CP-distance have the capacity to reflect the difference among the source test cases and follow-up test cases, since the categories and choices are defined based on the software functionalities.
+
+More formally, let us denote the set of categories by $A = \{A_1, A_2, \ldots, A_g\}$, where $g$ denotes the total number of categories. For each $A_i$, its choices are denotes by $P_i^{A_i} = \{p_1^{A_i},p_2^{A_i}, \ldots, p_h^{A_i}\}$, where $h$ denotes the number of choices for $A_i$. For input $x$, let us denote the corresponding non-empty subset by $A(x) = \{A_1^{x}, A_2^{x}, \ldots, A_q^{x}\}$, where $q$ refers to the number of categories associated with $x$. Since categories are distinct and their choices are disjoint, input $x$ in fact consists of values chosen from a non-empty subset of choices, denoted as $P(x) = \{p_1^{x}, p_2^{x}, \ldots, p_q^{x}\}$, where $p_i^x (i = 1, 2, \ldots, q)$ is the choice of the category $A_i^{x}$  for $x$.
+
+For any two inputs $x$ and $y$, we define $DP(x,y)$ as the set that contains elements in either $P(x)$ or $P(y)$ but not both. That is,
+$$DP(x,y) = (P(x) \cup P(y))\\ (P(x) \cap P(y)),$$ where ``n" is the set difference operator. Now, we define $$DA(x, y) = \{A_m|A_i if p_j^i \in DP(x, y)\}.$$ In other words, $DA(x, y)$ is the set of categories in which inputs $x$ and $y$ have different choices. Then, the distance measure between $x$ and $y$ is defined as $|DA(x, y)|$ (the size of $DA(x, y)$); that is, the number of categories that appear in either $x$ or $y$ but not both, or in which the choices in $x$ and $y$ differ.
+
+obviously, a greater value of CP-distance representing more dissimilar execution. After selecting a source test case $stc_i$ and obtaining a set of candidate MRs $\mathcal{R} = \{r_1^{stc_i}, r_2^{stc_i}, \ldots, r_g^{stc_i}\}$ ($g$ is the number of MRs whose source test case could be $stc_i$), PBMR generate a set of candidate folow-up test cases $FC = \{ftc_{r_1^{stc_i}}, ftc_{r_2^{stc_i}}, \ldots, ftc_{r_g^{stc_i}}\}$ according to every MR belonged to $FC$. Then, the distance $CP_{i,h}$ ($h \in \{1,2, \ldots, g\}$) between $stc_i$ and each follow-up test case $ftc_{r_h^{stc_i}}$ is calculated. Finally, the MR $r_h^{stc_i}$ is selected as long as the following condition is hold:
+$$CP_{i,h} = max\{CP_{i,1}, CP_{i,2}, \ldots, CP_{i,g}\}.$$
+
+The details of PBMR is given in Algorithm \ref{alg:pbmr}.
+\begin{algorithm}
+\caption{PBMR}
+\label{alg:pbmr}
+    \begin{algorithmic}[1]
+    \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+    \renewcommand{\algorithmicensure}{\textbf{Output:}}
+    \renewcommand{\algorithmicendwhile}{\algorithmicend\_\algorithmicwhile}
+    \renewcommand{\algorithmicendif}{\algorithmicend\_\algorithmicif}
+    \REQUIRE $stc_i, \mathcal{R} = \{r_1^{stc_i}, r_2^{stc_i}, \ldots, r_g^{stc_i}\}, CParray = null$
+    \ENSURE $CP_{max}$ ($max \in \{1, 2, \ldots, g\}$)
+    \FOR {$h=1 \to h=g$}
+    \STATE Generate the follow-up test case $ftc_h$ according to the $stc_i$ and $r_h^{stc_i}$
+    \STATE Calculate the distance $CP_{i,h}$ between the $stc_i$ and $ftc_h$
+    \STATE Add $CP_{i,h}$ to the list $CParray$
+    \ENDFOR
+    \STATE Calculate the maximal value $CP_{max}$ ($max \in \{1, 2, \ldots, g\}$) in the list $CParray$
+    \end{algorithmic}
+\end{algorithm}
+
+
+
+
+\subsection{Partition Based AMT (P-AMT)}
+\label{sec:P-AMT}
+
+\subsubsection{A partition-centric P-AMT}
 \begin{figure}[htb]
   \centering
   \includegraphics[width = 0.5\textwidth]{fig//pcenterpartitionframework}
   \caption{framework}
-  \label{fig:The Framework of PP-PFMT}
+  \label{fig:The Framework of PP-AMT}
 \end{figure}
 
 \begin{algorithm}
-\caption{PP-PFMT}
+\caption{PP-AMT}
 \label{alg:pp-pfmt}
     \begin{algorithmic}[1]
     \renewcommand{\algorithmicrequire}{\textbf{Input:}}
@@ -403,10 +541,42 @@ The detailed MDRT algorithm is given in Algorithm \ref{alg:mdrt}. In MDRT, the s
 
 
 
-\subsubsection{A MRs-centric P-PFMT}
+\subsubsection{A MRs-centric P-AMT (MP-AMT)}
+\label{sec:mp-amt}
+
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width = 0.47\textwidth]{fig//mrscentricframework}
+  \caption{The Framework of MP-AMT}
+  \label{fig:framework}
+\end{figure}
+
+MRs-centric adaptive metamorphic testing (MP-AMT) adds a feedback mechanism to control the execution process of traditional MT. First, MP-AMT randomly selects an MR and a source test case belonging to a partition that is selected according to the test profile, generating the follow-up test case depend on the source test case, and then updates the test profile according to the result of test execution. Second, a partition is selected according to updated test profile, and an MR is randomly selected from the set of MRs whose source test case belong to selected partition.
+
+Suppose that the input domain of SUT is divided into $m$ ($m > 2$) partitions ($s_1, s_2, \ldots, s_m$). A set $MR_{s_i}$ included metamorphic relations whose source test cases belong to the partition $s_i$, and $\mathcal{R} = \bigcup_{\substack{i = 1}}^mMR_{s_i}$ is a set that include all of metamorphic relations. The detailed MP-AMT algorithm is given in Algorithm \ref{alg:pm-pfmt}. In MP-AMT, the first metamorphic relation $MR$ is randomly selected from $\mathcal{R}$, and a source test case $stc$ is randomly selected from a partition $s_i$ related to the selected metamorphic relation, then the follow-up test case $ftc$ is generate based on $MR$ and $stc$, belonging to partition $s_f$ ($f \in \{1,2,\ldots, m\}$) (Lines 3 to 7 in Algorithm \ref{alg:pm-pfmt}). If the results of $stc$ and $ftc$ violate the $MR$, there are following two situation, denoted $\delta_1, \delta_2$, respectively (Lines 8 to 12):
+\begin{enumerate}[ {Situation} 1 ($\delta_1$):]
+  \item
+  If $i = f$, then the test profile is updated according to Formulas \ref{eq:DRThitJ} and \ref{eq:DRThitI}.
+  \item
+  If $i \ne f$, then the test profile is updated according to Formulas \ref{eq:MDRThitJ}, \ref{eq:MDRThitI}, and \ref{eq:MDRThitF}.
+\end{enumerate}
+
+Alternatively, if their results satisfy the $MR$, there are following two situation, denoted $\delta_1^{'}, \delta_2^{'}$, respectively (Lines 14 to 18):
+\begin{enumerate}[ {Situation} 1 ($\delta_1^{'}$):]
+  \item
+  If $i = f$, then the test profile is updated according to Formulas \ref{eq:DRTmissI} and \ref{eq:DRTmissJ}.
+
+  \item
+  If $i \ne f$, then the test profile is updated according to Formulas \ref{eq:MDRTmissI}, \ref{eq:MDRTmissF}, and \ref{eq:MDRTmissJ}.
+\end{enumerate}
+
+Next, MP-AMT randomly selects a partition according to updated test profile, then a source test case is randomly selected from the selected partition and an metamorphic relation is randomly selected from a $MR_{s_i}$ ($i \in \{1,2,\ldots,m\}$) whose source test cases belong to the selected partition. On the basis of $MR_{s_i}$, the follow-up test case is generated from the source test case (Lines 22 and 23). After the execution of the source and follow-up test cases, their results are verified against the $MR_{s_i}$, then the test profile is updated (Lines 24 to 35). This process is repeated until a termination condition is satisfied (Line 2).
+
+We developed a tool called AMTester to the best of our knowledge. AMTester has features such as termination condition setting, partition setting, test execution, and test report generation.
+
 
 \begin{algorithm}
-\caption{PM-PFMT}
+\caption{MP-AMT}
 \label{alg:pm-pfmt}
     \begin{algorithmic}[1]
     \renewcommand{\algorithmicrequire}{\textbf{Input:}}
@@ -455,10 +625,39 @@ The detailed MDRT algorithm is given in Algorithm \ref{alg:mdrt}. In MDRT, the s
     \end{algorithmic}
 \end{algorithm}
 
+\subsection{Random Based AMT (R-AMT)}
+\label{sec:ramt}
+
+Random Testing (RT) tests software by randomly generating inputs, which is a standard black-box software testing technique. The IEEE Guide to the Software Engineering Body of Knowledge (SWEBOK) \cite{bourque2014guide} lists RT as one of four common input-domain based testing techniques, along with equivalence partitioning, pairwise testing, and boundary value analysis. Arcuri et al. \cite{arcuri2012random} observe that RT is one of the most used automated testing techniques in practice. Therefore, we particularly develop one algorithm, random based AMT (R-AMT), to implement the proposed AMT. The framework of R-AMT is illustrated in Figure \ref{fig:rtframework}.
+\begin{figure}[htb]
+  \centering
+  \includegraphics[width = 0.47\textwidth]{fig//rtframework}
+  \caption{The Framework of R-AMT}
+  \label{fig:rtframework}
+\end{figure}
+
+In R-AMT, we make use the ARTsum algorithm to generate source test cases. Accordingly, a set of candidate MRs $\mathcal{CR}$ can be obtained according to the selected source test case. Then, an MR is selected by using the proposed RMRS or PBMR strategy. The details of R-AMT is given in Algorithm \ref{alg:R-pfmt}
 
 
-\subsection{Random Based PFMT}
-\label{sec:rPFMT}
+\begin{algorithm}
+\caption{R-AMT}
+\label{alg:R-pfmt}
+    \begin{algorithmic}[1]
+    \renewcommand{\algorithmicrequire}{\textbf{Input:}}
+    \renewcommand{\algorithmicendwhile}{\algorithmicend\_\algorithmicwhile}
+    \renewcommand{\algorithmicendif}{\algorithmicend\_\algorithmicif}
+    \REQUIRE $\mathcal{R} $
+    \WHILE {termination condition is not satisfied}
+    \STATE Generate a source test case $stc_i$ using the Algorithm \ref{alg:artsum}.
+    \STATE Select the MR from $\mathcal{R}$, whose source test case can be $stc_i$ and add the selected MR to $\mathcal{CR}$
+    \STATE Select an MR $MR_s$ form $\mathcal{CR}$ using the proposed strategy RMRS or PBMR.
+    \STATE Generate the follow-up test case $ftc_i$ according to $stc_i$ and $MR_s$.
+    \STATE Test the software using the $stc_i$ and $ftc_i$.
+    \STATE Verify the outputs of $stc_i$ and $ftc_i$ against the $MR_s$.
+    \ENDWHILE
+    \end{algorithmic}
+\end{algorithm}
+
 
 \section{Empirical Study}
 \label{sec:empiricalStudy}
@@ -469,11 +668,11 @@ We conducted a series of empirical studies to evaluate the performance of DRT.
 \label{sec:rqs}
 In our experiments, we focused on addressing the following three research questions:
 \begin{description}
-  \item [\textbf{RQ1}] \textbf{How efficient is SDMT at detecting faults?}
+  \item [\textbf{RQ1}] \textbf{How efficient is AMT at detecting faults?}
 
   Fault-detection efficiency is a key criterion for evaluating the performance of a testing technique. In our study, we chose three real-life programs, and applied mutation analysis to evaluate the fault-detecting efficiency.
 
-  \item [\textbf{RQ2}] \textbf{What is the actual test case selection overhead when using the M-AMT strategy?}
+  \item [\textbf{RQ2}] \textbf{What is the actual test case selection overhead when using the AMT technique?}
 
   We evaluate the test case selection overhead of M-AMT and compare with traditional MT in detecting software faults.
 \end{description}
@@ -481,7 +680,7 @@ In our experiments, we focused on addressing the following three research questi
 \subsection{Object Programs}
 \label{sec:programs}
 
-In order to evaluate the fault-detection effectiveness of proposed methods, we chose to study four sets of object programs: three laboratorial programs that were developed according to corresponding specifications, seven programs from the Software-artifact Infrastructure Repository (SIR) \cite{do2005supporting}, the regular expression processor component of the larger utility program \texttt{GUN grep}, and a Java library developed by Alibaba, which can be used to convert Java Objects into their JSON representation, and convert a JSON string to an equivalent Java object. The details of twelve programs are summarized in Table \ref{table:objects}.
+In order to evaluate the fault-detection effectiveness of proposed methods in different scales, different implementation languages, and different fields, we chose to study four sets of object programs: three laboratorial programs that were developed according to corresponding specifications, seven programs from the Software-artifact Infrastructure Repository (SIR) \cite{do2005supporting}, the regular expression processor component of the larger utility program \texttt{GUN grep}, and a Java library developed by Alibaba, which can be used to convert Java Objects into their JSON representation, and convert a JSON string to an equivalent Java object. The details of twelve programs are summarized in Table \ref{table:objects}.
 \begin{table*}[hbt]
   \caption{Twelve Programs as Experimental Objects}
   \label{table:objects}
@@ -517,6 +716,7 @@ Based on three real-lift specifications, We developed three systems, respectivel
   \centering
   \caption{Plan A}
   \label{table:chinaA}
+  \resizebox{0.46\textwidth}{!}{
   \begin{tabular}{|c|c|c|c|c|c|} \hline
   \multicolumn{2}{|c|}{\multirow{2}{*}{Plan details}}  &\multicolumn{4}{|c|}{Month charge~(CNY)} \\ \cline{3-6}
   \multicolumn{2}{|c|}{}                                     &\!$option_1$\!  &\!$option_2$\!  &\!$option_3$\! &\!$option_4$\! \\ \hline
@@ -524,13 +724,14 @@ Based on three real-lift specifications, We developed three systems, respectivel
                                           &Free data~(MB)    &150 &240 &900 &3000\\ \hline
    \multirow{2}{*}{\rotatebox{90}{Extra}} &Dialing calls~(CNY/min)  &0.25 &0.15  &0.15 &0.15 \\ \cline{2-6}
                                           &Data~(CNY/KB)  &\multicolumn{4}{c|}{0.0003} \\ \hline
-  \end{tabular}
+  \end{tabular}}
 \end{table}
 
 \begin{table}[!htp]
   \caption{Plan B}
   \label{table:chinaB}
   \centering
+  \resizebox{0.46\textwidth}{!}{
   \begin{tabular}{|c|c|c|c|c|c|} \hline
   \multicolumn{2}{|c|}{\multirow{2}{*}{Plan details}}  &\multicolumn{4}{|c|}{Month charge~(CNY)} \\ \cline{3-6}
   \multicolumn{2}{|c|}{}                                     &\!$option_1$\!  &\!$option_2$\!  &\!$option_3$\! &\!$option_4$\! \\ \hline
@@ -538,7 +739,7 @@ Based on three real-lift specifications, We developed three systems, respectivel
                                           &Free data~(MB)    &40 &80 &100 &150\\ \hline
    \multirow{2}{*}{\rotatebox{90}{Extra}} &Dialing calls~(CNY/min)  &0.25 &0.15  &0.15 &0.15 \\ \cline{2-6}
                                           &Data~(CNY/KB)  &\multicolumn{4}{c|}{0.0003} \\ \hline
-  \end{tabular}
+  \end{tabular}}
 \end{table}
 
 
@@ -579,9 +780,9 @@ The \texttt{printtokens} and \texttt{printtokens2} are independent implementatio
 The used version of the \texttt{grep} programs is 2.5.1a \cite{grep}. This program searches one or more input files for lines containing a match to a specified pattern. By default, grep prints the matching lines. We chose \texttt{grep} for our study for several reasons:
 \begin{enumerate}[1]
   \item
-  The \texttt{grep} program is wide used in Unix system, providing a opportunity to demonstrate the real world relevance of our techniques.
+  \texttt{grep} program is wide used in Unix system, providing a opportunity to demonstrate the real world relevance of our techniques.
   \item
-  The \texttt{grep} program, and its input format, are of greater complexity than the the programs in the other test sets, but still manageable as a target for automated test case generation.
+  \texttt{grep} program, and its input format, are of greater complexity than the the programs in the other test sets, but still manageable as a target for automated test case generation.
 \end{enumerate}
 
 The inputs of the \texttt{grep} were categorize into three components: options, which consist of a list of commands to modify the searching process, pattern, which is the regular expression to be searched for, and files, which refers to the input files to be searched.
@@ -590,16 +791,57 @@ The scope of functionality of this program is larger, which leads to construct t
 
 \subsubsection{Real-World Popular Programs}
 \label{sec:realPragrams}
-The \texttt{FastJson}
+
+\texttt{FastJson} is a Java library that can be used to convert Java Objects into their JSON representation. It can also be used to convert a JSON string to an equivalent Java object. We chose \texttt{FastJson} for our study for several reason:
+
+\begin{enumerate}[1]
+  \item
+  \texttt{FastJson} is wide used in real-word projects, providing a opportunity to demonstrate the real world relevance of our techniques.
+  \item
+  \texttt{FastJson} is more complex than other programs, and it is a open source project, that is, we can obtain its faults freely and conveniently.
+  \item
+  The chosen version of \texttt{FastJson} is 1.2.48, which was reported that had many faults that can support our research.
+\end{enumerate}
+
 
 
 \subsection{Variables}
 
 \subsubsection{Independent Variables}
+\label{sec:independentvariables}
 
-The independent variable is the testing technique, DRT. RPT and RT were used as baseline techniques for comparison.
+The independent variable in our experiment is the different strategies that improve the fault-detection efficiency. As choices for this variable, we include, of course, proposed PP-AMT, MP-AMT, and R-AMT. As baseline techniques for use in comparison, we selected two additional techniques, traditional MT and MT-ARTsum.
+
+\begin{table}[htb]
+  \caption{The Details of Independent Variables}
+  \centering
+  \label{table:independent}
+  \resizebox{0.49\textwidth}{!}{
+  \begin{tabular}{|c|c|c|c|} \hline
+  \multicolumn{2}{|c|}{\multirow{3}{*}{Techniques}}          &The strategy of    &The strategy of \\
+  \multicolumn{2}{|c|}{}                                     &selecting Source   &selecting MRs   \\
+  \multicolumn{2}{|c|}{}                                     &Test Case          &                 \\ \hline
+  \multicolumn{1}{|c|}{}                                     &PP-AMT             &partition               &RMRS             \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                                     &PP-AMT*            &partition               &PBMR     \\ \cline{2-4}
+  \multicolumn{1}{|c|}{\multirow{1}{*}{Proposed}}            &MP-AMT             &partition               &RMRS              \\ \cline{2-4}
+  \multicolumn{1}{|c|}{\multirow{1}{*}{Techniques}}          &MP-AMT*            &partition               &PBMR              \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                                     &R-AMT              &ARTsum                  &RMRS              \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                                     &R-AMT*             &ARTsum                  &PBMR              \\ \hline
+  \multicolumn{1}{|c|}{\multirow{1}{*}{Baseline}}            &MT                 &Random                  &--        \\ \cline{2-4}
+  \multicolumn{1}{|c|}{\multirow{1}{*}{Techniques}}          &MT-ARTsum          &ARTsum                  &--                  \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+Table \ref{table:independent} summarizes the details information of selecting source test cases and MRs of different techniques. Traditional MT is a natural baseline choice, because all proposed techniques is designed as an enhancement to MT, and assessing whether proposed techniques including PP-AMT, MP-AMT, and R-AMT is more cost-effective than MT is important.
+
+There exist some techniques, such as quasi-random testing (QRT) \cite{ciupa2008artoo}, RBCVT-Fast \cite{shahbazi2013centroidal}, ARTmif \cite{chan2006forgetting}, and ARTsum \cite{barus2016cost} that can achieve a computation overhead as low as $O(n)$. However, QRT and RBCVT-Fast can be only to test software with an exclusively numeric input domain, and therefore could not be compared to proposed techniques. Moreover, Barus et al. \cite{barus2016cost} has been empirically shown that ARTsum had a much lower selection overhead than ARTmif, and its overhead was close to that of RT. Thus, we used ARTsum to select the source test cases of MT as one of baseline techniques.
+
 
 \subsubsection{Dependent Variables}
+\label{sec:dependentvariables}
+
+The choice of a metric to use in comparing the effectiveness of testing techniques is non-trivial.
 
 The dependent variable for RQ1 is the metric for evaluating the fault-detection effectiveness.
 Several effectiveness metrics exist, including:
@@ -607,31 +849,330 @@ the P-measure~\cite{duran1984evaluation} (the probability of at least one fault 
 the E-measure~\cite{chen1997optimal} (the expected number of faults detected by a test suite);
 the F-measure~\cite{sun2018adaptive} (the expected number of test case executions required to detect the first fault); and
 the T-measure~\cite{zhang2014history} (the expected number of test cases required to detect all faults).
-Since the F- and T-measures have been widely used for evaluating the fault-detection efficiency and effectiveness of DRT-related testing techniques~\cite{Cai07, cai2009random, Lv2011, Yang2014Dynamic, li2015, zhang2014history}, they are also adopted in this study.
-We use $F$ and $T$ to represent the F-measure and the T-measure of a testing method.
-As shown in Algorithm~\ref{alg:DRT}, the testing process may not terminate after the detection of the first fault.
-Furthermore, because the fault detection information can lead to different probability profile adjustment mechanisms, it is also important to see what would happen after revealing the first fault.
-Therefore, we introduce the F2-measure~\cite{sun2018adaptive} as is the number of additional test cases required to reveal the second fault after detection of the first fault.
-We use $F2$ to represent the F2-measure of a testing method, and $SD_{measure}$ to represent the standard deviation of metrics (where $measure$ can be $F$, $F2$, or $T$).
+Since the F- and P-measures have been widely used for evaluating the fault-detection efficiency and effectiveness of MT, ART, and DRT-related testing techniques~\cite{sun2018adaptive, barus2016cost, barus2016impact}, they are also adopted in this study. We use $F$ and $P$ to represent the F-measure and the P-measure of a testing technique.
 
-An obvious metric for RQ3 is the time required to detect faults.
-Corresponding to the T-measure, in this study we used $T$-$time$, the time required to detect all faults.
-$F$-$time$ and $F2$-$time$ denote the time required to detect the first fault, and the additional time needed to detect the second fault (after detecting the first), respectively.
-For each of these metrics, smaller values indicate a better performance.
+We define $F$-$count$ as the number of test cases needed to detect a failure in a specific test run.
+The F-measure is the expected $F$-$count$ for a testing method:
+
+\begin{equation}
+  \label{eq:fmeasure}
+  F = \overline{F-count}.
+\end{equation}
+The F-measure is particularly appropriate for measuring the failure-detection effectiveness of adaptive testing methods, such as ART and DRT, in which the generation of new test cases depends on the previously executed test cases or the execution results of executed test case.
+
+The $P$ can characterize the testing process. Suppose that a particular method is used to generate a test suite with $n$ test cases $\{t_1, t_2, \ldots, t_n\}$,  the $P$ is defined as the probability of at least one failure being detected by the test suite:
+
+\begin{equation}
+  \label{eq:pmeasure}
+  P(n) = Prob(\exists t_i ~\text{that reveals a failure}).
+\end{equation}
+where $i = 1,2, \ldots, n$. A larger P reflects better failure-detection effectiveness.
+
+The rate of occurrence of failures (ROCOF) that is the probability that a failure (not necessarily the first) occurs in a given interval of executions, which is relevant for operating systems where the system has to process a large number of similar requests that are relatively frequent.
+ROCOF reflects the rate of occurrence of failure or anomalies in the system \cite{lyu1996handbook}.
+
+Holm-Bonferroni method \cite{holm1979simple} to determine which pair of testing techniques have significant difference in terms of $F$. Across the whole study, for each pair of testing techniques, denoted by technique a and technique b, the null hypothesis ($H_0$) was that a and b had similar performance in terms of one metric; whereas the alternative hypothesis ($H_1$) was that a and b had significantly different performance in terms of $F$. All the null hypotheses were ordered by their corresponding p-values, from lowest to largest; in other words, for null hypotheses $H_0^1, H_0^2, \ldots, H_0^{h-1}$, we had $p_1 \leq p_2 \leq ...$ For the given confidence level $\alpha = 0.05$, we found the minimal index $h$ such that $p_h > \frac{\alpha}{N + 1 - h}$ (where N is the total number of null hypotheses). Then, we rejected $H_0^1, H_0^2, \ldots, H_0^{h-1}$, that is, we regarded the pair of techniques involved in each of these hypotheses to have statistically significant difference in terms of a certain metric.
+On the other hand, we considered the pair of techniques involved in each of $H_0^h, H_0^{h + 1}, ...$ not to have significant difference with respect to one metric, as these hypotheses were accepted.
+
+
+An obvious metric for RQ2 is the time required to detect faults. Corresponding to the T-measure, in this study we used $F$-$time$ denote the time required (i.e. test cases generation, test cases selection, and test cases execution) to detect the first fault. Obviously, a smaller values of $F$-$time$ indicate a better performance.
+
+
 
 \subsection{Experimental Settings}
 
 \subsubsection{Partitioning}
+\label{sec:partition}
 
+The proposed techniques PP-AMT and MP-AMT both based on the partition testing that is a mainstream family of software testing techniques, which can be realized in different ways, such as Intuitive Similarity, Equivalent Paths, Risk-Based, and Specified As Equivalent (two test values are equivalent if the specification says that the program handles them in the same way) \cite{kaner2010introduction}. In this study, we made use of the CPM to conduct the partitioning. Our previous work \cite{sun2018adaptive} found that there is not a strong correlation between the granularity level in partitioning and the performance of APT. Therefore, we Select two categories that have fewer choices annotated with [single] or [error], and partition the input domain according to the combinations of their choices.
 
+We use an explanatory example to illustrate the method of partitioning. According to the description of Section \ref{sec:labPrograms},  we identify categories and associated choices of \texttt{ACMS}, as shown in Table \ref{table:categoryAndchoice}. With these categories/choices and constraints among choices, we further derive a set of complete test frames and each of them corresponds to a partition. Note that the number of partitions may vary with the granularity level. To ease the illustration, we derive partitions without considering the baggage weight category. Table \ref{table:partitionrule} shows the resulting partitions for BB, where $weight_*$ indicates no classification on the baggage weight.
+\begin{table}
+  \caption{Categories and choices of ACMS}
+  \label{table:categoryAndchoice}
+  \centering
+  \begin{tabular}{ll}
+  \toprule
+  Category                    & Associated choices \\
+  \midrule
+   aircraft cabin             & \emph{Economy}, \emph{Business}, \emph{First Class} \\
+   flight region              & \emph{International}, \emph{Domestic} \\
+   baggage weight             & \emph{Above Limit}, \emph{Below Limit} \\
+  \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}
+  \caption{Partitions of ACMS}
+  \label{table:partitionrule}
+  \centering
+  \begin{tabular}{|l|l|} \hline
+  Partition       & Complete Test Frame \\ \hline
+  $c_1$  & \{$International$, $Economy$, $weight_*$ \} \\ \hline
+  $c_2$  & \{$International$, $Business$, $weight_*$\} \\ \hline
+  $c_3$  & \{$International$, $First Class$, $weight_*$\} \\ \hline
+  $c_4$  & \{$Domestic$, $Economy$, $weight_*$ \} \\ \hline
+  $c_5$  & \{$Domestic$, $Business$, $weight_*$\} \\ \hline
+  $c_6$  & \{$Domestic$, $First Class$, $weight_*$\} \\ \hline
+  \end{tabular}
+\end{table}
 
 \subsubsection{Initial Test Profile}
+\label{sec:testprofile}
 
+The proposed techniques PP-AMT and MP-AMT make use of feedback information to adjust the test profile. Then the updated test profile guide those techniques to select next source test case or MR. Before executing the test, a concrete test profile should be initialized. In our previous work \cite{sun2018adaptive}, we have compared the equal and proportional initial test profile in terms of associated performance metrics (F-measure, F2-measure \cite{sun2018adaptive}, and T-measure). The comparison results that there was no significant difference between these two types of initial test profiles. And as a result, we used a uniform probability distribution as the initial testing profile in this study.
 
 \subsubsection{Constants}
+\label{sec:constants}
+
+In PP-AMT and MP-AMT, there is a parameter $\epsilon$ that is a probability adjusting factor. We followed studies \cite{Lv2011, Yang2014, li2015approach} to set $\epsilon = 0.05$.
+
+In R-AMT, ARTsum is employed to generate source test cases, which has a parameter $k$ --- the size of the candidate set. Previous work \cite{chen2004adaptive} has shown that at least for numeric programs --- that failure detection effectiveness improves as $k$ increase up to about 10, and then does not improve much further. In addition, Barus \cite{barus2016cost} applied ARTsum to non-numeric programs where the value of $k$ was set 10. Therefore, our experiments were all conducted with $k$ set to 10.
+
+\subsection{Generation of Categories and Choices for Object Programs}
+\label{sec:generatecategories}
+
+The categories and choices used for the laboratorial programs and Real-World Popular Programs considered in this study were designed by the authors. On the other hand, the categories and choices used for the SIR Programs and GUN Program were designed by Barus \cite{barus2016cost}. In large part, the selection of appropriate categories and choices is at a tester¡¯s discretion; we chose what we regarded as simple approaches for emulating that process. Precise details on the categories and choices used in our study are provided as following.
+
+\subsubsection{The categories and choices of Laboratorial Programs}
+\label{sec:categoriesoflp}
+
+\begin{table}[htb]
+  \caption{Definition of Categories and Choices for \texttt{CUBS}}
+  \label{table:categoriesofcubs}
+  \centering
+  \begin{tabular}{|c|c|c|} \hline
+  \#               &Category                                                  &Choice   \\ \hline
+  1                &\multicolumn{1}{c|}{\multirow{2}{*}{plan}}              &A        \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &B         \\ \hline
+  2                &\multicolumn{1}{c|}{\multirow{6}{*}{options}}              &46CNY     \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &96CNY     \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &286CNY     \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &886CNY     \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &126CNY     \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &186CNY     \\ \hline
+  3                &\multicolumn{1}{c|}{\multirow{2}{*}{calls}}                & calls $<$ free calls  \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      & calls $\geq$ free calls  \\ \hline
+  4                &\multicolumn{1}{c|}{\multirow{2}{*}{data}}                 & data  $<$ free data  \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      & data $\geq$ free data  \\ \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[htb]
+  \caption{Definition of Categories and Choices for \texttt{ACMS}}
+  \label{table:categoriesofacms}
+  \centering
+  \begin{tabular}{|c|c|c|} \hline
+  \#               &Category                                                   &Choice      \\ \hline
+  1                &\multicolumn{1}{c|}{\multirow{4}{*}{class}}                &first calss        \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &Business class     \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &Economy class       \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &infant               \\ \cline{3-3}
+  2                &\multicolumn{1}{c|}{\multirow{2}{*}{region}}               &Domestic flights     \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &International flights    \\ \hline
+  3                &\multicolumn{1}{c|}{\multirow{2}{*}{isStudent}}            &True                    \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &False                   \\ \hline
+  4                &\multicolumn{1}{c|}{\multirow{2}{*}{luggage}}              &luggage $<$ Free checked-in    \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &luggage $\leq$ Free checked-in  \\ \hline
+  5                &\multicolumn{1}{c|}{\multirow{2}{*}{fee}}                  &fee $=$ 0                      \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &fee $\leq$ 0                   \\ \hline
+  \end{tabular}
+\end{table}
+
+
+\begin{table}[htb]
+  \caption{Definition of Categories and Choices for \texttt{ERS}}
+  \label{table:categoriesofers}
+  \centering
+  \begin{tabular}{|c|c|c|} \hline
+  \#               &Category                                                   &Choice      \\ \hline
+  1                &\multicolumn{1}{c|}{\multirow{4}{*}{title}}                &senior sales manager        \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &sales manager              \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &sales executive           \\ \hline
+  2                &\multicolumn{1}{c|}{\multirow{3}{*}{mileage}}              &$0 \leq mileage \leq 3000$     \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &$3000 \le mileage \leq 4000$     \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &$mileage \ge 4000$              \\ \hline
+  3                &\multicolumn{1}{c|}{\multirow{4}{*}{sales}}                &$0 \leq sales \le 50,000$      \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &$50,000 \leq sales \le 80,000$      \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &$80,000 \leq sales \le 100,000$      \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &$sales \geq 100,000$                 \\ \hline
+  4                &\multicolumn{1}{c|}{\multirow{2}{*}{airline ticket}}       &$airline ticket = 0$     \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &$airline ticket \le 0$  \\ \hline
+  5                &\multicolumn{1}{c|}{\multirow{2}{*}{other expenses}}       &$other expenses = 0$            \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &$other expenses \le 0$                  \\ \hline
+  \end{tabular}
+\end{table}
+
+\begin{table}[htb]
+  \caption{Definition of Categories and Choices for \texttt{FastJson}}
+  \label{table:categoriesoffastjson}
+  \centering
+  \begin{tabular}{|c|c|c|} \hline
+  \#               &Category                                                   &Choice      \\ \hline
+  \end{tabular}
+\end{table}
+
+
+Precise details on the categories and choices of SIR and GUN programs are provided in Tables A4 to A15 in the Appendices, which can be found on the Computer Society Digital Library at http://doi.ieeecomputersociety.org/10.1109/TC.2016.2547\\380.
+
+\subsection{Generation of Test Cases for Object Programs}
+\label{sec:generatetestcases}
+
+\subsubsection{Generation of Test Cases for Laboratorial Programs}
+\label{sec:testcasesforlab}
+
+For \texttt{CUBS}, \texttt{ACMS}, and \texttt{ERS}, we used a generator that is based on the complete test frame devised for MT-related techniques selection. We systematically generated a test case for each complete test frame, which were collectively guaranteed to cover each category and choice. The final test suites contained $284$, $1470$, and $2260$, respectively.
+
+\subsubsection{Generation of Test Cases for SIR Programs}
+\label{sec:testcasesforsir}
+
+Each of the SIR programs had an existing pool of test cases, but these pools were not large enough (having a few thousand test cases per program) to ensure sufficient randomness. Thus, rather than sampling test cases from the existing pools, we used a number of techniques to dynamically generate test cases on demand. Our approach has some similarities to fuzz testing. We first analyzed the existing test pools to obtain the probability distributions of certain parameters. Then, according to the probability distributions, the concrete values of these parameters could be randomly chosen. The detailed procedure for test case generation for each object program can be found in Appendix A, available in the online supplemental material.
+
+\subsubsection{Generation of Test Cases for GUN Program}
+\label{sec:testcasesforgrep}
+
+For grep, we used a generator that was itself based on the categories and choices devised for ART selection. We systematically generated random candidate test cases, which were collectively guaranteed to cover each category and choice. Our test generator does not randomly sample from the entire input domain of grep; rather, it samples a small subset of the input space, as our purpose is to test the regular expression
+analyzer of grep. We further filtered the randomly generated pool to remove duplicate entries. The final pool contained $171$, $634$ elements. Readers can refer to Appendix B, available in the online supplemental material, for more technical details on the random test case generation process for \texttt{grep}.
+
+\subsubsection{Generation of Test Cases for Alibaba Program}
+\label{sec:testcasesforfastjson}
+
+\subsection{Identification of MRs for Object Programs}
+\label{sec:MRs}
+
+\subsubsection{The MRs of Laboratorial Programs}
+\label{sec:MRsoflab}
+
+In our study, to obtain metamorphic relations, we made use of METRIC \cite{chen2016metric}, which is based on the category¨Cchoice framework \cite{ostrand1988category}. In METRIC, only two distinct complete test frames that are abstract test cases defining possible combinations of inputs, are considered by the tester to generate an MR. In general, METRIC has the following steps to identify MRs:
+\begin{description}
+  \item [Step1.]
+  Users select two relevant and distinct complete test frames as a \emph{candidate pair}.
+  \item [Step2.]
+  Users determine whether or not the selected candidate pair is useful for identifying an MR, and if it is, then provide the corresponding MR description.
+  \item [Step3.]
+  Restart from step 1, and repeat until all candidate pairs are exhausted, or the predefined number of MRs to be generated is reached.
+\end{description}
+
+Following the above guidelines, we identified MRs for \texttt{CUBS}, \texttt{ACMS}, and \texttt{ERS}. Table \ref{table:mrsoflab} presents a part of MRs of those programs.
+
+\begin{table}[htb]
+  \caption{Part of MRs of Laboratorial Programs}
+  \label{table:mrsoflab}
+  \centering
+  \resizebox{0.48\textwidth}{!}{
+  \begin{tabular}{|c|c|c|c|} \hline
+  \multicolumn{1}{|c|}{\multirow{2}{*}{Program}}      &\multicolumn{3}{c|}{\multirow{1}{*}{MRs}}        \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                              &Source Test Cases   &Follow-up Test Cases         &Relations  \\ \hline
+  \multicolumn{1}{|c|}{}                              &$\{1a,2a,3a,4a\}$   &$\{1a,2a,3a,4b\}$            &$O_1 \ge O_2$ \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                              &$\{1a,2a,3a,4a\}$   &$\{1a,2a,3b,4a\}$            &$O_1 \ge O_2$ \\ \cline{2-4}
+  \multicolumn{1}{|c|}{\multirow{1}{*}{\texttt{CUBS}}}&$\{1a,2a,3a,4a\}$   &$\{1a,2a,3b,4b\}$            &$O_1 \ge O_2$ \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                              &$\{1a,2a,3a,4a\}$   &$\{1a,2b,3a,4a\}$            &$O_1 \ge O_2$ \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                              &$\{1a,2a,3a,4a\}$   &$\{1a,2b,3a,4b\}$            &$O_1 \ge O_2$ \\ \hline
+  \multicolumn{1}{|c|}{}                              &$\{1a,2a,3a,4a,5a\}$   &$\{1a,2a,3a,4a,5b\}$            &$O_1 = O_2 = 0$ \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                              &$\{1a,2a,3a,4a,5a\}$   &$\{1a,2a,3a,4b,5a\}$            &$O_1 = O_2 = 0$ \\ \cline{2-4}
+  \multicolumn{1}{|c|}{\multirow{1}{*}{\texttt{ACMS}}}&$\{1a,2a,3a,4a,5a\}$   &$\{1a,2b,3a,4a,5a\}$            &$O_1 = O_2 = 0$ \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                              &$\{1a,2a,3a,4a,5a\}$   &$\{1b,2a,3a,4a,5a\}$            &$O_1 = O_2 = 0$ \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                              &$\{1a,2a,3a,4a,5a\}$   &$\{1c,2a,3a,4a,5a\}$            &$O_1 = O_2 = 0$ \\ \hline
+  \multicolumn{1}{|c|}{}                              &$\{1a,2a,3a,4a\}$   &$\{1a,2a,3a,4b\}$            &$O_1 \le O_2$ \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                              &$\{1a,2a,3a,4a\}$   &$\{1a,2a,3b,4a\}$            &$O_1 = O_2 = 0$ \\ \cline{2-4}
+  \multicolumn{1}{|c|}{\multirow{1}{*}{\texttt{CUBS}}}&$\{1a,2a,3a,4a\}$   &$\{1a,2a,3c,4a\}$            &$O_1 = O_2 = 0$ \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                              &$\{1a,2a,3a,4a\}$   &$\{1a,2b,3a,4a\}$            &$O_1 = O_2 = 0$ \\ \cline{2-4}
+  \multicolumn{1}{|c|}{}                              &$\{1a,2a,3a,4a\}$   &$\{1a,2c,3a,4a\}$            &$O_1 \ge O_2$ \\ \hline
+  \end{tabular}
+  }
+\end{table}
+
+\subsubsection{The MRs of SIR Programs}
+\label{sec:MRsofsir}
+
+\texttt{$Print\_tokens$} and \texttt{$print\_tokens2$}. These two programs perform lexical parsing. They both read a sequence of strings from a file, group these strings into tokens, identify token categories and print out all the tokens and their categories in order. The main difference between these two programs is that \texttt{$print\_tokens$} uses a hard-coded DFA; while \texttt{$print\_tokens2$} does not. Suppose the input files in source test case and follow-up test case are denoted as $I_s$ and $I_f$, respectively, and their respective outputs are denoted as $O_s$ and $O_f$. Each element in $O_s$ and $O_f$ has two attributes: the token category (e.g. keyword, identifier, etc.) and the string of this token. For these two programs, we define MRs as follows.
+\begin{enumerate}[1]
+  \item
+  \textbf{MR1: Changing lower case into upper case}. In this MR, If is constructed from Is by changing all characters in Is with lower cases into their upper cases. Since \texttt{$print\_tokens$} attempts to identify tokens and their categories, we have the size of $O_f$ equal to the size of $O_s$. Besides, since all ``keywords" are case-sensitive, all the elements with categories of ``keyword" in $O_s$ become ``identifier" in $O_f$. For the non-keyword elements of $O_s$ the corresponding categories remain the same in $O_f$.
+  \item
+  \textbf{MR2: Deletion of comments}. In this MR, If is constructed from $I_s$ by deleting all comments in $I_s$. Then, we have $O_s = O_f$.
+  \item
+  \textbf{MR3: Insertion of comments}. In this MR, If is constructed from Is by inserting the comment symbol ``;" at the very beginning of some arbitrarily chosen lines. Then, we have $O_f \subseteq O_s$.
+\end{enumerate}
+
+\texttt{replace} performs regular expression matching and substitutions. It takes a regular expression r, a replacement string s and an input file as input parameters. It produces an output file resulting from replacing any substring in the input file that matched by r, with s. Instead of adopting the widely used Perl regular expression syntax, \texttt{replace} has its own syntax of regular expression.
+
+\begin{enumerate}[1]
+  \item
+  \textbf{MR1: Extension and permutation in brackets}. The syntax of regular expression in replace also supports the bracketed sub-expression ``$[x_1 \ldots x_n]$", where $x_i$ is a single character. Such an expression has an equivalent format ``$[x1¨Cxn]$", if ``$x1, \ldots, xn$" are continuous for the current locale. Thus, this MR constructs $r_f$ with two types of replacements.
+  \begin{itemize}
+    \item The condensed sub-expression ``$[x_1$ ¨C- $x_n]$" in $r_s$ is replaced by its extended equivalent ``$[x_1 \ldots x_n]$".
+    \item The extended sub-expression ``$[x_1 \ldots x_n]$" in $r_s$ is replaced by ``$[x_{i1} \ldots x_{in}]$", where ``$[x_{i1} \ldots
+          x_{in}]$" is a permutation of ``$[x_1 \ldots x_n]$".
+  \end{itemize}
+  \item
+  \textbf{MR2: Bracketing simple characters}. Apart from the reserved words with special meanings, any simple character should be equivalent to itself enclosed by the brackets, that is, ``a" is equivalent to ``[a]" if a is not a reserved word. $r_f$ is constructed by replacing some simple characters in $r_s$ with their bracketed formats. For example, if $r_s$ contains a sub-expression ``abc", then we have
+  ``[a][b][c]" instead in $r_f$.
+  \item
+  \textbf{MR3: Replacement of escape character with bracketed structure}. In \texttt{replace}, symbol ``@" is the escape character. Any reserved character, like ``\$" or ``\%" after ``@" stands for its original meaning. Actually there is another way to preserve the original meaning for these reserved words, by bracketing the reserved characters individually. For example ``\@\$¡¯¡¯ and ``[\$]" both mean ``\$". $r_f$ is constructed by replacing the escaped reserved words with ``@" in $r_s$ with the bracketed format.
+\end{enumerate}
+
+\texttt{Schedule} and \texttt{schedule2}. These two programs perform priority scheduling, which internally maintain four mutually exclusive
+job lists:
+\begin{itemize}
+  \item Three priority job-lists $P_1$, $P_2$ and $P_3$, with $P_3$ and $P_1$ indicating the highest and lowest priorities, respectively:
+  each list contains a list of jobs with the same priority.
+  \item One blocked job list PB: it contains all jobs currently suspended.
+\end{itemize}
+
+Given the same $a_i$ ($1 \leq i \leq 3$), the input files containing a series of commands in the source test case and follow-up test case are denoted as $C_s$ and $C_f$, respectively. For schedule, we define the MRs as follows.
+
+\begin{enumerate}[1]
+  \item
+  \textbf{MR1: Substitution of the quantum expire command}. In schedule, command coded in integer ``5" is called ``$QUANTUM\_EXPIRE$" command, which releases the currently activated job and puts it to the end of the corresponding job list. Command coded in integer ``3" is called ``BLOCK" command, which puts the currently activated job to the block list PB. Its reverse command ``UNBLOCK" command is coded in
+  ``4" that takes a ratio r as a parameter. The index of the selected job to be unblocked from PB is determined by multiplying the length of PB by the ratio r. When processing command ``4 r", schedule first releases the selected job from PB, and then put it to the end of the corresponding job list. Therefore, command ¡®¡®5¡¯¡¯ can be re-interpreted as command ``3", followed by ``4 1.00". By using ``3" and ``4 1.00", schedule first blocks the currently activated job (denoted as pa), puts it at the end of PB, then unblocks the last job in PB, i.e. pa,
+  (since the length of PB multiplied by 1.00 indicates the last index in PB) and puts this job to the end of the corresponding job list. Obviously, consecutively processing these two commands has the same effect as solely processing command ``5". Thus, $C_f$ is constructed by replacing command ``5" in $C_s$ with commands ``3" and ``4 1.00". The output of the follow-up test case (denoted as $O_f$) should be the same as the output of the source test case (denoted as $O_s$).
+  \item
+  \textbf{MR2: Substitution of the adding job command}. In schedule, command coded in ``$1$" is called ``$NEW\_JOB$" command, which takes an integer i ($1 \leq i \leq 3$) as its parameter to specify the priority, and adds a new job to the end of $P_i$. And command coded in ``$2$" is the ``$UPGRADE\_PRIO$" command, which promotes a job from its current priority job list ($P_i$) into the next higher priority job list ($P_{i+1}$), where $i = 1$ or $2$. This command takes two parameters. The first one is an integer $i$ of $1$ or $2$, which specifies the current priority job list $P_i$. The second parameter is a ratio r, and the index of the selected job in $P_i$ to be upgraded is determined by multiplying the length of $P_i$ by the ratio r. As a consequence, directly adding a new job with priority ($i + 1$) has the same effect as adding a job with priority $i$ and then promoting it to the job list with priority ($i + 1$). Thus, $C_f$ is constructed by replacing command ``$1~i + 1$" in $C_s$ with command ``$1~i$" followed by ``$2~i~1.00$" ($i = 1$ or $2$). Of should be the same as $O_s$.
+  \item
+  \textbf{MR3: Substitution of block and unblock commands}.
+\end{enumerate}
+
+The details of MRs can be obtained in \cite{xie2013metamorphic}.
+
+\subsubsection{The MRs of GUN Program}
+\label{sec:MRsofgrep}
+
+We used MRs for \texttt{grep} that have been defined in \cite{barus2010depth}.
+
+\subsubsection{The MRs of Alibaba program}
+\label{sec:MRsoffastjson}
+
+The MRs of \texttt{FastJason} have not been defined.   
+
+\subsection{The Faults}
+\label{sec:faults}
+
+\subsubsection{The faults of Laboratorial Programs}
+\label{sec:faultslab}
+
+We used mutation analysis \cite{chen2018test, mao2017out, chen2017similarity} to generate a total of 1563 mutants. Each mutant was created by applying a syntactic change (i.e. mutation operator) to the original program. We removed equivalent mutants, and mutants that were too easily detected --- deleting mutants that could be detected with less than 20 randomly generated test cases.
+
+\subsubsection{The faults of SIR programs}
+\label{sec:faultssir}
+
+SIR has several released mutants for used SIR programs. 
+
+\subsubsection{The faults of GUN program}
+\label{sec:faultsgrep}
+
+The details of mutants for \texttt{grep} can be found in \cite{barus2010depth}.
+
+\subsubsection{The faults of Alibaba program}
+
+The faults can be found on the GitHub at https://github.com/alibaba/fastjson.
+
 
 
 \subsection{Experimental Environment}
+Our experiments were conducted on a virtual machine running the Ubuntu 18.04 64-bit operating system. In this system, there were two CPUs and a memory of 2GB. The test scripts were generated using Java, bash shell, and Python. In the experiments, we repeatedly ran the testing using each technique 30 times \cite{arcuri2011practical} with different random seeds to guarantee the statistically reliable mean values of the metrics.
+
+
 \subsection{Experiment Architecture}
 
 
@@ -686,16 +1227,10 @@ His research interests include software testing, program analysis, and Service-O
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/authors/HPDai.jpg}}]{Hepeng Dai} is a PhD student in the School of Computer and Communication Engineering, University of Science and Technology Beijing, China. He received the master degree in Software Engineering from University of Science and Technology Beijing, China and the bachelor degree in Information and Computing Sciences from China University of Mining and Technology, China. His current research interests include software testing and debugging.
 \end{IEEEbiography}
 \vspace{-10ex}
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/authors/GWang.jpg}}]{Guan Wang} is a masters student at the School of Computer and Communication Engineering, University of Science and Technology Beijing. He received a bachelor degree in Computer Science from University of Science and Technology Beijing. His current research interests include software testing and Service-Oriented Computing.
-\end{IEEEbiography}
-\vspace{-10ex}
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/authors/DaveTowey.png}}]{Dave Towey} is an associate professor in the School of Computer Science, University of Nottingham Ningbo China. He received his BA and MA degrees from The University of Dublin, Trinity College, PgCertTESOL from The Open University of Hong Kong, MEd from The University of Bristol, and PhD from The University of Hong Kong. His current research interests include technology-enhanced teaching and learning, and software testing, especially metamorphic testing and adaptive random testing. He is a  member of both the IEEE and the ACM.
-\end{IEEEbiography}
-\vspace{-10ex}
 \begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/authors/TYChen.pdf}}]{Tsong Yueh Chen} is a Professor of Software Engineering at the Department of Computer Science and Software Engineering in Swinburne University of Technology. He received his PhD in Computer Science from The University of Melbourne, the MSc and DIC from Imperial College of Science and Technology, and BSc and MPhil from The University of Hong Kong. He is the inventor of metamorphic testing and adaptive random testing.
 \end{IEEEbiography}
 \vspace{-10ex}
-\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/authors/KYCai.pdf}}]{Kai-Yuan Cai} received the BS, MS, and PhD degrees from Beihang university, Beijing, China, in 1984, 1987, and 1991, respectively. He has been a full professor at Beihang University since 1995. He is a Cheung Kong Scholar (chair professor), jointly appointed by the Ministry of Education of China and the Li Ka Shing Foundation of Hong Kong in 1999. His main research interests include software testing, software reliability, reliable flight control, and software cybernatics.
+\begin{IEEEbiography}[{\includegraphics[width=1in,height=1.25in,clip,keepaspectratio]{fig/authors/HLiu.pdf}}]{Huai Liu} is a Lecturer of Information Technology at the College of Engineering \& Science in Victoria University, Melbourne, Australia. Prior to joining VU, he worked as a research fellow at RMIT University and a research associate at Swinburne University of Technology. He received the BEng in physioelectronic technology and MEng in communications and information systems, both from Nankai University, China, and the PhD degree in software engineering from the Swinburne University of Technology, Australia. His current research interests include software testing, cloud computing, and end-user software engineering.
 \end{IEEEbiography}
 
 \end{document}

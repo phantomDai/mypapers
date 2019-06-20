@@ -1,13 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.1.16)  17 OCT 2018 11:10
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  11 APR 2019 16:48
 entering extended mode
-**D:/fileRepository/APT-paper/APT_new/APTbyLiu(20180628)/APT2008(v1.1,20180628,
-Huai).tex
-
-(D:/fileRepository/APT-paper/APT_new/APTbyLiu(20180628)/APT2008(v1.1,20180628,H
-uai).tex
+**F:/mypapers/APT/APT_new/APTbyLiu(20180628)/APT2008(v1.1,20180628,Huai).tex
+(F:/mypapers/APT/APT_new/APTbyLiu(20180628)/APT2008(v1.1,20180628,Huai).tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-("F:\Program Files\CTEX\MiKTeX\tex\latex\ieeetran\IEEEtran.cls"
+(G:\latex\CTEX\MiKTeX\tex\latex\ieeetran\IEEEtran.cls
 Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -19,7 +16,7 @@ Document Class: IEEEtran 2007/03/05 V1.7a by Michael Shell
 -- Using IEEE Computer Society mode.
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 366.
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\ot1ppl.fd"
+(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 -- Using 8.5in x 11in (letter) paper.
@@ -92,11 +89,11 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24> not available
 \@IEEEtmpitemindent=\dimen116
 \c@IEEEbiography=\count90
 \@IEEEtranrubishbin=\box26
-) ("F:\Program Files\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty"
+) (G:\latex\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\float\float.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count91
 \float@exts=\toks15
@@ -104,16 +101,16 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks16
 \@floatcapt=\box28
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\base\ifthen.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\base\ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks17
 \c@algorithm=\count92
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\algorithms\algorithmic.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\algorithms\algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\keyval.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks18
 )
@@ -124,10 +121,10 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \ALC@tlm=\skip44
 \algorithmicindent=\skip45
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks19
 \symAMSa=\mathgroup4
@@ -135,24 +132,24 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks20
 \ex@=\dimen117
 ))
-("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen118
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count97
@@ -193,35 +190,35 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\color.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\00miktex\color.cfg"
+(G:\latex\CTEX\MiKTeX\tex\latex\00miktex\color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def"
+(G:\latex\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("F:\Program Files\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty"
+(G:\latex\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-("F:\Program Files\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty"
+(G:\latex\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count109
 ))
-("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\graphics.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\trig.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg"
+(G:\latex\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
@@ -229,7 +226,7 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 \Gin@req@height=\dimen126
 \Gin@req@width=\dimen127
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip49
 \subfigcapskip=\skip50
@@ -245,12 +242,11 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-("F:\Program Files\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg")
+(G:\latex\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg)
 \subfig@top=\skip53
 \subfig@bottom=\skip54
 )
-(D:\fileRepository\APT-paper\APT_new\APTbyLiu(20180628)\APT2008(v1.1,20180628,H
-uai).aux)
+(F:\mypapers\APT\APT_new\APTbyLiu(20180628)\APT2008(v1.1,20180628,Huai).aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
@@ -263,7 +259,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
- ("F:\Program Files\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii"
+
+(G:\latex\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count114
 \scratchdimen=\dimen130
@@ -289,10 +286,10 @@ End of file on the terminal!
  
 Here is how much of TeX's memory you used:
  3074 strings out of 495354
- 43339 string characters out of 3183075
+ 42775 string characters out of 3183523
  93115 words of memory out of 3000000
  6245 multiletter control sequences out of 15000+200000
  20100 words of font info for 54 fonts, out of 3000000 for 9000
  17 hyphenation exceptions out of 8191
- 27i,1n,24p,296b,103s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,1n,24p,284b,103s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

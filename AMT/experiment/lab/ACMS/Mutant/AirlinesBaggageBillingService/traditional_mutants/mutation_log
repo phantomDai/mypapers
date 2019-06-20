@@ -1,0 +1,112 @@
+AORB_1:39:double_feeCalculation(int,int,boolean,double,double):luggage - benchmark => luggage * benchmark
+AORB_2:39:double_feeCalculation(int,int,boolean,double,double):luggage - benchmark => luggage / benchmark
+AORB_3:39:double_feeCalculation(int,int,boolean,double,double):luggage - benchmark => luggage % benchmark
+AORB_4:39:double_feeCalculation(int,int,boolean,double,double):luggage - benchmark => luggage + benchmark
+AORB_5:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee => (luggage - benchmark) / economicfee
+AORB_6:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee => (luggage - benchmark) % economicfee
+AORB_7:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee => luggage - benchmark + economicfee
+AORB_8:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee => luggage - benchmark - economicfee
+AORB_9:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee * 0.015 => (luggage - benchmark) * economicfee / 0.015
+AORB_10:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee * 0.015 => (luggage - benchmark) * economicfee % 0.015
+AORB_11:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee * 0.015 => (luggage - benchmark) * economicfee + 0.015
+AORB_12:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee * 0.015 => (luggage - benchmark) * economicfee - 0.015
+AOIU_1:13:double_feeCalculation(int,int,boolean,double,double):airClass => -airClass
+AOIU_2:31:double_feeCalculation(int,int,boolean,double,double):area => -area
+AOIU_3:36:double_feeCalculation(int,int,boolean,double,double):benchmark => -benchmark
+AOIU_4:36:double_feeCalculation(int,int,boolean,double,double):luggage => -luggage
+AOIU_5:37:double_feeCalculation(int,int,boolean,double,double):benchmark => -benchmark
+AOIU_6:39:double_feeCalculation(int,int,boolean,double,double):luggage => -luggage
+AOIU_7:39:double_feeCalculation(int,int,boolean,double,double):economicfee => -economicfee
+AOIS_1:13:double_feeCalculation(int,int,boolean,double,double):airClass => airClass++
+AOIS_2:13:double_feeCalculation(int,int,boolean,double,double):airClass => airClass--
+AOIS_3:31:double_feeCalculation(int,int,boolean,double,double):area => ++area
+AOIS_4:31:double_feeCalculation(int,int,boolean,double,double):area => --area
+AOIS_5:31:double_feeCalculation(int,int,boolean,double,double):area => area++
+AOIS_6:31:double_feeCalculation(int,int,boolean,double,double):area => area--
+AOIS_7:36:double_feeCalculation(int,int,boolean,double,double):benchmark => ++benchmark
+AOIS_8:36:double_feeCalculation(int,int,boolean,double,double):benchmark => --benchmark
+AOIS_9:36:double_feeCalculation(int,int,boolean,double,double):benchmark => benchmark++
+AOIS_10:36:double_feeCalculation(int,int,boolean,double,double):benchmark => benchmark--
+AOIS_11:36:double_feeCalculation(int,int,boolean,double,double):luggage => ++luggage
+AOIS_12:36:double_feeCalculation(int,int,boolean,double,double):luggage => --luggage
+AOIS_13:36:double_feeCalculation(int,int,boolean,double,double):luggage => luggage++
+AOIS_14:36:double_feeCalculation(int,int,boolean,double,double):luggage => luggage--
+AOIS_15:37:double_feeCalculation(int,int,boolean,double,double):benchmark => ++benchmark
+AOIS_16:37:double_feeCalculation(int,int,boolean,double,double):benchmark => --benchmark
+AOIS_17:37:double_feeCalculation(int,int,boolean,double,double):benchmark => benchmark++
+AOIS_18:37:double_feeCalculation(int,int,boolean,double,double):benchmark => benchmark--
+AOIS_19:39:double_feeCalculation(int,int,boolean,double,double):luggage => ++luggage
+AOIS_20:39:double_feeCalculation(int,int,boolean,double,double):luggage => --luggage
+AOIS_21:39:double_feeCalculation(int,int,boolean,double,double):luggage => luggage++
+AOIS_22:39:double_feeCalculation(int,int,boolean,double,double):luggage => luggage--
+AOIS_23:39:double_feeCalculation(int,int,boolean,double,double):benchmark => ++benchmark
+AOIS_24:39:double_feeCalculation(int,int,boolean,double,double):benchmark => --benchmark
+AOIS_25:39:double_feeCalculation(int,int,boolean,double,double):benchmark => benchmark++
+AOIS_26:39:double_feeCalculation(int,int,boolean,double,double):benchmark => benchmark--
+AOIS_27:39:double_feeCalculation(int,int,boolean,double,double):economicfee => economicfee++
+AOIS_28:39:double_feeCalculation(int,int,boolean,double,double):economicfee => economicfee--
+ROR_1:31:double_feeCalculation(int,int,boolean,double,double): area == 1  =>   area > 1
+ROR_2:31:double_feeCalculation(int,int,boolean,double,double): area == 1  =>   area >= 1
+ROR_3:31:double_feeCalculation(int,int,boolean,double,double): area == 1  =>   area < 1
+ROR_4:31:double_feeCalculation(int,int,boolean,double,double): area == 1  =>   area <= 1
+ROR_5:31:double_feeCalculation(int,int,boolean,double,double): area == 1  =>   area != 1
+ROR_6:31:double_feeCalculation(int,int,boolean,double,double): area == 1  =>   true
+ROR_7:31:double_feeCalculation(int,int,boolean,double,double): area == 1  =>   false
+ROR_8:36:double_feeCalculation(int,int,boolean,double,double): benchmark > luggage  =>   benchmark >= luggage
+ROR_9:36:double_feeCalculation(int,int,boolean,double,double): benchmark > luggage  =>   benchmark < luggage
+ROR_10:36:double_feeCalculation(int,int,boolean,double,double): benchmark > luggage  =>   benchmark <= luggage
+ROR_11:36:double_feeCalculation(int,int,boolean,double,double): benchmark > luggage  =>   benchmark == luggage
+ROR_12:36:double_feeCalculation(int,int,boolean,double,double): benchmark > luggage  =>   benchmark != luggage
+ROR_13:36:double_feeCalculation(int,int,boolean,double,double): benchmark > luggage  =>   true
+ROR_14:36:double_feeCalculation(int,int,boolean,double,double): benchmark > luggage  =>   false
+COI_1:31:double_feeCalculation(int,int,boolean,double,double): area == 1  =>  !(area == 1)
+COI_2:32:double_feeCalculation(int,int,boolean,double,double): isStudent  =>  !isStudent
+COI_3:36:double_feeCalculation(int,int,boolean,double,double): benchmark > luggage  =>  !(benchmark > luggage)
+LOI_1:13:double_feeCalculation(int,int,boolean,double,double):airClass => ~airClass
+LOI_2:31:double_feeCalculation(int,int,boolean,double,double):area => ~area
+LOI_3:36:double_feeCalculation(int,int,boolean,double,double):benchmark => ~benchmark
+LOI_4:36:double_feeCalculation(int,int,boolean,double,double):luggage => ~luggage
+LOI_5:37:double_feeCalculation(int,int,boolean,double,double):benchmark => ~benchmark
+LOI_6:39:double_feeCalculation(int,int,boolean,double,double):luggage => ~luggage
+LOI_7:39:double_feeCalculation(int,int,boolean,double,double):benchmark => ~benchmark
+LOI_8:39:double_feeCalculation(int,int,boolean,double,double):economicfee => ~economicfee
+SDL_1:22:double_feeCalculation(int,int,boolean,double,double): switch (airClass) { case 0 :     benchmark = 40.0;     break; case 1 :     benchmark = 30.0;     break; case 2 :     benchmark = 20.0;     break; case 3 :     benchmark = 0.0;     break; } if (area == 1) {     if (isStudent) {         benchmark = 30.0;     } } if (benchmark > luggage) {     luggage = benchmark; } return luggagefee = (luggage - benchmark) * economicfee * 0.015;  =>   if (area == 1) {     if (isStudent) {         benchmark = 30.0;     } } if (benchmark > luggage) {     luggage = benchmark; } return luggagefee = (luggage - benchmark) * economicfee * 0.015;
+SDL_2:35:double_feeCalculation(int,int,boolean,double,double): switch (airClass) { case 0 :     benchmark = 40.0;     break; case 1 :     benchmark = 30.0;     break; case 2 :     benchmark = 20.0;     break; case 3 :     benchmark = 0.0;     break; } if (area == 1) {     if (isStudent) {         benchmark = 30.0;     } } if (benchmark > luggage) {     luggage = benchmark; } return luggagefee = (luggage - benchmark) * economicfee * 0.015;  =>   switch (airClass) { case 0 :     benchmark = 40.0;     break; case 1 :     benchmark = 30.0;     break; case 2 :     benchmark = 20.0;     break; case 3 :     benchmark = 0.0;     break; } if (benchmark > luggage) {     luggage = benchmark; } return luggagefee = (luggage - benchmark) * economicfee * 0.015;
+SDL_3:37:double_feeCalculation(int,int,boolean,double,double): switch (airClass) { case 0 :     benchmark = 40.0;     break; case 1 :     benchmark = 30.0;     break; case 2 :     benchmark = 20.0;     break; case 3 :     benchmark = 0.0;     break; } if (area == 1) {     if (isStudent) {         benchmark = 30.0;     } } if (benchmark > luggage) {     luggage = benchmark; } return luggagefee = (luggage - benchmark) * economicfee * 0.015;  =>   switch (airClass) { case 0 :     benchmark = 40.0;     break; case 1 :     benchmark = 30.0;     break; case 2 :     benchmark = 20.0;     break; case 3 :     benchmark = 0.0;     break; } if (area == 1) {     if (isStudent) {         benchmark = 30.0;     } } return luggagefee = (luggage - benchmark) * economicfee * 0.015;
+SDL_4:16:double_feeCalculation(int,int,boolean,double,double): benchmark = 40.0; break;  =>   break;
+SDL_5:16:double_feeCalculation(int,int,boolean,double,double): benchmark = 40.0; break;  =>   benchmark = 40.0;
+SDL_6:20:double_feeCalculation(int,int,boolean,double,double): benchmark = 30.0; break;  =>   break;
+SDL_7:20:double_feeCalculation(int,int,boolean,double,double): benchmark = 30.0; break;  =>   benchmark = 30.0;
+SDL_8:24:double_feeCalculation(int,int,boolean,double,double): benchmark = 20.0; break;  =>   break;
+SDL_9:24:double_feeCalculation(int,int,boolean,double,double): benchmark = 20.0; break;  =>   benchmark = 20.0;
+SDL_10:28:double_feeCalculation(int,int,boolean,double,double): benchmark = 0.0; break;  =>   break;
+SDL_11:28:double_feeCalculation(int,int,boolean,double,double): benchmark = 0.0; break;  =>   benchmark = 0.0;
+SDL_12:26:double_feeCalculation(int,int,boolean,double,double): case 0 :     benchmark = 40.0;     break; case 1 :     benchmark = 30.0;     break; case 2 :     benchmark = 20.0;     break; case 3 :     benchmark = 0.0;     break;  =>   case 1 :     benchmark = 30.0;     break; case 2 :     benchmark = 20.0;     break; case 3 :     benchmark = 0.0;     break;
+SDL_13:26:double_feeCalculation(int,int,boolean,double,double): case 0 :     benchmark = 40.0;     break; case 1 :     benchmark = 30.0;     break; case 2 :     benchmark = 20.0;     break; case 3 :     benchmark = 0.0;     break;  =>   case 0 :     benchmark = 40.0;     break; case 2 :     benchmark = 20.0;     break; case 3 :     benchmark = 0.0;     break;
+SDL_14:26:double_feeCalculation(int,int,boolean,double,double): case 0 :     benchmark = 40.0;     break; case 1 :     benchmark = 30.0;     break; case 2 :     benchmark = 20.0;     break; case 3 :     benchmark = 0.0;     break;  =>   case 0 :     benchmark = 40.0;     break; case 1 :     benchmark = 30.0;     break; case 3 :     benchmark = 0.0;     break;
+SDL_15:26:double_feeCalculation(int,int,boolean,double,double): case 0 :     benchmark = 40.0;     break; case 1 :     benchmark = 30.0;     break; case 2 :     benchmark = 20.0;     break; case 3 :     benchmark = 0.0;     break;  =>   case 0 :     benchmark = 40.0;     break; case 1 :     benchmark = 30.0;     break; case 2 :     benchmark = 20.0;     break;
+SDL_16:32:double_feeCalculation(int,int,boolean,double,double): if (isStudent) {     benchmark = 30.0; }  =>  
+SDL_17:36:double_feeCalculation(int,int,boolean,double,double): if (area == 1) {     if (isStudent) {         benchmark = 30.0;     } }  =>   if (true) {     if (isStudent) {         benchmark = 30.0;     } }
+SDL_18:33:double_feeCalculation(int,int,boolean,double,double): benchmark = 30.0;  =>  
+SDL_19:35:double_feeCalculation(int,int,boolean,double,double): if (isStudent) {     benchmark = 30.0; }  =>   if (true) {     benchmark = 30.0; }
+SDL_20:37:double_feeCalculation(int,int,boolean,double,double): luggage = benchmark;  =>  
+SDL_21:39:double_feeCalculation(int,int,boolean,double,double): if (benchmark > luggage) {     luggage = benchmark; }  =>   if (true) {     luggage = benchmark; }
+SDL_22:40:double_feeCalculation(int,int,boolean,double,double): return luggagefee = (luggage - benchmark) * economicfee * 0.015;  =>   return 0;
+VDL_1:31:double_feeCalculation(int,int,boolean,double,double):area == 1 => 1
+VDL_2:36:double_feeCalculation(int,int,boolean,double,double):benchmark > luggage => luggage
+VDL_3:36:double_feeCalculation(int,int,boolean,double,double):benchmark > luggage => benchmark
+VDL_4:39:double_feeCalculation(int,int,boolean,double,double):luggage - benchmark => benchmark
+VDL_5:39:double_feeCalculation(int,int,boolean,double,double):luggage - benchmark => luggage
+VDL_6:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee => luggage - benchmark
+ODL_1:31:double_feeCalculation(int,int,boolean,double,double):area == 1 => area
+ODL_2:31:double_feeCalculation(int,int,boolean,double,double):area == 1 => 1
+ODL_3:36:double_feeCalculation(int,int,boolean,double,double):benchmark > luggage => benchmark
+ODL_4:36:double_feeCalculation(int,int,boolean,double,double):benchmark > luggage => luggage
+ODL_5:39:double_feeCalculation(int,int,boolean,double,double):luggage - benchmark => luggage
+ODL_6:39:double_feeCalculation(int,int,boolean,double,double):luggage - benchmark => benchmark
+ODL_7:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee => luggage - benchmark
+ODL_8:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee => economicfee
+ODL_9:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee * 0.015 => (luggage - benchmark) * economicfee
+ODL_10:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee * 0.015 => 0.015
+CDL_1:31:double_feeCalculation(int,int,boolean,double,double):area == 1 => area
+CDL_2:39:double_feeCalculation(int,int,boolean,double,double):(luggage - benchmark) * economicfee * 0.015 => (luggage - benchmark) * economicfee

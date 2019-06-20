@@ -11,6 +11,7 @@
 \usepackage{amssymb}
 \usepackage[normalem]{ulem}
 \usepackage{color}
+\usepackage{ulem}
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 
@@ -23,8 +24,8 @@
         Hepeng~Dai,
         Guan~Wang,
         Dave~Towey,~\IEEEmembership{Member,~IEEE,}
-        Kai-Yuan~Cai,~\IEEEmembership{Member,~IEEE,}
-        and~Tsong Yueh~Chen,~\IEEEmembership{Member,~IEEE,}
+        Tsong Yueh~Chen,~\IEEEmembership{Member,~IEEE,}
+        and~Kai-Yuan~Cai,~\IEEEmembership{Member,~IEEE,}
 \thanks{A preliminary version of this paper was presented at the 36th Annual IEEE Computer Software and Applications Conference (COMPSAC 2012)~\cite{sun2012towards}.}
 \thanks{C.-A. Sun, H. Dai, and G. Wang are with the School of Computer and Communication Engineering, University of Science and Technology Beijing, Beijing 100083, China. E-mail: casun@ustb.edu.cn.}% <-this % stops a space
 \thanks{D. Towey is with the School of Computer Science, University of Nottingham Ningbo China, Ningbo 315100, China. E-mail: dave.towey@nottingham.edu.cn}
@@ -86,21 +87,13 @@ If one input can reveal a fault, then all other inputs in the same partition sho
 
 RT and PT are based on different intuitions, and each have their own advantages and disadvantages.
 Because it is likely that they can be complementary to each other, detecting different faults, it is intuitively appealing to investigate the their integration.
-%Accordingly, Cai et al.~\cite{cai2009random} have proposed the random partition testing (RPT) strategy.
-%In RPT, the input domain is first divided into $m$ partitions, $s_1, s_2, \ldots, s_m$, where each $s_i$ is allocated a probability $p_i$ of selection.
-%A partition $s_i$ is randomly selected according to the testing profile $\{ \left \langle s_1,p_1 \right \rangle, \left \langle s_2,p_2 \right \rangle, \ldots, \left \langle s_m,p_m \right \rangle\}$, where $p_1 + p_2 + \cdots + p_m = 1$.
-%A concrete test case is then randomly selected from the chosen $s_i$.
 
 In traditional RPT \cite{cai2009random}, the partitions and corresponding test profiles remain constant throughout testing, which may not be the best strategy.
 Independent researchers have observed that fault-revealing inputs tend to cluster into ``continuous regions''~\cite{Ammann88, Finelli91}---there is similarity in the execution behavior of neighboring software inputs.
 Based on software cybernetics, Cai et al. proposed dynamic random testing (DRT)~\cite{cai2009random}, aiming to improve on both RT and RPT.
-%Unlike the original RPT, where the values of $p_i$ are fixed, DRT attempts to dynamically change the values:
-%If a test case from a partition $s_i$ reveals a fault, the corresponding $p_i$ will be increased by a constant $\varepsilon$;
-%otherwise, it is decreased by $\varepsilon$.
 
 In practice, web services have usually been tested by the service providers, and simple or easy-to-test faults have been removed, meaning that the remaining faults are normally hard to detect.
 For ensuring a higher reliability of the web services, a simple RT strategy may not be an appropriate technique~\cite{li2014two}, especially when the scale is large, or there are some stubborn faults.
-%Studies have shown that DRT can improve on RT in term of fault detection effectiveness~\cite{Lv2011, Yang2014Dynamic, li2015}.
 
 In this paper, we present a dynamic random testing (DRT) approach for web services, as an enhanced version of RT that is an adaptation of DRT to the context of SOA.
 We examine key issues of such an adaption, and conduct empirical studies to evaluate the feasibility and effectiveness of the proposed DRT, with the experimental results showing DRT outperforms RT in terms of fault detection efficiency.
@@ -242,29 +235,6 @@ Some of these features include:
   This suggests that the number of tests should be kept as low as possible \cite{sunreview}.
 \end{itemize}
 
-%Although RT is a widely-used software testing method, some of its characteristics may make it inefficient for testing web services.
-%This study explores the application of DRT to web services with an aim of improving on the fault detection efficiency of RT.
-
-%\subsection{Mutation Analysis}
-%
-%Mutation analysis~\cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity} has been widely used to assess the adequacy of test suites and the effectiveness of testing techniques.
-%Mutation operators are used to seed various faults into the program under test, and thus generate a set of variants, called mutants.
-%If a test case causes a mutant to behave differently to the program under test, then we say that this test case ``kills'' the mutant, and thus detects the injected fault.
-%The mutation score (MS) is used to measure how thoroughly a test suite ``kills'' the mutants.
-%The MS is defined as:
-%
-%\begin{equation}
-%MS(p,ts) = \displaystyle\frac{N_k}{N_m - N_e}
-%\end{equation}
-%
-%where $p$ is the program being mutated;
-%$ts$ is the test suite under evaluation;
-%$N_k$ is the number of mutants killed;
-%$N_m$ is the total number of mutants; and
-%$N_e$ is the number of equivalent mutants (mutants whose behavior is always the same as that of $p$).
-%It has been highlighted that, compared with manually seeded faults,  automatically generated mutants can be more similar to  real-life faults, and thus the mutant score is a good indicator of the effectiveness of a testing technique~\cite{andrews2005mutation}.
-%This paper uses mutation analysis to evaluate the effectiveness of our proposed DRT for web services.
-
 \section{DRT for Web Services}
 \label{sec:DRTforwebserivce}
 
@@ -280,7 +250,7 @@ We next discuss the individual framework components.
 
 \begin{figure}[]
   \centering
-  \includegraphics[width = 0.5\textwidth]{fig//framework}
+  \includegraphics[width = 0.5\textwidth]{fig//framework.png}
   \caption{DRT for web services framework}
   \label{fig:frame}
 \end{figure}
@@ -304,7 +274,7 @@ We next discuss the individual framework components.
 
   \item
   \emph{Partition Selection}.
-  DRT randomly selects a partition according to the testing profile.
+  DRT randomly selects a partition $s_i$ according to the test profile.
 
   \item
   \emph{Test Case Generation}.
@@ -577,7 +547,7 @@ In practice, we should set
 \label{euqtion:approxValue}
   \varepsilon \approx \frac{2m\theta_{min}^2}{1-2\theta_{min}}.
 \end{equation}
-%
+
 \subsection{Prototype}
 \label{sec:prototype}
 
@@ -592,7 +562,7 @@ During the test, if a failure is detected before having executed the maximum num
 Testers can choose to remove defects and continue testing, or to stop testing.
 When all tests have completed, the test report is summarized and output in a file.
 
-\begin{figure}[] %\begin{figure}[!htp]
+\begin{figure}[]
   \centering
   \includegraphics[width=0.5\textwidth]{fig//prototype}
   \caption{Prototype interface}
@@ -605,6 +575,7 @@ When all tests have completed, the test report is summarized and output in a fil
 We conducted a series of empirical studies to evaluate the performance of DRT.
 
 \subsection{Research Questions}
+\label{sec:questions}
 
 In our experiments, we focused on addressing the following three research questions:
 
@@ -626,16 +597,17 @@ In our experiments, we focused on addressing the following three research questi
 \end{description}
 
 \subsection{Subject Web Services}
+\label{sec:subjects}
 
-We selected three real-life web services as the subject programs for our study:
+We selected three \sout{real-life} web services as the subject programs for our study:
 \texttt{Aviation Consignment Management Service (ACMS)},
 \texttt{China Unicom billing service (CUBS)}, and
-\texttt{Parking billing service (PBS)}.
+\texttt{Parking billing service (PBS)}, \textcolor{red}{which were developed by ourself based on the real-life specifications.}
 We used mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity} to generate a total of 1563 mutants. Each mutant was created by applying a syntactic change (i.e. mutation operator) to the original program.
 We removed equivalent mutants, and mutants that were too easily detected
 ---
 deleting mutants that could be detected with less than 20 randomly generated test cases.
-Table~\ref{tab:objects} summarizes the basic information of the used web services and their mutants.
+\textcolor{red}{To guarantee the statistic reliability, we first obtained different test suites using 50 random seeds, and tested all mutants on all test suites, then calculated the average number of test cases needed to kill a mutant. Based on the average number, we deleted easily detected mutants.}Table~\ref{tab:objects} summarizes the basic information of the used web services and their mutants.
 A detailed description of each web service is given in the following.
 
 \begin{table}
@@ -652,6 +624,7 @@ A detailed description of each web service is given in the following.
 \end{table}
 
 \subsubsection{Aviation Consignment Management Service (ACMC)}
+\label{sec:acms}
 
 ACMS helps airline companies check the allowance (weight) of free baggage, and the cost of additional baggage.
 Based on the destination, flights are categorised as either domestic or international.
@@ -674,26 +647,28 @@ The detailed price rules are summarized in Table~\ref{tab:aviation}, where $pric
 \end{table*}
 
 \subsubsection{China Unicom Billing Service (CUBS)}
+\label{sec:cubs}
 
 CUBS provides an interface through which customers can know how much they need to pay according to cell-phone plans, calls, and data usage.
 The details of several cell-phone plans are summarized in Tables~\ref{table:chinaA},~\ref{table:chinaB}, and~\ref{table:chinaC}.
-\begin{table*}
+
+\begin{table}[h]
   \caption{Plan A}
-  \label{table:chinaA}
+  \label{table:chinaC}
   \centering
-  \resizebox{\textwidth}{12mm}{
-  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|} \hline
-  \multicolumn{2}{|c|}{\multirow{2}{*}{Plan details}}                 &\multicolumn{11}{|c|}{Month charge~(CNY)} \\ \cline{3-13}
-  \multicolumn{2}{|c|}{}                                                        &\!$option_1$\!  &\!$option_2$\!  &\!$option_3$\!  &\!$option_4$\!  &\!$option_5$\!  &\!$option_6$\! &\!$option_7$\!  &\!$option_8$\!  &\!$option_9$\!  &\!$option_{10}$\!  &\!$option_{11}$\! \\ \hline
-  \multirow{3}{*}{\rotatebox{90}{Basic}} &Free calls~(min)  &50  &50  &240  &320  &420  &510  &700 &900 &1250 &1950  &3000 \\ \cline{2-13}
-                                            &Free data~(MB)  &150 &300 &300  &400  &500  &650  &750 &950 &1300 &2000  &3000 \\ \cline{2-13}
-                                            &Free incoming calls  &\multicolumn{11}{c|}{Domestic~(including video calls)} \\ \hline
-  \multirow{3}{*}{\rotatebox{90}{Extra}} &Incoming calls~(CNY/min)  &0.25 &0.20  &\multicolumn{9}{c|}{0.15} \\ \cline{2-13}
-                                           &Data~(CNY/KB)  &\multicolumn{11}{c|}{0.0003} \\ \cline{2-13}
-                                            &Video calls~(CNY/min)  &\multicolumn{11}{c|}{0.60} \\ \hline
-  \end{tabular}}
-\end{table*}
-\begin{table*}
+  \begin{tabular}{|c|c|c|c|c|} \hline
+  \multicolumn{2}{|c|}{\multirow{2}{*}{Plan details}}  &\multicolumn{3}{|c|}{Month charge~(CNY)} \\ \cline{3-5}
+  \multicolumn{2}{|c|}{}                                  &$option_1$  &$option_2$  &$option_3$ \\ \hline
+   \multirow{3}{*}{\rotatebox{90}{Basic}} &Free calls~(min)  &260  &380  &550 \\ \cline{2-5}
+                                          &Free data~(MB)  &40 &60 &80 \\ \cline{2-5}
+                                            &Free data~(MB)  &\multicolumn{3}{c|}{Domestic~(including video calls)} \\ \hline
+   \multirow{3}{*}{\rotatebox{90}{Extra}} &Incoming calls~(CNY/min)  &0.25 &0.20  &0.15 \\ \cline{2-5}
+                                            &Data~(CNY/KB)  &\multicolumn{3}{c|}{0.0003} \\ \cline{2-5}
+                                            &Video calls~(CNY/min)  &\multicolumn{3}{c|}{0.60} \\ \hline
+  \end{tabular}
+\end{table}
+
+\begin{table*}[hbtp]
   \caption{Plan B}
   \label{table:chinaB}
   \centering
@@ -710,23 +685,25 @@ The details of several cell-phone plans are summarized in Tables~\ref{table:chin
   \end{tabular}}
 \end{table*}
 
-\begin{table}
+\begin{table*}[hbtp]
   \caption{Plan C}
-  \label{table:chinaC}
+  \label{table:chinaA}
   \centering
-  \begin{tabular}{|c|c|c|c|c|} \hline
-  \multicolumn{2}{|c|}{\multirow{2}{*}{Plan details}}  &\multicolumn{3}{|c|}{Month charge~(CNY)} \\ \cline{3-5}
-  \multicolumn{2}{|c|}{}                                  &$option_1$  &$option_2$  &$option_3$ \\ \hline
-   \multirow{3}{*}{\rotatebox{90}{Basic}} &Free calls~(min)  &260  &380  &550 \\ \cline{2-5}
-                                          &Free data~(MB)  &40 &60 &80 \\ \cline{2-5}
-                                            &Free data~(MB)  &\multicolumn{3}{c|}{Domestic~(including video calls)} \\ \hline
-   \multirow{3}{*}{\rotatebox{90}{Extra}} &Incoming calls~(CNY/min)  &0.25 &0.20  &0.15 \\ \cline{2-5}
-                                            &Data~(CNY/KB)  &\multicolumn{3}{c|}{0.0003} \\ \cline{2-5}
-                                            &Video calls~(CNY/min)  &\multicolumn{3}{c|}{0.60} \\ \hline
-  \end{tabular}
-\end{table}
+  \resizebox{\textwidth}{12mm}{
+  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|} \hline
+  \multicolumn{2}{|c|}{\multirow{2}{*}{Plan details}}                 &\multicolumn{11}{|c|}{Month charge~(CNY)} \\ \cline{3-13}
+  \multicolumn{2}{|c|}{}                                                        &\!$option_1$\!  &\!$option_2$\!  &\!$option_3$\!  &\!$option_4$\!  &\!$option_5$\!  &\!$option_6$\! &\!$option_7$\!  &\!$option_8$\!  &\!$option_9$\!  &\!$option_{10}$\!  &\!$option_{11}$\! \\ \hline
+  \multirow{3}{*}{\rotatebox{90}{Basic}} &Free calls~(min)  &50  &50  &240  &320  &420  &510  &700 &900 &1250 &1950  &3000 \\ \cline{2-13}
+                                            &Free data~(MB)  &150 &300 &300  &400  &500  &650  &750 &950 &1300 &2000  &3000 \\ \cline{2-13}
+                                            &Free incoming calls  &\multicolumn{11}{c|}{Domestic~(including video calls)} \\ \hline
+  \multirow{3}{*}{\rotatebox{90}{Extra}} &Incoming calls~(CNY/min)  &0.25 &0.20  &\multicolumn{9}{c|}{0.15} \\ \cline{2-13}
+                                           &Data~(CNY/KB)  &\multicolumn{11}{c|}{0.0003} \\ \cline{2-13}
+                                            &Video calls~(CNY/min)  &\multicolumn{11}{c|}{0.60} \\ \hline
+  \end{tabular}}
+\end{table*}
 
 \subsubsection{Parking Billing Service (PBS)}
+\label{sec:pbs}
 
 Consider a parking billing service that accepts the parking details for a vehicle, including the vehicle type, day of the week, discount coupon, and hours of parking.
 This service  rounds up the parking duration to the next full hour, and then calculates the parking fee for according to the hourly rates in Table~\ref{tab:hourlyRate}.
@@ -750,17 +727,19 @@ To facilitate better parking management, at the time of parking, customers may p
 If the estimation and actual parked hours fall into the same time range, then the customer will receive a 40\% discount;
 but if they are different ranges, then a 20\% markup is applied.
 A customer may choose to either use a discount coupon, or provide an estimation of parking duration, but may not do both.
-%(Obviously, a customer may also choose to neither provide an estimation, nor use a discount coupon.)
 No vehicles are allowed to remain parked for two consecutive days on a continuous basis.
 
 \subsection{Variables}
+\label{sec:variables}
 
 \subsubsection{Independent Variables}
+\label{sec:independentvariables}
 
 The independent variable is the testing technique, DRT.
 RPT and RT were used as baseline techniques for comparison.
 
 \subsubsection{Dependent Variables}
+\label{sec:dependentvariables}
 
 The dependent variable for RQ1 is the metric for evaluating the fault-detection effectiveness.
 Several effectiveness metrics exist, including:
@@ -781,16 +760,21 @@ $F$-$time$ and $F2$-$time$ denote the time required to detect the first fault, a
 For each of these metrics, smaller values indicate a better performance.
 
 \subsection{Experimental Settings}
+\label{sec:settings}
 
 \subsubsection{Partitioning}
+\label{sec:partition}
+
 In our study, we set the partitions by making use of a decision table (DT) \cite{gettys1986if}.
 A DT presents a large amount of complex decisions in a simple, straightforward manner, representing a set of decision rules under all exclusive conditional scenarios in a pre-defined problem.
 Typically, a DT consists of four parts:
 
 \begin{enumerate}
 	\item
-	The upper-left part lists the conditions denoted $C_i$ ($i = 1, \ldots, n$, where $n$ is the number of conditions in the pre-defined problem, and $n \ge 1$).
-	Each condition $C_i$ contains a set of possible options $O_{i,q} \in CO_i = \{O_{i,1}, \ldots, O_{i,t_{i}}\}$, where $t_i$ is the number of possible options for $C_i$, and $q = \{1,\ldots,t_i\}$.
+	The upper-left part lists the conditions denoted $C_i$ ($i = 1, \ldots, n$, where $n$ is the number of conditions in the pre-defined problem,
+    and $n \ge 1$).
+	Each condition $C_i$ contains a set of possible options $O_{i,q} \in CO_i = \{O_{i,1}, \ldots, O_{i,t_{i}}\}$, where $t_i$ is the number of
+    possible options for $C_i$, and $q = \{1,\ldots,t_i\}$.
 	
 	\item
 	The upper-right part shows the condition space, which is a Cartesian product of all the $CO_i$	($SP(C) = CO_1 \times CO_2 \times \ldots \times CO_n$).
@@ -812,24 +796,15 @@ For fine-grain partition schemes, each \emph{CE} of a DT \emph{rule} corresponds
 while for coarse-grained schemes, a partition corresponds to the union of a group of partitions of which all \emph{CE} of DT \emph{rules} have the same \emph{AE}.
 Accordingly, we obtained two partition schemes for each subject web service:
 ACMS had 24 and 7 partitions; CUBS, 20 and 3; and PBS, 18 and 3, respectively.
-%\begin{table}[!]
-%\caption{Numbers of Partitions per Scheme for Three Subject Programs}
-%\label{tab:partition}
-%\centering
-%\begin{tabular}{|c|c|c|} \hline
-%  Web service      &Scheme 1         &Scheme 2  \\ \hline
-%  ACMS  &24                &7          \\ \hline
-%  CUBS      &20              &3          \\ \hline
-%  PBS      &18                &3          \\ \hline
-%\end{tabular}
-%\end{table}
 
 \subsubsection{Initial Test Profile}
+\label{sec:profile}
 
 Because test cases may be generated randomly during the test process, a feasible method is to use a uniform probability distribution as the initial testing profile.
 On the other hand, testers may also use past experience to guide a different probability distribution as the initial profile.
 
 \subsubsection{Constants}
+\label{sec:constant}
 
 In the experiments, we were interested in exploring the relationship between the number of partitions and the DRT strategy parameter $\varepsilon$, and therefore selected a set of parameter values:
 $\varepsilon \in \{1.0E$-$05, 5.0E$-$05, 1.0E$-$04, 5.0E$-$04, 1.0E$-$03, 5.0E$-$03, 1.0E$-$02, 5.0E$-$02, 1.0E$-$01, 2E$-$01, 3E$-$01, 4E$-$01, 5E$-$01\}$.
@@ -839,19 +814,23 @@ For PBS, when the test is carried out under partition scheme 2, if $\varepsilon 
 It is important, therefore, that the initial value of $\varepsilon$ should not be set too large.
 
 \subsection{Experimental Environment}
+\label{sec:environment}
 
 Our experiments were conducted on a virtual machine running the Ubuntu 11.06 64-bit operating system, with two CPUs, and a memory of 2GB.
 The test scripts were written in Java.
 To ensure statistically reliable values \cite{arcuri2011practical} of the metrics (F-measure, F2-measure, T-measure, F-time, F2-time, and T-time), each testing session was repeated 30 times with 30 different seeds, and the average value calculated.
 
 \subsection{Threats To Validity}
+\label{sec:threats}
 
 \subsubsection{Internal Validity}
+\label{sec:internalthreats}
 
 A threat to internal validity is related to the implementations of the testing techniques, which involved a moderate amount of programming work.
 However, our code was cross-checked by different individuals, and we are confident that all techniques were correctly implemented.
 
 \subsubsection{External Validity}
+\label{sec:externalthreats}
 
 The possible threat to external validity is related to the subject programs and seeded faults under evaluation.
 Although the three subject web services are not very complex, they do implement real-life business scenarios of diverse application domains.
@@ -860,97 +839,22 @@ These faults cover different types of mutation operators and require an average 
 Although we have tried to improve the generalisability of the findings by applying different partitioning granularities, and 13 kinds of parameters, we cannot be certain that similar results would be observed in other types of web services.
 
 \subsubsection{Construct Validity}
+\label{sec:construct}
 
 The metrics used in our study are simple in concept and straightforward to apply, and hence there should be little threat to the construct validity.
 
 \subsubsection{Conclusion Validity}
+\label{sec:conclusion}
+
 As reported for empirical studies in the field of software engineering \cite{arcuri2011practical},  at least 30 observations are necessary to ensure the statistical significance of results.
 Accordingly, we have run a sufficient number of trials to ensure the  reliability of our experimental results.
 Furthermore, as will be discussed in Section~\ref{sec:results}, further statistical tests were also conducted to confirm their significance.
-
-%\begin{table*}
-%  \caption{ACMS Results}
-%  \label{result:aviation}
-%  \centering
-%  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} \hline
-%     \multicolumn{2}{|c|}{\multirow{2}{*}{Strategy}} &\multicolumn{6}{|c|}{Partition scheme 1} &\multicolumn{6}{|c|}{Partition scheme 2}\\ \cline{3-14}
-%     \multicolumn{2}{|c|}{}  &F       &$SD_F$  &F2    &$SD_{F2}$  &T     &$SD_T$  &F     &$SD_F$  &F2    &$SD_{F2}$  &T     &$SD_T$  \\ \hline
-%     \multicolumn{2}{|c|}{RT}  &13.30   &10.34   &14.90 &24.64      &41.80 &27.13   &13.30 &10.34   &14.90 &24.64      &41.80 &27.13   \\ \hline
-%     \multicolumn{2}{|c|}{RPT} &12.04   &11.13   &12.26 &19.08      &35.31 &25.95   &9.03  &8.24    &15.13 &16.08      &34.29 &29.53   \\ \hline
-%     \multirow{13}{*}{DRT} &1.0E-5  &11.42  &10.16  &11.93  &18.62  &34.93  &22.46  &8.73   &9.88   &13.28  &18.83  &36.19  &28.96  \\ \cline{2-14}
-%                           &5.0E-5	&12.42	&10.63	&12.05	&20.27	&36.90	&25.39	&8.65	&9.30	&13.53	&19.07	&35.76	&29.86 \\ \cline{2-14}
-%                           &1.0E-4	&11.34	&10.65	&11.66	&21.27	&35.19	&26.01	&7.36	&8.49	&13.09	&17.89	&33.00	&27.94 \\ \cline{2-14}
-%                           &5.0E-4	&12.16	&12.13	&11.50	&19.36	&34.19	&26.18	&7.80	&8.37	&13.45	&17.36	&33.59	&27.67 \\ \cline{2-14}
-%                           &1.0E-3	&11.46	&11.10	&11.39	&19.01	&34.86	&23.17	&7.68	&8.11	&15.07	&19.85	&33.65	&29.95 \\ \cline{2-14}
-%                           &5.0E-3	&11.02	&9.67	&12.24	&18.83	&32.92	&20.75	&7.47	&8.65	&15.40	&18.81	&35.14	&29.01 \\ \cline{2-14}
-%                           &1.0E-2	&10.48	&9.60	&9.46	&14.17	&29.59	&19.10	&7.66	&9.18	&14.93	&18.69	&34.30	&30.15 \\ \cline{2-14}
-%                           &5.0E-2	&8.75	&6.59	&7.06	&10.35	&23.05	&11.67	&7.26	&7.74	&14.70	&18.15	&34.81	&28.14 \\ \cline{2-14}
-%                           &1.0E-1	&8.59	&6.66	&6.37	&9.41	&21.36	&10.81	&6.67	&7.34	&16.26	&17.54	&34.27	&27.48 \\ \cline{2-14}
-%                           &2.0E-1	&8.50	&6.21	&5.80	&9.07	&22.10	&10.56	&5.71	&6.04	&16.63	&10.33	&33.58	&30.78 \\ \cline{2-14}
-%                           &3.0E-1	&9.23	&6.84	&7.12	&10.34	&22.57	&11.13	&5.43	&6.28	&17.60	&10.39	&33.86	&30.33 \\ \cline{2-14}
-%                           &4.0E-1	&9.22	&7.03	&6.72	&9.36	&22.57	&10.44	&5.14	&5.19	&17.56	&19.11	&33.83	&28.94 \\ \cline{2-14}
-%                           &5.0E-1	&8.61	&6.41	&7.70	&10.45	&22.64	&10.95	&5.86	&6.50	&16.18	&17.06	&33.31	&27.40 \\ \hline
-%  \end{tabular}
-%\end{table*}
-%
-%\begin{table*}
-%  \caption{CUBS Results}
-%  \label{result:china}
-%  \centering
-%  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} \hline
-%     \multicolumn{2}{|c|}{\multirow{2}{*}{Strategy}} &\multicolumn{6}{|c|}{Partition scheme 1} &\multicolumn{6}{|c|}{Partition scheme 2}\\ \cline{3-14}
-%     \multicolumn{2}{|c|}{}  &F       &$SD_F$  &F2    &$SD_{F2}$  &T     &$SD_T$  &F     &$SD_F$  &F2    &$SD_{F2}$  &T     &$SD_T$  \\ \hline
-%     \multicolumn{2}{|c|}{RT}  &21.93	&20.37	&38.17	&38.17	&4203.07	&3219.40	&21.93	&20.37	&38.17	&38.17	&4203.07	&3219.40	\\ \hline
-%     \multicolumn{2}{|c|}{RPT} &21.96	&20.36	&28.74	&27.56	&2590.38	&1768.49	&23.66	&21.92	&27.31	&26.99	&4195.72	&2777.89	\\ \hline
-%     \multirow{13}{*}{DRT} &1.0E-5	&21.21	&23.24	&25.62	&23.29	&2720.70	&2051.85	&22.90	&22.51	&25.29	&28.21	&4106.81	&2589.29	\\ \cline{2-14}
-%                           &5.0E-5	&19.50	&19.94	&25.77	&24.78	&2503.45	&1873.76	&23.88	&23.25	&26.68	&26.84	&4130.03	&2588.36	\\ \cline{2-14}
-%                           &1.0E-4	&20.71	&22.51	&25.59	&26.00	&2516.91	&1843.11	&23.55	&22.76	&26.71	&30.26	&4196.01	&2247.57	\\ \cline{2-14}
-%                           &5.0E-4	&21.79	&21.10	&26.82	&28.21	&2519.39	&1942.65	&25.27	&28.74	&26.11	&24.36	&4190.61	&2753.74	\\ \cline{2-14}
-%                           &1.0E-3	&20.95	&20.79	&31.41	&31.54	&2532.84	&1752.56	&23.84	&25.44	&27.34	&27.64	&4291.41	&2884.39	\\ \cline{2-14}
-%                           &5.0E-3	&22.32	&21.90	&25.93	&26.48	&2535.97	&1572.42	&24.11	&23.27	&26.80	&25.20	&4218.74	&2887.01	\\ \cline{2-14}
-%                           &1.0E-2	&22.47	&21.55	&26.01	&23.85	&2550.88	&1873.01	&23.46	&25.01	&26.74	&26.43	&4117.11	&2798.92	\\ \cline{2-14}
-%                           &5.0E-2	&21.61	&20.04	&27.66	&29.12	&2559.56	&1777.16	&24.01	&24.32	&26.52	&27.04	&4105.51	&2570.57	\\ \cline{2-14}
-%                           &1.0E-1	&21.72	&21.71	&28.31	&28.91	&2533.08	&1774.39	&23.30	&24.45	&26.07	&27.91	&4271.32	&3011.37	\\ \cline{2-14}
-%                           &2.0E-1	&21.71	&21.83	&28.68	&32.75	&2552.29	&1879.60	&23.55	&25.20	&28.25	&30.31	&4170.32	&2796.61	\\ \cline{2-14}
-%                           &3.0E-1	&22.82	&21.65	&26.68	&31.28	&2623.00	&1770.36	&23.40	&25.52	&27.35	&27.84	&4138.49	&2594.70	\\ \cline{2-14}
-%                           &4.0E-1	&23.34	&24.02	&27.32	&27.42	&2664.34	&1886.21	&23.07	&24.08	&29.18	&30.39	&4192.68	&2706.73	\\ \cline{2-14}
-%                           &5.0E-1	&22.18	&22.32	&27.14	&28.54	&2599.40	&1640.05	&23.30	&23.63	&26.98	&27.71	&4195.45	&2535.00	\\ \hline
-%  \end{tabular}
-%\end{table*}
-%
-%\begin{table*}
-%  \caption{PBS Results}
-%  \label{result:parking}
-%  \centering
-%  \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|} \hline
-%     \multicolumn{2}{|c|}{\multirow{2}{*}{Strategy}} &\multicolumn{6}{|c|}{Partition scheme 1} &\multicolumn{6}{|c|}{Partition scheme 2}\\ \cline{3-14}
-%     \multicolumn{2}{|c|}{}   &F       &$SD_F$  &F2    &$SD_{F2}$  &T     &$SD_T$  &F     &$SD_F$  &F2    &$SD_{F2}$  &T     &$SD_T$  \\ \hline
-%     \multicolumn{2}{|c|}{RT}  &20.17   &16.32   &16.50 &13.20      &252.80 &191.54   &20.17   &16.32   &16.50 &13.20      &252.80 &191.54   \\ \hline
-%     \multicolumn{2}{|c|}{RPT} &17.71   &16.78   &16.72 &25.12      &178.91 &147.96   &16.49  &15.76    &15.45 &21.76      &182.66 &130.43  \\ \hline
-%     \multirow{13}{*}{DRT} &1.0E-5	&18.07	&19.08	&14.27	&21.70	&176.18	&146.49	&15.24	&15.06	&15.31	&23.97	&163.51	&135.48	\\ \cline{2-14}
-%                           &5.0E-5	&18.23	&18.34	&15.39	&24.35	&176.93	&143.93	&15.13	&15.35	&14.30	&23.57	&160.82	&116.59	\\ \cline{2-14}
-%                           &1.0E-4	&16.39	&17.42	&13.96	&21.04	&171.61	&142.79	&15.14	&15.05	&13.96	&22.31	&159.93	&121.90	\\ \cline{2-14}
-%                           &5.0E-4	&16.75	&17.56	&12.60	&21.98	&165.94	&140.33	&14.95	&12.66	&14.98	&24.52	&166.18	&125.20	\\ \cline{2-14}
-%                           &1.0E-3	&17.96	&18.93	&15.40	&22.22	&164.56	&138.74	&15.72	&16.03	&16.30	&24.41	&166.27	&128.63	\\ \cline{2-14}
-%                           &5.0E-3	&16.93	&17.23	&14.34	&22.34	&160.70	&117.02	&15.54	&12.79	&15.45	&23.70	&170.14	&129.61	\\ \cline{2-14}
-%                           &1.0E-2	&17.12	&16.60	&15.10	&22.68	&166.15	&136.59	&15.19	&15.02	&15.13	&25.78	&166.60	&124.97	\\ \cline{2-14}
-%                           &5.0E-2	&17.02	&18.70	&16.46	&24.75	&168.20	&129.72	&17.10	&17.23	&15.07	&24.09	&170.09	&130.88	\\ \cline{2-14}
-%                           &1.0E-1	&17.09	&16.78	&14.12	&22.00	&172.94	&153.50	&16.02	&17.16	&15.98	&24.97	&174.16	&134.34	\\ \cline{2-14}
-%                           &2.0E-1	&17.45	&18.36	&14.14	&22.77	&174.71	&139.02	&15.27	&15.54	&15.52	&23.86	&167.07	&132.81	\\ \cline{2-14}
-%                           &3.0E-1	&17.23	&18.45	&16.95	&27.43	&178.09	&161.44	&15.43	&15.54	&15.15	&22.04	&175.02	&136.66	\\ \cline{2-14}
-%                           &4.0E-1	&17.05	&17.72	&16.21	&20.08	&169.21	&145.43	&15.28	&15.93	&15.28	&24.48	&164.67	&124.24	\\ \cline{2-14}
-%                           &5.0E-1	&17.17	&18.26	&16.23	&25.83	&172.29	&134.94	&16.10	&15.78	&15.26	&23.80	&167.21	&124.05	\\ \hline
-%  \end{tabular}
-%\end{table*}
-
-
-
 
 \section{Experimental Results}
 \label{sec:results}
 
 \subsection{RQ1: Fault Detection Effectiveness}
-\label{sec:1}
+\label{sec:RQ1}
 
 The distributions of F-, F2-, and T-measure results for each program are displayed using boxplots in
 Figures~\ref{fig:Fmeasure} to~\ref{fig:Tmeasure}.
@@ -1006,46 +910,10 @@ For example, the \underline{\textbf{75}} in the top right cell of Table~\ref{tab
 \end{table}
 
 
-%\begin{table}[htbp]
-%  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower F-measure Score Than That on the Left Column}
-%  \centering
-%  \label{tableHolm:fmeasure}
-%  \begin{tabular}{|c|c|c|c|} \hline
-%          &RT                      &RPT                              &DRT                          \\ \hline
-%    RT    & ---                    &4                                &\underline{\textbf{60}}      \\ \hline
-%    RPT   &2                       & ---                             &\underline{\textbf{62}}      \\ \hline
-%    DRT   &\underline{\textbf{18}} &\underline{\textbf{16}}          & ---                         \\ \hline
-%  \end{tabular}
-%\end{table}
-%
-%\begin{table}[htbp]
-%  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower F2-measure Score Than That on the Left Column}
-%  \centering
-%  \label{tableHlom:nfmeasure}
-%  \begin{tabular}{|c|c|c|c|} \hline
-%          &RT                           &RPT                                   &DRT                       \\ \hline
-%    RT    & ---                         &4                                     &\underline{\textbf{69}}   \\ \hline
-%    RPT   &2                            & ---                                  &\underline{\textbf{63}}   \\ \hline
-%    DRT   &\underline{\textbf{9}}       &\underline{\textbf{15}}               & ---                       \\ \hline
-%  \end{tabular}
-%\end{table}
-%
-%\begin{table}[htbp]
-%  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower T-measure Score Than That on the Left Column}
-%  \centering
-%  \label{tableHlom:tmeasure}
-%  \begin{tabular}{|c|c|c|c|} \hline
-%          &RT                      &RPT                              &DRT                           \\ \hline
-%    RT    & ---                    &6                                &\underline{\textbf{75}}        \\ \hline
-%    RPT   &0                       & ---                             &\underline{\textbf{64}}       \\ \hline
-%    DRT   &\underline{\textbf{3}}  &\underline{\textbf{14}}          & ---                           \\ \hline
-%  \end{tabular}
-%\end{table}
-
-
 Table~\ref{tableHlom:f/f2/t-measure} clearly shows that the difference between each pair of testing techniques is always significantly different.
 
 \subsection{RQ2: Relationship between Partition Number and $\varepsilon$}
+\label{sec:RQ2}
 
 In~\ref{sec:relation}, we analyzed the relationship between the number of partitions and the DRT strategy parameter $\varepsilon$.
 In this section, we show that our theoretical analysis provides useful guidance to testers to set the value of $\varepsilon$.
@@ -1053,10 +921,19 @@ In this section, we show that our theoretical analysis provides useful guidance 
 We used three web services to validate our theoretical analysis.
 Before starting the test, the failure rate $\theta_i$ of partition $s_i$ was obtained by executing ($k$) test cases from $s_i$ until revealing a fault, then $\theta_i = k / k_i$, where $k_i$ is the total number of test cases in $s_i$.
 According to Formula 19, the theoretically optimal values of~$\varepsilon$ in each scenario for each web service are shown in Table~\ref{tab:parameters}, where $\varepsilon^{*}$ denotes the theoretical value of $\varepsilon$.
-We ran a series of experiments with the parameters set according to those in Table~\ref{tab:parameters}:
-The F-, F2-, and T-measure results for each  program are shown in Figure~\ref{fig:theovsnontheo}, where $\varepsilon_1^{*}$ and $\varepsilon_2^{*}$ denote the theoretical values of parameter $\varepsilon$ in the two different partition schemes, respectively.
-For ease of presentation and understanding, we used $log_{100}(1.0E05 \times \varepsilon)$ for the horizontal axis in Figure \ref{fig:theovsnontheo}.
-Apart from the DRT strategy parameter $\varepsilon$, all other experimental settings remained the same as in Section~\ref{sec:1}.
+We ran a series of experiments with the parameters set according to those in Table~\ref{tab:parameters}\sout{:
+The F-, F2-, and T-measure results for each  program are shown in Figure~\ref{fig:theovsnontheo},}.
+\textcolor{red}{Figure \ref{fig:theovsnontheo} shows, for each scenario, how many times DRT with theoretical parameter required less than test cases than DRT with normal parameters described in Section \ref{sec:constant} -- i.e., DRT with theoretical parameter ``wins'' the comparison; how many times DRT normal parameters required less test cases (normal values win). Apart from the DRT strategy parameter $\varepsilon$, all other experimental settings remained the same as in Section~\ref{sec:RQ1}.}
+%
+%\textcolor{red}{where we used $log_{100}(1.0E05 \times \varepsilon)$ for the horizontal axis to ease of presentation and understanding. The additional elements $\varepsilon_1^{*}$ and $\varepsilon_2^{*}$ denote the values of $log_{100}(1.0E05 \times \varepsilon^{*})$ in different partition scheme for each studied web service. Apart from the DRT strategy parameter $\varepsilon$, all other experimental settings remained the same as in Section~\ref{sec:RQ1}.}
+\begin{figure}[h]
+	\centering
+    \includegraphics[width=0.5\textwidth]{fig/drtparemeter/theVSnor.pdf}
+	\caption{Test Selection: number of wins of DRT with theoretical parameters and DRT with normal parameters}
+	\label{fig:theovsnontheo}
+\end{figure}
+
+%$\varepsilon_1^{*}$ and $\varepsilon_2^{*}$ denote the theoretical values of parameter $\varepsilon$ in the two different partition schemes, respectively.For ease of presentation and understanding, we used $log_{100}(1.0E05 \times \varepsilon)$ for the horizontal axis in Figure \ref{fig:theovsnontheo}. Apart from the DRT strategy parameter $\varepsilon$, all other experimental settings remained the same as in Section~\ref{sec:RQ1}}.
 
 \begin{table}
   \caption{Theoretical Optimal Values of DRT Parameter}
@@ -1087,16 +964,8 @@ From Figure~\ref{fig:theovsnontheo}, we have the following observations:
 
 \end{itemize}
 
-\begin{figure*}
-	\centering
-    \subfigure[ACMS] {\includegraphics[width=0.32\textwidth,height=5cm]{fig/drtparemeter/avia.pdf}}
-	\subfigure[CUBS] {\includegraphics[width=0.32\textwidth,height=5cm]{fig/drtparemeter/china.pdf}}
-	\subfigure[PBS] {\includegraphics[width=0.32\textwidth,height=5cm]{fig/drtparemeter/parking.pdf}}
-	\caption{Line charts of F-measure, F2-measure, and T-measure values for each program (for both the theoretically optimum parameter value, and other values}
-	\label{fig:theovsnontheo}
-\end{figure*}
-
 \subsection{RQ3: Selection Overhead}
+\label{sec:RQ3}
 
 Tables~\ref{tab:timeavia} to~\ref{tab:timeparking} summarize the F-, F2-, and T-time results, respectively, and their distributions for each web service is shown in Figures~\ref{fig:Ftime} to \ref{fig:Ttime}.
 It can be observed from the figures that, in general, DRT had the best performance, and RPT just marginally outperforms RT.
@@ -1226,42 +1095,6 @@ In other words, the additional computation incurred in DRT by updating the test 
   \end{tabular}
 \end{table}
 
-%\begin{table}[hbt]
-%  \caption{Number of Scenarios Where The Technique on the Top Row Has a Lower F-time Than That on the Left Column}
-%  \centering
-%  \label{tableHolm:ftime}
-%  \begin{tabular}{|c|c|c|c|} \hline
-%          &RT                      &RPT                              &DRT                       \\ \hline
-%    RT    & ---                    &5                                &\underline{\textbf{53}}   \\ \hline
-%    RPT   &1                       & ---                             &\underline{\textbf{59}}   \\ \hline
-%    DRT   &\underline{\textbf{25}} &\underline{\textbf{19}}          & ---                      \\ \hline
-%  \end{tabular}
-%\end{table}
-%
-%\begin{table}[hbt]
-%  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower F2-time Than That on the Left Column}
-%  \centering
-%  \label{tableHlom:nftime}
-%  \begin{tabular}{|c|c|c|c|} \hline
-%          &RT                      &RPT                              &DRT                       \\ \hline
-%    RT    & ---                    &3                                &\underline{\textbf{62}}   \\ \hline
-%    RPT   &3                       & ---                             &\underline{\textbf{57}}   \\ \hline
-%    DRT   &\underline{\textbf{16}} &\underline{\textbf{21}}          & ---                      \\ \hline
-%  \end{tabular}
-%\end{table}
-%
-%\begin{table}[hbt]
-%  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower T-time Than That on the Left Column}
-%  \centering
-%  \label{tableHlom:ttime}
-%  \begin{tabular}{|c|c|c|c|} \hline
-%          &RT                      &RPT                              &DRT                         \\ \hline
-%    RT    & ---                    &5                                &\underline{\textbf{61}}     \\ \hline
-%    RPT   &1                       & ---                             &\underline{\textbf{57}}     \\ \hline
-%    DRT   &\underline{\textbf{17}}  &\underline{\textbf{21}}          & ---                        \\ \hline
-%  \end{tabular}
-%\end{table}
-
 It can also be observed from Table~\ref{tableHlom:f/f2/t-time} that DRT only slightly outperformed RPT, but that DRT was significantly better than RT, especially in term of $T$-$time$.
 
 In summary, the DRT strategy is considered the best testing technique across all six metrics, and RPT marginally outperformed RT.
@@ -1274,22 +1107,13 @@ related to testing techniques for web services; and
 related to improving RT and PT.
 
 \subsection{Testing Techniques for Web Services}
+\label{sec:relatedworkWS}
 
 In recent years, a lot of effort has been made to test web services~\cite{canfora, bozkurt2010, li2014two, qiu2015regression}.
 Test case generation or selection is core to testing web services, and model-based~\cite{dalal1999model} and specification-based~\cite{li2009towards} techniques are two common approaches.
 Before making services available on the Internet, testers can use model-based techniques to verify whether or not the behavior of the WSUT meets their requirements.
 In these techniques, test data can be generated from a data model that specifies the inputs to the software---this data model can be built before, or in parallel to, the software development process.
 Verification methods using technologies such as theorem-proving~\cite{sinha2006model}, models~\cite{paradkar2007} and Petri-Nets~\cite{xiang2015executable} also exist.
-%Sinha et al.~\cite{sinha2006model}, for example, used theorem-proving to generate test cases, making use of existing test generation methods based on extended finite state machine (EFSM) specifications.
-%Paradkar et al. \cite{paradkar2007} proposed a model-based test data generation technique for semantic web services, where test cases are generated using pre-defined fault-models and the IOPE (Inputs, Outputs, Preconditions, Effects paradigm) information from semantic specifications.
-%Dong et al. \cite{dong2006web} proposed a web service testing technique based on fault coverage, in which a High-level Petri Net (HPN) is first constructed by analyzing the WSDL specification for each operation, and HPNs for all operations are merged into one for the service.
-%Then, a UIO (Unique Input Output) sequence is generated based on the resulting HPN through graph transformation.
-%Finally, a test case for each UIO sequence is generated to meet the fault-coverage requirements.
-%When testing web services, because it is often only the service's specification that users can receive, specification-based testing is a natural choice.
-%Typically, the web service specification is contained in the web service description language (WSDL) document, which provides information about the available operations and parameters.
-%Many methods proposed for WSDL-based test data generation are based on the XML schema data type.
-%Hanna and Munro proposed a framework that can be used to test the robustness of a web service~\cite{hanna2009approach}.
-%Their framework analyzes the WSDL documents of web services to identify what faults could impact the robustness, facilitating the design of test cases to detect those faults.
 
 All the above approaches aim to generate test cases without considering the impact of test case execution order on test efficiency.
 In contrast, Bertolino et al.~\cite{bertolino2007automatic} proposed using the category-partition method~\cite{Ostrand88} with XML schemas to perform XML-based partition testing.
@@ -1305,6 +1129,7 @@ To address the common oracle problem for testing web services, a metamorphic tes
 Sun et al. proposed a metamorphic testing framework for web services~\cite{sun2011} and conducted a case study that showed that up to 94.1\% of seeded faults could be detected without the need for oracles.
 
 \subsection{Improving RT and PT}
+\label{sec:relatedworkRT}
 
 Based on the observation that failure-causing inputs tend to cluster into contiguous regions in the input domain~\cite{Ammann88, Finelli91}, many works have been done to improve RT~\cite{cai2009random, chen2010adaptive}.
 Adaptive random testing~\cite{chen2010adaptive} is a family of techniques based on random testing that aim to improve the failure-detection effectiveness by evenly spreading test cases throughout the input domain.
@@ -1316,14 +1141,6 @@ However, AT may require a very long execution time in practice.
 To alleviate this, Cai et al.~\cite{cai2009random} proposed DRT, which uses testing information to dynamically adjust the testing profile.
 There are several things that can impact on DRT's test efficiency.
 Yang et al.~\cite{Yang2014Dynamic} proposed A-DRT, which adjusts parameters during the testing process.
-%Li et al.~\cite{li2015} developed O-DRT, which uses an objective function and a pre-defined parameter $f$ which, when exceeded during the testing process (by the objective function), results in the test profile being adjusted to a theoretically optimal one.
-%Lv et al. \cite{Lv2011} introduced two parameters for adjusting the selection probability of different partitions:
-%$\varepsilon$ adjusts the probability of partitions where a test case detects a fault; and
-%$\delta$ adjusts the probability of partitions where a test case does not detect a fault.
-%($\varepsilon$ should be greater than $\delta$).
-%Furthermore, they recommended setting the $\varepsilon$ and $\delta$ values to have an interval of $\varepsilon/\delta$.
-%However, it is unclear how to set $\varepsilon$ and $\delta$ individually.
-%In this study, we only considered one parameter (i.e. $\varepsilon$) in the DRT algorithm for adjusting the probability of different partitions, and provided detailed settings guidance.
 
 \section{Conclusion}
 \label{sec:conclusion}

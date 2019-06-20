@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  22 MAR 2019 20:11
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  13 APR 2019 22:08
 entering extended mode
 **F:/mypapers/AMT/new/MT.tex
 (F:/mypapers/AMT/new/MT.tex
@@ -294,293 +294,394 @@ File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-(F:\mypapers\AMT\new\MT.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+(G:\latex\CTEX\MiKTeX\tex\latex\tools\array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen143
+\extrarowheight=\dimen144
+\NC@list=\toks26
+\extratabsurround=\skip56
+\backup@length=\skip57
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\booktabs\booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen145
+\lightrulewidth=\dimen146
+\cmidrulewidth=\dimen147
+\belowrulesep=\dimen148
+\belowbottomsep=\dimen149
+\aboverulesep=\dimen150
+\abovetopsep=\dimen151
+\cmidrulesep=\dimen152
+\cmidrulekern=\dimen153
+\defaultaddspace=\dimen154
+\@cmidla=\count118
+\@cmidlb=\count119
+\@aboverulesep=\dimen155
+\@belowrulesep=\dimen156
+\@thisruleclass=\count120
+\@lastruleclass=\count121
+\@thisrulewidth=\dimen157
+)
+(F:\mypapers\AMT\new\MT.aux
+
+LaTeX Warning: Label `fig:framework' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 -- Lines per column: 61 (exact).
 (G:\latex\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count118
-\scratchdimen=\dimen143
+\scratchcounter=\count122
+\scratchdimen=\dimen158
 \scratchbox=\box35
-\nofMPsegments=\count119
-\nofMParguments=\count120
-\everyMPshowfont=\toks26
-\MPscratchCnt=\count121
-\MPscratchDim=\dimen144
-\MPnumerator=\count122
-\makeMPintoPDFobject=\count123
-\everyMPtoPDFconversion=\toks27
+\nofMPsegments=\count123
+\nofMParguments=\count124
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen159
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
+\everyMPtoPDFconversion=\toks28
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 49.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 48.
  (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <11.04124> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 49.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 48.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 49.
-LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 49
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 48.
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 48
 .
-LaTeX Font Info:    Try loading font information for U+msa on input line 49.
+LaTeX Font Info:    Try loading font information for U+msa on input line 48.
 
 (G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 49.
+LaTeX Font Info:    Try loading font information for U+msb on input line 48.
 
 (G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for U+pzd on input line 49.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 48.
 
 (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
-
-LaTeX Warning: Citation `sun2012towards' on page 1 undefined on input line 49.
-
-
-Underfull \hbox (badness 5862) in paragraph at lines 49--49
-[][]\OT1/ppl/m/it/8.03 D. Towey is with the School of Com-put-er Sci-ence, U-ni
--ver-si-ty
- []
-
-
-Underfull \hbox (badness 2057) in paragraph at lines 49--49
-\OT1/ppl/m/it/8.03 of Not-ting-ham N-ing-bo Chi-na, N-ing-bo 315100, Chi-na. E-
-mail: dav-
- []
-
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 57.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 56.
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
-(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 57.
+(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 56.
 Missing character: There is no ¡ in font pplr7t!
 Missing character: There is no ¯ in font pplr7t!
-[1{G:/latex/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
+ [1{G:/latex/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
 
 ]
 
 LaTeX Warning: Reference `sec:DRTforwebserivce' on page 2 undefined on input li
-ne 98.
+ne 97.
 
 
 LaTeX Warning: Reference `sec:empiricalstudy' on page 2 undefined on input line
- 99.
+ 98.
 
 
-LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 100
-.
+LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 99.
+
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 107.
-LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 117
-.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 106.
 [2]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 127.
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 116
+.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 126.
 
  (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
-) [3]
+)
+Underfull \hbox (badness 1629) in paragraph at lines 137--138
+[]\OT1/ppl/m/n/9.53561 Decompose the func-tion-al spec-i-fi-ca-tion in-to
+ []
+
+[3] [4]
+\c@theo=\count128
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+[]\OT1/ppl/b/it/9.53561 Theorem 1. \OT1/ppl/m/n/9.53561 De-fine a tu-ple of in-
+te-gers $\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 =$
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+$\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]; [] ; s[]; s[]; s[]; [] ; s[]; [] ;
+ s[]; s[]; [] ; s[]\OT1/cmr/m/n/10 )$\OT1/ppl/m/n/9.53561 ,
+ []
+
+
+Underfull \hbox (badness 1694) in paragraph at lines 267--268
+\OT1/ppl/m/n/9.53561 where $\OML/cmm/m/it/10 g$ \OT1/ppl/m/n/9.53561 is the to-
+tal num-ber of cat-e-gories, $\OML/cmm/m/it/10 h[]$ \OT1/ppl/m/n/9.53561 is
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 296--297
+[] []\OT1/ppl/m/n/9.53561 Set $\OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 = \OML/cmm/
+m/it/10 c[]$\OT1/ppl/m/n/9.53561 , where $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 u$
+\OT1/ppl/m/n/9.53561 , $\OML/cmm/m/it/10 sum[]dist\OT1/cmr/m/n/10 (\OML/cmm/m/i
+t/10 c[]; E\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $
+ []
+
+
 
 pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig//generateframework.p
 df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
-<fig//generateframework.pdf, id=27, 589.70313pt x 328.72812pt>
+<fig//generateframework.pdf, id=30, 590.70688pt x 331.73938pt>
 File: fig//generateframework.pdf Graphic file (type pdf)
 
 <use fig//generateframework.pdf>
-Package pdftex.def Info: fig//generateframework.pdf used on input line 231.
-(pdftex.def)             Requested size: 258.9675pt x 144.35991pt.
+Package pdftex.def Info: fig//generateframework.pdf used on input line 326.
+(pdftex.def)             Requested size: 258.9675pt x 145.43933pt.
 
-Overfull \hbox (6.0225pt too wide) in paragraph at lines 231--232
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 326--327
  [][] 
  []
 
+[5 <F:/mypapers/AMT/new/fig//generateframework.pdf>]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 344.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 437.
+ [6]
+Underfull \hbox (badness 1472) in paragraph at lines 453--454
+\OT1/ppl/m/n/9.53561 whose source test case could be $\OML/cmm/m/it/10 stc[]$\O
+T1/ppl/m/n/9.53561 ), PBM-R gen-er-
+ []
+
+
+Underfull \hbox (badness 2591) in paragraph at lines 453--454
+\OT1/ppl/m/n/9.53561 ate a set of can-di-date folow-up test cas-es $\OML/cmm/m/
+it/10 FC \OT1/cmr/m/n/10 =$
+ []
+
+
+Underfull \hbox (badness 6412) in paragraph at lines 472--473
+[] []\OT1/ppl/m/n/9.53561 Calculate the max-i-mal val-ue $\OML/cmm/m/it/10 CP[]
+$ \OT1/ppl/m/n/9.53561 ($\OML/cmm/m/it/10 max \OMS/cmsy/m/n/10 2$
+ []
+
 
 
 pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig//pcenterpartitionfra
 mework.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> 
 allowed
-<fig//pcenterpartitionframework.pdf, id=28, 758.33313pt x 380.42125pt>
+<fig//pcenterpartitionframework.pdf, id=77, 761.34438pt x 381.92688pt>
 File: fig//pcenterpartitionframework.pdf Graphic file (type pdf)
 
 <use fig//pcenterpartitionframework.pdf>
 Package pdftex.def Info: fig//pcenterpartitionframework.pdf used on input line 
-347.
-(pdftex.def)             Requested size: 258.9675pt x 129.91037pt.
+485.
+(pdftex.def)             Requested size: 258.9675pt x 129.91168pt.
 
-Overfull \hbox (6.0225pt too wide) in paragraph at lines 347--348
- [][] 
- []
-
-[4 <F:/mypapers/AMT/new/fig//generateframework.pdf>] [5 <F:/mypapers/AMT/new/fi
-g//pcenterpartitionframework.pdf>]
-LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 489.
-
-Overfull \vbox (2.87064pt too high) detected at line 523
- []
-
-
-Overfull \vbox (3.49689pt too high) detected at line 525
- []
-
-
-Overfull \hbox (13.78163pt too wide) in paragraph at lines 520--528
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 485--486
  [][] 
  []
 
 
-Overfull \vbox (2.87064pt too high) detected at line 537
+
+pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig//mrscentricframework
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<fig//mrscentricframework.pdf, id=78, 762.85pt x 380.92313pt>
+File: fig//mrscentricframework.pdf Graphic file (type pdf)
+
+<use fig//mrscentricframework.pdf>
+Package pdftex.def Info: fig//mrscentricframework.pdf used on input line 549.
+(pdftex.def)             Requested size: 243.43007pt x 121.55495pt.
+ [7 <F:/mypapers/AMT/new/fig//pcenterpartitionframework.pdf>]
+
+pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig//rtframework.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<fig//rtframework.pdf, id=124, 762.85pt x 380.92313pt>
+File: fig//rtframework.pdf Graphic file (type pdf)
+
+<use fig//rtframework.pdf>
+Package pdftex.def Info: fig//rtframework.pdf used on input line 634.
+(pdftex.def)             Requested size: 243.43007pt x 121.55495pt.
+
+Underfull \vbox (badness 2547) has occurred while \output is active []
+
+ [8 <F:/mypapers/AMT/new/fig//mrscentricframework.pdf>]
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 688.
+ [9 <F:/mypapers/AMT/new/fig//rtframework.pdf>]
+Overfull \vbox (2.87064pt too high) detected at line 727
  []
 
 
-Overfull \vbox (3.49689pt too high) detected at line 539
+Overfull \vbox (3.49689pt too high) detected at line 727
  []
 
 
-Overfull \hbox (13.78163pt too wide) in paragraph at lines 534--542
+Overfull \vbox (2.87064pt too high) detected at line 742
+ []
+
+
+Overfull \vbox (3.49689pt too high) detected at line 742
+ []
+
+[10]
+Overfull \hbox (0.85022pt too wide) in paragraph at lines 819--834
  [][] 
  []
 
-[6] [7]
+[11]
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 911.
 
-LaTeX Warning: Citation `chen1997optimal' on page 8 undefined on input line 607
-.
+ (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <8.03> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 911.
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ¯ in font pplr7t!
 
-
-LaTeX Warning: Citation `zhang2014history' on page 8 undefined on input line 60
-9.
-
-
-LaTeX Warning: Citation `li2015' on page 8 undefined on input line 610.
-
-
-LaTeX Warning: Citation `zhang2014history' on page 8 undefined on input line 61
-0.
-
-
-LaTeX Warning: Reference `alg:DRT' on page 8 undefined on input line 612.
+Underfull \hbox (badness 10000) in paragraph at lines 1016--1017
+\OT1/ppl/m/n/9.53561 Precise de-tail-s on the cat-e-gories and choic-es of
+ []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 7504) in paragraph at lines 1016--1017
+\OT1/ppl/m/n/9.53561 SIR and GUN pro-gram-s are pro-vid-ed in Ta-bles
+ []
 
 
-(F:\mypapers\AMT\new\MT.bbl [8]
-Underfull \hbox (badness 10000) in paragraph at lines 269--270
+Underfull \hbox (badness 10000) in paragraph at lines 1016--1017
+\OT1/ppl/m/n/9.53561 A4 to A15 in the Ap-pen-dices, which can be
+ []
+
+
+Underfull \hbox (badness 3895) in paragraph at lines 1016--1017
+\OT1/ppl/m/n/9.53561 found on the Com-put-er So-ci-ety Dig-i-tal Li-brary at
+ []
+
+[12]
+Missing character: There is no ¨ in font pplr7t!
+ [13]
+Missing character: There is no ¨ in font cmr10!
+Missing character: There is no ¨ in font pplr7t!
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ¯ in font pplr7t!
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ¯ in font pplr7t!
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ® in font pplr7t!
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ® in font pplr7t!
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ¯ in font pplr7t!
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ¯ in font pplr7t!
+ [14]
+Underfull \hbox (badness 3780) in paragraph at lines 1168--1169
+\OT1/ppl/m/n/9.53561 The fault-s can be found on the GitHub at http-
+ []
+
+(F:\mypapers\AMT\new\MT.bbl [15]
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ­ in font pplr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
 []\OT1/ppl/m/n/8.03 T. G. Project, ``Grep home page.
  []
 
+[16]
 Missing character: There is no ¡ in font pplri7t!
 Missing character: There is no ¯ in font pplri7t!
 )
 
 pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig/authors/CASun.pdf): 
 PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<fig/authors/CASun.pdf, id=130, 74.43811pt x 99.4917pt>
+<fig/authors/CASun.pdf, id=238, 74.43811pt x 99.4917pt>
 File: fig/authors/CASun.pdf Graphic file (type pdf)
 
 <use fig/authors/CASun.pdf>
-Package pdftex.def Info: fig/authors/CASun.pdf used on input line 681.
+Package pdftex.def Info: fig/authors/CASun.pdf used on input line 1222.
 (pdftex.def)             Requested size: 67.59338pt x 90.34325pt.
 File: fig/authors/CASun.pdf Graphic file (type pdf)
  <use fig/authors/CASun.pdf>
-Package pdftex.def Info: fig/authors/CASun.pdf used on input line 681.
+Package pdftex.def Info: fig/authors/CASun.pdf used on input line 1222.
 (pdftex.def)             Requested size: 67.59338pt x 90.34325pt.
- [9 <F:/mypapers/AMT/new/fig/authors/CASun.pdf>]
-<fig/authors/HPDai.jpg, id=143, 296.10625pt x 414.54875pt>
+
+<fig/authors/HPDai.jpg, id=241, 296.10625pt x 414.54875pt>
 File: fig/authors/HPDai.jpg Graphic file (type jpg)
 
 <use fig/authors/HPDai.jpg>
-Package pdftex.def Info: fig/authors/HPDai.jpg used on input line 686.
+Package pdftex.def Info: fig/authors/HPDai.jpg used on input line 1227.
 (pdftex.def)             Requested size: 64.52457pt x 90.33441pt.
 File: fig/authors/HPDai.jpg Graphic file (type jpg)
  <use fig/authors/HPDai.jpg>
-Package pdftex.def Info: fig/authors/HPDai.jpg used on input line 686.
+Package pdftex.def Info: fig/authors/HPDai.jpg used on input line 1227.
 (pdftex.def)             Requested size: 64.52457pt x 90.33441pt.
-
-<fig/authors/GWang.jpg, id=146, 215.30438pt x 263.48438pt>
-File: fig/authors/GWang.jpg Graphic file (type jpg)
-
-<use fig/authors/GWang.jpg>
-Package pdftex.def Info: fig/authors/GWang.jpg used on input line 689.
-(pdftex.def)             Requested size: 72.2695pt x 88.44168pt.
-File: fig/authors/GWang.jpg Graphic file (type jpg)
- <use fig/authors/GWang.jpg>
-Package pdftex.def Info: fig/authors/GWang.jpg used on input line 689.
-(pdftex.def)             Requested size: 72.2695pt x 88.44168pt.
-
-<fig/authors/DaveTowey.png, id=149, 876.27374pt x 1044.90375pt>
-File: fig/authors/DaveTowey.png Graphic file (type png)
-
-<use fig/authors/DaveTowey.png>
-Package pdftex.def Info: fig/authors/DaveTowey.png used on input line 692.
-(pdftex.def)             Requested size: 72.2694pt x 86.17691pt.
-File: fig/authors/DaveTowey.png Graphic file (type png)
- <use fig/authors/DaveTowey.png>
-Package pdftex.def Info: fig/authors/DaveTowey.png used on input line 692.
-(pdftex.def)             Requested size: 72.2694pt x 86.17691pt.
 
 
 pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig/authors/TYChen.pdf):
  PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<fig/authors/TYChen.pdf, id=152, 310.15875pt x 371.3875pt>
+<fig/authors/TYChen.pdf, id=244, 310.15875pt x 371.3875pt>
 File: fig/authors/TYChen.pdf Graphic file (type pdf)
 
 <use fig/authors/TYChen.pdf>
-Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 695.
+Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 1230.
 (pdftex.def)             Requested size: 72.26733pt x 86.5337pt.
 File: fig/authors/TYChen.pdf Graphic file (type pdf)
  <use fig/authors/TYChen.pdf>
-Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 695.
+Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 1230.
 (pdftex.def)             Requested size: 72.26733pt x 86.5337pt.
 
 
-pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig/authors/KYCai.pdf): 
-PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
-<fig/authors/KYCai.pdf, id=155, 72.27pt x 101.17801pt>
-File: fig/authors/KYCai.pdf Graphic file (type pdf)
+pdfTeX warning: pdflatex.exe (file F:/mypapers/AMT/new/fig/authors/HLiu.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<fig/authors/HLiu.pdf, id=247, 2177.13374pt x 2902.845pt>
+File: fig/authors/HLiu.pdf Graphic file (type pdf)
 
-<use fig/authors/KYCai.pdf>
-Package pdftex.def Info: fig/authors/KYCai.pdf used on input line 698.
-(pdftex.def)             Requested size: 64.5296pt x 90.34146pt.
-File: fig/authors/KYCai.pdf Graphic file (type pdf)
- <use fig/authors/KYCai.pdf>
-Package pdftex.def Info: fig/authors/KYCai.pdf used on input line 698.
-(pdftex.def)             Requested size: 64.5296pt x 90.34146pt.
- [10
+<use fig/authors/HLiu.pdf>
+Package pdftex.def Info: fig/authors/HLiu.pdf used on input line 1233.
+(pdftex.def)             Requested size: 67.73627pt x 90.31503pt.
+File: fig/authors/HLiu.pdf Graphic file (type pdf)
+ <use fig/authors/HLiu.pdf>
+Package pdftex.def Info: fig/authors/HLiu.pdf used on input line 1233.
+(pdftex.def)             Requested size: 67.73627pt x 90.31503pt.
+ [17
 
- <F:/mypapers/AMT/new/fig/authors/HPDai.jpg> <F:/mypapers/AMT/new/fig/authors/G
-Wang.jpg> <F:/mypapers/AMT/new/fig/authors/DaveTowey.png> <F:/mypapers/AMT/new/
-fig/authors/TYChen.pdf> <F:/mypapers/AMT/new/fig/authors/KYCai.pdf>] (F:\mypape
-rs\AMT\new\MT.aux)
+ <F:/mypapers/AMT/new/fig/authors/CASun.pdf> <F:/mypapers/AMT/new/fig/authors/H
+PDai.jpg> <F:/mypapers/AMT/new/fig/authors/TYChen.pdf> <F:/mypapers/AMT/new/fig
+/authors/HLiu.pdf>]
+(F:\mypapers\AMT\new\MT.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 3859 strings out of 495354
- 55253 string characters out of 3183523
- 138686 words of memory out of 3000000
- 6939 multiletter control sequences out of 15000+200000
- 56469 words of font info for 132 fonts, out of 3000000 for 9000
+ 4044 strings out of 495354
+ 57923 string characters out of 3183523
+ 134612 words of memory out of 3000000
+ 7115 multiletter control sequences out of 15000+200000
+ 56901 words of font info for 134 fonts, out of 3000000 for 9000
  17 hyphenation exceptions out of 8191
- 29i,12n,34p,1500b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 29i,13n,34p,1500b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
 {G:/latex/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<G:/latex/CTEX/MiKTeX/f
 onts/type1/public/amsfonts/cm/cmex10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/publ
 ic/amsfonts/cm/cmmi10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/
@@ -591,18 +692,19 @@ ic/amsfonts/cm/cmr5.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cm
 r6.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><G:/latex/
 CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><G:/latex/CTEX/MiKTeX/fonts
 /type1/public/amsfonts/cm/cmsy10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/a
-msfonts/cm/cmsy5.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7
-.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><G:/latex/C
-TEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1
-/urw/helvetic/uhvb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.
-pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><G:/latex/CTEX/M
-iKTeX/fonts/type1/urw/palatino/uplb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw
-/palatino/uplbi8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb
-><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><G:/latex/CTEX/MiKT
-eX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on MT.pdf (10 pages, 1970783 bytes).
+msfonts/cm/cmsy5.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6
+.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><G:/latex/C
+TEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><G:/latex/CTEX/MiKTeX/fonts
+/type1/urw/courier/ucrr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/helvetic/uh
+vb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><G:/latex/CT
+EX/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type
+1/urw/palatino/uplb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplbi8
+a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><G:/latex/CTEX/
+MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/u
+rw/zapfding/uzdr.pfb>
+Output written on MT.pdf (17 pages, 2163566 bytes).
 PDF statistics:
- 248 PDF objects out of 1000 (max. 8388607)
+ 349 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

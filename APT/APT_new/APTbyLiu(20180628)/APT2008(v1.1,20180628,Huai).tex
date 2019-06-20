@@ -441,7 +441,7 @@ Program				& LOC			& Size of			& Version	& Number of	\\
 
 %Note that the fault in V3 of \texttt{gzip} cannot be revealed by any test case in the associated test suite, hence it was not included in our experiments. In the repository, there are totally 39 faults that can be detected with the associated test suites. Among them, we only included those faults that are hard to detect into our experiments. For instance, we selected 3 out of 5 detectable faults in \texttt{make}, because their detections require more test cases. In summary, the empirical studies were conducted on three object programs with ten faulty versions and 19 distinct faults.
 
-\textcolor{blue}{R2C2,R3C2:Next Updated: As to the selection of faults, we only include those that are hard to detect for evaluation; in more detail, we checked all faults in the repository and excluded those faults whose detections require less then 20 randomly selected test cases, except that the detection of the fault in V2 of "gzip" requires about 15 randomly selected test cases. Note that the fault in V3 of \texttt{gzip} cannot be revealed by any test cases in the associated test suite, hence it was not included in our experiments. 
+\textcolor{blue}{R2C2,R3C2:Next Updated: As to the selection of faults, we only include those that are hard to detect for evaluation; in more detail, we checked all faults in the repository and excluded those faults whose detections require less then 20 randomly selected test cases, except that the detection of the fault in V2 of "gzip" requires about 15 randomly selected test cases. Note that the fault in V3 of \texttt{gzip} cannot be revealed by any test cases in the associated test suite, hence it was not included in our experiments.
 %Also, all faults of another object program (\texttt{flex}) can be detected with less than 20 randomly selected test cases, so they were not included.
 In summary, the empirical studies were conducted on three object programs with ten faulty versions and 19 distinct faults, namely 3 faults for \texttt{make}, 7 faults for \texttt{grep}, and 9 faults for \texttt{gzip}.}
 
@@ -824,24 +824,24 @@ We compared each pair of granularity levels and conducted the hypothesis testing
 \caption{Number of scenarios where the granularity level on top row is associated with smaller measure than that on left column}
 \label{tab:Gsta}
 \centering
-\begin{tabular}{|c|c|c|c|} 
+\begin{tabular}{|c|c|c|c|}
 \multicolumn{4}{c}{Comparison for F-measure} \\ \hline
 		& Coarse			& Medium			    & Fine				\\ \hline
 Coarse	& ---				& 36					& 32				\\ \hline
 Medium	& 44				& ---					& \textbf{28}	    \\ \hline
-Fine	& 48			    & \textbf{52}	        & ---				\\ \hline 
+Fine	& 48			    & \textbf{52}	        & ---				\\ \hline
 \multicolumn{4}{c}{ } \\
 \multicolumn{4}{c}{Comparison for F2-measure} \\ \hline
 				& Coarse			& Medium			& Fine				    \\ \hline
 Coarse	& ---					& 25					& 19					\\ \hline
 Medium	& 31					& ---					& \textbf{17}	        \\ \hline
-Fine	& 37					& \textbf{39}	        & ---					\\ \hline 
+Fine	& 37					& \textbf{39}	        & ---					\\ \hline
 \multicolumn{4}{c}{ } \\
 \multicolumn{4}{c}{Comparison for T-measure} \\ \hline
 		& Coarse			& Medium			& Fine				  \\ \hline
 Coarse	& ---				& 32				& \textbf{27}	      \\ \hline
 Medium	& 48				& ---				& 33					\\ \hline
-Fine		& \textbf{53}	& 47				& ---					\\ \hline 
+Fine		& \textbf{53}	& 47				& ---					\\ \hline
 \multicolumn{4}{c}{ } \\
 \multicolumn{4}{c}{Comparison for T2-measure} \\ \hline
 				& Coarse			& Medium			& Fine				\\ \hline
@@ -908,7 +908,7 @@ It was shown that the proportional initial probability profile was significantly
 \caption{Number of scenarios where the initial profile type on top row is associated with smaller measure than that on left column}
 \label{tab:Psta}
 \centering
-\begin{tabular}{|c|c|c|} 
+\begin{tabular}{|c|c|c|}
 \multicolumn{3}{c}{Comparison for F-measure} \\ \hline
 						& Equal				& Proportional	\\ \hline
 Equal					& ---				& 67			\\ \hline
@@ -922,7 +922,7 @@ Proportional	    & \textbf{56}	& ---			\\ \hline
 \multicolumn{3}{c}{Comparison for T-measure} \\ \hline
 						& Equal			& Proportional	\\ \hline
 Equal					& ---			& \textbf{91}	\\ \hline
-Proportional	       	& \textbf{29}	& ---			\\ \hline 
+Proportional	       	& \textbf{29}	& ---			\\ \hline
 \multicolumn{3}{c}{ } \\
 \multicolumn{3}{c}{Comparison for T2-measure} \\ \hline
 						& Equal				& Proportional	\\ \hline
@@ -964,15 +964,15 @@ One key issue of APT (and DRT) is that the profile will be adjusted in almost op
 \section{Conclusion}
 \label{sec:conc}
 
-RT and PT are two fundamental families of software testing techniques. Each of them has its own merit and weakness, and sometimes they can be complementary to each other. Some studies have been conducted to integrate RT and PT, resulting in some advanced testing techniques, such as RPT and DRT. In this paper, we proposed a new approach to integrating RT and PT, namely APT. In APT, a test profile is maintained and adaptively updated based on some novel mechanisms, including the Markov matrix (MAPT) and the reward and punishment strategy (RAPT). Empirical studies have been conducted to evaluate the performance of MAPT and RAPT using three large-sized real-life programs associated with ten faulty versions and 19 distinct faults. 
-\textcolor{blue}{R3C9:Next Para Updated: It has shown that both RAPT and MAPT can use significantly fewer test cases than DRT and RPT. We have also observed that RAPT has significantly lower overhead than DRT and RPT, while MAPT's overhead is only marginally lower than that of DRT and RPT. 
+RT and PT are two fundamental families of software testing techniques. Each of them has its own merit and weakness, and sometimes they can be complementary to each other. Some studies have been conducted to integrate RT and PT, resulting in some advanced testing techniques, such as RPT and DRT. In this paper, we proposed a new approach to integrating RT and PT, namely APT. In APT, a test profile is maintained and adaptively updated based on some novel mechanisms, including the Markov matrix (MAPT) and the reward and punishment strategy (RAPT). Empirical studies have been conducted to evaluate the performance of MAPT and RAPT using three large-sized real-life programs associated with ten faulty versions and 19 distinct faults.
+\textcolor{blue}{R3C9:Next Para Updated: It has shown that both RAPT and MAPT can use significantly fewer test cases than DRT and RPT. We have also observed that RAPT has significantly lower overhead than DRT and RPT, while MAPT's overhead is only marginally lower than that of DRT and RPT.
 Furthermore, RAPT has consistently shown the best performance for all three object programs across all four metrics. This further indicates that among the proposed APT techniques, RAPT should be used with the higher priority.}
 %It has shown that both RAPT and MAPT can use significantly fewer test cases than DRT and RPT. We have also observed that RAPT has significantly lower overhead than DRT and RPT, while MAPT's overhead is only marginally lower than that of DRT and RPT.
 
-Our experiments involved three levels of granularity and two types of initial probability profile. Our investigations showed that there was no strong correlation between the granularity/profile and the performance. It is thus necessary to further study the proper partitioning scheme(s) with appropriate granularity level for APT and relevant techniques. It is also of importance to investigate how to design a ``good'' probability profile aiming at optimizing the testing effectiveness. 
+Our experiments involved three levels of granularity and two types of initial probability profile. Our investigations showed that there was no strong correlation between the granularity/profile and the performance. It is thus necessary to further study the proper partitioning scheme(s) with appropriate granularity level for APT and relevant techniques. It is also of importance to investigate how to design a ``good'' probability profile aiming at optimizing the testing effectiveness.
 
 
-One piece of future work is about the appropriate settings of the parameters (such as $\epsilon$, $\delta$, $\gamma$, and $\tau$) in APT. 
+One piece of future work is about the appropriate settings of the parameters (such as $\epsilon$, $\delta$, $\gamma$, and $\tau$) in APT.
 \textcolor{blue}{R3C9:On one hand}, the settings we used in this study are based on the previous experience and/or empirical estimation. It is worthwhile to investigate the relationship between different settings and the performance of APT, and thus hopefully work out a guideline on how to set these parameters. \textcolor{blue}{R3C9:On the other hand, no strong correlation between the initial probability profile and the performance was found, which could be further investigated.} Our empirical studies compared APT with two baseline techniques that integrate RT and PT. It is also interesting to further compare APT with other testing techniques, such as ART. Last but not the least, it is possible to integrate MAPT and RAPT as well as other relevant techniques, with the purpose of further enhancing the performance of APT.
 
 %\appendices

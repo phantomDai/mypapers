@@ -1,0 +1,4 @@
+JSI_1:7:static is inserted
+JSI_2:9:static is inserted
+JID_1:7: double benchmark0 =>  double benchmark;
+JID_2:9: double luggagefee0 =>  double luggagefee;

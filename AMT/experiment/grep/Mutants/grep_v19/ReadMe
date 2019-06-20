@@ -1,0 +1,9 @@
+File name : > /home/ssi/abarus/source/grep_Mutation/grep_mutant164/ReadMe
+ Modified file# : /home/ssi/abarus/source/grep-2.5.1a/src/dfa.c
+Category : ==
+Modified line# : 887
+Before Modified : 	  if (c == ',')
+
+After Modified : 	  if (c != ',')
+
+Created by : Arlinta Christy Barus

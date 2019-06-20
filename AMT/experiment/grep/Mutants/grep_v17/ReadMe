@@ -1,0 +1,9 @@
+File name : > /home/ssi/abarus/source/grep_Mutation/grep_mutant155/ReadMe
+ Modified file# : /home/ssi/abarus/source/grep-2.5.1a/src/dfa.c
+Category : ==
+Modified line# : 2443
+Before Modified :   if (iswalnum(wc) || wc == L'_')
+
+After Modified :   if (iswalnum(wc) || wc != L'_')
+
+Created by : Arlinta Christy Barus
