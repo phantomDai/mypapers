@@ -1,0 +1,11 @@
+
+分区：20
+Fmeasure = 21.70
+NFmeasure = 26.79
+Tmeasure = 2525.53
+sdr_Fmeasure = 41.89
+sdr_NFmeasure = 16.19
+adr_Tmaesure = 1895.99
+Ftime：140.13
+F2time：172.27
+Ttime：32429.07

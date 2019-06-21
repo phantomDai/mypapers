@@ -1,10 +1,11 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  17 MAY 2019 18:23
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.1.16)  20 JUN 2019 11:47
 entering extended mode
-**F:/mypapers/DRT/DRTPaper/DRT4WS(V17)/Appendix.tex
-(F:/mypapers/DRT/DRTPaper/DRT4WS(V17)/Appendix.tex
+**C:/Users/Administrator/Desktop/mypapers/DRT/DRTPaper/DRT4WS(V17)/Appendix.tex
+
+(C:/Users/Administrator/Desktop/mypapers/DRT/DRTPaper/DRT4WS(V17)/Appendix.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-(F:\mypapers\DRT\DRTPaper\DRT4WS(V17)\IEEEtran.cls
+(C:\Users\Administrator\Desktop\mypapers\DRT\DRTPaper\DRT4WS(V17)\IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -17,7 +18,7 @@ Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 503.
 
-(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1ppl.fd
+("F:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\ot1ppl.fd"
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 -- Using IEEE Computer Society mode.
@@ -115,11 +116,11 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24.09> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-) (G:\latex\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty
+) ("F:\Program Files\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty"
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-(G:\latex\CTEX\MiKTeX\tex\latex\float\float.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count94
 \float@exts=\toks15
@@ -127,16 +128,16 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks16
 \@floatcapt=\box29
 )
-(G:\latex\CTEX\MiKTeX\tex\latex\base\ifthen.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks17
 \c@algorithm=\count95
 )
-(G:\latex\CTEX\MiKTeX\tex\latex\algorithms\algorithmic.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\algorithms\algorithmic.sty"
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 
-(G:\latex\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks18
 )
@@ -147,10 +148,10 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \ALC@tlm=\skip44
 \algorithmicindent=\skip45
 )
-(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty"
 Package: amssymb 2009/06/22 v3.00
 
-(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty"
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \@emptytoks=\toks19
 \symAMSa=\mathgroup4
@@ -158,24 +159,24 @@ Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty"
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks20
 \ex@=\dimen126
 ))
-(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen127
 )
-(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count100
@@ -216,35 +217,35 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-(G:\latex\CTEX\MiKTeX\tex\latex\graphics\color.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\color.sty"
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(G:\latex\CTEX\MiKTeX\tex\latex\00miktex\color.cfg
+("F:\Program Files\CTEX\MiKTeX\tex\latex\00miktex\color.cfg"
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 
-(G:\latex\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
+("F:\Program Files\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(G:\latex\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+("F:\Program Files\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-(G:\latex\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+("F:\Program Files\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count112
 ))
-(G:\latex\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(G:\latex\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(G:\latex\CTEX\MiKTeX\tex\latex\graphics\trig.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(G:\latex\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
+("F:\Program Files\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
@@ -252,7 +253,7 @@ Package graphics Info: Driver file: pdftex.def on input line 91.
 \Gin@req@height=\dimen135
 \Gin@req@width=\dimen136
 )
-(G:\latex\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty
+("F:\Program Files\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty"
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip49
 \subfigcapskip=\skip50
@@ -268,11 +269,11 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(G:\latex\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg)
+("F:\Program Files\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg")
 \subfig@top=\skip53
 \subfig@bottom=\skip54
 )
-(F:\mypapers\DRT\DRTPaper\DRT4WS(V17)\Appendix.aux)
+(C:\Users\Administrator\Desktop\mypapers\DRT\DRTPaper\DRT4WS(V17)\Appendix.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 15.
@@ -285,9 +286,8 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 15.
 LaTeX Font Info:    ... okay on input line 15.
-
 -- Lines per column: 61 (exact).
-(G:\latex\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
+("F:\Program Files\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count117
 \scratchdimen=\dimen139
@@ -303,45 +303,48 @@ LaTeX Font Info:    ... okay on input line 15.
 )
 LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 21.
 LaTeX Font Info:    Try loading font information for U+msa on input line 21.
- (G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
+ ("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 21.
 
-(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
+("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 \c@my=\count123
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 110.
 
 
-(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1phv.fd
+("F:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\ot1phv.fd"
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
-) [1{G:/latex/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}] [
-2]
+) [1{F:/Program Files/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.
+sfd}}] [2]
 \c@lem=\count124
- [3] [4] [5]
-(F:\mypapers\DRT\DRTPaper\DRT4WS(V17)\Appendix.aux) ) 
+ [3]
+[4] [5]
+(C:\Users\Administrator\Desktop\mypapers\DRT\DRTPaper\DRT4WS(V17)\Appendix.aux)
+ ) 
 Here is how much of TeX's memory you used:
  3367 strings out of 495354
- 48279 string characters out of 3183523
+ 49059 string characters out of 3183075
  113057 words of memory out of 3000000
  6504 multiletter control sequences out of 15000+200000
  31432 words of font info for 83 fonts, out of 3000000 for 9000
  17 hyphenation exceptions out of 8191
- 27i,15n,24p,319b,231s stack positions out of 5000i,500n,10000p,200000b,50000s
-{G:/latex/CTEX/MiKTeX/font
-s/enc/dvips/fontname/8r.enc}<G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmex10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><G
-:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><G:/latex/CTEX/MiK
-TeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/
-public/amsfonts/cm/cmr8.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><G:
-/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><G:/latex/CTE
-X/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/
-urw/palatino/uplb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplbi8a.
-pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><G:/latex/CTEX/Mi
-KTeX/fonts/type1/urw/palatino/uplri8a.pfb>
+ 27i,15n,24p,347b,231s stack positions out of 5000i,500n,10000p,200000b,50000s
+{F:/Program Files/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<F:/Program Fil
+es/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><F:/Program Files/CTEX
+/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><F:/Program Files/CTEX/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmmi8.pfb><F:/Program Files/CTEX/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr12.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/pub
+lic/amsfonts/cm/cmr8.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msa
+m10.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><F:/P
+rogram Files/CTEX/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><F:/Program Files/
+CTEX/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><F:/Program Files/CTEX/MiKTeX/
+fonts/type1/urw/palatino/uplr8a.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/u
+rw/palatino/uplri8a.pfb>
 Output written on Appendix.pdf (5 pages, 146978 bytes).
 PDF statistics:
  71 PDF objects out of 1000 (max. 8388607)
