@@ -1,0 +1,94 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage[left=2.54cm,right=2.54cm,top=2.54cm,bottom=2.54cm]{geometry}
+\usepackage{longtable}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{verbatim}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{array}
+\usepackage{multirow}
+\newcommand{\progname}[1]{\texttt{#1}\xspace}
+\newcommand{\grep}{\progname{grep}}
+\newcommand{\replace}{\progname{replace}}
+\newcommand{\prtok}{\progname{printtokens}}
+\newcommand{\prtoktwo}{\progname{printtokens2}}
+\newcommand{\sch}{\progname{schedule}}
+\newcommand{\schtwo}{\progname{schedule2}}
+\newcommand{\etal}{\emph{et al.}\xspace}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\funct}[2]{\ensuremath{\mathrm{#1}\!\left(#2\right)}}
+\newcommand{\mut}[1]{\ensuremath{m_{#1}}}
+\newcommand{\mrt}[2]{\multirow{#1}{6cm}{#2}}
+\newcommand{\mrn}[2]{\multirow{#1}{*}{#2}}
+
+\begin{document}
+\begin{longtable}{|l|p{6cm}|p{6cm}|} 
+\caption[Definition of categories and choices for \grep]{Definition of categories and choices for \grep}
+\label{tab:d-category-choice} \\ \hline
+\textbf{\#} & \textbf{Category} & \textbf{Choice}   \\ \hline
+\endfirsthead
+\multicolumn{3}{c}{\tablename\ \thetable{} Definition of categories and choices for \grep (continued)} \\ \hline
+\textbf{\#} & \textbf{Category} & \textbf{Choice} \\ \hline 
+\endhead
+\hline \multicolumn{3}{|r|}{{-- continued on next page}} \\  \endfoot
+\hline \hline \endlastfoot
+%\textbf{Cat. \#} & \textbf{Category} & \textbf{Choice} & \textbf{Description}  \\ \hline
+\mrn{2}{1} & \mrt{2}{NormalChar - presence of any literal character} & NormalAlNum - presence of any alphabetic or numerical literal (for instance ``A'', ``z'', or ``5'')   \\ \cline{3-3}
+                  && NormalPunct - presence of any punctuation character (such as ``:'')\\ \hline
+\mrn{3}{2} & \mrt{3}{WordSymbol - presence of ``word'' or ``non-word'' metacharacters}& YesWord - ``\textbackslash w'' present       \\ \cline{3-3}
+                  && NoWord - ``\textbackslash W'' present         \\ 
+                  && \\ \hline
+\mrn{3}{3} & \mrt{3}{DigitSymbol - presence of ``digit'' or ``non-digit'' metacharacters} & YesDigit - ``\textbackslash d'' present      \\ \cline{3-3}
+                  && NoDigit - ``\textbackslash D'' present       \\ 
+                  && \\ \hline
+\mrn{4}{4} & \mrt{4}{SpaceSymbol - presence of any ``whitespace'' or ``non-space'' metacharacters}  & YesSpace - ``\textbackslash s'' present      \\ 
+                  && \\ \cline{3-3}
+                  && NoSpace - ``\textbackslash S'' present       \\ 
+                  && \\ \hline
+\mrn{12}{5} & \mrt{12}{NamedSymbol - presence of a symbol from a character group} & ALPHA - presence of [:ALPHA:]    \\ \cline{3-3}
+                
+   && UPPER - presence of [:UPPER:]       \\ \cline{3-3}
+                     && LOWER - presence of [:LOWER:]      \\ \cline{3-3}
+                     && DIGIT - presence of [:DIGIT:]      \\ \cline{3-3}
+                     && XDIGIT - presence of [:XDIGIT:]     \\ \cline{3-3}
+                     && SPACE - presence of [:SPACE:]      \\ \cline{3-3}
+                     && PUNCT - presence of [:PUNCT:]       \\ \cline{3-3}
+                     && ALNUM - presence of [:ALNUM:]      \\ \cline{3-3}
+                     && PRINT - presence of [:PRINT:]      \\ \cline{3-3}
+                     && GRAPH - presence of [:GRAPH:]      \\ \cline{3-3}
+                     && CNTRL - presence of [:CNTRL:]      \\ \cline{3-3}
+                     && BLANK - presence of [:BLANK:]      \\ \hline
+6 & AnyChar - presence of the ``.'' metacharacter (matches any character) & Dot - dot (``.'') present        \\ \hline 
+\pagebreak \mrn{3}{7} & \mrt{3}{Range - presence of a pattern representing a character range}  & NumRange - number range present (for example ``[1-7]'')  \\ \cline{3-3}
+                    && UpcaseRange - uppercase letter range present (for example ``[C-G]'')\\ \cline{3-3}
+                      && LowcaseRange - lowercase letter range present (such as ``[s-w]'')\\ \hline
+\mrn{3}{8} & \mrt{3}{Bracket - presence of patterns encompassed by [] or [\textasciicircum] }& NormalBracket - ``[]'' pattern present \\ \cline{3-3}
+                      && CaretBracket - [\textasciicircum] pattern present \\ 
+                      && \\ \hline
+\mrn{4}{9} & \mrt{4}{Iteration - presence of patterns that contain iterator symbols}                      & Qmark - presence of the question mark metacharacter  (``?''), which matches 0 or 1 iteration     \\ \cline{3-3}
+                      && Star - presence of the star metacharacter (``*''), matching zero or more iterations \\ \cline{3-3}
+                      && Plus - presence of the plus metacharacter(``+''), matching one or more iterations \\ \cline{3-3}
+                      && Repminmax - presence of min-max repetition form: for example,  ``\{2, 3\}''  matches lines containing ``aa'' or ``aaa''  \\ \hline
+\mrn{2}{10} & \mrt{2}{Parentheses - used to group patterns for repetition, also ``backreferencing''}                      & NormParen - presence of a pattern surrounded by parentheses  \\ \cline{3-3}
+                      && Backref - presence of a pattern with normal parentheses and a back reference \\  \hline
+\mrn{3}{11} & \mrt{3}{Line - presence of special characters relating to line boundaries} & BegLine - presence of (``\textasciicircum'') (matches beginning of line) \\ \cline{3-3}
+                      && EndLine - presence of (``\$'') (matches end of line)     \\ \cline{3-3}
+                      && BegEndLine - presence of (``\textasciicircum''...``\$'') (matches beginning and end of line)  \\ \cline{3-3} \hline
+\mrn{3}{12} & \mrt{3}{Word - presence of sequences that match word beginnings or ends} & BegWord - presence of a (``\textbackslash $<$'') metacharacter (matches word beginning) \\ \cline{3-3}
+                      && EndWord - presence of a (``\textbackslash $>$'') metacharacter (matches word end)   \\ \cline{3-3}
+                      && BegEndWord - presence of a (``\textbackslash $<$'' ... ``\textbackslash $>$'') pattern  (matches word end) \\ \hline 
+\mrn{6}{13} & \mrt{6}{Edge - presence of sequences that match word boundaries} & YesEdgeBeg - presence of a ``\textbackslash b'' metacharacter (sequence must lie on a word edge at the beginning - for example  ``\textbackslash babc'' matches ``abcde'' but not ``xabc'') \\ \cline{3-3}
+                      && YesEdgeEnd - presence of the ``\textbackslash b'' metacharacter (sequence must lie on a word edge at the end - for example ``abc\textbackslash b'' matches ``12abc'' but not ``abc12'')  \\ \cline{3-3}
+                      && YesEdgeBegEnd - presence of ``\textbackslash b'' ... ``\textbackslash b'' pattern - sequence must lie on a word edge at the beginning and the end (for example ``\textbackslash babc\textbackslash b'' matches ``abc'' only)  \\ \cline{3-3}
+                      && NoEdgeBeg - presence of ``\textbackslash B'' metacharacter - sequence must not lie on a word edge at the beginning (for example, ``\textbackslash Babc'' matches ``xabce'' but not ``abcde'').    \\ \cline{3-3}
+                      && NoEdgeEnd - presence of ``\textbackslash B'' metacharacter  - sequence must not lie on a word edge at the end (for example, ``abc\textbackslash B'' matches ``xabce'' but not ``xabc'').    \\ \cline{3-3}
+                      && NoEdgeBegEnd - presence of ``\textbackslash B'' ... ''\textbackslash B'' - sequence must not lie on a word edge at the beginning and the end (for example, ``\textbackslash Babc\textbackslash B'' matches ``xabce'' but not ``abcdeabc''). \\ \hline 
+\mrn{2}{14} & \mrt{2}{Combine - combining multiple patterns} & Concatenation - presence of a sequence of tokens (which must all appear in sequence in the text to match - for example, "ab" matches "abx" or "cab" but not "aaa", "axb", or "bax")  \\ \cline{3-3}
+                      && Alternative - presence of two tokens separated by the ``$|$'' metacharacter (presence of either token will result in a match - for instance "a$|$b" matches "ast" or byz")  \\ \hline
+\end{longtable}
+
+
+
+
+\end{document}

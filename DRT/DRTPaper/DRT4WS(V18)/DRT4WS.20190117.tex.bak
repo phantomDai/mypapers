@@ -409,12 +409,10 @@ We removed equivalent mutants, and mutants that were too easily detected
 deleting mutants that could be detected with less than 20 randomly generated test cases.
 \textcolor{red}{To guarantee the statistic reliability, we first obtained different test suites using 50 random seeds, and tested all mutants on all test suites, then calculated the average number of test cases needed to kill a mutant. Based on the average number, we deleted easily detected mutants.}
 
-\textcolor{red}{}
-
 Table~\ref{tab:objects} summarizes the basic information of the used web services and their mutants.
 A detailed description of each web service is given in the following.
 
-\begin{table}
+\begin{table}[h]
 \caption{Studied Web Services}
 \label{tab:objects}
 \centering

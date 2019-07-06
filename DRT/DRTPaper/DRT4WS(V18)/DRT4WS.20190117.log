@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  31 MAY 2019 15:39
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  6 JUL 2019 15:06
 entering extended mode
 **F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/DRT4WS.20190117.tex
 (F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/DRT4WS.20190117.tex
@@ -391,28 +391,29 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 252.
 
-<fig//framework.png, id=22, 380.93517pt x 202.78963pt>
-File: fig//framework.png Graphic file (type png)
 
-<use fig//framework.png>
-Package pdftex.def Info: fig//framework.png used on input line 254.
-(pdftex.def)             Requested size: 258.9675pt x 137.87036pt.
+
+pdfTeX warning: pdflatex.exe (file F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig//fr
+amework.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5>
+ allowed
+<fig//framework.pdf, id=22, 381.92688pt x 216.81pt>
+File: fig//framework.pdf Graphic file (type pdf)
+ <use fig//framework.pdf>
+Package pdftex.def Info: fig//framework.pdf used on input line 254.
+(pdftex.def)             Requested size: 258.9675pt x 147.0153pt.
 
 Overfull \hbox (6.0225pt too wide) in paragraph at lines 254--255
  [][] 
  []
 
-
-Underfull \vbox (badness 3333) has occurred while \output is active []
-
- [3 <F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig//framework.png>]
+[3 <F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig//framework.pdf>]
 \c@theo=\count124
 
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 365.
 
-<fig//prototype.png, id=26, 642.90187pt x 283.0575pt>
+<fig//prototype.png, id=61, 642.90187pt x 283.0575pt>
 File: fig//prototype.png Graphic file (type png)
  <use fig//prototype.png>
 Package pdftex.def Info: fig//prototype.png used on input line 367.
@@ -465,7 +466,7 @@ OML/cmm/m/it/10 E$\OT1/ppl/m/n/9.53561 -$\OT1/cmr/m/n/10 01\OML/cmm/m/it/10 ; \
 OT1/cmr/m/n/10 3\OML/cmm/m/it/10 E$\OT1/ppl/m/n/9.53561 -
  []
 
-[6] <fig/drtresultbox/aviaresultf.pdf, id=47, 578.16pt x 475.7775pt>
+[6] <fig/drtresultbox/aviaresultf.pdf, id=82, 578.16pt x 475.7775pt>
 File: fig/drtresultbox/aviaresultf.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/aviaresultf.pdf>
@@ -473,7 +474,7 @@ Package pdftex.def Info: fig/drtresultbox/aviaresultf.pdf used on input line 67
 2.
 (pdftex.def)             Requested size: 165.7389pt x 113.81142pt.
 
-<fig/drtresultbox/chinaresultf.pdf, id=48, 578.16pt x 474.77374pt>
+<fig/drtresultbox/chinaresultf.pdf, id=83, 578.16pt x 474.77374pt>
 File: fig/drtresultbox/chinaresultf.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/chinaresultf.pdf>
@@ -481,7 +482,7 @@ Package pdftex.def Info: fig/drtresultbox/chinaresultf.pdf used on input line 6
 73.
 (pdftex.def)             Requested size: 165.7389pt x 113.81038pt.
 
-<fig/drtresultbox/parkingresultf.pdf, id=49, 578.16pt x 483.8075pt>
+<fig/drtresultbox/parkingresultf.pdf, id=84, 578.16pt x 483.8075pt>
 File: fig/drtresultbox/parkingresultf.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/parkingresultf.pdf>
@@ -489,7 +490,7 @@ Package pdftex.def Info: fig/drtresultbox/parkingresultf.pdf used on input line
  674.
 (pdftex.def)             Requested size: 165.7389pt x 113.80551pt.
 
-<fig/drtresultbox/aviaresultf2.pdf, id=50, 578.16pt x 485.815pt>
+<fig/drtresultbox/aviaresultf2.pdf, id=85, 578.16pt x 485.815pt>
 File: fig/drtresultbox/aviaresultf2.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/aviaresultf2.pdf>
@@ -497,7 +498,7 @@ Package pdftex.def Info: fig/drtresultbox/aviaresultf2.pdf used on input line 6
 81.
 (pdftex.def)             Requested size: 165.7389pt x 113.81071pt.
 
-<fig/drtresultbox/chinaresultf2.pdf, id=51, 578.16pt x 480.79625pt>
+<fig/drtresultbox/chinaresultf2.pdf, id=86, 578.16pt x 480.79625pt>
 File: fig/drtresultbox/chinaresultf2.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/chinaresultf2.pdf>
@@ -505,7 +506,7 @@ Package pdftex.def Info: fig/drtresultbox/chinaresultf2.pdf used on input line
 682.
 (pdftex.def)             Requested size: 165.7389pt x 113.80879pt.
 
-<fig/drtresultbox/parkingresultf2.pdf, id=52, 578.16pt x 481.8pt>
+<fig/drtresultbox/parkingresultf2.pdf, id=87, 578.16pt x 481.8pt>
 File: fig/drtresultbox/parkingresultf2.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/parkingresultf2.pdf>
@@ -513,7 +514,7 @@ Package pdftex.def Info: fig/drtresultbox/parkingresultf2.pdf used on input lin
 e 683.
 (pdftex.def)             Requested size: 165.7389pt x 113.81114pt.
 
-<fig/drtresultbox/aviaresultt.pdf, id=53, 578.16pt x 475.7775pt>
+<fig/drtresultbox/aviaresultt.pdf, id=88, 578.16pt x 475.7775pt>
 File: fig/drtresultbox/aviaresultt.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/aviaresultt.pdf>
@@ -521,7 +522,7 @@ Package pdftex.def Info: fig/drtresultbox/aviaresultt.pdf used on input line 69
 0.
 (pdftex.def)             Requested size: 165.7389pt x 113.81142pt.
 
-<fig/drtresultbox/chinaresultt.pdf, id=54, 579.16376pt x 466.74374pt>
+<fig/drtresultbox/chinaresultt.pdf, id=89, 579.16376pt x 466.74374pt>
 File: fig/drtresultbox/chinaresultt.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/chinaresultt.pdf>
@@ -529,7 +530,7 @@ Package pdftex.def Info: fig/drtresultbox/chinaresultt.pdf used on input line 6
 91.
 (pdftex.def)             Requested size: 165.74385pt x 113.80838pt.
 
-<fig/drtresultbox/parkingresultt.pdf, id=55, 578.16pt x 463.7325pt>
+<fig/drtresultbox/parkingresultt.pdf, id=90, 578.16pt x 463.7325pt>
 File: fig/drtresultbox/parkingresultt.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/parkingresultt.pdf>
@@ -537,7 +538,7 @@ Package pdftex.def Info: fig/drtresultbox/parkingresultt.pdf used on input line
  692.
 (pdftex.def)             Requested size: 165.7389pt x 113.81004pt.
  [7]
-<fig/drtparemeter/theVSnor.pdf, id=60, 584.1825pt x 514.92375pt>
+<fig/drtparemeter/theVSnor.pdf, id=95, 584.1825pt x 514.92375pt>
 File: fig/drtparemeter/theVSnor.pdf Graphic file (type pdf)
 
 <use fig/drtparemeter/theVSnor.pdf>
@@ -560,63 +561,63 @@ Paper/DRT4WS(V18)/fig/drtresultbox/chinaresultf2.pdf> <F:/mypapers/DRT/DRTPaper
 T4WS(V18)/fig/drtresultbox/aviaresultt.pdf> <F:/mypapers/DRT/DRTPaper/DRT4WS(V1
 8)/fig/drtresultbox/chinaresultt.pdf> <F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig
 /drtresultbox/parkingresultt.pdf>]
-<fig/drttime/aviatimef.pdf, id=157, 578.16pt x 471.7625pt>
+<fig/drttime/aviatimef.pdf, id=192, 578.16pt x 471.7625pt>
 File: fig/drttime/aviatimef.pdf Graphic file (type pdf)
 
 <use fig/drttime/aviatimef.pdf>
 Package pdftex.def Info: fig/drttime/aviatimef.pdf used on input line 857.
 (pdftex.def)             Requested size: 165.7389pt x 113.80838pt.
 
-<fig/drttime/chinatimef.pdf, id=158, 578.16pt x 473.77pt>
+<fig/drttime/chinatimef.pdf, id=193, 578.16pt x 473.77pt>
 File: fig/drttime/chinatimef.pdf Graphic file (type pdf)
 
 <use fig/drttime/chinatimef.pdf>
 Package pdftex.def Info: fig/drttime/chinatimef.pdf used on input line 858.
 (pdftex.def)             Requested size: 165.7389pt x 113.80832pt.
 
-<fig/drttime/parkingtimef.pdf, id=159, 578.16pt x 481.8pt>
+<fig/drttime/parkingtimef.pdf, id=194, 578.16pt x 481.8pt>
 File: fig/drttime/parkingtimef.pdf Graphic file (type pdf)
 
 <use fig/drttime/parkingtimef.pdf>
 Package pdftex.def Info: fig/drttime/parkingtimef.pdf used on input line 859.
 (pdftex.def)             Requested size: 165.7389pt x 113.81114pt.
 
-<fig/drttime/aviatimef2.pdf, id=160, 578.16pt x 471.7625pt>
+<fig/drttime/aviatimef2.pdf, id=195, 578.16pt x 471.7625pt>
 File: fig/drttime/aviatimef2.pdf Graphic file (type pdf)
 
 <use fig/drttime/aviatimef2.pdf>
 Package pdftex.def Info: fig/drttime/aviatimef2.pdf used on input line 866.
 (pdftex.def)             Requested size: 165.7389pt x 113.80838pt.
 
-<fig/drttime/chinatimef2.pdf, id=161, 578.16pt x 471.7625pt>
+<fig/drttime/chinatimef2.pdf, id=196, 578.16pt x 471.7625pt>
 File: fig/drttime/chinatimef2.pdf Graphic file (type pdf)
 
 <use fig/drttime/chinatimef2.pdf>
 Package pdftex.def Info: fig/drttime/chinatimef2.pdf used on input line 867.
 (pdftex.def)             Requested size: 165.7389pt x 113.80838pt.
 
-<fig/drttime/parkingtimef2.pdf, id=162, 578.16pt x 471.7625pt>
+<fig/drttime/parkingtimef2.pdf, id=197, 578.16pt x 471.7625pt>
 File: fig/drttime/parkingtimef2.pdf Graphic file (type pdf)
 
 <use fig/drttime/parkingtimef2.pdf>
 Package pdftex.def Info: fig/drttime/parkingtimef2.pdf used on input line 868.
 (pdftex.def)             Requested size: 165.7389pt x 113.80838pt.
 
-<fig/drttime/aviatimet.pdf, id=163, 578.16pt x 481.8pt>
+<fig/drttime/aviatimet.pdf, id=198, 578.16pt x 481.8pt>
 File: fig/drttime/aviatimet.pdf Graphic file (type pdf)
 
 <use fig/drttime/aviatimet.pdf>
 Package pdftex.def Info: fig/drttime/aviatimet.pdf used on input line 876.
 (pdftex.def)             Requested size: 165.7389pt x 113.81114pt.
 
-<fig/drttime/chinatimet.pdf, id=164, 578.16pt x 485.815pt>
+<fig/drttime/chinatimet.pdf, id=199, 578.16pt x 485.815pt>
 File: fig/drttime/chinatimet.pdf Graphic file (type pdf)
 
 <use fig/drttime/chinatimet.pdf>
 Package pdftex.def Info: fig/drttime/chinatimet.pdf used on input line 877.
 (pdftex.def)             Requested size: 165.7389pt x 113.81071pt.
 
-<fig/drttime/parkingtimet.pdf, id=165, 578.16pt x 481.8pt>
+<fig/drttime/parkingtimet.pdf, id=200, 578.16pt x 481.8pt>
 File: fig/drttime/parkingtimet.pdf Graphic file (type pdf)
 
 <use fig/drttime/parkingtimet.pdf>
@@ -646,7 +647,7 @@ Missing character: There is no ¯ in font pplri7t!
 pdfTeX warning: pdflatex.exe (file F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig/aut
 hors/CASun.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1
 .5> allowed
-<fig/authors/CASun.pdf, id=277, 74.43811pt x 99.4917pt>
+<fig/authors/CASun.pdf, id=312, 74.43811pt x 99.4917pt>
 File: fig/authors/CASun.pdf Graphic file (type pdf)
 
 <use fig/authors/CASun.pdf>
@@ -657,7 +658,7 @@ File: fig/authors/CASun.pdf Graphic file (type pdf)
 Package pdftex.def Info: fig/authors/CASun.pdf used on input line 976.
 (pdftex.def)             Requested size: 67.59338pt x 90.34325pt.
 
-<fig/authors/HPDai.jpg, id=280, 296.10625pt x 414.54875pt>
+<fig/authors/HPDai.jpg, id=315, 296.10625pt x 414.54875pt>
 File: fig/authors/HPDai.jpg Graphic file (type jpg)
 
 <use fig/authors/HPDai.jpg>
@@ -668,7 +669,7 @@ File: fig/authors/HPDai.jpg Graphic file (type jpg)
 Package pdftex.def Info: fig/authors/HPDai.jpg used on input line 981.
 (pdftex.def)             Requested size: 64.52457pt x 90.33441pt.
 
-<fig/authors/GWang.jpg, id=283, 215.30438pt x 263.48438pt>
+<fig/authors/GWang.jpg, id=318, 215.30438pt x 263.48438pt>
 File: fig/authors/GWang.jpg Graphic file (type jpg)
 
 <use fig/authors/GWang.jpg>
@@ -680,7 +681,7 @@ Package pdftex.def Info: fig/authors/GWang.jpg used on input line 984.
 (pdftex.def)             Requested size: 72.2695pt x 88.44168pt.
  [12 <F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig/authors/CASun.pdf> <F:/mypapers/
 DRT/DRTPaper/DRT4WS(V18)/fig/authors/HPDai.jpg> <F:/mypapers/DRT/DRTPaper/DRT4W
-S(V18)/fig/authors/GWang.jpg>] <fig/authors/DaveTowey.png, id=298, 876.27374pt 
+S(V18)/fig/authors/GWang.jpg>] <fig/authors/DaveTowey.png, id=333, 876.27374pt 
 x 1044.90375pt>
 File: fig/authors/DaveTowey.png Graphic file (type png)
 
@@ -696,7 +697,7 @@ Package pdftex.def Info: fig/authors/DaveTowey.png used on input line 987.
 pdfTeX warning: pdflatex.exe (file F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig/aut
 hors/TYChen.pdf): PDF inclusion: found PDF version <1.6>, but at most version <
 1.5> allowed
-<fig/authors/TYChen.pdf, id=301, 310.15875pt x 371.3875pt>
+<fig/authors/TYChen.pdf, id=336, 310.15875pt x 371.3875pt>
 File: fig/authors/TYChen.pdf Graphic file (type pdf)
 
 <use fig/authors/TYChen.pdf>
@@ -711,7 +712,7 @@ Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 990.
 pdfTeX warning: pdflatex.exe (file F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig/aut
 hors/KYCai.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1
 .5> allowed
-<fig/authors/KYCai.pdf, id=304, 72.27pt x 101.17801pt>
+<fig/authors/KYCai.pdf, id=339, 72.27pt x 101.17801pt>
 File: fig/authors/KYCai.pdf Graphic file (type pdf)
 
 <use fig/authors/KYCai.pdf>
@@ -734,7 +735,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  4046 strings out of 495354
  59912 string characters out of 3183523
- 145893 words of memory out of 3000000
+ 145890 words of memory out of 3000000
  7089 multiletter control sequences out of 15000+200000
  61228 words of font info for 151 fonts, out of 3000000 for 9000
  17 hyphenation exceptions out of 8191
@@ -761,9 +762,9 @@ latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><G:/latex/CTEX/MiKTeX/fon
 ts/type1/urw/palatino/uplbi8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatin
 o/uplr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><G:/lat
 ex/CTEX/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on DRT4WS.20190117.pdf (13 pages, 2648707 bytes).
+Output written on DRT4WS.20190117.pdf (13 pages, 2161753 bytes).
 PDF statistics:
- 408 PDF objects out of 1000 (max. 8388607)
+ 443 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  208 words of extra memory for PDF output out of 10000 (max. 10000000)
 
