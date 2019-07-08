@@ -12,6 +12,7 @@
 \usepackage[normalem]{ulem}
 \usepackage{color}
 \usepackage{ulem}
+\usepackage{booktabs}
 \hyphenation{op-tical net-works semi-conduc-tor}
 
 
@@ -96,8 +97,12 @@ In practice, web services have usually been tested by the service providers, and
 For ensuring a higher reliability of the web services, a simple RT strategy may not be an appropriate technique~\cite{li2014two}, especially when the scale is large, or there are some stubborn faults.
 
 In this paper, we present a dynamic random testing (DRT) approach for web services, as an enhanced version of RT that is an adaptation of DRT to the context of SOA.
-We examine key issues of such an adaption, and conduct empirical studies to evaluate the feasibility and effectiveness of the proposed DRT, with the experimental results showing DRT outperforms RT in terms of fault detection efficiency.
-The contributions of this work include:
+\sout{We examine key issues of such an adaption, and conduct empirical studies to evaluate the feasibility and effectiveness of the proposed DRT, with the experimental results showing DRT outperforms RT in terms of fault detection efficiency.}
+\textcolor{red}{We examine key issues of such an adaptation, and accordingly propose a framework for web services testing through the combination of the principle of DRT
+proposed in \cite{cai2009random} and the features of web services. To validate the fault detection effectiveness and efficiency of the proposed DRT in the context of SOA, we conduct a comprehensive empirical study. Besides, we further explore impact factors of the proposed DRT and provide guidelines for setting DRT parameters based on a theoretical analysis. Finally, we compare the performance of the proposed DRT with other baseline techniques.}
+\sout{The contributions of this work include:}
+
+\textcolor{red}{This paper extends our previous work \cite{sun2012towards} in the following aspects. First, this paper extensively examines the challenges and practical situations related to testing Web services (Section \ref{sec:webservices}). It also extensively discusses the limitations of RT, Partition Testing (PT), and Random Partition Testing (RPT), when they are used for testing Web services (Section \ref{sec:introduction}). Second, the previous work \cite{sun2012towards} provided a coarse-grained framework for DRT of Web services and PT was not studied. In contrast, this paper provides a comprehensive solution based on partitioning (Section 4.4.1). Third, this paper provides guidelines for setting DRT parameters, based on a theoretical analysis (Section 3.2). Such guidelines are crucial to enhance the practical application of DRT, which were not covered in \cite{sun2012towards}. Fourth, the previous work \cite{sun2012towards} only evaluated the fault detection effectiveness and efficiency of the proposed approach (DRT) in terms of F-measure and T-measure, and only two small Web services (ATM Service and Warehouse Service) used to evaluate and compare its performance with RT. This paper, in contrast, provides a comprehensive evaluation that not only evaluates the fault detection effectiveness of the proposed approach in terms of the F-measure, F2-measure, and T-measure (Section \ref{sec:RQ1}), but also evaluates its efficiency in terms of F-time, F2-time, and T-time (Section \ref{sec:RQ3}). Besides, we use three real-life Web services as subjects, and compared the fault-detection effectiveness and efficiency of the proposed approach with those of RT, RPT, and AT. Furthermore, we made use of statistical analyses to validate the significance of the empirical evaluations and comparisons (Sections \ref{sec:RQ1} and \ref{sec:RQ3}), which were not covered in \cite{sun2012towards}. We also examine the relationship between the number of partitions and the optimal control parameter settings for DRT, evaluating the usefulness of guidelines provided by the theoretical analysis (Section \ref{sec:RQ2}), which was not covered in \cite{sun2012towards}. Fifth, we substantially extended the literature compared the \cite{sun2012towards} (Section \ref{sec:relatedwork}). The contributions of this work, together with the previous work \cite{sun2012towards}, include:}
 
 \begin{itemize}
   \item
@@ -207,6 +212,7 @@ Furthermore, the selection of partition $s_i$, and subsequent selection and exec
 The execution time for one iteration of DRT is thus a constant, and therefore the overall time complexity for DRT to select $n$ test cases is $O(m \cdot n)$.
 
 \subsection{Web Services}
+\label{sec:webservices}
 
 A web service is a platform-independent, loosely coupled, self-contained, programmable, web-enabled application that can be described, published, discovered, coordinated and configured using XML artifacts for the purpose of developing distributed interoperable applications~\cite{papazoglou2008service}.
 A web service consists of a description (usually specified in WSDL) and implementation (written in any programming language).
@@ -271,15 +277,18 @@ We next discuss the individual framework components.
   Once partitioned, testers can assign probability distributions to the partitions as an initial testing profile.
   This initial testing profile can be assigned in different ways, including using a uniform probability distribution, or one that sets probabilities according to the importance of the partition:
   For example, a partition within which faults were previously detected should be given higher priority.
+  \item
+  \emph{Test Profile and DRT's Parameter Initialization}.
+  Testers need to
+
 
   \item
   \emph{Partition Selection}.
   DRT randomly selects a partition $s_i$ according to the test profile.
 
   \item
-  \emph{Test Case Generation}.
-  Given the selected partition $s_i$, a test case is then randomly and independently generated within $s_i$.
-  Because the WSDL document has been parsed, generation of test cases can be automated.
+  \emph{Test Case \sout{Generation} \textcolor{red}{Selection}}.
+  Given the selected partition $s_i$, a test case is then randomly and independently \textcolor{red}{selected within $s_i$ according to a uniform distribution}.
 
   \item
   \emph{Test Case Execution}.
@@ -324,6 +333,8 @@ As testing proceeds, the probability $p_M$ of partition $s_M$ being selected is 
     p_M^{n + 1} > p_M^{n}
 \end{equation}
 
+\textcolor{red}{In order to achieve the best performance, the probability of partition $s_M$ that has the maximum failure rate being selected is expected to increase. To achieve this goal, the probability increase of $s_M$ being selected for the next round should be larger than that of other partitions. The further analysis of sufficient condition can result in an interval of $\epsilon$.}
+
 Initially, the testing profile is
 $\{ \left \langle s_1,p_1^0 \right \rangle, \left \langle s_2,p_2^0 \right \rangle, \ldots, \left \langle s_m,p_m^0 \right \rangle\}$,
 which, after $n$ test cases have been executed,  is then updated to
@@ -358,18 +369,19 @@ Therefore, $p_i^{n + 1}$ for all cases together is:
 \begin{equation}
     \label{eq:7}
     \begin{split}
-    p_i^{n + 1} = &p_i^n\theta_i(p_i^n + \varepsilon) + p_i^n(1-\theta_i)(p_i^n - \varepsilon)\\
-    &+ \sum_{j \neq i}p_j^n\theta_j(p_i^n - \displaystyle \frac{\varepsilon}{m- 1})\\
-    &+ \sum_{j \neq i}p_j^n(1 - \theta_j)(p_i^n + \displaystyle\frac{\varepsilon}{m - 1})\\
-    =&(p_i^n)^2\theta_i + p_i^n\theta_i\varepsilon + (p_i^n)^2 - p_i^n\varepsilon - (p_i^n)^2\theta_i + p_i^n\theta_i\varepsilon\\
-    & + (p_i^n - \displaystyle\frac{\varepsilon}{m - 1})\sum_{j \neq i}p_j^n\theta_j + (p_i^n + \displaystyle\frac{\varepsilon}{m - 1})\sum_{j \neq i}p_j^n\\
-    &- (p_i^n + \displaystyle\frac{\varepsilon}{m - 1})\sum_{j \neq i}p_j^n\theta_j\\
-    =&(p_i^n)^2 + 2p_i^n\theta_i\varepsilon - p_i^n\varepsilon + (p_i^n - \displaystyle\frac{\varepsilon}{m - 1} - p_i^n \\
-    &- \displaystyle\frac{\varepsilon}{m - 1})\sum_{j \neq i}p_j^n\theta_j + (p_i^n + \displaystyle\frac{\varepsilon}{m - 1})(1 - p_i^n)\\
-    =&p_i^n + (p_i^n)^2 - (p_i^n)^2 + 2p_i^n\theta_i\varepsilon - p_i^n\varepsilon + \displaystyle\frac{\varepsilon}{m - 1} - \\
-    &\displaystyle\frac{\varepsilon}{m - 1}p_i^n - \displaystyle\frac{2\varepsilon}{m - 1}\sum_{j \neq i}p_j^n\theta_j\\
-    =&p_i^n + \displaystyle\frac{\varepsilon}{m - 1}(2p_i^n\theta_im - p_i^nm - 2p_i^n\theta_i + 1 )\\
-    &- \displaystyle\frac{2\varepsilon}{m-1}\sum_{j \neq i}p_j^n\theta_j\\
+    p_i^{n + 1} 
+%    = &p_i^n\theta_i(p_i^n + \varepsilon) + p_i^n(1-\theta_i)(p_i^n - \varepsilon)\\
+%    &+ \sum_{j \neq i}p_j^n\theta_j(p_i^n - \displaystyle \frac{\varepsilon}{m- 1})\\
+%    &+ \sum_{j \neq i}p_j^n(1 - \theta_j)(p_i^n + \displaystyle\frac{\varepsilon}{m - 1})\\
+%    =&(p_i^n)^2\theta_i + p_i^n\theta_i\varepsilon + (p_i^n)^2 - p_i^n\varepsilon - (p_i^n)^2\theta_i + p_i^n\theta_i\varepsilon\\
+%    & + (p_i^n - \displaystyle\frac{\varepsilon}{m - 1})\sum_{j \neq i}p_j^n\theta_j + (p_i^n + \displaystyle\frac{\varepsilon}{m - 1})\sum_{j \neq i}p_j^n\\
+%    &- (p_i^n + \displaystyle\frac{\varepsilon}{m - 1})\sum_{j \neq i}p_j^n\theta_j\\
+%    =&(p_i^n)^2 + 2p_i^n\theta_i\varepsilon - p_i^n\varepsilon + (p_i^n - \displaystyle\frac{\varepsilon}{m - 1} - p_i^n \\
+%    &- \displaystyle\frac{\varepsilon}{m - 1})\sum_{j \neq i}p_j^n\theta_j + (p_i^n + \displaystyle\frac{\varepsilon}{m - 1})(1 - p_i^n)\\
+%    =&p_i^n + (p_i^n)^2 - (p_i^n)^2 + 2p_i^n\theta_i\varepsilon - p_i^n\varepsilon + \displaystyle\frac{\varepsilon}{m - 1} - \\
+%    &\displaystyle\frac{\varepsilon}{m - 1}p_i^n - \displaystyle\frac{2\varepsilon}{m - 1}\sum_{j \neq i}p_j^n\theta_j\\
+%    =&p_i^n + \displaystyle\frac{\varepsilon}{m - 1}(2p_i^n\theta_im - p_i^nm - 2p_i^n\theta_i + 1 )\\
+%    &- \displaystyle\frac{2\varepsilon}{m-1}\sum_{j \neq i}p_j^n\theta_j\\
     =&p_i^n + Y_i^n,
     \end{split}
 \end{equation}
@@ -386,13 +398,14 @@ From Formula~\ref{eq:yi}, we have:
  \begin{equation}
     \begin{split}
     \label{eq:26}
-    Y_M^n - Y_i^n = &\displaystyle\frac{\varepsilon}{m - 1}(2p_M^n\theta_Mm - p_M^nm - 2p_M^n\theta_M + 1)\\
-    & - \displaystyle\frac{2\varepsilon}{m - 1}\sum_{j \neq M}p_j^n\theta_j - \displaystyle\frac{\varepsilon}{m - 1}(2p_i^n\theta_im - p_i^nm\\
-    & - 2p_i^n\theta_i + 1) + \displaystyle\frac{2\varepsilon}{m - 1}\sum_{j \neq i}p_j^n\theta_j \\
-    =&\displaystyle\frac{\varepsilon}{m - 1}(2m(p_M^n\theta_M - p_i^n\theta_i) - m(p_M^n - p_i^n) -\\
-    & 2(p_M^n\theta_M - p_i^n\theta_i)) - \sum_{j \neq M}p_j^n\theta_j + \sum_{j \neq i}p_j^n\theta_j    \\
-    =& \displaystyle\frac{2\varepsilon}{m - 1}(m(p_M^n\theta_M - p_i^n\theta_i) - \displaystyle\frac{m(p_M^n - p_i^n)}{2} - \\
-    &(p_M^n\theta_M - p_i^n\theta_i)) + \displaystyle\frac{2\varepsilon}{m-1}(p_M^n\theta_M - p_i^n\theta_i)\\
+    Y_M^n - Y_i^n
+%     = &\displaystyle\frac{\varepsilon}{m - 1}(2p_M^n\theta_Mm - p_M^nm - 2p_M^n\theta_M + 1)\\
+%    & - \displaystyle\frac{2\varepsilon}{m - 1}\sum_{j \neq M}p_j^n\theta_j - \displaystyle\frac{\varepsilon}{m - 1}(2p_i^n\theta_im - p_i^nm\\
+%    & - 2p_i^n\theta_i + 1) + \displaystyle\frac{2\varepsilon}{m - 1}\sum_{j \neq i}p_j^n\theta_j \\
+%    =&\displaystyle\frac{\varepsilon}{m - 1}(2m(p_M^n\theta_M - p_i^n\theta_i) - m(p_M^n - p_i^n) -\\
+%    & 2(p_M^n\theta_M - p_i^n\theta_i)) - \sum_{j \neq M}p_j^n\theta_j + \sum_{j \neq i}p_j^n\theta_j    \\
+%    =& \displaystyle\frac{2\varepsilon}{m - 1}(m(p_M^n\theta_M - p_i^n\theta_i) - \displaystyle\frac{m(p_M^n - p_i^n)}{2} - \\
+%    &(p_M^n\theta_M - p_i^n\theta_i)) + \displaystyle\frac{2\varepsilon}{m-1}(p_M^n\theta_M - p_i^n\theta_i)\\
     =&\displaystyle\frac{2\varepsilon}{m - 1}(m(p_M^n\theta_M - p_i^n\theta_i) - \displaystyle\frac{m(p_M^n - p_i^n)}{2}).
     \end{split}
 \end{equation}
@@ -404,38 +417,38 @@ Before presenting the final guidelines, we need the following lemma.
   If $p_i^{n} - p_M^{n} > 2(p_i^{n}\theta_i - p_M^{n}\theta_M)$, then $p_M^{n + 1} > p_M^{n}$.
 \end{lem}
 \begin{IEEEproof}
-The condition $p_i^{n} - p_M^{n} > 2(p_i^{n}\theta_i - p_M^{n}\theta_M)$ can be equivalently expressed as:
-\begin{equation}
-  \label{lemma:proof1}
-\displaystyle\frac{p_M^n - p_i^n}{2} < p_M^{n}\theta_M - p_i^{n}\theta_i.
-\end{equation}
-
-From Formula~\ref{lemma:proof1},  $(p_M^{n}\theta_M - p_i^{n}\theta_i) - \displaystyle\frac{p_M^n - p_i^n}{2} > 0$, and because $0 < \varepsilon < 1$, and $m > 1$,  therefore:
-\begin{equation}
-  \label{lemma:proof2}
-\displaystyle\frac{2m\varepsilon}{m - 1}((p_M^{n}\theta_M - p_i^{n}\theta_i) - \displaystyle\frac{p_M^n - p_i^n}{2}) > 0.
-\end{equation}
-
-Furthermore:
-\begin{equation}
-  \label{lemma:proof3}
-\displaystyle\frac{2\varepsilon}{m - 1}(m(p_M^{n}\theta_M - p_i^{n}\theta_i) - \displaystyle\frac{m(p_M^n - p_i^n)}{2}) > 0.
-\end{equation}
-
-According to Formulas \ref{lemma:proof3} and \ref{eq:26},
-if $p_i^{n} - p_M^{n} > 2(p_i{n}\theta_i - p_M^{n}\theta_M)$, then
-$Y_M^n - Y_i^n > 0$.
-
-Also, because
-$\sum_{i=1}^mp_i^{n + 1} = 1$, and
-$\sum_{i=1}^mp_i^{n} = 1$, therefore
-$Y_M^n >0$, and thus
-$\sum_{i=1}^mY_i^n = 0$.
-
-According to Formula~\ref{eq:7},
-$p_M^{n + 1} = p_M^n + Y_M^n$.
-Because $Y_M^n >0$, therefore
-$p_M^{n + 1} > p_M^n$.
+%The condition $p_i^{n} - p_M^{n} > 2(p_i^{n}\theta_i - p_M^{n}\theta_M)$ can be equivalently expressed as:
+%\begin{equation}
+%  \label{lemma:proof1}
+%\displaystyle\frac{p_M^n - p_i^n}{2} < p_M^{n}\theta_M - p_i^{n}\theta_i.
+%\end{equation}
+%
+%From Formula~\ref{lemma:proof1},  $(p_M^{n}\theta_M - p_i^{n}\theta_i) - \displaystyle\frac{p_M^n - p_i^n}{2} > 0$, and because $0 < \varepsilon < 1$, and $m > 1$,  therefore:
+%\begin{equation}
+%  \label{lemma:proof2}
+%\displaystyle\frac{2m\varepsilon}{m - 1}((p_M^{n}\theta_M - p_i^{n}\theta_i) - \displaystyle\frac{p_M^n - p_i^n}{2}) > 0.
+%\end{equation}
+%
+%Furthermore:
+%\begin{equation}
+%  \label{lemma:proof3}
+%\displaystyle\frac{2\varepsilon}{m - 1}(m(p_M^{n}\theta_M - p_i^{n}\theta_i) - \displaystyle\frac{m(p_M^n - p_i^n)}{2}) > 0.
+%\end{equation}
+%
+%According to Formulas \ref{lemma:proof3} and \ref{eq:26},
+%if $p_i^{n} - p_M^{n} > 2(p_i{n}\theta_i - p_M^{n}\theta_M)$, then
+%$Y_M^n - Y_i^n > 0$.
+%
+%Also, because
+%$\sum_{i=1}^mp_i^{n + 1} = 1$, and
+%$\sum_{i=1}^mp_i^{n} = 1$, therefore
+%$Y_M^n >0$, and thus
+%$\sum_{i=1}^mY_i^n = 0$.
+%
+%According to Formula~\ref{eq:7},
+%$p_M^{n + 1} = p_M^n + Y_M^n$.
+%Because $Y_M^n >0$, therefore
+%$p_M^{n + 1} > p_M^n$.
 \end{IEEEproof}
 
 Accordingly, we can now present the following theorem that states a sufficient condition for achieving $p_M^{n + 1} > p_M^{n}$.
@@ -448,89 +461,90 @@ Accordingly, we can now present the following theorem that states a sufficient c
   \displaystyle\frac{2m\theta_{min}^2}{1-2\theta_{min}} < \varepsilon < \displaystyle\frac{(m-1)m\theta_{min}}{2(m + 1)}.
 \end{equation}
 \end{theo}
-\emph{Proof:} In order to guarantee $p_M^{n + 1} > p_M^{n}$, we consider the following three situations (where $i \in \{1, 2, \ldots, m\}$ and $i \ne M$).
-
-\textbf{Situation 1 ($p_i^n = p_M^n$):}
-Because $\theta_i < \theta_M$, therefore
-$(p_i^n\theta_i - p_M^n\theta_M) < 0$.
-
-Therefore, $(p_i^n - p_M^n) > 2(p_i^n\theta_i - p_M^n\theta_M)$.
-
-According to Lemma 1, we have $p_M^{n + 1} > p_M^{n}$.
-\textbf{Situation 2 ($p_i^n > p_M^n$):} According to Formula \ref{equa:results}, we have the following:
-$$\varepsilon > \displaystyle\frac{2m\theta_{min}^2}{1-2\theta_{min}}.$$
-
-Because
-$$\displaystyle\frac{2m\theta_{min}^2}{1-2\theta_{min}} = \displaystyle\frac{\theta_{min}}{1/2m\theta_{min} - 1/m},$$
-we have the following:
-$$\varepsilon > \displaystyle\frac{\theta_{min}}{1/2m\theta_{min} - 1/m}.$$
-
-Because $\theta_{min} < 1/2$, therefore
-$1/2m\theta_{min} - 1/m > 0$ and
-$\varepsilon(1/2m\theta - 1/m) > \theta_{min}$, which gives
-$\varepsilon/2m\theta_{min} > \theta_{min} + \varepsilon/m$.
-
-Because $\varepsilon > 0$, and $m > 1$, therefore
- $$\displaystyle\frac{1}{2\theta_{min}} > \displaystyle\frac{(\theta_{min} + \varepsilon/m)}{(\varepsilon/m)}.$$
-
-$(1/2\theta_{min})(p_i^n - p_M^n) > (p_i^n - p_M^n)(\theta_{min} + \varepsilon/m)/(\varepsilon/m)$ as
-$p_i^n > p_M^n$, and
-$$p_i^n -p_M^n > 2\theta_{min}(p_i^n -p_M^n)\displaystyle\frac{\theta_{min} + \varepsilon/m}{\varepsilon/m}.$$
-
-Because $(\theta_{min} + \varepsilon/m)/(\varepsilon/m) > 1$, therefore
-$$2\theta_{min}(p_i^n -p_M^n)\displaystyle\frac{\theta_{min} + \varepsilon/m}{\varepsilon/m} > 2\theta_{min}(p_i^n -p_M^n).$$
-
-Because $\theta_{min} < \theta_M$, therefore
-$$2\theta_{min}(p_i^n - p_M^n) > 2(p_i^n\theta_{min} - p_M^n\theta_M).$$
-
-Thus,
-$$p_i^n -p_M^n > 2(p_i^n\theta_{min} - p_M^n\theta_M).$$
-
-According to Lemma 1, we have $p_M^{n + 1} > p_M^{n}$.
-\textbf{Situation 3 ($p_i^n < p_M^n$):}
-For this proof, we make the assumption that $\frac{1}{2} < \theta_M < 1$.
-
-Because we have
-$$\varepsilon < \displaystyle\frac{(m - 1)m\theta_{min}}{2(m + 1)}$$
-and
-$$\displaystyle\frac{(m - 1)m\theta_{min}}{2(m + 1)} = \displaystyle\frac{2m -(m + 1)}{2(m + 1)}m\theta_{min},$$
-thus
-$$\varepsilon < (\displaystyle\frac{m}{m +1} - \displaystyle\frac{1}{2})m\theta_{min}.$$
-
-Obviously, $\varepsilon/m < (m/(m + 1) - 1/2)\theta_{min}$ as $m > 1$.
-
-Furthermore, we have
-$$-\displaystyle\frac{\varepsilon}{m} > (\displaystyle\frac{1}{2} - \displaystyle\frac{m}{m + 1})\theta_{min}$$
-and
-$$\displaystyle\frac{m\theta_{min}}{m + 1} - \displaystyle\frac{\varepsilon}{m} + \displaystyle\frac{2\varepsilon}{m} > \displaystyle\frac{\theta_{min}}{2} + \displaystyle\frac{2\varepsilon}{m}$$
-which means that
-$$\displaystyle\frac{m\theta_{min}}{m + 1} + \displaystyle\frac{\varepsilon}{m}  > \displaystyle\frac{1}{2}(\theta_{min} + \displaystyle\frac{4\varepsilon}{m}).$$
-
-It follows that
-$$(m\theta_{min}/(m + 1) + \varepsilon/m)/(4\varepsilon/m + \theta_{min}) > 1/2$$ for any $m > 1, \varepsilon > 0$, and $0 < \theta_{min} < 1$.
-
-Because $\frac{1}{2} < \theta_M < 1$, therefore
-$(m\theta_{min}/(m + 1) + \varepsilon/m)/(4\varepsilon/m + \theta_{min}) > 1/2\theta_M$.
-
-Thus, we have
-$$2(p_M^n -p_i^n)\theta_M\displaystyle\frac{\displaystyle\frac{\varepsilon}{m} +\displaystyle\frac{m\theta_{min}}{m + 1}}{\displaystyle\frac{4\varepsilon}{m} + \theta_{min}} > p_M^n -p_i^n$$
-as $p_M^n > p_i^n$.
-
-Because $\varepsilon/m < 4\varepsilon/m$, and $m\theta_{min}/(m + 1) < \theta_{min}$, therefore
-$$ \displaystyle\frac{\displaystyle\frac{\varepsilon}{m} +\displaystyle\frac{m\theta_{min}}{m + 1}}{\displaystyle\frac{4\varepsilon}{m} + \theta_{min}} < 1$$
-and
-$$ 2(p_M^n -p_i^n)\theta_M > 2(p_M^n -p_i^n)\theta_M\displaystyle\frac{\displaystyle\frac{\varepsilon}{m} +\displaystyle\frac{m\theta_{min}}{m + 1}}{\displaystyle\frac{4\varepsilon}{m} + \theta_{min}}$$
-
-Hence we have
-$$2(p_M^n -p_i^n)\theta_M > p_M^n -p_i^n,$$
-which can be equivalently expressed as
-$$p_i^n -p_M^n > 2(p_i^n - p_M^n)\theta_M.$$
-
-Because $\theta_{min} < \theta_M$, therefore
-$2(p_i^n - p_M^n)\theta_M > 2(p_i^n\theta_{min} - p_M^n\theta_M)$, and thus
-$$p_i^n -p_M^n > 2(p_i^n\theta_{min} - p_M^n\theta_M).$$
-
-According to Lemma 1, we have $p_M^{n + 1} > p_M^{n}$.
+\emph{Proof:} 
+%In order to guarantee $p_M^{n + 1} > p_M^{n}$, we consider the following three situations (where $i \in \{1, 2, \ldots, m\}$ and $i \ne M$).
+%
+%\textbf{Situation 1 ($p_i^n = p_M^n$):}
+%Because $\theta_i < \theta_M$, therefore
+%$(p_i^n\theta_i - p_M^n\theta_M) < 0$.
+%
+%Therefore, $(p_i^n - p_M^n) > 2(p_i^n\theta_i - p_M^n\theta_M)$.
+%
+%According to Lemma 1, we have $p_M^{n + 1} > p_M^{n}$.
+%\textbf{Situation 2 ($p_i^n > p_M^n$):} According to Formula \ref{equa:results}, we have the following:
+%$$\varepsilon > \displaystyle\frac{2m\theta_{min}^2}{1-2\theta_{min}}.$$
+%
+%Because
+%$$\displaystyle\frac{2m\theta_{min}^2}{1-2\theta_{min}} = \displaystyle\frac{\theta_{min}}{1/2m\theta_{min} - 1/m},$$
+%we have the following:
+%$$\varepsilon > \displaystyle\frac{\theta_{min}}{1/2m\theta_{min} - 1/m}.$$
+%
+%Because $\theta_{min} < 1/2$, therefore
+%$1/2m\theta_{min} - 1/m > 0$ and
+%$\varepsilon(1/2m\theta - 1/m) > \theta_{min}$, which gives
+%$\varepsilon/2m\theta_{min} > \theta_{min} + \varepsilon/m$.
+%
+%Because $\varepsilon > 0$, and $m > 1$, therefore
+% $$\displaystyle\frac{1}{2\theta_{min}} > \displaystyle\frac{(\theta_{min} + \varepsilon/m)}{(\varepsilon/m)}.$$
+%
+%$(1/2\theta_{min})(p_i^n - p_M^n) > (p_i^n - p_M^n)(\theta_{min} + \varepsilon/m)/(\varepsilon/m)$ as
+%$p_i^n > p_M^n$, and
+%$$p_i^n -p_M^n > 2\theta_{min}(p_i^n -p_M^n)\displaystyle\frac{\theta_{min} + \varepsilon/m}{\varepsilon/m}.$$
+%
+%Because $(\theta_{min} + \varepsilon/m)/(\varepsilon/m) > 1$, therefore
+%$$2\theta_{min}(p_i^n -p_M^n)\displaystyle\frac{\theta_{min} + \varepsilon/m}{\varepsilon/m} > 2\theta_{min}(p_i^n -p_M^n).$$
+%
+%Because $\theta_{min} < \theta_M$, therefore
+%$$2\theta_{min}(p_i^n - p_M^n) > 2(p_i^n\theta_{min} - p_M^n\theta_M).$$
+%
+%Thus,
+%$$p_i^n -p_M^n > 2(p_i^n\theta_{min} - p_M^n\theta_M).$$
+%
+%According to Lemma 1, we have $p_M^{n + 1} > p_M^{n}$.
+%\textbf{Situation 3 ($p_i^n < p_M^n$):}
+%For this proof, we make the assumption that $\frac{1}{2} < \theta_M < 1$.
+%
+%Because we have
+%$$\varepsilon < \displaystyle\frac{(m - 1)m\theta_{min}}{2(m + 1)}$$
+%and
+%$$\displaystyle\frac{(m - 1)m\theta_{min}}{2(m + 1)} = \displaystyle\frac{2m -(m + 1)}{2(m + 1)}m\theta_{min},$$
+%thus
+%$$\varepsilon < (\displaystyle\frac{m}{m +1} - \displaystyle\frac{1}{2})m\theta_{min}.$$
+%
+%Obviously, $\varepsilon/m < (m/(m + 1) - 1/2)\theta_{min}$ as $m > 1$.
+%
+%Furthermore, we have
+%$$-\displaystyle\frac{\varepsilon}{m} > (\displaystyle\frac{1}{2} - \displaystyle\frac{m}{m + 1})\theta_{min}$$
+%and
+%$$\displaystyle\frac{m\theta_{min}}{m + 1} - \displaystyle\frac{\varepsilon}{m} + \displaystyle\frac{2\varepsilon}{m} > \displaystyle\frac{\theta_{min}}{2} + \displaystyle\frac{2\varepsilon}{m}$$
+%which means that
+%$$\displaystyle\frac{m\theta_{min}}{m + 1} + \displaystyle\frac{\varepsilon}{m}  > \displaystyle\frac{1}{2}(\theta_{min} + \displaystyle\frac{4\varepsilon}{m}).$$
+%
+%It follows that
+%$$(m\theta_{min}/(m + 1) + \varepsilon/m)/(4\varepsilon/m + \theta_{min}) > 1/2$$ for any $m > 1, \varepsilon > 0$, and $0 < \theta_{min} < 1$.
+%
+%Because $\frac{1}{2} < \theta_M < 1$, therefore
+%$(m\theta_{min}/(m + 1) + \varepsilon/m)/(4\varepsilon/m + \theta_{min}) > 1/2\theta_M$.
+%
+%Thus, we have
+%$$2(p_M^n -p_i^n)\theta_M\displaystyle\frac{\displaystyle\frac{\varepsilon}{m} +\displaystyle\frac{m\theta_{min}}{m + 1}}{\displaystyle\frac{4\varepsilon}{m} + \theta_{min}} > p_M^n -p_i^n$$
+%as $p_M^n > p_i^n$.
+%
+%Because $\varepsilon/m < 4\varepsilon/m$, and $m\theta_{min}/(m + 1) < \theta_{min}$, therefore
+%$$ \displaystyle\frac{\displaystyle\frac{\varepsilon}{m} +\displaystyle\frac{m\theta_{min}}{m + 1}}{\displaystyle\frac{4\varepsilon}{m} + \theta_{min}} < 1$$
+%and
+%$$ 2(p_M^n -p_i^n)\theta_M > 2(p_M^n -p_i^n)\theta_M\displaystyle\frac{\displaystyle\frac{\varepsilon}{m} +\displaystyle\frac{m\theta_{min}}{m + 1}}{\displaystyle\frac{4\varepsilon}{m} + \theta_{min}}$$
+%
+%Hence we have
+%$$2(p_M^n -p_i^n)\theta_M > p_M^n -p_i^n,$$
+%which can be equivalently expressed as
+%$$p_i^n -p_M^n > 2(p_i^n - p_M^n)\theta_M.$$
+%
+%Because $\theta_{min} < \theta_M$, therefore
+%$2(p_i^n - p_M^n)\theta_M > 2(p_i^n\theta_{min} - p_M^n\theta_M)$, and thus
+%$$p_i^n -p_M^n > 2(p_i^n\theta_{min} - p_M^n\theta_M).$$
+%
+%According to Lemma 1, we have $p_M^{n + 1} > p_M^{n}$.
 $\hfill{}
 \Box$
 
@@ -547,6 +561,15 @@ In practice, we should set
 \label{euqtion:approxValue}
   \varepsilon \approx \frac{2m\theta_{min}^2}{1-2\theta_{min}}.
 \end{equation}
+
+\textcolor{red}{For a given partition scheme, we can get the number of partitions, namely $m$. To get $\theta_{min}$, we need to first figure out failure rates of all partitions and then get their minimum. The failure rate of each partition can be obtained through two ways:}
+\begin{enumerate}[1]
+  \item
+  \textcolor{red}{The failure rate can be directly defined as $F / E$ ($F$ is the number of failures and $E$ is the number if executed tests) in case the test history of web service under test is accessible.}
+
+  \item
+  \textcolor{red}{The failure rate can be approximately calculated by $1 / k_i$ ($k_i$ is the total number of test cases performed to reveal a fault).}
+\end{enumerate}
 
 \subsection{Prototype}
 \label{sec:prototype}
@@ -590,10 +613,13 @@ In our experiments, we focused on addressing the following three research questi
   In our earlier work~\cite{sun2012towards}, we found that the DRT parameter $\varepsilon$ had a significant effect on DRT efficiency, and  that the optimal value of the parameter could be related to the number of partitions.
   The relationship between $\varepsilon$ and the number of partitions is examined through theoretical analysis, and verified through the empirical studies.
 
-  \item [RQ3] What is the actual test case generation overhead when using the DRT strategy?
+  \item [RQ3] \sout{What is the actual test case generation overhead when using the DRT strategy?In Section} \sout{\ref{sec:DRTStrategy}, we showed that DRT only requires linear time to generate test case. We wish to validate the linearity through empirical examination of the actual test case generation and execution.}
+  
+  \textcolor{red}{How efficient is DRT at detecting web service faults in terms of time cost when comparing with baseline techniques?}
 
-  In Section~\ref{sec:DRTStrategy}, we showed that DRT only requires linear time to generate test case.
-  We wish to validate the linearity through empirical examination of the actual test case generation and execution.
+  \textcolor{red}{DRT introduces the selection of partitions and test cases in a partition compared with RT and PT. Naturally, one may be interested in knowing the fault detection efficiency of DRT in terms of time cost. To answer this question, we compare the time cost of DRT with that of baseline techniques.}
+
+
 \end{description}
 
 \subsection{Subject Web Services}
@@ -603,22 +629,23 @@ We selected three \sout{real-life} web services as the subject programs for our 
 \texttt{Aviation Consignment Management Service (ACMS)},
 \texttt{China Unicom billing service (CUBS)}, and
 \texttt{Parking billing service (PBS)}, \textcolor{red}{which were developed by ourself based on the real-life specifications.}
-We used mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity} to generate a total of 1563 mutants. Each mutant was created by applying a syntactic change (i.e. mutation operator) to the original program.
+We used mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity} to generate a total of 1563 mutants. \textcolor{red}{More specifically, we employed the tool muJava \cite{ma2005mujava} to create many faults version (i.e., mutants).} Each mutant was created by applying a syntactic change (i.e. mutation operator) to the original program.
 We removed equivalent mutants, and mutants that were too easily detected
 ---
 deleting mutants that could be detected with less than 20 randomly generated test cases.
-\textcolor{red}{To guarantee the statistic reliability, we first obtained different test suites using 50 random seeds, and tested all mutants on all test suites, then calculated the average number of test cases needed to kill a mutant. Based on the average number, we deleted easily detected mutants.}Table~\ref{tab:objects} summarizes the basic information of the used web services and their mutants.
+\textcolor{red}{To guarantee the statistic reliability, we first obtained different test suites using 50 random seeds, and tested all mutants on all test suites, then calculated the average number of test cases needed to kill a mutant. Based on the average number, we deleted easily detected mutants.} Table~\ref{tab:objects} summarizes the basic information of the used web services \sout{and their mutants} \textcolor{red}{, mutants, and corresponding mutation operators of used mutants}.
 A detailed description of each web service is given in the following.
 
 \begin{table}
 \caption{Studied Web Services}
 \label{tab:objects}
 \centering
-\begin{tabular}{|c|c|c|} \hline
-  Web service           &LOC           &Number of mutants \\ \hline
-  ACMS    &116           &3   \\ \hline
-  CUBS       &131           &11   \\ \hline
-  PBS            &129           &4    \\ \hline
+\begin{tabular}{|c|c|c|c|} \hline
+  Web service           &LOC           &Number of mutants & Corresponding   \\
+                        &              &                  &  mutation oprators\\ \hline
+  ACMS                  &116           &3                 & ROR  \\ \hline
+  CUBS                  &131           &11                & AOIS, AOIU, LOI \\ \hline
+  PBS                   &129           &4                 & AIOS, COI  \\ \hline
 \end{tabular}
 
 \end{table}
@@ -735,8 +762,7 @@ No vehicles are allowed to remain parked for two consecutive days on a continuou
 \subsubsection{Independent Variables}
 \label{sec:independentvariables}
 
-The independent variable is the testing technique, DRT.
-RPT and RT were used as baseline techniques for comparison.
+The independent variable is the testing technique, \sout{DRT, RPT and RT} \textcolor{red}{RT, RPT, DRT, and AT \cite{cai2004optimal}} were used as baseline techniques for comparison.
 
 \subsubsection{Dependent Variables}
 \label{sec:dependentvariables}
@@ -794,14 +820,100 @@ A DT \emph{rule} is composed of a \emph{CE} and its corresponding \emph{AE}.
 With DT, it is possible to obtain partition schemes with different granularities.
 For fine-grain partition schemes, each \emph{CE} of a DT \emph{rule} corresponds to a partition;
 while for coarse-grained schemes, a partition corresponds to the union of a group of partitions of which all \emph{CE} of DT \emph{rules} have the same \emph{AE}.
-Accordingly, we obtained two partition schemes for each subject web service:
-ACMS had 24 and 7 partitions; CUBS, 20 and 3; and PBS, 18 and 3, respectively.
+\sout{Accordingly, we obtained two partition schemes for each subject web service:
+ACMS had 24 and 7 partitions; CUBS, 20 and 3; and PBS, 18 and 3, respectively.}
+\textcolor{red}{Accordingly, Tables \ref{tab:ds-acms} to \ref{tab:ds-pbs} show the decision tables for \texttt{ACMS}, \texttt{CUBS}, and \texttt{PBS}, respectively.}
+\begin{table*}
+  \caption{Decision Table of \texttt{ACMS}}
+  \label{tab:ds-acms}
+  \centering
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{ccccccccccccccccccccccccc}
+  \toprule
+      &\!$r_1$\! &\!$r_2$\! &\!$r_3$\! &\!$r_4$\! &\!$r_5$\! &\!$r_6$\! &\!$r_7$\! &\!$r_8$\! &\!$r_9$\! &\!$r_{10}$\! &\!$r_{11}$\! &\!$r_{12}$\! &\!$r_{13}$\! &\!$r_{14}$\! &\!$r_{15}$\! &\!$r_{16}$\! &\!$r_{17}$\! &\!$r_{18}$\! &\!$r_{19}$\! &\!$r_{20}$\! &\!$r_{21}$\! &\!$r_{22}$\! &\!$r_{23}$\! &\!$r_{24}$\! \\
+  \toprule
+  class &0 &1 &2 &0 &1 &2 &0 &1 &2 &0 &1 &2 &0 &1 &2 &0 &1 &2 &0 &1 &2 &0 &1 &2 \\
+  destination &0 &0 &0 &1 &1 &1 &0 &0 &0 &1 &1 &1 &0 &0 &0 &1 &1 &1 &0 &0 & 0 &1 &1 &1 \\
+  isStudent &N &N &N &N &N &N &Y &Y &Y &Y &Y &Y &N &N &N &N &N &N &Y &Y &Y &Y &Y &Y \\
+  isOverload &N &N &N &N &N &N &N &N &N &N &N &N &Y &Y &Y &Y &Y &Y &Y &Y &Y &Y &Y &Y \\
+  \midrule
+  0 &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark & & & & & & & & & & & & \\
+  $f_{acms}^1$ & & & & & & & & & & & & &\checkmark & & & & & &\checkmark & & & & & \\
+  $f_{acms}^2$ & & & & & & & & & & & & & &\checkmark & & & & & &\checkmark & & & & \\
+  $f_{acms}^3$ & & & & & & & & & & & & & & &\checkmark & & & & & &\checkmark & & & \\
+  $f_{acms}^4$ & & & & & & & & & & & & & & & &\checkmark & & & & & &\checkmark & & \\
+  $f_{acms}^5$ & & & & & & & & & & & & & & & & &\checkmark & & & & & &\checkmark &\checkmark \\
+  $f_{acms}^6$ & & & & & & & & & & & & & & & & & &\checkmark & & & & & & \\
+  \bottomrule
+  \end{tabular}}
+\end{table*}
+
+\begin{table*}
+  \caption{Decision Table of \texttt{CUBS}}
+  \label{tab:ds-cubs}
+  \centering
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{ccccccccccccccccccccc}
+  \toprule
+      &\!$r_1$\! &\!$r_2$\! &\!$r_3$\! &\!$r_4$\! &\!$r_5$\! &\!$r_6$\! &\!$r_7$\! &\!$r_8$\! &\!$r_9$\! &\!$r_{10}$\! &\!$r_{11}$\! &\!$r_{12}$\! &\!$r_{13}$\! &\!$r_{14}$\! &\!$r_{15}$\! &\!$r_{16}$\! &\!$r_{17}$\! &\!$r_{18}$\! &\!$r_{19}$\! &\!$r_{20}$\! \\
+  \toprule
+  plan &A &A &A &B &B &B &B &B &B &C &C &C &C &C &C &C &C &C &C &C \\
+  option &$op_A^1$ &$op_A^2$ &$op_A^3$ &$op_B^1$ &$op_B^2$ &$op_B^3$ &$op_B^4$ &$op_B^5$ &$op_B^6$ &$op_C^1$ &$op_C^2$ &$op_C^3$ &$op_C^4$ &$op_C^5$ &$op_C^6$ &$op_C^7$ &$op_C^8$ &$op_C^9$ &$op_C^10$ &$op_C^11$ \\
+  \midrule
+  $f_{cubs}^1$ &\checkmark &\checkmark &\checkmark & & & & & & & & & & & & & & & & & \\
+  $f_{cubs}^2$ & & & &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark & & & & & & & & & & & \\
+  $f_{cubs}^3$ & & & & & & & & & &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark \\
+  \bottomrule
+  \end{tabular}}
+\end{table*}
+
+\begin{table*}
+  \caption{Decision Table of \texttt{PBS}}
+  \label{tab:ds-pbs}
+  \centering
+  \resizebox{\textwidth}{!}{
+  \begin{tabular}{ccccccccccccccccccc}
+  \toprule
+      &\!$r_1$\! &\!$r_2$\! &\!$r_3$\! &\!$r_4$\! &\!$r_5$\! &\!$r_6$\! &\!$r_7$\! &\!$r_8$\! &\!$r_9$\! &\!$r_{10}$\! &\!$r_{11}$\! &\!$r_{12}$\! &\!$r_{13}$\! &\!$r_{14}$\! &\!$r_{15}$\! &\!$r_{16}$\! &\!$r_{17}$\! &\!$r_{18}$\!  \\
+  \toprule
+  vehicle        &0 &1 &2 &0 &1 &2 &0 &1 &2 &0 &1 &2 &0 &1 &2 &0 &1 &2 \\
+  time           &0 &0 &0 &1 &1 &1 &0 &0 &0 &1 &1 &1 &0 &0 &0 &1 &1 &1 \\
+  discount       &0 &0 &0 &0 &0 &0 &1 &1 &1 &1 &1 &1 &2 &2 &2 &2 &2 &2 \\
+  \midrule
+  $f_{pbs}^1$    &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark & & & & & & & & & & & & \\
+  $f_{pbs}^1$    & & & & & & &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark & & & & & & \\
+  $f_{pbs}^1$    & & & & & & & & & & & & &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark &\checkmark \\
+  \bottomrule
+  \end{tabular}}
+\end{table*}
+
+
 
 \subsubsection{Initial Test Profile}
 \label{sec:profile}
 
 Because test cases may be generated randomly during the test process, a feasible method is to use a uniform probability distribution as the initial testing profile.
-On the other hand, testers may also use past experience to guide a different probability distribution as the initial profile.
+On the other hand, testers may also use past experience to guide a different probability distribution as the initial profile. \textcolor{red}{In our experiment, we used the uniform probability distribution as the initial test profile, and the initial test
+profiles of each web services are summarized in Table \ref{tab:initialtf}, where $<s_i, p_i>$
+represents the probability of partition $s_i$ is $p_i$.}
+
+\begin{table*}
+  \caption{Initial Test Profile of Subject Web Services}
+  \label{tab:initialtf}
+  \centering
+  \begin{tabular}{|c|c|c|} \hline
+  Actual parking hours       &Hourly parking rates   & Initial test profile  \\ \hline
+  \multirow{2}{*}{\texttt{ACMS}}      &24                     &${<s_1, \frac{1}{24}>, <s_2, \frac{1}{24}>,\ldots, <s_{24}, \frac{1}{24}>}$  \\ \cline{2-3}
+                             &7                     &${<s_1, \frac{1}{7}>, <s_2, \frac{1}{7}>, \ldots,<s_7, \frac{1}{7}>}$  \\ \hline
+  \multirow{2}{*}{\texttt{CUBS}}      &20                     &${<s_1, \frac{1}{20}>, <s_2, \frac{1}{20}>,\ldots, <s_{20}, \frac{1}{20}>}$  \\ \cline{2-3}
+                             &3                     &${<s_1, \frac{1}{3}>, <s_2, \frac{1}{3}>, \ldots,<s_3, \frac{1}{3}>}$  \\ \hline
+  \multirow{2}{*}{\texttt{PBS}}       &18                     &${<s_1, \frac{1}{18}>, <s_2, \frac{1}{18}>,\ldots, <s_{18}, \frac{1}{18}>}$  \\ \cline{2-3}
+                             &3                     &${<s_1, \frac{1}{3}>, <s_2, \frac{1}{3}>, \ldots,<s_3, \frac{1}{3}>}$  \\ \hline
+
+
+  \end{tabular}
+\end{table*}
+
 
 \subsubsection{Constants}
 \label{sec:constant}
@@ -919,21 +1031,13 @@ In~\ref{sec:relation}, we analyzed the relationship between the number of partit
 In this section, we show that our theoretical analysis provides useful guidance to testers to set the value of $\varepsilon$.
 
 We used three web services to validate our theoretical analysis.
-Before starting the test, the failure rate $\theta_i$ of partition $s_i$ was obtained by executing ($k$) test cases from $s_i$ until revealing a fault, then $\theta_i = k / k_i$, where $k_i$ is the total number of test cases in $s_i$.
+\sout{Before starting the test, the failure rate $\theta_i$ of partition $s_i$ was obtained by executing ($k$) test cases from $s_i$ until revealing a fault, then $\theta_i = k / k_i$, where $k_i$ is the total number of test cases in $s_i$.}
+\textcolor{red}{Before starting the test, the failure rate $\theta_i$ of partition $s_i$ is needed. From Table \ref{tab:aviation} to \ref{tab:hourlyRate}, we observe that the values of some parameters (such as the weight of baggage, the minutes of calls, and parking hours) are countable infinite, meaning that result in infinite test cases in a partition. In this situation, we employ $1 / k_i$ ($k_i$ is the total number of test cases performed to reveal a fault) to get the approximate failure rate $\theta_i$ of $s_i$.}
 According to Formula 19, the theoretically optimal values of~$\varepsilon$ in each scenario for each web service are shown in Table~\ref{tab:parameters}, where $\varepsilon^{*}$ denotes the theoretical value of $\varepsilon$.
-We ran a series of experiments with the parameters set according to those in Table~\ref{tab:parameters}\sout{:
-The F-, F2-, and T-measure results for each  program are shown in Figure~\ref{fig:theovsnontheo},}.
-\textcolor{red}{Figure \ref{fig:theovsnontheo} shows, for each scenario, how many times DRT with theoretical parameter required less than test cases than DRT with normal parameters described in Section \ref{sec:constant} -- i.e., DRT with theoretical parameter ``wins'' the comparison; how many times DRT normal parameters required less test cases (normal values win). Apart from the DRT strategy parameter $\varepsilon$, all other experimental settings remained the same as in Section~\ref{sec:RQ1}.}
-%
-%\textcolor{red}{where we used $log_{100}(1.0E05 \times \varepsilon)$ for the horizontal axis to ease of presentation and understanding. The additional elements $\varepsilon_1^{*}$ and $\varepsilon_2^{*}$ denote the values of $log_{100}(1.0E05 \times \varepsilon^{*})$ in different partition scheme for each studied web service. Apart from the DRT strategy parameter $\varepsilon$, all other experimental settings remained the same as in Section~\ref{sec:RQ1}.}
-\begin{figure}[h]
-	\centering
-    \includegraphics[width=0.5\textwidth]{fig/drtparemeter/theVSnor.pdf}
-	\caption{Test Selection: number of wins of DRT with theoretical parameters and DRT with normal parameters}
-	\label{fig:theovsnontheo}
-\end{figure}
-
-%$\varepsilon_1^{*}$ and $\varepsilon_2^{*}$ denote the theoretical values of parameter $\varepsilon$ in the two different partition schemes, respectively.For ease of presentation and understanding, we used $log_{100}(1.0E05 \times \varepsilon)$ for the horizontal axis in Figure \ref{fig:theovsnontheo}. Apart from the DRT strategy parameter $\varepsilon$, all other experimental settings remained the same as in Section~\ref{sec:RQ1}}.
+We ran a series of experiments with the parameters set according to those in Table~\ref{tab:parameters}:
+The F-, F2-, and T-measure results for each  program are shown in Figure~\ref{fig:theovsnontheo}, where $\varepsilon_1^{*}$ and $\varepsilon_2^{*}$ denote the theoretical values of parameter $\varepsilon$ in the two different partition schemes, respectively.
+For ease of presentation and understanding, we used $log_{100}(1.0E05 \times \varepsilon)$ for the horizontal axis in Figure \ref{fig:theovsnontheo}.
+Apart from the DRT strategy parameter $\varepsilon$, all other experimental settings remained the same as in Section~\ref{sec:RQ1}.
 
 \begin{table}
   \caption{Theoretical Optimal Values of DRT Parameter}
@@ -951,6 +1055,21 @@ The F-, F2-, and T-measure results for each  program are shown in Figure~\ref{fi
   \end{tabular}
 \end{table}
 
+\begin{figure*}
+	\centering
+    \subfigure[ACMS] {\includegraphics[width=0.32\textwidth,height=5cm]{fig/drtparemeter/avia.pdf}}
+	\subfigure[CUBS] {\includegraphics[width=0.32\textwidth,height=5cm]{fig/drtparemeter/china.pdf}}
+	\subfigure[PBS] {\includegraphics[width=0.32\textwidth,height=5cm]{fig/drtparemeter/parking.pdf}}
+	\caption{Line charts of F-measure, F2-measure, and T-measure values for each program (for both the theoretically optimum parameter value, and other values}
+	\label{fig:theovsnontheo}
+\end{figure*}
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[width=0.5\textwidth]{fig/drtparemeter/theVSnor.pdf}
+	\caption{Test Selection: number of wins of DRT with theoretical parameters and DRT with normal parameters}
+	\label{fig:theovsnontheo}
+\end{figure}
 From Figure~\ref{fig:theovsnontheo}, we have the following observations:
 \begin{itemize}
   \item
@@ -1098,6 +1217,23 @@ In other words, the additional computation incurred in DRT by updating the test 
 It can also be observed from Table~\ref{tableHlom:f/f2/t-time} that DRT only slightly outperformed RPT, but that DRT was significantly better than RT, especially in term of $T$-$time$.
 
 In summary, the DRT strategy is considered the best testing technique across all six metrics, and RPT marginally outperformed RT.
+
+\subsection{Results and Limitations}
+\label{sec:resultsandlimitations}
+Through the evaluation, we have the following results:
+
+\begin{itemize}
+  \item
+  DRT demonstrates the best performance for all the three studied web services with the six metrics.  
+
+  \item
+  From Figure \ref{fig:theovsnontheo} (a), it can be observed that the DRT strategy with larger parameter values performs better than with the theoretically optimum value, in terms of the F-measure.
+  The main reason for this is that, for this scenario, the maximum failure rate ($\theta_M = 4.781E-3$) is large and the number of partitions is small:
+  When the parameter value is large, the probability of selecting partitions with lower failure rates is quickly reduced, and the probability of selecting partitions with larger failure rates is quickly increased, according to Formulas 3 and 4.
+
+\end{itemize}
+
+
 
 \section{Related Work}
 \label{sec:relatedwork}

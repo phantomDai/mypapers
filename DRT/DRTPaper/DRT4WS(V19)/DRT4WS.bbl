@@ -184,6 +184,11 @@ Y.-S. Ma, J.~Offutt, and Y.~R. Kwon, ``Mujava: An automated class mutation
   system,'' \emph{Software Testing, Verification and Reliability}, vol.~15,
   no.~2, pp. 97--133, 2005.
 
+\bibitem{cai2004optimal}
+K.-Y. Cai, Y.-C. Li, and K.~Liu, ``Optimal and adaptive testing for software
+  reliability assessment,'' \emph{Information and Software Technology},
+  vol.~46, no.~15, pp. 989--1000, 2004.
+
 \bibitem{duran1984evaluation}
 J.~W. Duran and S.~C. Ntafos, ``An evaluation of random testing,'' \emph{IEEE
   transactions on Software Engineering}, no.~4, pp. 438--444, 1984.
