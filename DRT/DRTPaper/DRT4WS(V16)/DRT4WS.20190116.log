@@ -1,15 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.1.16)  16 JAN 2019 21:23
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  15 JUL 2019 09:39
 entering extended mode
-**C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15
-)/DRT4WS.20190116.tex
-
-(C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)
-/DRT4WS.20190116.tex
+**F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/DRT4WS.20190116.tex
+(F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/DRT4WS.20190116.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-
-(C:\Users\Administrator\Desktop\MyPapers\mypapers\DRTpaper\DRTPaper\DRT4WS(V15)
-\IEEEtran.cls
+(F:\mypapers\DRT\DRTPaper\DRT4WS(V16)\IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -22,7 +17,7 @@ Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 503.
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\ot1ppl.fd"
+(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 -- Using IEEE Computer Society mode.
@@ -119,33 +114,33 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24.09> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-) ("F:\Program Files\CTEX\MiKTeX\tex\latex\tools\enumerate.sty"
+) (G:\latex\CTEX\MiKTeX\tex\latex\tools\enumerate.sty
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks15
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\cite\cite.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
-("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen126
 ))
-("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen127
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count94
@@ -186,11 +181,11 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\float\float.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count106
 \float@exts=\toks21
@@ -198,16 +193,16 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks22
 \@floatcapt=\box31
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\base\ifthen.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\base\ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks23
 \c@algorithm=\count107
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\algorithms\algorithmic.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\algorithms\algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\keyval.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks24
 )
@@ -218,27 +213,27 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \ALC@tlm=\skip47
 \algorithmicindent=\skip48
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\graphics.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\trig.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg"
+(G:\latex\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def"
+(G:\latex\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("F:\Program Files\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty"
+(G:\latex\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-("F:\Program Files\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty"
+(G:\latex\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count112
@@ -246,10 +241,10 @@ Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen135
 \Gin@req@width=\dimen136
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\multirow\multirow.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
 \bigstrutjot=\dimen137
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip49
 \subfigcapskip=\skip50
@@ -265,21 +260,21 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-("F:\Program Files\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg")
+(G:\latex\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg)
 \subfig@top=\skip53
 \subfig@bottom=\skip54
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-("F:\Program Files\CTEX\MiKTeX\tex\latex\ulem\ulem.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\ulem\ulem.sty
 \UL@box=\box32
 \UL@hyphenbox=\box33
 \UL@skip=\skip55
@@ -291,16 +286,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: ulem 2011/03/18
 \ULdepth=\dimen142
 )
-("F:\Program Files\CTEX\MiKTeX\tex\latex\graphics\color.sty"
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\00miktex\color.cfg"
+(G:\latex\CTEX\MiKTeX\tex\latex\00miktex\color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-(C:\Users\Administrator\Desktop\MyPapers\mypapers\DRTpaper\DRTPaper\DRT4WS(V15)
-\DRT4WS.20190116.aux)
+(F:\mypapers\DRT\DRTPaper\DRT4WS(V16)\DRT4WS.20190116.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
@@ -315,7 +309,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
 LaTeX Font Info:    ... okay on input line 17.
 
 -- Lines per column: 61 (exact).
-("F:\Program Files\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii"
+(G:\latex\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count118
 \scratchdimen=\dimen143
@@ -330,7 +324,7 @@ LaTeX Font Info:    ... okay on input line 17.
 \everyMPtoPDFconversion=\toks27
 )
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 49.
- ("F:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\ot1phv.fd"
+ (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <11.04124> not available
@@ -341,17 +335,17 @@ LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 49
 .
 LaTeX Font Info:    Try loading font information for U+msa on input line 49.
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd"
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 49.
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd"
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+pzd on input line 49.
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\upzd.fd"
+(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 Underfull \hbox (badness 5862) in paragraph at lines 49--49
@@ -370,8 +364,7 @@ LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
 LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
 
 (Font)              Font shape `OT1/phv/b/sc' tried instead on input line 57.
-[1{F:/Program Files/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sf
-d}}
+[1{G:/latex/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
 
 ]
@@ -379,7 +372,8 @@ LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 110
 .
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 131.
- [2]
+
+[2]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 281.
@@ -394,8 +388,7 @@ Overfull \hbox (6.0225pt too wide) in paragraph at lines 283--284
  [][] 
  []
 
-[3 <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V
-15)/fig//framework.pdf>]
+[3 <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig//framework.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 357--365
 []\OT1/ppl/m/n/9.53561 Initially, the test-ing pro-file is
  []
@@ -437,7 +430,7 @@ Overfull \hbox (6.0225pt too wide) in paragraph at lines 597--598
 
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 631.
 
-("F:\Program Files\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd"
+(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Underfull \hbox (badness 10000) in paragraph at lines 630--640
@@ -460,8 +453,7 @@ m/n/9.53561 Parking billing
 LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 645.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 654.
-[6 <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V
-15)/fig//prototype.png>]
+[6 <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig//prototype.png>]
 LaTeX Font Info:    Calculating math sizes for size <9.03374> on input line 739
 .
  [7]
@@ -635,47 +627,36 @@ File: fig/drttime/parkingtimet.pdf Graphic file (type pdf)
 <use fig/drttime/parkingtimet.pdf>
 Package pdftex.def Info: fig/drttime/parkingtimet.pdf used on input line 1206.
 (pdftex.def)             Requested size: 165.7389pt x 113.81114pt.
- [9] [10 <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DR
-T4WS(V15)/fig/drtresultbox/aviaresultf.pdf> <C:/Users/Administrator/Desktop/MyP
-apers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/drtresultbox/chinaresultf.pdf>
- <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15
-)/fig/drtresultbox/parkingresultf.pdf> <C:/Users/Administrator/Desktop/MyPapers
-/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/drtresultbox/aviaresultf2.pdf> <C:/
-Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig
-/drtresultbox/chinaresultf2.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypap
-ers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/drtresultbox/parkingresultf2.pdf> <C:/Use
-rs/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/dr
-tresultbox/aviaresultt.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypapers/D
-RTpaper/DRTPaper/DRT4WS(V15)/fig/drtresultbox/chinaresultt.pdf> <C:/Users/Admin
-istrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/drtresultb
-ox/parkingresultt.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpap
-er/DRTPaper/DRT4WS(V15)/fig/drtparemeter/avia.pdf> <C:/Users/Administrator/Desk
-top/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/drtparemeter/china.pdf>
- <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15
-)/fig/drtparemeter/parking.pdf>] [11 <C:/Users/Administrator/Desktop/MyPapers/m
-ypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/drttime/aviatimef.pdf> <C:/Users/Admi
-nistrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/drttime/c
-hinatimef.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPa
-per/DRT4WS(V15)/fig/drttime/parkingtimef.pdf> <C:/Users/Administrator/Desktop/M
-yPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/drttime/aviatimef2.pdf> <C:/
-Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig
-/drttime/chinatimef2.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRT
-paper/DRTPaper/DRT4WS(V15)/fig/drttime/parkingtimef2.pdf> <C:/Users/Administrat
-or/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/drttime/aviatime
-t.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4
-WS(V15)/fig/drttime/chinatimet.pdf> <C:/Users/Administrator/Desktop/MyPapers/my
-papers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/drttime/parkingtimet.pdf>] [12]
-(C:\Users\Administrator\Desktop\MyPapers\mypapers\DRTpaper\DRTPaper\DRT4WS(V15)
-\DRT4WS.20190116.bbl
+ [9] [10 <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/drtresultbox/aviaresultf.pdf
+> <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/drtresultbox/chinaresultf.pdf> <F:/
+mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/drtresultbox/parkingresultf.pdf> <F:/mypa
+pers/DRT/DRTPaper/DRT4WS(V16)/fig/drtresultbox/aviaresultf2.pdf> <F:/mypapers/D
+RT/DRTPaper/DRT4WS(V16)/fig/drtresultbox/chinaresultf2.pdf> <F:/mypapers/DRT/DR
+TPaper/DRT4WS(V16)/fig/drtresultbox/parkingresultf2.pdf> <F:/mypapers/DRT/DRTPa
+per/DRT4WS(V16)/fig/drtresultbox/aviaresultt.pdf> <F:/mypapers/DRT/DRTPaper/DRT
+4WS(V16)/fig/drtresultbox/chinaresultt.pdf> <F:/mypapers/DRT/DRTPaper/DRT4WS(V1
+6)/fig/drtresultbox/parkingresultt.pdf> <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/f
+ig/drtparemeter/avia.pdf> <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/drtparemete
+r/china.pdf> <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/drtparemeter/parking.pdf
+>] [11 <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/drttime/aviatimef.pdf> <F:/myp
+apers/DRT/DRTPaper/DRT4WS(V16)/fig/drttime/chinatimef.pdf> <F:/mypapers/DRT/DRT
+Paper/DRT4WS(V16)/fig/drttime/parkingtimef.pdf> <F:/mypapers/DRT/DRTPaper/DRT4W
+S(V16)/fig/drttime/aviatimef2.pdf> <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/dr
+ttime/chinatimef2.pdf> <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/drttime/parkin
+gtimef2.pdf> <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/drttime/aviatimet.pdf> <
+F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/drttime/chinatimet.pdf> <F:/mypapers/D
+RT/DRTPaper/DRT4WS(V16)/fig/drttime/parkingtimet.pdf>] [12] (F:\mypapers\DRT\DR
+TPaper\DRT4WS(V16)\DRT4WS.20190116.bbl
 Missing character: There is no ¡ in font pplr7t!
- [13]
+
+[13]
 Missing character: There is no ¡ in font pplri7t!
 Missing character: There is no ¯ in font pplri7t!
 )
 
-pdfTeX warning: pdflatex.exe (file C:/Users/Administrator/Desktop/MyPapers/mypa
-pers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/authors/CASun.pdf): PDF inclusion: found
- PDF version <1.6>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/aut
+hors/CASun.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1
+.5> allowed
 <fig/authors/CASun.pdf, id=435, 74.43811pt x 99.4917pt>
 File: fig/authors/CASun.pdf Graphic file (type pdf)
 
@@ -721,9 +702,9 @@ Package pdftex.def Info: fig/authors/DaveTowey.png used on input line 1366.
 (pdftex.def)             Requested size: 72.2694pt x 86.17691pt.
 
 
-pdfTeX warning: pdflatex.exe (file C:/Users/Administrator/Desktop/MyPapers/mypa
-pers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/authors/TYChen.pdf): PDF inclusion: foun
-d PDF version <1.6>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/aut
+hors/TYChen.pdf): PDF inclusion: found PDF version <1.6>, but at most version <
+1.5> allowed
 <fig/authors/TYChen.pdf, id=447, 310.15875pt x 371.3875pt>
 File: fig/authors/TYChen.pdf Graphic file (type pdf)
 
@@ -736,9 +717,9 @@ Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 1369.
 (pdftex.def)             Requested size: 72.26733pt x 86.5337pt.
 
 
-pdfTeX warning: pdflatex.exe (file C:/Users/Administrator/Desktop/MyPapers/mypa
-pers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/authors/KYCai.pdf): PDF inclusion: found
- PDF version <1.6>, but at most version <1.5> allowed
+pdfTeX warning: pdflatex.exe (file F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/aut
+hors/KYCai.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1
+.5> allowed
 <fig/authors/KYCai.pdf, id=450, 72.27pt x 101.17801pt>
 File: fig/authors/KYCai.pdf Graphic file (type pdf)
 
@@ -749,50 +730,44 @@ File: fig/authors/KYCai.pdf Graphic file (type pdf)
  <use fig/authors/KYCai.pdf>
 Package pdftex.def Info: fig/authors/KYCai.pdf used on input line 1372.
 (pdftex.def)             Requested size: 64.5296pt x 90.34146pt.
- [14 <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS
-(V15)/fig/authors/CASun.pdf> <C:/Users/Administrator/Desktop/MyPapers/mypapers/
-DRTpaper/DRTPaper/DRT4WS(V15)/fig/authors/HPDai.jpg> <C:/Users/Administrator/De
-sktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/authors/GWang.jpg> <C
-:/Users/Administrator/Desktop/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/f
-ig/authors/DaveTowey.png> <C:/Users/Administrator/Desktop/MyPapers/mypapers/DRT
-paper/DRTPaper/DRT4WS(V15)/fig/authors/TYChen.pdf> <C:/Users/Administrator/Desk
-top/MyPapers/mypapers/DRTpaper/DRTPaper/DRT4WS(V15)/fig/authors/KYCai.pdf>]
-(C:\Users\Administrator\Desktop\MyPapers\mypapers\DRTpaper\DRTPaper\DRT4WS(V15)
-\DRT4WS.20190116.aux) ) 
+ [14 <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/authors/CASun.pdf> <F:/mypapers/
+DRT/DRTPaper/DRT4WS(V16)/fig/authors/HPDai.jpg> <F:/mypapers/DRT/DRTPaper/DRT4W
+S(V16)/fig/authors/GWang.jpg> <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/authors
+/DaveTowey.png> <F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/authors/TYChen.pdf> <
+F:/mypapers/DRT/DRTPaper/DRT4WS(V16)/fig/authors/KYCai.pdf>]
+(F:\mypapers\DRT\DRTPaper\DRT4WS(V16)\DRT4WS.20190116.aux) ) 
 Here is how much of TeX's memory you used:
  4008 strings out of 495354
- 60311 string characters out of 3183075
+ 59193 string characters out of 3183523
  161881 words of memory out of 3000000
  7059 multiletter control sequences out of 15000+200000
  60074 words of font info for 144 fonts, out of 3000000 for 9000
  17 hyphenation exceptions out of 8191
- 29i,15n,34p,1278b,482s stack positions out of 5000i,500n,10000p,200000b,50000s
-{F:/Program Files/CTEX/MiKTeX/fonts/enc/dvips/fontname/8
-r.enc}<F:/Program Files/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><
-F:/Program Files/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><F:/Prog
-ram Files/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><F:/Program File
-s/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><F:/Program Files/CTEX/M
-iKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><F:/Program Files/CTEX/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmmi8.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type
-1/public/amsfonts/cm/cmmi9.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmr10.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/public/amsfont
-s/cm/cmr6.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7
-.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><F:/
-Program Files/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><F:/Program F
-iles/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><F:/Program Files/CT
-EX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><F:/Program Files/CTEX/MiKTe
-X/fonts/type1/public/amsfonts/cm/cmsy6.pfb><F:/Program Files/CTEX/MiKTeX/fonts/
-type1/public/amsfonts/cm/cmsy7.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/pu
-blic/amsfonts/cm/cmsy8.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/public/ams
-fonts/symbols/msam10.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/urw/courier/
-ucrr8a.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvb8a.pfb><F
-:/Program Files/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><F:/Program Fil
-es/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><F:/Program Files/CTEX/MiKT
-eX/fonts/type1/urw/palatino/uplb8a.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type
-1/urw/palatino/uplbi8a.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/urw/palati
-no/uplr8a.pfb><F:/Program Files/CTEX/MiKTeX/fonts/type1/urw/palatino/uplri8a.pf
-b><F:/Program Files/CTEX/MiKTeX/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on DRT4WS.20190116.pdf (14 pages, 2235799 bytes).
+ 29i,15n,34p,1236b,482s stack positions out of 5000i,500n,10000p,200000b,50000s
+{G:/latex/CTEX/MiKT
+eX/fonts/enc/dvips/fontname/8r.enc}<G:/latex/CTEX/MiKTeX/fonts/type1/public/ams
+fonts/cm/cmex10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10
+.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><G:/latex/C
+TEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><G:/latex/CTEX/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmmi7.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/am
+sfonts/cm/cmmi8.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi9.
+pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><G:/latex/CT
+EX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><G:/latex/CTEX/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmr7.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfo
+nts/cm/cmr8.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><
+G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><G:/latex/CTEX/M
+iKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><G:/latex/CTEX/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmsy6.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfont
+s/cm/cmsy7.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><
+G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb><G:/latex/C
+TEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1
+/urw/helvetic/uhvb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.
+pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><G:/latex/CTEX/M
+iKTeX/fonts/type1/urw/palatino/uplb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw
+/palatino/uplbi8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb
+><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><G:/latex/CTEX/MiKT
+eX/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on DRT4WS.20190116.pdf (14 pages, 2234749 bytes).
 PDF statistics:
  562 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

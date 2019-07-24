@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  6 JUL 2019 15:06
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  24 JUL 2019 20:05
 entering extended mode
 **F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/DRT4WS.20190117.tex
 (F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/DRT4WS.20190117.tex
@@ -393,7 +393,7 @@ LaTeX Warning: No positions in optional float specifier.
 
 
 
-pdfTeX warning: pdflatex.exe (file F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig//fr
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig//fr
 amework.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5>
  allowed
 <fig//framework.pdf, id=22, 381.92688pt x 216.81pt>
@@ -644,7 +644,7 @@ Missing character: There is no ¡ in font pplri7t!
 Missing character: There is no ¯ in font pplri7t!
 )
 
-pdfTeX warning: pdflatex.exe (file F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig/aut
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig/aut
 hors/CASun.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1
 .5> allowed
 <fig/authors/CASun.pdf, id=312, 74.43811pt x 99.4917pt>
@@ -694,7 +694,7 @@ Package pdftex.def Info: fig/authors/DaveTowey.png used on input line 987.
 (pdftex.def)             Requested size: 72.2694pt x 86.17691pt.
 
 
-pdfTeX warning: pdflatex.exe (file F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig/aut
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig/aut
 hors/TYChen.pdf): PDF inclusion: found PDF version <1.6>, but at most version <
 1.5> allowed
 <fig/authors/TYChen.pdf, id=336, 310.15875pt x 371.3875pt>
@@ -709,7 +709,7 @@ Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 990.
 (pdftex.def)             Requested size: 72.26733pt x 86.5337pt.
 
 
-pdfTeX warning: pdflatex.exe (file F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig/aut
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/DRT/DRTPaper/DRT4WS(V18)/fig/aut
 hors/KYCai.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1
 .5> allowed
 <fig/authors/KYCai.pdf, id=339, 72.27pt x 101.17801pt>

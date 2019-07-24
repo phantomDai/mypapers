@@ -94,6 +94,11 @@ G.~B. Finelli, ``{NASA} software failure characterization experiments,''
   \emph{Reliability Engineering and System Safety}, vol.~32, no.~1, pp.
   155--169, 1991.
 
+\bibitem{cai2004optimal}
+K.-Y. Cai, Y.-C. Li, and K.~Liu, ``Optimal and adaptive testing for software
+  reliability assessment,'' \emph{Information and Software Technology},
+  vol.~46, no.~15, pp. 989--1000, 2004.
+
 \bibitem{li2014two}
 Y.-F. Li, P.~K. Das, and D.~L. Dowe, ``Two decades of web application
   testing¡ªa survey of recent advances,'' \emph{Information Systems}, vol.~43,
@@ -162,6 +167,16 @@ Y.~Li, B.~B. Yin, J.~Lv, and K.-Y. Cai, ``Approach for test profile
   IEEE Annual International Computer Software and Applications Conference
   (COMPSAC'15)}, 2015, pp. 466--471.
 
+\bibitem{sun2016mt4ws}
+C.-a. Sun, G.~Wang, Q.~Wen, D.~Towey, and T.~Y. Chen, ``Mt4ws: An automated
+  metamorphic testing system for web services.'' \emph{IJHPCN}, vol.~9, no.
+  1/2, pp. 104--115, 2016.
+
+\bibitem{ma2005mujava}
+Y.-S. Ma, J.~Offutt, and Y.~R. Kwon, ``Mujava: An automated class mutation
+  system,'' \emph{Software Testing, Verification and Reliability}, vol.~15,
+  no.~2, pp. 97--133, 2005.
+
 \bibitem{demillo1978hints}
 R.~A. DeMillo, R.~J. Lipton, and F.~G. Sayward, ``Hints on test data selection:
   help for the practicing programmer,'' \emph{Computer}, vol.~11, no.~4, pp.
@@ -178,16 +193,6 @@ J.~Chen, F.-C. Kuo, T.~Y. Chen, D.~Towey, C.~Su, and R.~Huang, ``A similarity
   metric for the inputs of oo programs and its application in adaptive random
   testing,'' \emph{IEEE Transactions on Reliability}, vol.~66, no.~2, pp.
   373--402, 2017.
-
-\bibitem{ma2005mujava}
-Y.-S. Ma, J.~Offutt, and Y.~R. Kwon, ``Mujava: An automated class mutation
-  system,'' \emph{Software Testing, Verification and Reliability}, vol.~15,
-  no.~2, pp. 97--133, 2005.
-
-\bibitem{cai2004optimal}
-K.-Y. Cai, Y.-C. Li, and K.~Liu, ``Optimal and adaptive testing for software
-  reliability assessment,'' \emph{Information and Software Technology},
-  vol.~46, no.~15, pp. 989--1000, 2004.
 
 \bibitem{duran1984evaluation}
 J.~W. Duran and S.~C. Ntafos, ``An evaluation of random testing,'' \emph{IEEE
