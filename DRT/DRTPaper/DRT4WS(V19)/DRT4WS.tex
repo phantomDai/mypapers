@@ -121,7 +121,7 @@ Section~\ref{sec:relatedwork} discusses related work and Section~\ref{sec:conclu
 \section{Background}
 \label{sec:background}
 
-In this section, we present some of the underlying concepts for DRT, web services, and mutation analysis.
+In this section, we present some of the underlying concepts for DRT, and web services.
 
 \subsection{Dynamic Random Testing (DRT)}
 \label{sec:DRTStrategy}
@@ -169,10 +169,10 @@ p_j + \displaystyle\frac{p'_i}{m-1} & \text{if } p_i < \varepsilon
 
 Algorithm \ref{alg:DRT} describes DRT.
 In DRT, the first test case is taken from a partition that has been randomly selected according to the initial probability profile $\{p_1, p_2, \ldots, p_m\}$ (Lines 2 and 3 in Algorithm~\ref{alg:DRT}).
-After each test case execution, the testing profile $\{ \left \langle s_1,p_1 \right \rangle, \left \langle s_2,p_2 \right \rangle, \ldots, \left \langle s_m,p_m \right \rangle\}$ is updated by changing the values of $p_i$:
+After each test case execution, the test profile $\{ \left \langle s_1,p_1 \right \rangle, \left \langle s_2,p_2 \right \rangle, \ldots, \left \langle s_m,p_m \right \rangle\}$ is updated by changing the values of $p_i$:
 If a fault is revealed, Formulas~\ref{eq:DRThitJ} and~\ref{eq:DRThitI} are used;
 otherwise, Formulas~\ref{eq:DRTmissI} and~\ref{eq:DRTmissJ} are used.
-The updated testing profile is then used to guide the random selection of the next test case (Line 8).
+The updated test profile is then used to guide the random selection of the next test case (Line 8).
 This process is repeated until a termination condition is satisfied (Line 1).
 Examples of possible termination conditions include:
  ``testing resources have been exhausted'';
@@ -204,7 +204,7 @@ Examples of possible termination conditions include:
     \end{algorithmic}
 \end{algorithm}
 
-As can be seen from Formulas~\ref{eq:DRThitJ} to~\ref{eq:DRTmissJ},  updating the testing profile involves $m$ simple calculations, thus requiring a constant time.
+As can be seen from Formulas~\ref{eq:DRThitJ} to~\ref{eq:DRTmissJ},  updating the test profile involves $m$ simple calculations, thus requiring a constant time.
 Furthermore, the selection of partition $s_i$, and subsequent selection and execution of the test case, all involve a constant time.
 The execution time for one iteration of DRT is thus a constant, and therefore the overall time complexity for DRT to select $n$ test cases is $O(m \cdot n)$.
 
@@ -247,9 +247,9 @@ In this section, we describe a framework for applying DRT to web services, discu
 \label{sec:framework}
 
 Considering the principle of DRT and the features of web services, we propose a DRT for web services framework, as illustrated in Figure~\ref{fig:frame}.
-In the figure, the DRT components are inside the box, and the web services under test are located outside.
-Interactions between DRT components and the web services are depicted in the framework.
-We next discuss the individual framework components.
+\textcolor{red}{In the figure, the DRT components are inside the box, the web services under test and testers are located outside.
+Interactions between DRT components, the web services and testers are depicted in the framework.
+We next discuss the individual framework components.}
 
 \begin{figure}[]
   \centering
@@ -267,7 +267,7 @@ We next discuss the individual framework components.
 
   \item
   \emph{Partition Construction}.
-  Partition testing (PT) refers to a class of testing techniques that break the input domain into a number of partitions~\cite{weyuker1991analyzing}.
+  Partition testing (PT) refers to a class of testing techniques that classify the input domain into a number of partitions~\cite{weyuker1991analyzing}.
   Because DRT is a black-box testing technique, combining RT and PT, the PT approaches used are at the specification level.
   Various approaches and principles for achieving convenient and effective partitions have been discussed in the literature~\cite{weyuker1991analyzing, cai2005partition, chen1994relationship, chen1996expected}.
   The input domain of the web service under test (WSUT) can be partitioned based on the WSUT specifications and the parsed parameters.
@@ -300,7 +300,7 @@ We next discuss the individual framework components.
 Generally speaking, DRT test case generation is influenced by both the probability distribution (for selection of the relevant partition), and the principles of RT
 ---
 combining the effectiveness of PT with the ease of RT.
-\textcolor{red}{Because our technique is based on PT, it is necessary that the partition details are provided (by the tester), which can easily be done through analysis of the input parameters and their constraints, as described in the specification of the web service under test. Once the partition details are available, then it is not difficult to set an initial test profile. The tester can, for example, simply use a uniform probability distribution ($p_1 = p_2 = \ldots = p_m = 1 / m$, where $m$ denotes the number of partitions, and $p_i $ $(i = 1,2,\ldots,m)$ denotes the probability of selecting the $i^{th}$ partition). In Section \ref{sec:relation}, we provide some guidance for how to set the DRT parameters.}
+\textcolor{red}{Because our technique is based on PT, it is necessary that the partition details are provided (by the tester), which can easily be done through analysis of the input parameters and their constraints, as described in the specification of the web service under test. Once the partition details are available, then it is not difficult to set an initial test profile. The tester can, for example, simply use a uniform probability distribution ($p_1 = p_2 = \ldots = p_m = 1 / m$, where $m$ denotes the number of partitions, and $p_i $ $(i = 1,2,\ldots,m)$ denotes the probability of selecting the $i^{th}$ partition). In Section \ref{sec:relation}, we provide some Guidelines for how to set the DRT parameters.}
 Furthermore, many of the components in the DRT for web services framework can be automated.
 To enhance the efficiency and practical applicability of DRT for web services, we also developed a prototype that will be described in Section~\ref{sec:prototype}.
 
@@ -322,7 +322,7 @@ We next explore these impacts through a theoretical analysis, which, to be mathe
 \end{enumerate}
 
 A principle of the DRT strategy is to increase the selection probabilities (by amount $\varepsilon$) of partitions with larger failure rates.
-In addition to the impact of the parameter $\varepsilon$, the number of partitions also influences the speed of updating the testing profile (Formulas \ref{eq:DRThitJ} to \ref{eq:DRTmissJ}).
+In addition to the impact of the parameter $\varepsilon$, the number of partitions also influences the speed of updating the test profile (Formulas \ref{eq:DRThitJ} to \ref{eq:DRTmissJ}).
 Therefore, for a given number of partitions, we are interested in investigating what values of $\varepsilon$ yield the best DRT performance.
 
 Letting $\theta_M$ denote the maximum failure rate, and $s_M$ denote partitions with that failure rate, then $p_i^n$ denotes the probability of executing the $n^{th}$ test case from partition $s_i$.
@@ -334,7 +334,7 @@ As testing proceeds, the probability $p_M$ of partition $s_M$ being selected is 
 
 \textcolor{red}{In order to achieve the best performance, the probability of selecting the partition $s_M$ (which has the maximum failure rate) is expected to increase. To achieve this, the increase in probability of $s_M$ being selected for the next round should be larger than that for other partitions. We further analysis sufficient conditions of the above goal, and can accordingly derive an interval for $\varepsilon$.}
 
-Initially, the testing profile is
+Initially, the test profile is
 $\{ \left \langle s_1,p_1^0 \right \rangle, \left \langle s_2,p_2^0 \right \rangle, \ldots, \left \langle s_m,p_m^0 \right \rangle\}$,
 which, after $n$ test cases have been executed,  is then updated to
 $\{ \left \langle s_1,p_1^n \right \rangle, \left \langle s_2,p_2^n \right \rangle, \ldots, \left \langle s_m,p_m^n \right \rangle\}$.
@@ -397,7 +397,7 @@ Before presenting the final guidelines, we need the following lemma.
   If $p_i^{n} - p_M^{n} > 2(p_i^{n}\theta_i - p_M^{n}\theta_M)$, then $p_M^{n + 1} > p_M^{n}$.
 \end{lem}
 \begin{IEEEproof}
-See Appendix.
+\textcolor{red}{See Appendix A.}
 \end{IEEEproof}
 
 Accordingly, we can now present the following theorem that states a sufficient condition for achieving $p_M^{n + 1} > p_M^{n}$.
@@ -411,7 +411,7 @@ Accordingly, we can now present the following theorem that states a sufficient c
 \end{equation}
 \end{theo}
 \begin{IEEEproof}
-See Appendix.
+\textcolor{red}{See Appendix A.}
 \end{IEEEproof}
 
 In summary, when $\frac{1}{2} < \theta_M < 1$, there is always an interval $\mathcal{I}$:
@@ -420,7 +420,7 @@ In summary, when $\frac{1}{2} < \theta_M < 1$, there is always an interval $\mat
 \end{equation}
 where $\theta_{min} \le \theta_i, i \in \{1, 2, \ldots, m\}$, and $\theta_i \ne 0$, which can guarantee $p_M^{n+1} > p_M^n$.
 
-From the proof above, it is clear that the value of $\theta_M$ affects the upper bound ($\mathcal{I}_{upper}$) of $\mathcal{I}$.
+From the proof in Appendix A, it is clear that the value of $\theta_M$ affects the upper bound ($\mathcal{I}_{upper}$) of $\mathcal{I}$.
 When $\theta_{min} < \theta_M < \frac{1}{2}$, the value of $\mathcal{I}_{upper}$ should close to the lower bound of $\mathcal{I}$.
 In practice, we should set
 \begin{equation}
@@ -461,7 +461,7 @@ In practice, we should set
     \textcolor{red}{\emph{Test case preparation.} The tester is responsible for specifying the mode of test case generation (either randomly generating test cases based on the parameters, or uploading test cases generated using other techniques).}
   \end{itemize}
   \item
-  \textcolor{red}{Execution interface presents a summary of the testing results, including details of the test case execution (number, input, expected output, partition, and result (pass or fail)). For randomly generated tests, the tester has to check each individual result. Otherwise, when all tests have been completed, a report is generated in a downloadable file.}
+  \textcolor{red}{\emph{Execution} interface presents a summary of the testing results, including details of the test case execution (number, input, expected output, partition, and result (pass or fail)). For randomly generated tests, the tester has to check each individual result. Otherwise, when all tests have been completed, a report is generated in a downloadable file.}
 \end{enumerate}
 
 
@@ -792,9 +792,9 @@ The details of actions are defined in Table \ref{tab:formulas}, where $w$ is the
 
 
 
-\textcolor{red}{As can be seen from the description above, because DT considers all parameters and identifies their invalid combinations, it can  provide a systematic and efficient way to partition an input domain into disjoint subdomains, and than generate test cases. In practice, each DT \emph{rule} condition entry corresponds to a partition in which test cases cover some paths
+\textcolor{red}{As can be seen from the description above, because DT considers all parameters and identifies their invalid combinations, it can  provide a systematic and efficient way to partition an input domain into disjoint subdomains, and then generate test cases. In practice, each DT \emph{rule} condition entry corresponds to a partition in which test cases cover some paths
 ---
-thus, the faults in those paths have a chance of being detected. To obtain the partition schemes, we made use of DT, and the details are described as following.}
+thus, the faults in those paths have a chance of being detected.}
 
 
 
@@ -1045,7 +1045,7 @@ In summary, the DRT strategy is considered the best testing technique across thi
 
 \begin{itemize}
   \item
-  \textcolor{red}{DRT outperforms RT, RPT, and AT, according to all the applied metrics for all three studied web services. DRT performs marginally outperformed AT in terms of the F-, F2-, and T-measure, for all the studied web services. However, AT incurs heavier computation overheads, and takes a significantly longer time. For instance, AT spent 32429.07ms selecting test cases for detecting all faults of \texttt{CUBS}, while DRT only need 30.21ms (Table \ref{tab:time}). This indicates that among RT, RPT, and AT, DRT should be chosen.}
+  \textcolor{red}{DRT outperformed RT, RPT, and AT, according to all the applied metrics for all three studied web services. DRT marginally outperformed AT in terms of the F-, F2-, and T-measure, for all the studied web services. Moreover, AT incurs heavier computation overhead, and takes a significantly longer time. For instance, AT spent 32429.07ms selecting test cases for detecting all faults of \texttt{CUBS}, while DRT only needed 30.21ms (Table \ref{tab:time}). This indicates that among RT, RPT, and AT, DRT should be chosen.}
 
   \item
   \textcolor{red}{DRT is more effective in terms of F-, F2-, and T-measure when the parameter settings are optimal (according to the theoretical analysis): In most cases, DRT has the best performance for all three object web services, according to these three metrics (F-measure, F2-measure, and T-measure) when following the guidelines for the parameter settings. This highlights the usefulness of the parameter-setting guidelines.}
@@ -1055,7 +1055,7 @@ In summary, the DRT strategy is considered the best testing technique across thi
 
 \begin{itemize}
   \item
-  \textcolor{red}{While DRT outperforms RT and RPT in terms of fault detection effectiveness and efficiency, this is achieved at the cost of the additional effort required to set the partitions and test profiles.}
+  \textcolor{red}{While DRT outperformed RT and RPT in terms of fault detection effectiveness and efficiency, this is achieved at the cost of the additional effort required to set the partitions and test profiles.}
 
   \item
   \textcolor{red}{Applying DRT involves setting parameters, which may not be trivial. Even when following the theoretical guidelines.}
