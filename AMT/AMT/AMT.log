@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  5 APR 2019 16:06
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  26 JUL 2019 19:54
 entering extended mode
 **F:/mypapers/AMT/AMT/AMT.tex
 (F:/mypapers/AMT/AMT/AMT.tex
@@ -15,11 +15,12 @@ Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 \@IEEEtrantmpcountB=\count80
 \@IEEEtrantmpcountC=\count81
 \@IEEEtrantmptoksA=\toks14
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 503.
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 503.
 
-(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
+-- Using IEEE Computer Society mode.
 -- Using 8.5in x 11in (letter) paper.
 -- Using PDF output.
 \@IEEEnormalsizeunitybaselineskip=\dimen105
@@ -27,55 +28,57 @@ File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 \CLASSINFOnormalsizebaselineskip=\dimen106
 \CLASSINFOnormalsizeunitybaselineskip=\dimen107
 \IEEEnormaljot=\dimen108
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <5.01874> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <5.01874> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <7.02625> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <7.02625> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8.03> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <8.03> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9.03374> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <9.03374> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9.53561> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <9.53561> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <11.04124> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <11.04124> not available
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12.045> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <12.045> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17.06374> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <17.06374> not available
 
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 1090.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
-(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 1090.
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20.075> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <20.075> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <24.09> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24.09> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
 
 \IEEEquantizedlength=\dimen109
 \IEEEquantizedlengthdiff=\dimen110
@@ -111,8 +114,10 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
+) (G:\latex\CTEX\MiKTeX\tex\latex\tools\enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks15
 )
-** ATTENTION: Overriding command lockouts (line 2).
 (G:\latex\CTEX\MiKTeX\tex\latex\cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
@@ -128,7 +133,7 @@ Package: amstext 2000/06/29 v2.01
 
 (G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
-\@emptytoks=\toks15
+\@emptytoks=\toks16
 \ex@=\dimen126
 ))
 (G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
@@ -158,34 +163,24 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \dotsspace@=\muskip10
 \c@parentequation=\count101
 \dspbrk@lvl=\count102
-\tag@help=\toks16
+\tag@help=\toks17
 \row@=\count103
 \column@=\count104
 \maxfields@=\count105
-\andhelp@=\toks17
+\andhelp@=\toks18
 \eqnshift@=\dimen129
 \alignsep@=\dimen130
 \tagshift@=\dimen131
 \tagwidth@=\dimen132
 \totwidth@=\dimen133
 \lineht@=\dimen134
-\@envbody=\toks18
+\@envbody=\toks19
 \multlinegap=\skip45
 \multlinetaggap=\skip46
-\mathdisplay@stack=\toks19
+\mathdisplay@stack=\toks20
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
-Package: amssymb 2009/06/22 v3.00
-
-(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
-\symAMSa=\mathgroup4
-\symAMSb=\mathgroup5
-LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
-))
 (G:\latex\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
@@ -193,15 +188,15 @@ nment
 (G:\latex\CTEX\MiKTeX\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count106
-\float@exts=\toks20
+\float@exts=\toks21
 \float@box=\box30
-\@float@everytoks=\toks21
+\@float@everytoks=\toks22
 \@floatcapt=\box31
 )
 (G:\latex\CTEX\MiKTeX\tex\latex\base\ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\@float@every@algorithm=\toks22
+\@float@every@algorithm=\toks23
 \c@algorithm=\count107
 )
 (G:\latex\CTEX\MiKTeX\tex\latex\algorithms\algorithmic.sty
@@ -209,7 +204,7 @@ Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 
 (G:\latex\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
-\KV@toks@=\toks23
+\KV@toks@=\toks24
 )
 \c@ALC@unique=\count108
 \c@ALC@line=\count109
@@ -246,282 +241,470 @@ Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen135
 \Gin@req@width=\dimen136
 )
-(G:\latex\CTEX\MiKTeX\tex\latex\base\textcomp.sty
-Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
-Package textcomp Info: Sub-encoding information:
-(textcomp)               5 = only ISO-Adobe without \textcurrency
-(textcomp)               4 = 5 + \texteuro
-(textcomp)               3 = 4 + \textohm
-(textcomp)               2 = 3 + \textestimated + \textcurrency
-(textcomp)               1 = TS1 - \textcircled - \t
-(textcomp)               0 = TS1 (full)
-(textcomp)             Font families with sub-encoding setting implement
-(textcomp)             only a restricted character set as indicated.
-(textcomp)             Family '?' is the default used for unknown fonts.
-(textcomp)             See the documentation for details.
-Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
-
-(G:\latex\CTEX\MiKTeX\tex\latex\base\ts1enc.def
-File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
+(G:\latex\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
+\bigstrutjot=\dimen137
 )
-LaTeX Info: Redefining \oldstylenums on input line 266.
-Package textcomp Info: Setting cmr sub-encoding to TS1/0 on input line 281.
-Package textcomp Info: Setting cmss sub-encoding to TS1/0 on input line 282.
-Package textcomp Info: Setting cmtt sub-encoding to TS1/0 on input line 283.
-Package textcomp Info: Setting cmvtt sub-encoding to TS1/0 on input line 284.
-Package textcomp Info: Setting cmbr sub-encoding to TS1/0 on input line 285.
-Package textcomp Info: Setting cmtl sub-encoding to TS1/0 on input line 286.
-Package textcomp Info: Setting ccr sub-encoding to TS1/0 on input line 287.
-Package textcomp Info: Setting ptm sub-encoding to TS1/4 on input line 288.
-Package textcomp Info: Setting pcr sub-encoding to TS1/4 on input line 289.
-Package textcomp Info: Setting phv sub-encoding to TS1/4 on input line 290.
-Package textcomp Info: Setting ppl sub-encoding to TS1/3 on input line 291.
-Package textcomp Info: Setting pag sub-encoding to TS1/4 on input line 292.
-Package textcomp Info: Setting pbk sub-encoding to TS1/4 on input line 293.
-Package textcomp Info: Setting pnc sub-encoding to TS1/4 on input line 294.
-Package textcomp Info: Setting pzc sub-encoding to TS1/4 on input line 295.
-Package textcomp Info: Setting bch sub-encoding to TS1/4 on input line 296.
-Package textcomp Info: Setting put sub-encoding to TS1/5 on input line 297.
-Package textcomp Info: Setting uag sub-encoding to TS1/5 on input line 298.
-Package textcomp Info: Setting ugq sub-encoding to TS1/5 on input line 299.
-Package textcomp Info: Setting ul8 sub-encoding to TS1/4 on input line 300.
-Package textcomp Info: Setting ul9 sub-encoding to TS1/4 on input line 301.
-Package textcomp Info: Setting augie sub-encoding to TS1/5 on input line 302.
-Package textcomp Info: Setting dayrom sub-encoding to TS1/3 on input line 303.
-Package textcomp Info: Setting dayroms sub-encoding to TS1/3 on input line 304.
+(G:\latex\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip49
+\subfigcapskip=\skip50
+\subfigcaptopadj=\dimen138
+\subfigbottomskip=\skip51
+\subfigcapmargin=\dimen139
+\subfiglabelskip=\skip52
+\c@subfigure=\count113
+\c@lofdepth=\count114
+\c@subtable=\count115
+\c@lotdepth=\count116
 
-Package textcomp Info: Setting pxr sub-encoding to TS1/0 on input line 305.
-Package textcomp Info: Setting pxss sub-encoding to TS1/0 on input line 306.
-Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
-Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
-Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
-Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
-Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
-Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
-Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
-Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
-Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
-Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
-Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
-Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
-Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
-Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
-Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
-Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
-Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
-Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
-Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
-Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
-Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
-Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
-Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
-Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
-Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
-Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
-Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
-Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
-Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
-Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
-Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
-Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
-Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
-Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(G:\latex\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg)
+\subfig@top=\skip53
+\subfig@bottom=\skip54
 )
-(G:\latex\CTEX\MiKTeX\tex\latex\xcolor\xcolor.sty
-Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(G:\latex\CTEX\MiKTeX\tex\latex\ulem\ulem.sty
+\UL@box=\box32
+\UL@hyphenbox=\box33
+\UL@skip=\skip55
+\UL@hook=\toks25
+\UL@height=\dimen140
+\UL@pe=\count117
+\UL@pixel=\dimen141
+\ULC@box=\box34
+Package: ulem 2011/03/18
+\ULdepth=\dimen142
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
 (G:\latex\CTEX\MiKTeX\tex\latex\00miktex\color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
-Package xcolor Info: Driver file: pdftex.def on input line 225.
-Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1337.
-Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1341.
-Package xcolor Info: Model `RGB' extended on input line 1353.
-Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1355.
-Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1356.
-Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1357.
-Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1358.
-Package xcolor Info: Model `Gray' substituted by `gray' on input line 1359.
-Package xcolor Info: Model `wave' substituted by `hsb' on input line 1360.
+Package color Info: Driver file: pdftex.def on input line 130.
 )
-(G:\latex\CTEX\MiKTeX\tex\latex\tools\enumerate.sty
-Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
-\@enLab=\toks24
+(G:\latex\CTEX\MiKTeX\tex\latex\tools\array.sty
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen143
+\extrarowheight=\dimen144
+\NC@list=\toks26
+\extratabsurround=\skip56
+\backup@length=\skip57
 )
-(G:\latex\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
-\bigstrutjot=\dimen137
+(G:\latex\CTEX\MiKTeX\tex\latex\booktabs\booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen145
+\lightrulewidth=\dimen146
+\cmidrulewidth=\dimen147
+\belowrulesep=\dimen148
+\belowbottomsep=\dimen149
+\aboverulesep=\dimen150
+\abovetopsep=\dimen151
+\cmidrulesep=\dimen152
+\cmidrulekern=\dimen153
+\defaultaddspace=\dimen154
+\@cmidla=\count118
+\@cmidlb=\count119
+\@aboverulesep=\dimen155
+\@belowrulesep=\dimen156
+\@thisruleclass=\count120
+\@lastruleclass=\count121
+\@thisrulewidth=\dimen157
 )
-(F:\mypapers\AMT\AMT\AMT.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 17.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 17.
- (G:\latex\CTEX\MiKTeX\tex\latex\base\ts1cmr.fd
-File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    ... okay on input line 17.
+(F:\mypapers\AMT\AMT\AMT.aux
 
--- Lines per column: 56 (exact).
+LaTeX Warning: Label `fig:framework' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+
+-- Lines per column: 61 (exact).
 (G:\latex\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count113
-\scratchdimen=\dimen138
-\scratchbox=\box32
-\nofMPsegments=\count114
-\nofMParguments=\count115
-\everyMPshowfont=\toks25
-\MPscratchCnt=\count116
-\MPscratchDim=\dimen139
-\MPnumerator=\count117
-\makeMPintoPDFobject=\count118
-\everyMPtoPDFconversion=\toks26
-) [1{G:/latex/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
-
-
-]
-LaTeX Font Info:    Try loading font information for U+msa on input line 87.
+\scratchcounter=\count122
+\scratchdimen=\dimen158
+\scratchbox=\box35
+\nofMPsegments=\count123
+\nofMParguments=\count124
+\everyMPshowfont=\toks27
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen159
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
+\everyMPtoPDFconversion=\toks28
+)
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 48.
+ (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <11.04124> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 48.
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8.03> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 48.
+LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 48
+.
+LaTeX Font Info:    Try loading font information for U+msa on input line 48.
 
 (G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 87.
+LaTeX Font Info:    Try loading font information for U+msb on input line 48.
 
 (G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 97.
+LaTeX Font Info:    Try loading font information for U+pzd on input line 48.
 
-(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
+(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\upzd.fd
+File: upzd.fd 2001/06/04 font definitions for U/pzd.
+)
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 56.
+LaTeX Font Info:    Font shape `OT1/phv/bx/sc' in size <11.04124> not available
+
+(Font)              Font shape `OT1/phv/b/sc' tried instead on input line 56.
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ¯ in font pplr7t!
+ [1{G:/latex/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
+
+
+]
+
+LaTeX Warning: Reference `sec:DRTforwebserivce' on page 2 undefined on input li
+ne 97.
+
+
+LaTeX Warning: Reference `sec:empiricalstudy' on page 2 undefined on input line
+ 98.
+
+
+LaTeX Warning: Reference `sec:conclusion' on page 2 undefined on input line 99.
+
+
+LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9.53561> not available
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 106.
+[2]
+LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 116
+.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 126.
+
+ (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Underfull \hbox (badness 1939) in paragraph at lines 140--141
-\OT1/ptm/m/n/10 In DRT, a test case is s-e-lect-ed from a par-ti-tion that
+Underfull \hbox (badness 1629) in paragraph at lines 137--138
+[]\OT1/ppl/m/n/9.53561 Decompose the func-tion-al spec-i-fi-ca-tion in-to
  []
 
-[2] <figs//framework.pdf, id=20, 540.51938pt x 381.67593pt>
-File: figs//framework.pdf Graphic file (type pdf)
+[3] [4]
+\c@theo=\count128
 
-<use figs//framework.pdf>
-Package pdftex.def Info: figs//framework.pdf used on input line 213.
-(pdftex.def)             Requested size: 242.52063pt x 171.2459pt.
- [3 <F:/mypapers/AMT/AMT/figs//framework.pdf>]
-
-LaTeX Warning: Float too large for page by 3.53412pt on input line 374.
-
-[4]
-Overfull \vbox (2.47572pt too high) detected at line 405
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+[]\OT1/ppl/b/it/9.53561 Theorem 1. \OT1/ppl/m/n/9.53561 De-fine a tu-ple of in-
+te-gers $\OML/cmm/m/it/10 S \OT1/cmr/m/n/10 =$
  []
 
 
-Overfull \vbox (2.02786pt too high) detected at line 407
+Underfull \hbox (badness 10000) in paragraph at lines 267--268
+$\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 s[]; s[]; [] ; s[]; s[]; s[]; [] ; s[]; [] ;
+ s[]; s[]; [] ; s[]\OT1/cmr/m/n/10 )$\OT1/ppl/m/n/9.53561 ,
  []
 
 
-Overfull \hbox (7.16228pt too wide) in paragraph at lines 402--410
+Underfull \hbox (badness 1694) in paragraph at lines 267--268
+\OT1/ppl/m/n/9.53561 where $\OML/cmm/m/it/10 g$ \OT1/ppl/m/n/9.53561 is the to-
+tal num-ber of cat-e-gories, $\OML/cmm/m/it/10 h[]$ \OT1/ppl/m/n/9.53561 is
+ []
+
+
+Underfull \hbox (badness 1603) in paragraph at lines 296--297
+[] []\OT1/ppl/m/n/9.53561 Set $\OML/cmm/m/it/10 e[] \OT1/cmr/m/n/10 = \OML/cmm/
+m/it/10 c[]$\OT1/ppl/m/n/9.53561 , where $\OMS/cmsy/m/n/10 8\OML/cmm/m/it/10 u$
+\OT1/ppl/m/n/9.53561 , $\OML/cmm/m/it/10 sum[]dist\OT1/cmr/m/n/10 (\OML/cmm/m/i
+t/10 c[]; E\OT1/cmr/m/n/10 ) \OMS/cmsy/m/n/10 $
+ []
+
+
+
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/AMT/AMT/fig//generateframework.p
+df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<fig//generateframework.pdf, id=30, 590.70688pt x 331.73938pt>
+File: fig//generateframework.pdf Graphic file (type pdf)
+
+<use fig//generateframework.pdf>
+Package pdftex.def Info: fig//generateframework.pdf used on input line 326.
+(pdftex.def)             Requested size: 258.9675pt x 145.43933pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 326--327
  [][] 
  []
 
-
-Overfull \vbox (2.47572pt too high) detected at line 419
- []
-
-
-Overfull \vbox (2.02786pt too high) detected at line 421
- []
-
-
-Overfull \hbox (7.16228pt too wide) in paragraph at lines 416--424
- [][] 
- []
-
-[5]
-Missing character: There is no ¨ in font ptmr7t!
-
-Overfull \hbox (7.85452pt too wide) in paragraph at lines 466--473
- [][] 
- []
-
-
-Underfull \vbox (badness 3746) has occurred while \output is active []
-
+[5 <F:/mypapers/AMT/AMT/fig//generateframework.pdf>]
+LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 437.
  [6]
-<figs//fmeasure.pdf, id=75, 601.24625pt x 489.83pt>
-File: figs//fmeasure.pdf Graphic file (type pdf)
- <use figs//fmeasure.pdf>
-Package pdftex.def Info: figs//fmeasure.pdf used on input line 515.
-(pdftex.def)             Requested size: 232.19843pt x 189.17184pt.
+Underfull \hbox (badness 1472) in paragraph at lines 453--454
+\OT1/ppl/m/n/9.53561 whose source test case could be $\OML/cmm/m/it/10 stc[]$\O
+T1/ppl/m/n/9.53561 ), PBM-R gen-er-
+ []
 
-<figs//nmeasure.pdf, id=76, 587.19376pt x 500.87125pt>
-File: figs//nmeasure.pdf Graphic file (type pdf)
 
-<use figs//nmeasure.pdf>
-Package pdftex.def Info: figs//nmeasure.pdf used on input line 521.
-(pdftex.def)             Requested size: 232.19843pt x 198.05978pt.
- [7 <F:/mypapers/AMT/AMT/figs//fmeasure.pdf> <F:/mypapers/AMT/AMT/figs//nmeasur
-e.pdf>]
-Missing character: There is no ¡ in font ptmr7t!
-Missing character: There is no ¯ in font ptmr7t!
- [8] (F:\mypapers\AMT\AMT\AMT.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 2591) in paragraph at lines 453--454
+\OT1/ppl/m/n/9.53561 ate a set of can-di-date folow-up test cas-es $\OML/cmm/m/
+it/10 FC \OT1/cmr/m/n/10 =$
+ []
 
- [9]
-Missing character: There is no ¡ in font ptmri7t!
-Missing character: There is no ¯ in font ptmri7t!
-Missing character: There is no ¡ in font ptmri7t!
-Missing character: There is no ¯ in font ptmri7t!
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \hbox (badness 6412) in paragraph at lines 472--473
+[] []\OT1/ppl/m/n/9.53561 Calculate the max-i-mal val-ue $\OML/cmm/m/it/10 CP[]
+$ \OT1/ppl/m/n/9.53561 ($\OML/cmm/m/it/10 max \OMS/cmsy/m/n/10 2$
+ []
 
+
+
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/AMT/AMT/fig//pcenterpartitionfra
+mework.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> 
+allowed
+<fig//pcenterpartitionframework.pdf, id=77, 761.34438pt x 381.92688pt>
+File: fig//pcenterpartitionframework.pdf Graphic file (type pdf)
+
+<use fig//pcenterpartitionframework.pdf>
+Package pdftex.def Info: fig//pcenterpartitionframework.pdf used on input line 
+485.
+(pdftex.def)             Requested size: 258.9675pt x 129.91168pt.
+
+Overfull \hbox (6.0225pt too wide) in paragraph at lines 485--486
+ [][] 
+ []
+
+
+
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/AMT/AMT/fig//mrscentricframework
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
+<fig//mrscentricframework.pdf, id=78, 762.85pt x 380.92313pt>
+File: fig//mrscentricframework.pdf Graphic file (type pdf)
+
+<use fig//mrscentricframework.pdf>
+Package pdftex.def Info: fig//mrscentricframework.pdf used on input line 549.
+(pdftex.def)             Requested size: 243.43007pt x 121.55495pt.
+ [7 <F:/mypapers/AMT/AMT/fig//pcenterpartitionframework.pdf>]
+
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/AMT/AMT/fig//rtframework.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
+<fig//rtframework.pdf, id=124, 762.85pt x 380.92313pt>
+File: fig//rtframework.pdf Graphic file (type pdf)
+
+<use fig//rtframework.pdf>
+Package pdftex.def Info: fig//rtframework.pdf used on input line 634.
+(pdftex.def)             Requested size: 243.43007pt x 121.55495pt.
+
+Underfull \vbox (badness 2547) has occurred while \output is active []
+
+ [8 <F:/mypapers/AMT/AMT/fig//mrscentricframework.pdf>]
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 688.
+ [9 <F:/mypapers/AMT/AMT/fig//rtframework.pdf>]
+Overfull \vbox (2.87064pt too high) detected at line 727
+ []
+
+
+Overfull \vbox (3.49689pt too high) detected at line 727
+ []
+
+
+Overfull \vbox (2.87064pt too high) detected at line 742
+ []
+
+
+Overfull \vbox (3.49689pt too high) detected at line 742
+ []
+
+[10]
+Overfull \hbox (0.85022pt too wide) in paragraph at lines 819--834
+ [][] 
+ []
+
+[11]
+LaTeX Font Info:    Try loading font information for OMS+ppl on input line 911.
+
+ (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <8.03> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 911.
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ¯ in font pplr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 1016--1017
+\OT1/ppl/m/n/9.53561 Precise de-tail-s on the cat-e-gories and choic-es of
+ []
+
+
+Underfull \hbox (badness 7504) in paragraph at lines 1016--1017
+\OT1/ppl/m/n/9.53561 SIR and GUN pro-gram-s are pro-vid-ed in Ta-bles
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1016--1017
+\OT1/ppl/m/n/9.53561 A4 to A15 in the Ap-pen-dices, which can be
+ []
+
+
+Underfull \hbox (badness 3895) in paragraph at lines 1016--1017
+\OT1/ppl/m/n/9.53561 found on the Com-put-er So-ci-ety Dig-i-tal Li-brary at
+ []
+
+[12]
+Missing character: There is no ¨ in font pplr7t!
+ [13]
+Missing character: There is no ¨ in font cmr10!
+Missing character: There is no ¨ in font pplr7t!
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ¯ in font pplr7t!
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ¯ in font pplr7t!
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ® in font pplr7t!
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ® in font pplr7t!
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ¯ in font pplr7t!
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ¯ in font pplr7t!
+ [14]
+Underfull \hbox (badness 3780) in paragraph at lines 1168--1169
+\OT1/ppl/m/n/9.53561 The fault-s can be found on the GitHub at http-
+ []
+
+(F:\mypapers\AMT\AMT\AMT.bbl [15]
+Missing character: There is no ¡ in font pplr7t!
+Missing character: There is no ­ in font pplr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--337
+[]\OT1/ppl/m/n/8.03 T. G. Project, ``Grep home page.
+ []
+
+[16]
+Missing character: There is no ¡ in font pplri7t!
+Missing character: There is no ¯ in font pplri7t!
 )
 
-** Conference Paper **
-Before submitting the final camera ready copy, remember to:
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/AMT/AMT/fig/authors/CASun.pdf): 
+PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<fig/authors/CASun.pdf, id=238, 74.43811pt x 99.4917pt>
+File: fig/authors/CASun.pdf Graphic file (type pdf)
 
- 1. Manually equalize the lengths of two columns on the last page
- of your paper;
+<use fig/authors/CASun.pdf>
+Package pdftex.def Info: fig/authors/CASun.pdf used on input line 1222.
+(pdftex.def)             Requested size: 67.59338pt x 90.34325pt.
+File: fig/authors/CASun.pdf Graphic file (type pdf)
+ <use fig/authors/CASun.pdf>
+Package pdftex.def Info: fig/authors/CASun.pdf used on input line 1222.
+(pdftex.def)             Requested size: 67.59338pt x 90.34325pt.
 
- 2. Ensure that any PostScript and/or PDF output post-processing
- uses only Type 1 fonts and that every step in the generation
- process uses the appropriate paper size.
+<fig/authors/HPDai.jpg, id=241, 296.10625pt x 414.54875pt>
+File: fig/authors/HPDai.jpg Graphic file (type jpg)
 
-[10] (F:\mypapers\AMT\AMT\AMT.aux) ) 
+<use fig/authors/HPDai.jpg>
+Package pdftex.def Info: fig/authors/HPDai.jpg used on input line 1227.
+(pdftex.def)             Requested size: 64.52457pt x 90.33441pt.
+File: fig/authors/HPDai.jpg Graphic file (type jpg)
+ <use fig/authors/HPDai.jpg>
+Package pdftex.def Info: fig/authors/HPDai.jpg used on input line 1227.
+(pdftex.def)             Requested size: 64.52457pt x 90.33441pt.
+
+
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/AMT/AMT/fig/authors/TYChen.pdf):
+ PDF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<fig/authors/TYChen.pdf, id=244, 310.15875pt x 371.3875pt>
+File: fig/authors/TYChen.pdf Graphic file (type pdf)
+
+<use fig/authors/TYChen.pdf>
+Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 1230.
+(pdftex.def)             Requested size: 72.26733pt x 86.5337pt.
+File: fig/authors/TYChen.pdf Graphic file (type pdf)
+ <use fig/authors/TYChen.pdf>
+Package pdftex.def Info: fig/authors/TYChen.pdf used on input line 1230.
+(pdftex.def)             Requested size: 72.26733pt x 86.5337pt.
+
+
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/AMT/AMT/fig/authors/HLiu.pdf): P
+DF inclusion: found PDF version <1.6>, but at most version <1.5> allowed
+<fig/authors/HLiu.pdf, id=247, 2177.13374pt x 2902.845pt>
+File: fig/authors/HLiu.pdf Graphic file (type pdf)
+
+<use fig/authors/HLiu.pdf>
+Package pdftex.def Info: fig/authors/HLiu.pdf used on input line 1233.
+(pdftex.def)             Requested size: 67.73627pt x 90.31503pt.
+File: fig/authors/HLiu.pdf Graphic file (type pdf)
+ <use fig/authors/HLiu.pdf>
+Package pdftex.def Info: fig/authors/HLiu.pdf used on input line 1233.
+(pdftex.def)             Requested size: 67.73627pt x 90.31503pt.
+ [17
+
+ <F:/mypapers/AMT/AMT/fig/authors/CASun.pdf> <F:/mypapers/AMT/AMT/fig/authors/H
+PDai.jpg> <F:/mypapers/AMT/AMT/fig/authors/TYChen.pdf> <F:/mypapers/AMT/AMT/fig
+/authors/HLiu.pdf>]
+(F:\mypapers\AMT\AMT\AMT.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
 Here is how much of TeX's memory you used:
- 4326 strings out of 495354
- 60616 string characters out of 3183523
- 134639 words of memory out of 3000000
- 7435 multiletter control sequences out of 15000+200000
- 42803 words of font info for 90 fonts, out of 3000000 for 9000
- 14 hyphenation exceptions out of 8191
- 27i,12n,35p,1948b,618s stack positions out of 5000i,500n,10000p,200000b,50000s
-{G:/latex/CTEX/MiKTeX/fonts/enc/dvips/fontn
-ame/8r.enc}<G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><G:/
-latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><G:/latex/CTEX/MiKT
-eX/fonts/type1/public/amsfonts/cm/cmmi5.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmmi7.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/c
-m/cmmi8.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><G:/
-latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr5.pfb><G:/latex/CTEX/MiKTeX
-/fonts/type1/public/amsfonts/cm/cmr6.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/publ
-ic/amsfonts/cm/cmr7.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cm
-r8.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><G:/late
-x/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy5.pfb><G:/latex/CTEX/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmsy7.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmsy8.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/courier/ucrr8a.pfb
-><G:/latex/CTEX/MiKTeX/fonts/type1/urw/times/utmb8a.pfb><G:/latex/CTEX/MiKTeX/f
-onts/type1/urw/times/utmbi8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/times/ut
-mr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/times/utmri8a.pfb>
-Output written on AMT.pdf (10 pages, 349717 bytes).
+ 4044 strings out of 495354
+ 57935 string characters out of 3183523
+ 134612 words of memory out of 3000000
+ 7115 multiletter control sequences out of 15000+200000
+ 56901 words of font info for 134 fonts, out of 3000000 for 9000
+ 17 hyphenation exceptions out of 8191
+ 29i,13n,34p,1501b,620s stack positions out of 5000i,500n,10000p,200000b,50000s
+{G:/latex/CTEX/MiKTeX/fonts/enc/dvips/fontname/8r.enc}<G:/latex/CTEX/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmex10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmmi10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/
+cmmi5.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi7.pfb><G:/la
+tex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><G:/latex/CTEX/MiKTeX/
+fonts/type1/public/amsfonts/cm/cmr10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmr5.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cm
+r6.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr7.pfb><G:/latex/
+CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><G:/latex/CTEX/MiKTeX/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmsy5.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6
+.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><G:/latex/C
+TEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><G:/latex/CTEX/MiKTeX/fonts
+/type1/urw/courier/ucrr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/helvetic/uh
+vb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><G:/latex/CT
+EX/MiKTeX/fonts/type1/urw/helvetic/uhvro8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type
+1/urw/palatino/uplb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplbi8
+a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><G:/latex/CTEX/
+MiKTeX/fonts/type1/urw/palatino/uplri8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/u
+rw/zapfding/uzdr.pfb>
+Output written on AMT.pdf (17 pages, 2163566 bytes).
 PDF statistics:
- 177 PDF objects out of 1000 (max. 8388607)
+ 349 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 89 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  26 JUL 2019 12:03
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  31 JUL 2019 18:40
 entering extended mode
 **F:/mypapers/DRT/DRTPaper/DRT4WS(V19)/DRT4WS.tex
 (F:/mypapers/DRT/DRTPaper/DRT4WS(V19)/DRT4WS.tex
@@ -444,30 +444,30 @@ Missing character: There is no Â in font pplr7t!
 Missing character: There is no ¡ in font pplr7t!
 Missing character: There is no Â in font pplr7t!
 Missing character: There is no ¯ in font pplr7t!
- <fig/parameter.pdf, id=75, 21.63281pt x 19.22382pt>
+ <fig/parameter.pdf, id=75, 194.4063pt x 169.3527pt>
 File: fig/parameter.pdf Graphic file (type pdf)
 
 <use fig/parameter.pdf>
 Package pdftex.def Info: fig/parameter.pdf used on input line 470.
-(pdftex.def)             Requested size: 253.88162pt x 227.68105pt.
- <fig/partition.pdf, id=76, 21.681pt x 24.0659pt>
+(pdftex.def)             Requested size: 253.8079pt x 227.63171pt.
+ <fig/partition.pdf, id=76, 141.6492pt x 158.7531pt>
 File: fig/partition.pdf Graphic file (type pdf)
 
 <use fig/partition.pdf>
 Package pdftex.def Info: fig/partition.pdf used on input line 471.
-(pdftex.def)             Requested size: 253.89684pt x 256.10994pt.
+(pdftex.def)             Requested size: 253.8055pt x 256.07884pt.
 
-Overfull \hbox (0.93663pt too wide) in paragraph at lines 470--472
+Overfull \hbox (0.86292pt too wide) in paragraph at lines 470--472
  [][] 
  []
 
 
-Overfull \hbox (0.95184pt too wide) in paragraph at lines 470--472
+Overfull \hbox (0.8605pt too wide) in paragraph at lines 470--472
  [] 
  []
 
 [5]
-Underfull \vbox (badness 4543) has occurred while \output is active []
+Underfull \vbox (badness 4673) has occurred while \output is active []
 
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 513.
 
@@ -731,7 +731,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  4038 strings out of 495354
  58897 string characters out of 3183523
- 162245 words of memory out of 3000000
+ 162248 words of memory out of 3000000
  7094 multiletter control sequences out of 15000+200000
  57078 words of font info for 133 fonts, out of 3000000 for 9000
  17 hyphenation exceptions out of 8191
@@ -757,7 +757,7 @@ atino/uplb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><G:
 /latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><G:/latex/CTEX/MiKTeX/fo
 nts/type1/urw/palatino/uplri8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/zapfdi
 ng/uzdr.pfb>
-Output written on DRT4WS.pdf (17 pages, 2365767 bytes).
+Output written on DRT4WS.pdf (17 pages, 2233002 bytes).
 PDF statistics:
  530 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
