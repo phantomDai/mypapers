@@ -461,7 +461,7 @@ In practice, we should set
     \textcolor{red}{\emph{Test case preparation.} The tester is responsible for specifying the mode of test case generation (either randomly generating test cases based on the parameters, or uploading test cases generated using other techniques).}
   \end{itemize}
   \item
-  \textcolor{red}{\emph{Execution} interface presents a summary of the testing results, including details of the test case execution (number, input, expected output, partition, and result (pass or fail)). For randomly generated tests, the tester has to check each individual result. Otherwise, when all tests have been completed, a report is generated in a downloadable file.}
+  \textcolor{red}{\emph{Execution} interface presents a summary of the testing results, including details of the test case execution (input, expected output, partition, and result (pass or fail)). For randomly generated tests, the tester has to check each individual result. Otherwise, when all tests have been completed, a report is generated in a downloadable file.}
 \end{enumerate}
 
 
@@ -511,7 +511,7 @@ We selected three web services as the subject programs for our study, \textcolor
 \texttt{Aviation Consignment Management Service (ACMS)};
 \texttt{China Unicom billing service (CUBS)}; and
 \texttt{Parking billing service (PBS)}}. \textcolor{red}{
-We used the tool muJava \cite{ma2005mujava} to conduct mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity}, generating a total of 1563 mutants}. Each mutant was created by applying a syntactic change (\textcolor{red}{using a mutation operator from all applicable mutation operators provided by muJava) to the original program. Equivalent mutants, and those that were too easily detected}
+We used the tool muJava \cite{ma2005mujava} to conduct mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity}, generating a total of 1563 mutants}. Each mutant was created by applying a syntactic change (\textcolor{red}{using a mutation operator from all applicable ones provided by muJava) to the original program. Equivalent mutants, and those that were too easily detected}
 \textcolor{red}{(requiring less than 20 randomly generated test cases), were removed.}
 \textcolor{red}{To ensure the statistical reliability, we obtained 50 different test suites using different random seeds, then testing all mutants with all test suites, calculating the average number of test cases needed to kill (detect) a mutant. Based on this, those mutants that could be detected too easily were removed.} Table~\ref{tab:objects} summarizes the basic information of the used web services and their mutants.
 A detailed description of each web service is given in the following.
@@ -572,7 +572,7 @@ If a discount voucher is presented, a 50\% discount off the parking fee is appli
   \centering
   \begin{tabular}{lllllll} \toprule
   \multirow{2}{*}{Actual parking hours} &\multicolumn{3}{l}{Weekday}&\multicolumn{3}{l}{Saturday and sunday} \\ \cmidrule(lr){2-4} \cmidrule(lr){5-7}
-                                  &Motorbike  &Car: 2-door coupe  &Car: others    &Motorbike  &Car: 2-door coupe  &Car: others \\ \midrule
+                                  &Motorcycle  &Car: 2-door coupe  &Car: others    &Motorcycle  &Car: 2-door coupe  &Car: others \\ \midrule
   $(0.0,2.0]$                     &\$4.00        &\$4.50          &\$5.00      &\$5.00        &\$6.00        &\$7.00 \\
   $(2.0,4.0]$                     &\$5.00        &\$5.50          &\$6.00      &\$6.50      &\$7.50        &\$8.50  \\
   $(4.0,24.0]$                    &\$6.00        &\$6.50          &\$7.00      &\$8.00      &\$9.00        &\$10.00  \\ \bottomrule
@@ -699,7 +699,7 @@ For fine-grain partition schemes, each \emph{CE} of a DT \emph{rule} corresponds
 while for coarse-grained schemes, a partition corresponds to the union of a group of partitions of which all \emph{CE} of DT \emph{rules} have the same \emph{AE}.
 \textcolor{red}{The decision tables for \texttt{ACMS}, \texttt{CUBS}, and \texttt{PBS} are shown in Tables \ref{tab:ds-acms} to \ref{tab:ds-pbs}, respectively. In the tables, $R_i$ $(i = 1, 2, \ldots, n)$ denotes the identified $i^{th}$ \emph{rule}; $n$ is total number of \emph{rules}; and the checkmark (\checkmark) under each \emph{rule} indicates that corresponding action should be taken.
 % The details of conditions and associated options for all the three web services are summarized in Table \ref{tab:conandopt}, and 
-The details of actions are defined in Table \ref{tab:formulas}, where $w$ is the weight of baggage; $price^*$ means economy class fare; $op^*$ means the month charge; $call$ and $data$ mean the call duration and data usage, repectively; $freeCall$ and $freeData$ mean the free calls and free data, respectively; $baseFee$ means the cost before the discount. In Table \ref{tab:ds-acms}, the condition for calculating the cost of the baggage include \emph{class} (0: First class; 1: Business class; 2: Economy class), \emph{isStudent} (Y: The passenger is a student; N: The passenger is not a student), \emph{isOverload} (Y: The weight exceeds the weight of the free carry; N: The weight does not exceed the weight of the free carry), and \emph{Destination} (0: Domestic flight; 1: International flight). In Table \ref{tab:ds-cubs}, conditions that affect cell-phone bills include \emph{plan} (A: Plan A; B: Plan B; C: Plan C) and \emph{option} $y$ under \emph{plan} $x$, represented as $op_x^y$, where $x \in \{A, B, C\}$, and $y \in \{\mathcal{Z} |1 \le y \le 11\}$. In Table \ref{tab:ds-pbs}, conditions that affect the parking fee include the type of \emph{vehicle} (0: Motorbike; 1: 2-door coupe; 2: Others), \emph{day of week} (0: Weekday; 1: Saturday or Sunday), and \emph{discount information} (0: Customers provide a discount coupon; 1: The estimated hours of parking and the actual hours of parking fall into the same time range; 2: Estimated hours and the actual hours are in different time ranges).}
+The details of actions are defined in Table \ref{tab:formulas}, where $w$ is the weight of baggage; $price^*$ means economy class fare; $op^*$ means the month charge; $call$ and $data$ mean the call duration and data usage, repectively; $freeCall$ and $freeData$ mean the free calls and free data, respectively; $baseFee$ means the cost before the discount. In Table \ref{tab:ds-acms}, the condition for calculating the cost of the baggage include \emph{class} (0: First class; 1: Business class; 2: Economy class), \emph{isStudent} (Y: The passenger is a student; N: The passenger is not a student), \emph{isOverload} (Y: The weight exceeds the weight of the free carry; N: The weight does not exceed the weight of the free carry), and \emph{Destination} (0: Domestic flight; 1: International flight). In Table \ref{tab:ds-cubs}, conditions that affect cell-phone bills include \emph{plan} (A: Plan A; B: Plan B; C: Plan C) and \emph{option} $y$ under \emph{plan} $x$, represented as $op_x^y$, where $x \in \{A, B, C\}$, and $y \in \{\mathcal{Z} |1 \le y \le 11\}$. In Table \ref{tab:ds-pbs}, conditions that affect the parking fee include the type of \emph{vehicle} (0: Motorcycle; 1: 2-door coupe; 2: Others), \emph{day of week} (0: Weekday; 1: Saturday or Sunday), and \emph{discount information} (0: Customers provide a discount coupon; 1: The estimated hours of parking and the actual hours of parking fall into the same time range; 2: Estimated hours and the actual hours are in different time ranges).}
 
 \begin{table*}
   \caption{Decision Table for \texttt{ACMS}}
@@ -792,7 +792,9 @@ The details of actions are defined in Table \ref{tab:formulas}, where $w$ is the
 
 
 
-\textcolor{red}{As can be seen from the description above, because DT considers all parameters and identifies their invalid combinations, it can  provide a systematic and efficient way to partition an input domain into disjoint subdomains, and then generate test cases. In practice, each DT \emph{rule} condition entry corresponds to a partition in which test cases cover some paths.}
+\textcolor{red}{As can be seen from the description above, because DT considers all parameters and identifies their invalid combinations, it can  provide a systematic and efficient way to partition an input domain into disjoint subdomains, and then generate test cases. In practice, each DT \emph{rule} condition entry corresponds to a partition in which test cases cover some paths
+---
+thus, the faults in those paths have a chance of being detected.}
 
 
 
@@ -1015,9 +1017,9 @@ From Figure~\ref{fig:theovsnontheo}, we have the following observations:
 
 
 
-As was done for the F-, F2-, and T-measure data, we used the Holm-Bonferroni method to check the difference between each pair of testing strategies in terms of F-time, F2-time, and T-time, as shown in Table \ref{tableHlom:f/f2/t-time}.
+As was done for the F-, F2-, and T-measure data, we used the Holm-Bonferroni method to check the difference between each pair of testing strategies in terms of F-time, F2-time, and T-time, as shown in Table \ref{tableHlom:f/f2/t-time}, \textcolor{red}{where each cell gives the number of scenarios where the technique above (in the table performed better than one to the left. If the differene is significant, the number is underlined and in bold face.)}.
 
-In Table \ref{tableHlom:f/f2/t-time}, \textcolor{red}{some entries (such as ``\underline{\textbf{6}}" \& ``\underline{\textbf{0}}" for DRT vs. RT, ``\underline{\textbf{6}}" vs. ``\underline{\textbf{0}}" for DRT vs. RPT, ``\underline{\textbf{6}}" vs. ``\underline{\textbf{0}}" for DRT vs. AT) are in bold font and underline, meaning that, in terms of F2-/T-time, DRT was significantly better than RT, and RPT, DRT only marginally outperformed RT, and RPT in terms of F-time, and DRT was significantly better than AT in terms of F-/F2-/T-time}.
+In Table \ref{tableHlom:f/f2/t-time}, \textcolor{red}{some entries (such as ``\underline{\textbf{6}}" \& ``\underline{\textbf{0}}" for DRT vs. RT, ``\underline{\textbf{6}}" vs. ``\underline{\textbf{0}}" for DRT vs. RPT, ``\underline{\textbf{6}}" vs. ``\underline{\textbf{0}}" for DRT vs. AT), meaning that, in terms of F2-/T-time, DRT was significantly better than RT, and RPT, DRT only marginally outperformed RT, and RPT in terms of F-time, and DRT was significantly better than AT in terms of F-/F2-/T-time}.
 In other words, the additional computation incurred in DRT by updating the test profile is compensated for in terms of test execution savings.
 
 In summary, the DRT strategy is considered the best testing technique across this three metrics, RPT marginally outperformed RT, and DRT, RPT, and RT significantly outperformed AT.
