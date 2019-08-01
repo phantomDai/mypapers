@@ -511,7 +511,7 @@ We selected three web services as the subject programs for our study, \textcolor
 \texttt{Aviation Consignment Management Service (ACMS)};
 \texttt{China Unicom billing service (CUBS)}; and
 \texttt{Parking billing service (PBS)}}. \textcolor{red}{
-We used the tool muJava \cite{ma2005mujava} to conduct mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity}, generating a total of 1563 mutants}. Each mutant was created by applying a syntactic change (\textcolor{red}{using a mutation operator from all applicable ones provided by muJava) to the original program. Equivalent mutants, and those that were too easily detected}
+We used the tool muJava \cite{ma2005mujava} to conduct mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity}, generating a total of 1563 mutants}. Each mutant was created by applying a syntactic change (\textcolor{red}{using one of all applicable mutation operators provided by muJava) to the original program. Equivalent mutants, and those that were too easily detected}
 \textcolor{red}{(requiring less than 20 randomly generated test cases), were removed.}
 \textcolor{red}{To ensure the statistical reliability, we obtained 50 different test suites using different random seeds, then testing all mutants with all test suites, calculating the average number of test cases needed to kill (detect) a mutant. Based on this, those mutants that could be detected too easily were removed.} Table~\ref{tab:objects} summarizes the basic information of the used web services and their mutants.
 A detailed description of each web service is given in the following.
