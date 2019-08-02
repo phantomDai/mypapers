@@ -91,15 +91,15 @@ Because it is likely that they can be complementary to each other, detecting dif
 
 In traditional RPT \cite{cai2009random}, the partitions and corresponding test profiles remain constant throughout testing, which may not be the best strategy.
 Independent researchers have observed that fault-revealing inputs tend to cluster into ``continuous regions''~\cite{Ammann88, Finelli91}---there is similarity in the execution behavior of neighboring software inputs.
-Based on software cybernetics, Cai et al. proposed \textcolor{red}{adaptive testing (AT) to control the testing process \cite{cai2004optimal}}, however, AT has a high computational overhead of decision-making. To alleviate this, dynamic random testing (DRT) \cite{cai2009random} was proposed by Cai et al., aiming to improve on both RT and RPT.
+Based on software cybernetics, \textcolor{red}{Cai et al. proposed adaptive testing (AT) to control the testing process \cite{cai2004optimal}, however, AT decision-making incurs a heavy computational overhead}. To alleviate this, dynamic random testing (DRT) \cite{cai2009random} was proposed by Cai et al., aiming to improve on both RT and RPT.
 
 In practice, web services have usually been tested by the service providers, and simple or easy-to-test faults have been removed, meaning that the remaining faults are normally hard to detect.
 For ensuring a higher reliability of the web services, a simple RT strategy may not be an appropriate technique~\cite{li2014two}, especially when the scale is large, or there are some stubborn faults.
 
-In this paper, we present a dynamic random testing (DRT) approach for web services, as an enhanced version of RT that is an adaptation of DRT to the context of SOA.
-\textcolor{red}{We examine key issues of such an adaptation, and, accordingly, propose a framework for testing web services that combines the principle of DRT \cite{cai2009random} and the features of web services. To validate the fault detection effectiveness and efficiency of the proposed DRT method in the context of SOA, we conduct a comprehensive empirical study. We also explore the impact factors of the proposed DRT, and provide guidelines for setting DRT parameters based on a theoretical analysis. Finally, we compare the performance of the proposed DRT with other baseline techniques.}
+In this paper, we present a dynamic random testing (DRT) approach for web services, as an enhanced version of RT adapted to the context of SOA.
+\textcolor{red}{We examine key issues of such an adaptation, and, accordingly, propose a framework for testing web services that combines the principles of DRT \cite{cai2009random} and the features of web services. To validate the fault detection effectiveness and efficiency of the proposed DRT method in the context of SOA, we conduct a comprehensive empirical study. We also explore the impact factors of the proposed DRT, and provide guidelines for setting DRT parameters based on a theoretical analysis. Finally, we compare the performance of the proposed DRT with other baseline techniques.}
 
-\textcolor{red}{This paper extends our previous work \cite{sun2012towards} in the following aspects. Firstly, this paper extensively examines the challenges and practical situations related to testing web services (Section \ref{sec:webservices}). It also extensively discusses the limitations of RT, Partition Testing (PT), Random Partition Testing (RPT), and Adaptive testing (AT), when they are used for testing web services (Section \ref{sec:introduction}). Secondly, although previous work \cite{sun2012towards} provided a coarse-grained framework for DRT of web services, PT was not studied. In contrast, this paper provides a comprehensive solution based on partitioning (Section 4.4.1). Thirdly, based on a theoretical analysis (Section 3.2), this paper provides guidelines for setting DRT parameters. Such guidelines are crucial to enhance the practical application of DRT, which was not covered in previous work \cite{sun2012towards}. Fourthly, previous work \cite{sun2012towards} only evaluated the fault detection effectiveness and efficiency of the proposed approach (DRT) in terms of the F-measure and T-measure, and only two small web services (ATM Service and Warehouse Service) were used in the evaluation of its performance. This paper, in contrast, provides a comprehensive evaluation that not only evaluates the fault detection effectiveness of the proposed approach in terms of the F-measure, F2-measure, and T-measure (Section \ref{sec:RQ1}), but also evaluates its efficiency in terms of F-time, F2-time, and T-time (Section \ref{sec:RQ3}). Furthermore, we also examine three real-life Web services, comparing the fault-detection effectiveness and efficiency of the proposed approach with those of RT, RPT, and AT. Statistical analyses were used to validate the significance of the empirical evaluations and comparisons (Sections \ref{sec:RQ1} and \ref{sec:RQ3}), which was not covered in previous work \cite{sun2012towards}. Extending again the previous work \cite{sun2012towards}, we also examine the relationship between the number of partitions and the optimal control parameter settings for DRT, evaluating the usefulness of guidelines provided by the theoretical analysis (Section \ref{sec:RQ2}). The contributions of this work, combined with previous work \cite{sun2012towards}, include:}
+\textcolor{red}{This paper extends our previous work \cite{sun2012towards} in the following aspects. Firstly, this paper extensively examines the challenges and practical situations related to testing web services (Section \ref{sec:webservices}). It also extensively discusses the limitations of RT, Partition Testing (PT), Random Partition Testing (RPT), and Adaptive Testing (AT), when they are used for testing web services (Section \ref{sec:introduction}). Secondly, although previous work \cite{sun2012towards} provided a coarse-grained framework for DRT of web services, PT was not studied. In contrast, this paper provides a comprehensive solution based on partitioning (Section 4.4.1). Thirdly, based on a theoretical analysis (Section 3.2), this paper provides guidelines for setting DRT parameters. Such guidelines are crucial to enhance the practical application of DRT, which was not covered in previous work \cite{sun2012towards}. Fourthly, previous work \cite{sun2012towards} only evaluated the fault detection effectiveness and efficiency of the proposed approach (DRT) in terms of the F-measure and T-measure, and only two small web services (ATM Service and Warehouse Service) were used in the evaluation of its performance. This paper, in contrast, provides a comprehensive evaluation that not only evaluates the fault detection effectiveness of the proposed approach in terms of the F-measure, F2-measure, and T-measure (Section \ref{sec:RQ1}), but also evaluates its efficiency in terms of F-time, F2-time, and T-time (Section \ref{sec:RQ3}). Furthermore, we also examine three real-life web services, comparing the fault-detection effectiveness and efficiency of the proposed approach with those of RT, RPT, and AT. Statistical analyses are used to validate the significance of the empirical evaluations and comparisons (Sections \ref{sec:RQ1} and \ref{sec:RQ3}), which was not covered in previous work \cite{sun2012towards}. Extending again the previous work \cite{sun2012towards}, we also examine the relationship between the number of partitions and the optimal control parameter settings for DRT, evaluating the usefulness of guidelines provided by the theoretical analysis (Section \ref{sec:RQ2}). The contributions of this work, combined with previous work \cite{sun2012towards}, include:}
 
 \begin{itemize}
   \item
@@ -126,7 +126,7 @@ In this section, we present some of the underlying concepts for DRT, and web ser
 \subsection{Dynamic Random Testing (DRT)}
 \label{sec:DRTStrategy}
 
-DRT combines RT and PT [31], with the goal of benefitting from the advantages of both.
+DRT combines RT and PT, with the goal of benefitting from the advantages of both.
 Given a test suite \emph{TS} classified into $m$ partitions (denoted $s_1, s_2, \ldots, s_m$),  suppose that a test case from $s_i$ ($i = 1, 2, \ldots, m$) is selected and executed.
 If this test case reveals a fault, $\forall j = 1, 2, \ldots, m$ and $j \neq i$, we then set
 
@@ -248,7 +248,7 @@ In this section, we describe a framework for applying DRT to web services, discu
 
 Considering the principle of DRT and the features of web services, we propose a DRT for web services framework, as illustrated in Figure~\ref{fig:frame}.
 \textcolor{red}{In the figure, the DRT components are inside the box, the web services under test and testers are located outside.
-Interactions between DRT components, the web services and testers are depicted in the framework.
+Interactions between DRT components, the web services, and testers are depicted in the framework.
 We next discuss the individual framework components.}
 
 \begin{figure}[]
@@ -300,9 +300,9 @@ We next discuss the individual framework components.}
 Generally speaking, DRT test case generation is influenced by both the probability distribution (for selection of the relevant partition), and the principles of RT
 ---
 combining the effectiveness of PT with the ease of RT.
-\textcolor{red}{Because our technique is based on PT, it is necessary that the partition details are provided (by the tester), which can easily be done through analysis of the input parameters and their constraints, as described in the specification of the web service under test. Once the partition details are available, then it is not difficult to set an initial test profile. The tester can, for example, simply use a uniform probability distribution ($p_1 = p_2 = \ldots = p_m = 1 / m$, where $m$ denotes the number of partitions, and $p_i $ $(i = 1,2,\ldots,m)$ denotes the probability of selecting the $i^{th}$ partition). In Section \ref{sec:relation}, we provide some guidelines for how to set the DRT parameters.}
+\textcolor{red}{Because our technique is based on PT, it is necessary that the partition details be provided (by the tester), which can easily be done through analysis of the input parameters and their constraints, as described in the specification of the web service under test. Once the partition details are available, then it is not difficult to set an initial test profile. The tester can, for example, simply use a uniform probability distribution ($p_1 = p_2 = \ldots = p_m = 1 / m$, where $m$ denotes the number of partitions, and $p_i $ $(i = 1,2,\ldots,m)$ denotes the probability of selecting the $i^{th}$ partition). In Section \ref{sec:relation}, we provide some guidelines for how to set the DRT parameters.
 Furthermore, many of the components in the DRT for web services framework can be automated.
-To enhance the efficiency and practical applicability of DRT for web services, we also developed a prototype that will be described in Section~\ref{sec:prototype}.
+To make it easier for potential adopters of DRT for web services, we have also developed a prototype application (described in Section \ref{sec:prototype}).}
 
 \subsection{Guidelines for Parameter Setting}
 \label{sec:relation}
@@ -332,7 +332,7 @@ As testing proceeds, the probability $p_M$ of partition $s_M$ being selected is 
     p_M^{n + 1} > p_M^{n}
 \end{equation}
 
-\textcolor{red}{In order to achieve the best performance, the probability of selecting the partition $s_M$ (which has the maximum failure rate) is expected to increase. To achieve this, the increase in probability of $s_M$ being selected for the next round should be larger than that for other partitions. We further analysis sufficient conditions of the above goal, and can accordingly derive an interval for $\varepsilon$.}
+\textcolor{red}{In order to achieve the best performance, the probability of selecting the partition $s_M$ (which has the maximum failure rate) is expected to increase. To achieve this, the increase in probability of $s_M$ being selected for the next round should be larger than that for other partitions. We further analyze sufficient conditions for this goal, and can accordingly derive an interval for $\varepsilon$.}
 
 Initially, the test profile is
 $\{ \left \langle s_1,p_1^0 \right \rangle, \left \langle s_2,p_2^0 \right \rangle, \ldots, \left \langle s_m,p_m^0 \right \rangle\}$,
@@ -428,13 +428,13 @@ In practice, we should set
   \varepsilon \approx \frac{2m\theta_{min}^2}{1-2\theta_{min}}.
 \end{equation}
 
-\textcolor{red}{For a given partition scheme, with a total number of $m$ partitions, identification of the partition with the minimum failure rate $(\theta_{min})$ first requires calculation of the failure rates of each partition, then identification of the minimum. Each partition¡¯s failure rate can be obtained in two ways:}
+\textcolor{red}{For a given partition scheme, with a total number of $m$ partitions, identification of the partition with the minimum failure rate $(\theta_{min})$ first requires calculation of the failure rates of each partition, then identification of the minimum. Each partition's failure rate can be obtained in two ways:}
 \begin{enumerate}[1)]
   \item
   \textcolor{red}{It can be calculated directly as $F / E$ ($F$ is the number of failures and $E$ is the number of executed tests), if the test history of the web service under test is accessible.}
 
   \item
-  \textcolor{red}{It can be approximately calculated by $1 / k_i$ ($k_i$ is the total number of test cases executed before revealing a fault).}
+  \textcolor{red}{It can be approximated by $1 / k_i$, where $k_i$ is the total number of test cases executed before revealing a fault.}
 \end{enumerate}
 
 
@@ -445,24 +445,26 @@ In practice, we should set
 
 \begin{enumerate}[1)]
   \item
-  \textcolor{red}{\emph{Guidance} interface describes the steps and configuring rules the tester should follow when testing a web service.}
+  \textcolor{red}{Guidance. This feature describes the steps the tester should follow when testing a web service.}
 
   \item
-  \textcolor{red}{\emph{Configuration} interface (as shown in Figure \ref{fig:configuration}) interacts with the testers to obtain and set the information related to testing the web service, including: the address of the web service under test; the DRT parameters and partition details; and the test case preparation. The detailed steps are as follows:}
+  \textcolor{red}{Configuration. This feature interacts with the testers to obtain and set the information related to testing the web service, including: the address of the web service under test; the DRT parameters and partition details; and the test case preparation. The detailed steps are as follows:}
 
   \begin{itemize}
     \item
-    \textcolor{red}{\emph{URL Inputting and parsing.} We integrate the WSDL parsing functionality provided by MT4WS \cite{sun2016mt4ws}. This enables all the (WSDL) parameters and their types to be automatically obtained.}
+    \textcolor{red}{Inputting and parsing the URL: We integrate the WSDL parsing functionality provided by MT4WS \cite{sun2016mt4ws}. This enables all the (WSDL) parameters and their types to be automatically obtained.}
     \item
-    \textcolor{red}{\emph{Parameter setting.} The tester is responsible for selecting which operations of the current WSUT are to be tested, and for partitioning each parameter into disjoint options.}
+    \textcolor{red}{Parameter setting: The tester is responsible for selecting which operations of the current web service under test are to be tested, and for partitioning each parameter into disjoint choices.}
     \item
-    \textcolor{red}{\emph{Partition and DRT parameter setting.} The tester is responsible for specifying the partitions by combining the options associated with each parameter and setting a specific value for DRT parameter.}
+    \textcolor{red}{Partition setting: The tester is responsible for specifying the partitions by combining the choices associated with each parameter.}
     \item
-    \textcolor{red}{\emph{Test case preparation.} The tester is responsible for specifying the mode of test case generation (either randomly generating test cases based on the parameters, or uploading test cases generated using other techniques).}
+    \textcolor{red}{Test case generation: The tester is responsible for specifying the mode of test case generation (either randomly generating test cases based on the parameters, or uploading test cases generated using other techniques).}
   \end{itemize}
   \item
-  \textcolor{red}{\emph{Execution} interface presents a summary of the testing results, including details of the test case execution (input, expected output, partition, and result (pass or fail)). For randomly generated tests, the tester has to check each individual result. Otherwise, when all tests have been completed, a report is generated in a downloadable file.}
+  \textcolor{red}{Execution. This feature presents a summary of the testing results, including details of the test case execution (input, expected output, partition, and result (pass or fail)). For randomly generated tests, the tester has to check each individual result. Otherwise, when all tests have been completed, a report is generated in a downloadable file.}
 \end{enumerate}
+
+\textcolor{red}{The back-end logic is composed of several Restful APIs and Java classes: The APIs are responsible for communicating HTTP messages to and from the front-end interface. The controller class is responsible for updating the test profile according to the test results, and for selecting test cases from the partitions. The selected test cases are wrapped in SOAP messages and sent to the web service under test through the proxy class, which also intercepts the test results.}
 
 
 \begin{figure}
@@ -497,7 +499,7 @@ In our experiments, we focused on addressing the following three research questi
 
   \item [RQ3]
 
-  \textcolor{red}{Compared with baseline techniques, how efficient is DRT at detecting web service faults in terms of time cost?}
+  \textcolor{red}{Compared with the baseline techniques, how efficient is DRT at detecting web service faults in terms of time?}
 
   \textcolor{red}{Compared with RT and PT, DRT incorporates the selection of partitions and test cases whithin a partition. Compared with AT which also introduces feedback and adaptive control principles to software testing, DRT has a simple but efficient control strategy. Thus, we are interested in comparing the fault detection efficiency of DRT, RT, PT, and AT in terms of their time costs. To answer this, we compare the time cost of DRT with that of the baseline techniques.}
 
@@ -513,7 +515,7 @@ We selected three web services as the subject programs for our study, \textcolor
 \texttt{Parking billing service (PBS)}}. \textcolor{red}{
 We used the tool muJava \cite{ma2005mujava} to conduct mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity}, generating a total of 1563 mutants}. Each mutant was created by applying a syntactic change (\textcolor{red}{using one of all applicable mutation operators provided by muJava) to the original program. Equivalent mutants, and those that were too easily detected}
 \textcolor{red}{(requiring less than 20 randomly generated test cases), were removed.}
-\textcolor{red}{To ensure the statistical reliability, we obtained 50 different test suites using different random seeds, then testing all mutants with all test suites, calculating the average number of test cases needed to kill (detect) a mutant. Based on this, those mutants that could be detected too easily were removed.} Table~\ref{tab:objects} summarizes the basic information of the used web services and their mutants.
+\textcolor{red}{To ensure the statistical reliability, we obtained 50 different test suites using different random seeds, then tested all mutants with all test suites, calculating the average number of test cases needed to kill (detect) a mutant. Based on this, those mutants that could be detected too easily were removed.} Table~\ref{tab:objects} summarizes the basic information of the used web services and their mutants.
 A detailed description of each web service is given in the following.
 
 \begin{table}[h]
@@ -697,9 +699,9 @@ A DT \emph{rule} is composed of a \emph{CE} and its corresponding \emph{AE}.
 With DT, it is possible to obtain partition schemes with different granularities.
 For fine-grain partition schemes, each \emph{CE} of a DT \emph{rule} corresponds to a partition;
 while for coarse-grained schemes, a partition corresponds to the union of a group of partitions of which all \emph{CE} of DT \emph{rules} have the same \emph{AE}.
-\textcolor{red}{The decision tables for \texttt{ACMS}, \texttt{CUBS}, and \texttt{PBS} are shown in Tables \ref{tab:ds-acms} to \ref{tab:ds-pbs}, respectively. In the tables, $R_i$ $(i = 1, 2, \ldots, n)$ denotes the identified $i^{th}$ \emph{rule}; $n$ is total number of \emph{rules}; and the checkmark (\checkmark) under each \emph{rule} indicates that corresponding action should be taken.
+\textcolor{red}{The decision tables for \texttt{ACMS}, \texttt{CUBS}, and \texttt{PBS} are shown in Tables \ref{tab:ds-acms} to \ref{tab:ds-pbs}, respectively. In the tables, $R_i$ $(i = 1, 2, \ldots, n)$ denotes the identified $i^{th}$ \emph{rule}; $n$ is the total number of \emph{rules}; and the checkmark (\checkmark) under each \emph{rule} indicates that the corresponding action should be taken.
 % The details of conditions and associated options for all the three web services are summarized in Table \ref{tab:conandopt}, and
-The details of actions are defined in Table \ref{tab:formulas}, where $w$ is the weight of baggage; $price^*$ means economy class fare; $op^*$ means the month charge; $call$ and $data$ mean the call duration and data usage, repectively; $freeCall$ and $freeData$ mean the free calls and free data, respectively; $baseFee$ means the cost before the discount. In Table \ref{tab:ds-acms}, the condition for calculating the cost of the baggage include \emph{class} (0: First class; 1: Business class; 2: Economy class), \emph{isStudent} (Y: The passenger is a student; N: The passenger is not a student), \emph{isOverload} (Y: The weight exceeds the weight of the free carry; N: The weight does not exceed the weight of the free carry), and \emph{Destination} (0: Domestic flight; 1: International flight). In Table \ref{tab:ds-cubs}, conditions that affect cell-phone bills include \emph{plan} (A: Plan A; B: Plan B; C: Plan C) and \emph{option} $y$ under \emph{plan} $x$, represented as $op_x^y$, where $x \in \{A, B, C\}$, and $y \in \{\mathcal{Z} |1 \le y \le 11\}$. In Table \ref{tab:ds-pbs}, conditions that affect the parking fee include the type of \emph{vehicle} (0: Motorcycle; 1: 2-door coupe; 2: Others), \emph{day of week} (0: Weekday; 1: Saturday or Sunday), and \emph{discount information} (0: Customers provide a discount coupon; 1: The estimated hours of parking and the actual hours of parking fall into the same time range; 2: Estimated hours and the actual hours are in different time ranges).}
+The details of actions are provided in Table \ref{tab:formulas}, where $w$ is the weight of baggage; $price^*$ means economy class fare; $op^*$ means the month charge; $call$ and $data$ mean the call duration and data usage, repectively; $freeCall$ and $freeData$ mean the free calls and free data, respectively; $baseFee$ means the cost before the discount. In Table \ref{tab:ds-acms}, the condition for calculating the cost of the baggage include \emph{class} (0: First class; 1: Business class; 2: Economy class), \emph{isStudent} (Y: The passenger is a student; N: The passenger is not a student), \emph{isOverload} (Y: The baggage exceeds the free carry-on weight limit; N: The baggage does not exceed the free carry-on weight limit.), and \emph{Destination} (0: Domestic flight; 1: International flight). In Table \ref{tab:ds-cubs}, conditions that influence cell-phone bills include \emph{plan} (A: Plan A; B: Plan B; C: Plan C) and \emph{option} $y$ under \emph{plan} $x$, represented as $op_x^y$, where $x \in \{A, B, C\}$, and $y \in \{\mathcal{Z} |1 \le y \le 11\}$. In Table \ref{tab:ds-pbs}, conditions that affect the parking fee include the type of \emph{vehicle} (0: Motorcycle; 1: 2-door coupe; 2: Others), \emph{day of week} (0: Weekday; 1: Saturday or Sunday), and \emph{discount information} (0: Customers provide a discount coupon; 1: The estimated hours of parking and the actual hours of parking fall into the same time range; 2: Estimated hours and the actual hours are in different time ranges).}
 
 \begin{table*}
   \caption{Decision Table for \texttt{ACMS}}
@@ -766,7 +768,7 @@ The details of actions are defined in Table \ref{tab:formulas}, where $w$ is the
 
 
 \begin{table*}
-  \caption{Formulas of the Actions in Table \ref{tab:ds-acms} to \ref{tab:ds-pbs}}
+  \caption{Formulas of the Actions in Table \ref{tab:ds-acms} $\sim$ \ref{tab:ds-pbs}}
   \label{tab:formulas}
   \centering
   \begin{tabular}{ll}
@@ -792,7 +794,7 @@ The details of actions are defined in Table \ref{tab:formulas}, where $w$ is the
 
 
 
-\textcolor{red}{As can be seen from the description above, because DT considers all parameters and identifies their invalid combinations, it can  provide a systematic and efficient way to partition an input domain into disjoint subdomains, and then generate test cases. In practice, each DT \emph{rule} condition entry corresponds to a partition in which test cases cover some paths
+\textcolor{red}{As can be seen from the description above, because the DT considers all parameters, and identifies their invalid combinations, it can  provide a systematic and efficient way to partition an input domain into disjoint subdomains, and then generate test cases. In practice, each DT \emph{rule} condition entry corresponds to a partition in which test cases cover some paths
 ---
 thus, the faults in those paths have a chance of being detected.}
 
@@ -1042,10 +1044,10 @@ In summary, the DRT strategy is considered the best testing technique across thi
 
 \begin{itemize}
   \item
-  \textcolor{red}{DRT outperformed RT, RPT, and AT, according to all the applied metrics for all three studied web services. DRT marginally outperformed AT in terms of the F-, F2-, and T-measure, for all the studied web services. Moreover, AT incurs heavier computation overhead, and takes a significantly longer time. For instance, AT spent 32429.07ms selecting test cases for detecting all faults of \texttt{CUBS}, while DRT only needed 30.21ms (Table \ref{tab:time}). This indicates that among RT, RPT, and AT, DRT should be chosen.}
+  \textcolor{red}{DRT outperformed RT, RPT, and AT, according to all the applied metrics for all three studied web services. DRT marginally outperformed AT in terms of the F-, F2-, and T-measure, for all the studied web services. Moreover, AT incurs heavier computational overhead, and takes a significantly longer time. For instance, AT required 32429.07ms to select and execute sufficient test cases to detect all faults in \texttt{CUBS}, while DRT only needed 30.21ms (Table \ref{tab:time}). This indicates that among RT, RPT, and AT, DRT should be chosen.}
 
   \item
-  \textcolor{red}{DRT is more effective in terms of F-, F2-, and T-measure when the parameter settings are optimal (according to the theoretical analysis): In most cases, DRT has the best performance for all three object web services, according to these three metrics (F-measure, F2-measure, and T-measure) when following the guidelines for the parameter settings. This highlights the usefulness of the parameter-setting guidelines.}
+  \textcolor{red}{DRT is more effective in terms of the F-, F2-, and T-measure when the parameter settings are optimal (according to the theoretical analysis): In most cases, DRT has the best performance for all three web services, according to these three metrics (F-measure, F2-measure, and T-measure) when following the guidelines for the parameter settings. This highlights the usefulness of the parameter-setting guidelines.}
 \end{itemize}
 
 \textcolor{red}{We also note the following limitations:}
