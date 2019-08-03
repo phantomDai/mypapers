@@ -246,8 +246,8 @@ In this section, we describe a framework for applying DRT to web services, discu
 \subsection{Framework}
 \label{sec:framework}
 
-Considering the principle of DRT and the features of web services, we propose a DRT for web services framework, as illustrated in Figure~\ref{fig:frame}.
-\textcolor{red}{In the figure, the DRT components are inside the box, the web services under test and testers are located outside.
+Considering the principles of DRT and the features of web services, we propose a DRT for web services framework, as illustrated in Figure~\ref{fig:frame}.
+\textcolor{red}{In the figure, the DRT components are inside the box, and the web services under test and testers are located outside.
 Interactions between DRT components, the web services, and testers are depicted in the framework.
 We next discuss the individual framework components.}
 
@@ -277,7 +277,7 @@ We next discuss the individual framework components.}
 
   \item
   \emph{Test Profile and DRT Parameter Initialization}.
-  \textcolor{red}{Testers need to initialize the test profile, a simple way of doing which would be the use of a uniform probability distribution ( $p_1 = p_2 = \ldots = p_k = 1 / k$, where $k$ denotes the number of partitions, and $p_i$ $(i = 1,2, \ldots, k)$ denotes the probability of selecting the $i^{th}$ partition). They also need to set DRT parameters (guidelines for which are introduced in Section \ref{sec:relation})}.
+  \textcolor{red}{Testers need to initialize the test profile, a simple way of doing which would be the use of a uniform probability distribution ($p_1 = p_2 = \ldots = p_k = 1 / k$, where $k$ denotes the number of partitions, and $p_i$ $(i = 1,2, \ldots, k)$ denotes the probability of selecting the $i^{th}$ partition). They also need to set DRT parameters (guidelines for which are introduced in Section \ref{sec:relation})}.
 
   \item
   \emph{Partition Selection}.
@@ -295,7 +295,7 @@ We next discuss the individual framework components.}
   \emph{Test Profile Adjustment}.
   Upon completion of each test, its pass or fail status is determined by comparing the actual and expected results (with pass if both are the same).
   The pass or fail status is then used to adjust the (partition) probability distribution accordingly.
-  Situations where determination of the test outcome status is not possible (i.e. in the presence of the oracle problem~\cite{weyuker1982testing, barr2015oracle, patel2018mapping}) may potentially be addressed using metamorphic testing~\cite{sun2011}.
+  Situations where determination of the test outcome status is not possible (i.e. in the presence of the oracle problem~\cite{weyuker1982testing, barr2015oracle, patel2018mapping, segura2018metamorphic}) may potentially be addressed using metamorphic testing~\cite{sun2011}.
 \end{enumerate}
 Generally speaking, DRT test case generation is influenced by both the probability distribution (for selection of the relevant partition), and the principles of RT
 ---
@@ -428,10 +428,10 @@ In practice, we should set
   \varepsilon \approx \frac{2m\theta_{min}^2}{1-2\theta_{min}}.
 \end{equation}
 
-\textcolor{red}{For a given partition scheme, with a total number of $m$ partitions, identification of the partition with the minimum failure rate $(\theta_{min})$ first requires calculation of the failure rates of each partition, then identification of the minimum. Each partition's failure rate can be obtained in two ways:}
+\textcolor{red}{For a given partition scheme, with a total of $m$ partitions, identification of the partition with the minimum failure rate $(\theta_{min})$ first requires calculation of the failure rates of each partition, then identification of the minimum. Each partition's failure rate can be obtained in two ways:}
 \begin{enumerate}[1)]
   \item
-  \textcolor{red}{It can be calculated directly as $F / E$ ($F$ is the number of failures and $E$ is the number of executed tests), if the test history of the web service under test is accessible.}
+  \textcolor{red}{It can be calculated directly as $F / E$ ($F$ is the number of failures and $E$ is the number of executed tests), if the test history of the web service under test is available.}
 
   \item
   \textcolor{red}{It can be approximated by $1 / k_i$, where $k_i$ is the total number of test cases executed before revealing a fault.}
@@ -441,7 +441,7 @@ In practice, we should set
 \subsection{Prototype}
 \label{sec:prototype}
 
-\textcolor{red}{This section describes a supporting tool DRTester that partially automates DRT for web services. DRTester supports the following tasks in testing web services: a) WSDL parsing, b) parameters setting, c) partition and DRT parameter setting, d) test cases preparation. The details of DRTester are described below:}
+\textcolor{red}{This section describes a tool that partially automates DRT for web services, called DRTester. DRTester supports the following tasks in testing web services: a) WSDL parsing; b) parameters of WSUT setting; c) partition and DRT parameters (adjusting factor $\varepsilon$ and test profile) setting; and d) test cases preparation. The details of DRTester are as follows:}
 
 \begin{enumerate}[1)]
   \item
@@ -501,7 +501,7 @@ In our experiments, we focused on addressing the following three research questi
 
   \textcolor{red}{Compared with the baseline techniques, how efficient is DRT at detecting web service faults in terms of time?}
 
-  \textcolor{red}{Compared with RT and PT, DRT incorporates the selection of partitions and test cases whithin a partition. Compared with AT which also introduces feedback and adaptive control principles to software testing, DRT has a simple but efficient control strategy. Thus, we are interested in comparing the fault detection efficiency of DRT, RT, PT, and AT in terms of their time costs. 
+  \textcolor{red}{Compared with RT and PT, DRT incorporates the selection of partitions and test cases within a partition. Compared with AT, which also introduces feedback and adaptive control principles to software testing, DRT has a simple but efficient control strategy. Thus, we are interested in comparing the fault detection efficiency of DRT, RT, PT, and AT in terms of their time costs. 
   %To answer this, we compare the time cost of DRT with that of the baseline techniques.
   }
 
@@ -515,7 +515,7 @@ We selected three web services as the subject programs for our study, \textcolor
 \texttt{Aviation Consignment Management Service (ACMS)};
 \texttt{China Unicom billing service (CUBS)}; and
 \texttt{Parking billing service (PBS)}}. \textcolor{red}{
-We used the tool muJava \cite{ma2005mujava} to conduct mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity}, generating a total of 1563 mutants}. Each mutant was created by applying a syntactic change (\textcolor{red}{using one of all applicable mutation operators provided by muJava) to the original program. Equivalent mutants, and those that were too easily detected}
+We used the tool MuJava \cite{ma2005mujava} to conduct mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity}, generating a total of 1563 mutants}. Each mutant was created by applying a syntactic change (\textcolor{red}{using one of all applicable mutation operators provided by MuJava) to the original program. Equivalent mutants, and those that were too easily detected}
 \textcolor{red}{(requiring less than 20 randomly generated test cases), were removed.}
 \textcolor{red}{To ensure the statistical reliability, we obtained 50 different test suites using different random seeds, then tested all mutants with all test suites, calculating the average number of test cases needed to kill (detect) a mutant. Based on this, those mutants that could be detected too easily were removed.} Table~\ref{tab:objects} summarizes the basic information of the used web services and their mutants.
 A detailed description of each web service is given in the following.
@@ -700,10 +700,9 @@ Typically, a DT consists of four parts:
 A DT \emph{rule} is composed of a \emph{CE} and its corresponding \emph{AE}.
 With DT, it is possible to obtain partition schemes with different granularities.
 For fine-grain partition schemes, each \emph{CE} of a DT \emph{rule} corresponds to a partition;
-while for coarse-grained schemes, a partition corresponds to the union of a group of partitions of which all \emph{CE} of DT \emph{rules} have the same \emph{AE}.
+while for coarse-grained schemes, a partition corresponds to the union of a group of partitions for which all \emph{CE} of DT \emph{rules} have the same \emph{AE}.
 \textcolor{red}{The decision tables for \texttt{ACMS}, \texttt{CUBS}, and \texttt{PBS} are shown in Tables \ref{tab:ds-acms} to \ref{tab:ds-pbs}, respectively. In the tables, $R_i$ $(i = 1, 2, \ldots, n)$ denotes the identified $i^{th}$ \emph{rule}; $n$ is the total number of \emph{rules}; and the checkmark (\checkmark) under each \emph{rule} indicates that the corresponding action should be taken.
-% The details of conditions and associated options for all the three web services are summarized in Table \ref{tab:conandopt}, and
-The details of actions are provided in Table \ref{tab:formulas}, where $w$ is the weight of baggage; $price^*$ means economy class fare; $op^*$ means the month charge; $call$ and $data$ mean the call duration and data usage, repectively; $freeCall$ and $freeData$ mean the free calls and free data, respectively; $baseFee$ means the cost before the discount. In Table \ref{tab:ds-acms}, the condition for calculating the cost of the baggage include \emph{class} (0: First class; 1: Business class; 2: Economy class), \emph{isStudent} (Y: The passenger is a student; N: The passenger is not a student), \emph{isOverload} (Y: The baggage exceeds the free carry-on weight limit; N: The baggage does not exceed the free carry-on weight limit.), and \emph{Destination} (0: Domestic flight; 1: International flight). In Table \ref{tab:ds-cubs}, conditions that influence cell-phone bills include \emph{plan} (A: Plan A; B: Plan B; C: Plan C) and \emph{option} $y$ under \emph{plan} $x$, represented as $op_x^y$, where $x \in \{A, B, C\}$, and $y \in \{\mathcal{Z} |1 \le y \le 11\}$. In Table \ref{tab:ds-pbs}, conditions that affect the parking fee include the type of \emph{vehicle} (0: Motorcycle; 1: 2-door coupe; 2: Others), \emph{day of week} (0: Weekday; 1: Saturday or Sunday), and \emph{discount information} (0: Customers provide a discount coupon; 1: The estimated hours of parking and the actual hours of parking fall into the same time range; 2: Estimated hours and the actual hours are in different time ranges).}
+The details of actions are provided in Table \ref{tab:formulas}, where $w$ is the weight of baggage; $price^*$ means economy class fare; $op^*$ means the month charge; $call$ and $data$ mean the call duration and data usage, repectively; $freeCall$ and $freeData$ mean the free calls and free data, respectively; and $baseFee$ means the cost before the discount. In Table \ref{tab:ds-acms}, the condition for calculating the cost of the baggage include \emph{class} (0: First class; 1: Business class; and 2: Economy class), \emph{isStudent} (Y: The passenger is a student; and N: The passenger is not a student), \emph{isOverload} (Y: The baggage exceeds the free carry-on weight limit; and N: The baggage does not exceed the free carry-on weight limit.), and \emph{Destination} (0: Domestic flight; and 1: International flight). In Table \ref{tab:ds-cubs}, conditions that influence cell-phone bills include \emph{plan} (A: Plan A; B: Plan B; and C: Plan C) and \emph{option} $y$ under \emph{plan} $x$, represented as $op_x^y$, where $x \in \{A, B, C\}$, and $y \in \{\mathcal{Z} |1 \le y \le 11\}$. In Table \ref{tab:ds-pbs}, conditions that affect the parking fee include the type of \emph{vehicle} (0: Motorcycle; 1: 2-door coupe; and 2: Others), \emph{day of week} (0: Weekday; and 1: Saturday or Sunday), and \emph{discount information} (0: Customers provide a discount coupon; 1: The estimated hours of parking and the actual hours of parking fall into the same time range; and 2: Estimated hours and the actual hours are in different time ranges).}
 
 \begin{table*}
   \caption{Decision Table for \texttt{ACMS}}
@@ -829,7 +828,7 @@ means that the probability of selecting partition $s_i$ is $p_i$.}
 \end{table*}
 
 \begin{table*}[htbp]
-  \caption{Number of Scenarios Where the Technique on the Top Wow Has a Lower Metric (F-/F2/T-measure) Score Than That on The Left Column}
+  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower Metric (F-/F2/T-measure) Score Than That on The Left Column}
   \centering
   \label{tableHlom:f/f2/t-measure}
   \begin{tabular}{lllllllllllll}  \toprule
@@ -897,7 +896,7 @@ Furthermore, as will be discussed in Section~\ref{sec:results}, further statisti
 \label{sec:RQ1}
 
 F-, F2-, and T-measure results for \texttt{ACMS}, \texttt{CUBS}, and \texttt{PBS} are shown using boxplots in
-Figures~\ref{fig:Fmeasure} to~\ref{fig:Tmeasure}, \textcolor{red}{Here, the parameter $\varepsilon$ of DRT is set to the optimal values as described in Section \ref{sec:RQ2}. The experimental results of DRT with other parameter values are shown in Appendix B.}
+Figures~\ref{fig:Fmeasure} to~\ref{fig:Tmeasure}, \textcolor{red}{where the DRT parameter $\varepsilon$ was set to the optimal values as, described in Section \ref{sec:RQ2}. The experimental results of DRT with other parameter values are shown in Appendix B.}
 In each boxplot, the upper and lower bounds of the box represent the third and first quartiles of the metric, respectively;
 the middle line represents the median value;
 the upper and lower whiskers mark, respectively, the largest and smallest data within the range of $\pm 1.5 \times IQR$ (where $IQR$ is the interquartile range);
@@ -930,7 +929,7 @@ each solid circle represents the mean value of the metric.
 	\label{fig:Tmeasure}
 \end{figure}
 
-It can observed from the figures that, by an overwhelming majority, \textcolor{red}{DRT was the best performer in terms of F-, F2-, and T-measure, followed by AT, RPT, and RT. On the other hand, RT may be the best performer occasionally or the worst performer in terms of F-, F2-, and T-measure, which means that the fault detection effectiveness of RT is not stable. On the contrary, DRT and AT had a relatively stable fault detection effectiveness}.
+It can observed from the figures that, \textcolor{red}{in an overwhelming majority of cases, DRT was the best performer in terms of F-, F2-, and T-measure, followed by AT, RPT, and RT. On the other hand, RT may be the best performer occasionally or the worst performer in terms of F-, F2-, and T-measure, which means that the fault detection effectiveness of RT is not stable. In contrast, DRT and AT show a relatively stable fault detection effectiveness}.
 We also conducted statistical testing to verify the significance of this observation, using the Holm-Bonferroni method~\cite{sun2018adaptive} (with p-value equal to $0.05$) to determine which pairs of testing techniques had significant differences.
 The statistical data are shown in Table \ref{tableHlom:f/f2/t-measure}, where each cell gives the number of scenarios where the technique above (in the table) performed better than one to the left.
 When the difference is significant, the number is underlined and in bold face.
@@ -941,7 +940,7 @@ Table~\ref{tableHlom:f/f2/t-measure} clearly shows that the difference between e
 \subsection{RQ2: Relationship between Partition Number and $\varepsilon$}
 \label{sec:RQ2}
 
-In~\ref{sec:relation}, we analyzed the relationship between the number of partitions and the DRT strategy parameter $\varepsilon$.
+In Section \ref{sec:relation}, we analyzed the relationship between the number of partitions and the DRT parameter $\varepsilon$.
 In this section, we show that our theoretical analysis provides useful guidance to testers to set the value of $\varepsilon$.
 
 We used three web services to validate our theoretical analysis.
@@ -997,7 +996,7 @@ From Figure~\ref{fig:theovsnontheo}, we have the following observations:
 \subsection{RQ3: \textcolor{red}{Fault Detection Efficiency}}
 \label{sec:RQ3}
 
-\textcolor{red}{The F-, F2-, and T-time results for \texttt{ACMS}, \texttt{CUBS}, and \texttt{PBS} are summarized in Table \ref{tab:time}, where the values of DRT parameters for subject web services are the same as those in Section \ref{sec:RQ1}. The F-, F2-, and T-time results of DRT with different parameter values are summarized in Appendix B.} It can be observed from the \textcolor{red}{table} that, in general, DRT had the best performance, RPT just marginally outperforms RT, and \textcolor{red}{AT had the worst performance}.
+\textcolor{red}{The F-, F2-, and T-time results for \texttt{ACMS}, \texttt{CUBS}, and \texttt{PBS} are summarized in Table \ref{tab:time}, where the values of DRT parameters for the subject web services are the same as those in Section \ref{sec:RQ1}. The F-, F2-, and T-time results of DRT with different parameter values are summarized in Appendix B.} It can be observed from the \textcolor{red}{table} that, in general, DRT had the best performance; RPT marginally outperforms RT; and \textcolor{red}{AT had the worst performance}.
 
 
 \begin{table*}
@@ -1020,7 +1019,8 @@ From Figure~\ref{fig:theovsnontheo}, we have the following observations:
 
 
 As was done for the F-, F2-, and T-measure data, we used the Holm-Bonferroni method to check the difference between each pair of testing strategies in terms of F-time, F2-time, and T-time, as shown in Table \ref{tableHlom:f/f2/t-time}.
-In Table \ref{tableHlom:f/f2/t-time}, \textcolor{red}{some entries (such as ``\underline{\textbf{6}}'' \& ``\underline{\textbf{0}}'' for DRT vs. RT, ``\underline{\textbf{6}}'' vs. ``\underline{\textbf{0}}'' for DRT vs. RPT, ``\underline{\textbf{6}}'' vs. ``\underline{\textbf{0}}'' for DRT vs. AT), meaning that, in terms of F2-/T-time, DRT was significantly better than RT, and RPT, DRT only marginally outperformed RT, and RPT in terms of F-time, and DRT was significantly better than AT in terms of F-/F2-/T-time}.
+% In Table \ref{tableHlom:f/f2/t-time}, \textcolor{red}{some entries (such as ``\underline{\textbf{6}}'' \& ``\underline{\textbf{0}}'' for DRT vs. RT, ``\underline{\textbf{6}}'' vs. ``\underline{\textbf{0}}'' for DRT vs. RPT, ``\underline{\textbf{6}}'' vs. ``\underline{\textbf{0}}'' for DRT vs. AT), meaning that, in terms of F2-/T-time, DRT was significantly better than RT, and RPT, DRT only marginally outperformed RT, and RPT in terms of F-time, and DRT was significantly better than AT in terms of F-/F2-/T-time}.
+\textcolor{red}{Following the same convention of the use of bold face and underlined in Table \ref{tableHlom:f/f2/t-measure}, Table \ref{tableHlom:f/f2/t-time} shows that (a) DRT was significantly better than AT in terms of F-/F2/T-time; (b) DRT was significantly better than RT and RPT in terms of F2-/T-time; and (c) DRT marginally outperformed RT and RPT in terms of F-time.}
 In other words, the additional computation incurred in DRT by updating the test profile is compensated for in terms of test execution savings.
 
 In summary, the DRT strategy is considered the best testing technique across this three metrics, RPT marginally outperformed RT, and DRT, RPT, and RT significantly outperformed AT.

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  2 AUG 2019 10:56
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  3 AUG 2019 23:20
 entering extended mode
 **F:/mypapers/DRT/DRTPaper/DRT4WS(V22)/DRT4WS.tex
 (F:/mypapers/DRT/DRTPaper/DRT4WS(V22)/DRT4WS.tex
@@ -485,7 +485,7 @@ Overfull \hbox (13.3525pt too wide) in paragraph at lines 624--634
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 849--855
+Underfull \hbox (badness 10000) in paragraph at lines 848--854
 $\OT1/cmr/m/n/10 04\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 1\OML/cmm/m/it/10 :\OT1/c
 mr/m/n/10 0\OML/cmm/m/it/10 E$\OT1/ppl/m/n/9.53561 -$\OT1/cmr/m/n/10 03\OML/cmm
 /m/it/10 ; \OT1/cmr/m/n/10 5\OML/cmm/m/it/10 :\OT1/cmr/m/n/10 0\OML/cmm/m/it/10
@@ -503,7 +503,7 @@ OT1/cmr/m/n/10 3\OML/cmm/m/it/10 E$\OT1/ppl/m/n/9.53561 -
 File: fig/drtresultbox/acmsFbySun.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/acmsFbySun.pdf>
-Package pdftex.def Info: fig/drtresultbox/acmsFbySun.pdf used on input line 908
+Package pdftex.def Info: fig/drtresultbox/acmsFbySun.pdf used on input line 907
 .
 (pdftex.def)             Requested size: 248.6071pt x 199.16898pt.
 
@@ -511,7 +511,7 @@ Package pdftex.def Info: fig/drtresultbox/acmsFbySun.pdf used on input line 908
 File: fig/drtresultbox/cubsFbySun.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/cubsFbySun.pdf>
-Package pdftex.def Info: fig/drtresultbox/cubsFbySun.pdf used on input line 909
+Package pdftex.def Info: fig/drtresultbox/cubsFbySun.pdf used on input line 908
 .
 (pdftex.def)             Requested size: 248.60294pt x 199.16898pt.
 
@@ -519,7 +519,7 @@ Package pdftex.def Info: fig/drtresultbox/cubsFbySun.pdf used on input line 909
 File: fig/drtresultbox/pbsFbySun.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/pbsFbySun.pdf>
-Package pdftex.def Info: fig/drtresultbox/pbsFbySun.pdf used on input line 910.
+Package pdftex.def Info: fig/drtresultbox/pbsFbySun.pdf used on input line 909.
 
 (pdftex.def)             Requested size: 248.60294pt x 199.16614pt.
  [10]
@@ -528,7 +528,7 @@ File: fig/drtresultbox/acmsF2bySun.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/acmsF2bySun.pdf>
 Package pdftex.def Info: fig/drtresultbox/acmsF2bySun.pdf used on input line 91
-7.
+6.
 (pdftex.def)             Requested size: 248.6071pt x 199.16614pt.
 
 <fig/drtresultbox/cubsF2bySun.pdf, id=124, 596.2275pt x 486.81876pt>
@@ -536,14 +536,14 @@ File: fig/drtresultbox/cubsF2bySun.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/cubsF2bySun.pdf>
 Package pdftex.def Info: fig/drtresultbox/cubsF2bySun.pdf used on input line 91
-8.
+7.
 (pdftex.def)             Requested size: 248.6034pt x 199.16614pt.
 
 <fig/drtresultbox/pbsF2bySun.pdf, id=125, 588.1975pt x 486.81876pt>
 File: fig/drtresultbox/pbsF2bySun.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/pbsF2bySun.pdf>
-Package pdftex.def Info: fig/drtresultbox/pbsF2bySun.pdf used on input line 919
+Package pdftex.def Info: fig/drtresultbox/pbsF2bySun.pdf used on input line 918
 .
 (pdftex.def)             Requested size: 248.60294pt x 199.16614pt.
 
@@ -551,7 +551,7 @@ Package pdftex.def Info: fig/drtresultbox/pbsF2bySun.pdf used on input line 919
 File: fig/drtresultbox/acmsTbySun.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/acmsTbySun.pdf>
-Package pdftex.def Info: fig/drtresultbox/acmsTbySun.pdf used on input line 926
+Package pdftex.def Info: fig/drtresultbox/acmsTbySun.pdf used on input line 925
 .
 (pdftex.def)             Requested size: 248.60141pt x 199.16614pt.
 
@@ -559,7 +559,7 @@ Package pdftex.def Info: fig/drtresultbox/acmsTbySun.pdf used on input line 926
 File: fig/drtresultbox/cubsTbySun.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/cubsTbySun.pdf>
-Package pdftex.def Info: fig/drtresultbox/cubsTbySun.pdf used on input line 927
+Package pdftex.def Info: fig/drtresultbox/cubsTbySun.pdf used on input line 926
 .
 (pdftex.def)             Requested size: 248.60272pt x 199.16614pt.
 
@@ -567,7 +567,7 @@ Package pdftex.def Info: fig/drtresultbox/cubsTbySun.pdf used on input line 927
 File: fig/drtresultbox/pbsTbySun.pdf Graphic file (type pdf)
 
 <use fig/drtresultbox/pbsTbySun.pdf>
-Package pdftex.def Info: fig/drtresultbox/pbsTbySun.pdf used on input line 928.
+Package pdftex.def Info: fig/drtresultbox/pbsTbySun.pdf used on input line 927.
 
 (pdftex.def)             Requested size: 248.60141pt x 199.16614pt.
 
@@ -575,42 +575,42 @@ Package pdftex.def Info: fig/drtresultbox/pbsTbySun.pdf used on input line 928.
 File: fig/drtparemeter/avias1.pdf Graphic file (type pdf)
 
 <use fig/drtparemeter/avias1.pdf>
-Package pdftex.def Info: fig/drtparemeter/avias1.pdf used on input line 973.
+Package pdftex.def Info: fig/drtparemeter/avias1.pdf used on input line 972.
 (pdftex.def)             Requested size: 253.7823pt x 142.2654pt.
 
 <fig/drtparemeter/avias2.pdf, id=130, 699.61375pt x 499.8675pt>
 File: fig/drtparemeter/avias2.pdf Graphic file (type pdf)
 
 <use fig/drtparemeter/avias2.pdf>
-Package pdftex.def Info: fig/drtparemeter/avias2.pdf used on input line 974.
+Package pdftex.def Info: fig/drtparemeter/avias2.pdf used on input line 973.
 (pdftex.def)             Requested size: 253.7823pt x 142.2654pt.
 
 <fig/drtparemeter/cubss1.pdf, id=131, 722.7pt x 509.905pt>
 File: fig/drtparemeter/cubss1.pdf Graphic file (type pdf)
 
 <use fig/drtparemeter/cubss1.pdf>
-Package pdftex.def Info: fig/drtparemeter/cubss1.pdf used on input line 975.
+Package pdftex.def Info: fig/drtparemeter/cubss1.pdf used on input line 974.
 (pdftex.def)             Requested size: 253.78687pt x 142.2667pt.
 
 <fig/drtparemeter/cubss2.pdf, id=132, 712.6625pt x 509.905pt>
 File: fig/drtparemeter/cubss2.pdf Graphic file (type pdf)
 
 <use fig/drtparemeter/cubss2.pdf>
-Package pdftex.def Info: fig/drtparemeter/cubss2.pdf used on input line 976.
+Package pdftex.def Info: fig/drtparemeter/cubss2.pdf used on input line 975.
 (pdftex.def)             Requested size: 253.78534pt x 142.2667pt.
 
 <fig/drtparemeter/pbss1.pdf, id=133, 708.6475pt x 499.8675pt>
 File: fig/drtparemeter/pbss1.pdf Graphic file (type pdf)
 
 <use fig/drtparemeter/pbss1.pdf>
-Package pdftex.def Info: fig/drtparemeter/pbss1.pdf used on input line 977.
+Package pdftex.def Info: fig/drtparemeter/pbss1.pdf used on input line 976.
 (pdftex.def)             Requested size: 253.7829pt x 142.2654pt.
 
 <fig/drtparemeter/pbss2.pdf, id=134, 708.6475pt x 499.8675pt>
 File: fig/drtparemeter/pbss2.pdf Graphic file (type pdf)
 
 <use fig/drtparemeter/pbss2.pdf>
-Package pdftex.def Info: fig/drtparemeter/pbss2.pdf used on input line 978.
+Package pdftex.def Info: fig/drtparemeter/pbss2.pdf used on input line 977.
 (pdftex.def)             Requested size: 253.7829pt x 142.2654pt.
  [11 <F:/mypapers/DRT/DRTPaper/DRT4WS(V22)/fig/drtresultbox/acmsFbySun.pdf> <F:
 /mypapers/DRT/DRTPaper/DRT4WS(V22)/fig/drtresultbox/cubsFbySun.pdf> <F:/mypaper
@@ -722,10 +722,10 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 4038 strings out of 495354
- 58897 string characters out of 3183523
- 162228 words of memory out of 3000000
- 7094 multiletter control sequences out of 15000+200000
+ 4039 strings out of 495354
+ 58920 string characters out of 3183523
+ 162212 words of memory out of 3000000
+ 7095 multiletter control sequences out of 15000+200000
  57078 words of font info for 133 fonts, out of 3000000 for 9000
  17 hyphenation exceptions out of 8191
  29i,15n,34p,2385b,484s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -750,7 +750,7 @@ atino/uplb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplbi8a.pfb><G:
 /latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><G:/latex/CTEX/MiKTeX/fo
 nts/type1/urw/palatino/uplri8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/zapfdi
 ng/uzdr.pfb>
-Output written on DRT4WS.pdf (17 pages, 2237242 bytes).
+Output written on DRT4WS.pdf (17 pages, 2236702 bytes).
 PDF statistics:
  530 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

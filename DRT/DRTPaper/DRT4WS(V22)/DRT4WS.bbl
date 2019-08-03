@@ -38,8 +38,8 @@ C.-A. Sun, E.~el~Khoury, and M.~Aiello, ``Transaction management in
   Transactions on Services Computing}, vol.~4, no.~2, pp. 167--180, 2011.
 
 \bibitem{bartolini2009whitening}
-C.~Bartolini, A.~Bertolino, S.~Elbaum, and E.~Marchetti, ``Whitening soa
-  testing,'' in \emph{Proceedings of the 7th joint meeting of the European
+C.~Bartolini, A.~Bertolino, S.~Elbaum, and E.~Marchetti, ``{Whitening SOA
+  testing},'' in \emph{Proceedings of the 7th joint meeting of the European
   Software Engineering Conference and the ACM SIGSOFT International Symposium
   on Foundations of Software Engineering (ESEC/FSE'12)}, 2009, pp. 161--170.
 
@@ -59,8 +59,8 @@ K.-Y. Cai, H.~Hu, C.~Jiang, and F.~Ye, ``Random testing with dynamically
   Symposium On Software Reliability Engineering (ISSRE'09)}, 2009, pp. 1--2.
 
 \bibitem{chen2010adaptive}
-T.~Y. Chen, F.-C. Kuo, R.~G. Merkel, and T.~Tse, ``Adaptive random testing: The
-  art of test case diversity,'' \emph{Journal of Systems and Software},
+T.~Y. Chen, F.-C. Kuo, R.~G. Merkel, and T.~H. Tse, ``Adaptive random testing:
+  The art of test case diversity,'' \emph{Journal of Systems and Software},
   vol.~83, no.~1, pp. 60--66, 2010.
 
 \bibitem{Cai07}
@@ -112,8 +112,8 @@ C.-A. Sun, M.~Li, J.~Jia, and J.~Han, ``Constraint-based model-driven testing
 
 \bibitem{sunreview}
 C.-A. Sun, Z.~Wang, Q.~Wen, P.~Wu, and T.~Y. Chen, ``An empirical study on
-  iterative metamorphic testing for web services,'' \emph{International Journal
-  on Software Tools for Technology Transfer, under review}.
+  iterative metamorphic testing for web services,'' \emph{submitted for
+  publication}.
 
 \bibitem{weyuker1991analyzing}
 E.~J. Weyuker and B.~Jeng, ``Analyzing partition testing strategies,''
@@ -149,9 +149,13 @@ K.~Patel and R.~M. Hierons, ``A mapping study on testing non-testable
   systems,'' \emph{Software Quality Journal}, vol.~26, no.~4, pp. 1373--1413,
   2018.
 
+\bibitem{segura2018metamorphic}
+S.~Segura, D.~Towey, Z.~Q. Zhou, and T.~Y. Chen, ``Metamorphic testing: Testing
+  the untestable,'' \emph{IEEE Software}, 2018.
+
 \bibitem{sun2011}
-C.-A. Sun, G.~Wang, B.~Mu, H.~Liu, Z.~Wang, and T.~Y. Chen, ``Metamorphic
-  testing for web services: framework and a case study,'' in \emph{Proceedings
+C.-A. Sun, G.~Wang, B.~Mu, H.~Liu, Z.~Wang, and T.~Y. Chen, ``{Metamorphic
+  testing for web services: Framework and a case study},'' in \emph{Proceedings
   of the 9th IEEE International Conference on Web Services (ICWS'11)}, 2011,
   pp. 283--290.
 
@@ -168,7 +172,7 @@ Y.~Li, B.~B. Yin, J.~Lv, and K.-Y. Cai, ``Approach for test profile
   (COMPSAC'15)}, 2015, pp. 466--471.
 
 \bibitem{sun2016mt4ws}
-C.-A. Sun, G.~Wang, Q.~Wen, D.~Towey, and T.~Y. Chen, ``Mt4ws: An automated
+C.-A. Sun, G.~Wang, Q.~Wen, D.~Towey, and T.~Y. Chen, ``{MT4WS}: An automated
   metamorphic testing system for web services,'' \emph{International Journal of
   High Performance Computing and Networking}, vol.~9, no. 1/2, pp. 104--115,
   2016.
@@ -191,7 +195,7 @@ C.~Mao, T.~Y. Chen, and F.-C. Kuo, ``Out of sight, out of mind: a
 
 \bibitem{chen2017similarity}
 J.~Chen, F.-C. Kuo, T.~Y. Chen, D.~Towey, C.~Su, and R.~Huang, ``A similarity
-  metric for the inputs of oo programs and its application in adaptive random
+  metric for the inputs of {OO} programs and its application in adaptive random
   testing,'' \emph{IEEE Transactions on Reliability}, vol.~66, no.~2, pp.
   373--402, 2017.
 
@@ -233,9 +237,9 @@ A.~Arcuri and L.~Briand, ``A practical guide for using statistical tests to
   2011, pp. 1--10.
 
 \bibitem{bozkurt2010}
-M.~Bozkurt, M.~Harman, Y.~Hassoun \emph{et~al.}, ``Testing web services: A
-  survey,'' \emph{Department of Computer Science, King¡¯s College London, Tech.
-  Rep. TR-10-01}, 2010.
+M.~Bozkurt, M.~Harman, and Y.~Hassoun, ``Testing web services: A survey,''
+  \emph{Department of Computer Science, King¡¯s College London, Tech. Rep.
+  TR-10-01}, 2010.
 
 \bibitem{qiu2015regression}
 D.~Qiu, B.~Li, S.~Ji, and H.~Leung, ``Regression testing of web service: A
@@ -265,8 +269,8 @@ A.~Sinha and A.~Paradkar, ``Model-based functional conformance testing of web
 \bibitem{paradkar2007}
 A.~M. Paradkar, A.~Sinha, C.~Williams, R.~D. Johnson, S.~Outterson, C.~Shriver,
   and C.~Liang, ``Automated functional conformance test generation for semantic
-  web services,'' in \emph{Proceedings of the International Conference on Web
-  Services (ICWS'07)}, 2007, pp. 110--117.
+  web services,'' in \emph{Proceedings of the 5th International Conference on
+  Web Services (ICWS'07)}, 2007, pp. 110--117.
 
 \bibitem{xiang2015executable}
 D.~Xiang, N.~Xie, B.~Ma, and K.~Xu, ``The executable invocation policy of web
