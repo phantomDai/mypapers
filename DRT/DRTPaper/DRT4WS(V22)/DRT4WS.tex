@@ -828,7 +828,7 @@ means that the probability of selecting partition $s_i$ is $p_i$.}
 \end{table*}
 
 \begin{table*}[htbp]
-  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower Metric (F-/F2/T-measure) Score Than That on The Left Column}
+  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower Metric (F-/F2-/T-measure) Score Than the Technique on The Left Column}
   \centering
   \label{tableHlom:f/f2/t-measure}
   \begin{tabular}{lllllllllllll}  \toprule
@@ -896,7 +896,7 @@ Furthermore, as will be discussed in Section~\ref{sec:results}, further statisti
 \label{sec:RQ1}
 
 F-, F2-, and T-measure results for \texttt{ACMS}, \texttt{CUBS}, and \texttt{PBS} are shown using boxplots in
-Figures~\ref{fig:Fmeasure} to~\ref{fig:Tmeasure}, \textcolor{red}{where the DRT parameter $\varepsilon$ was set to the optimal values as, described in Section \ref{sec:RQ2}. The experimental results of DRT with other parameter values are shown in Appendix B.}
+Figures~\ref{fig:Fmeasure} to~\ref{fig:Tmeasure}, \textcolor{red}{where the DRT parameter $\varepsilon$ was set to the optimal values, as described in Section \ref{sec:RQ2}. The experimental results of DRT with other parameter values are shown in Appendix B.}
 In each boxplot, the upper and lower bounds of the box represent the third and first quartiles of the metric, respectively;
 the middle line represents the median value;
 the upper and lower whiskers mark, respectively, the largest and smallest data within the range of $\pm 1.5 \times IQR$ (where $IQR$ is the interquartile range);
@@ -1020,7 +1020,7 @@ From Figure~\ref{fig:theovsnontheo}, we have the following observations:
 
 As was done for the F-, F2-, and T-measure data, we used the Holm-Bonferroni method to check the difference between each pair of testing strategies in terms of F-time, F2-time, and T-time, as shown in Table \ref{tableHlom:f/f2/t-time}.
 % In Table \ref{tableHlom:f/f2/t-time}, \textcolor{red}{some entries (such as ``\underline{\textbf{6}}'' \& ``\underline{\textbf{0}}'' for DRT vs. RT, ``\underline{\textbf{6}}'' vs. ``\underline{\textbf{0}}'' for DRT vs. RPT, ``\underline{\textbf{6}}'' vs. ``\underline{\textbf{0}}'' for DRT vs. AT), meaning that, in terms of F2-/T-time, DRT was significantly better than RT, and RPT, DRT only marginally outperformed RT, and RPT in terms of F-time, and DRT was significantly better than AT in terms of F-/F2-/T-time}.
-\textcolor{red}{Following the same convention of the use of bold face and underlined in Table \ref{tableHlom:f/f2/t-measure}, Table \ref{tableHlom:f/f2/t-time} shows that (a) DRT was significantly better than AT in terms of F-/F2/T-time; (b) DRT was significantly better than RT and RPT in terms of F2-/T-time; and (c) DRT marginally outperformed RT and RPT in terms of F-time.}
+\textcolor{red}{Following the same convention of the use of bold face and underlined in Table \ref{tableHlom:f/f2/t-measure}, Table \ref{tableHlom:f/f2/t-time} shows that a) DRT was significantly better than AT in terms of F-/F2-/T-time; b) DRT was significantly better than RT and RPT in terms of F2-/T-time; and c) DRT marginally outperformed RT and RPT in terms of F-time.}
 In other words, the additional computation incurred in DRT by updating the test profile is compensated for in terms of test execution savings.
 
 In summary, the DRT strategy is considered the best testing technique across this three metrics, RPT marginally outperformed RT, and DRT, RPT, and RT significantly outperformed AT.
@@ -1030,7 +1030,7 @@ In summary, the DRT strategy is considered the best testing technique across thi
 \textcolor{red}{Based on the evaluation, we have the following observations:}
 
 \begin{table*}
-  \caption{Number of Scenarios Where the Technique on the Top Wow Has a Lower Metric (F-/F2/T-time) Score Than That on The Left Column}
+  \caption{Number of Scenarios Where the Technique on the Top Row Has a Lower Metric (F-/F2-/T-time) Score Than the Technique on The Left Column}
   \centering
   \label{tableHlom:f/f2/t-time}
   \begin{tabular}{lllllllllllll}  \toprule
