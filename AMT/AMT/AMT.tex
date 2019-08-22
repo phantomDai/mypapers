@@ -681,27 +681,33 @@ In our experiments, we focused on addressing the following three research questi
 \label{sec:programs}
 
 In order to evaluate the fault-detection effectiveness of proposed methods in different scales, different implementation languages, and different fields, we chose to study four sets of object programs: three laboratorial programs that were developed according to corresponding specifications, seven programs from the Software-artifact Infrastructure Repository (SIR) \cite{do2005supporting}, the regular expression processor component of the larger utility program \texttt{GUN grep}, and a Java library developed by Alibaba, which can be used to convert Java Objects into their JSON representation, and convert a JSON string to an equivalent Java object. The details of twelve programs are summarized in Table \ref{table:objects}.
+
+
 \begin{table*}[hbt]
   \caption{Twelve Programs as Experimental Objects}
   \label{table:objects}
   \centering
-  \begin{tabular}{|c|c|c|c|c|c|c|c|} \hline
-  programs               &Source        &Language  &LOC     &All Faults &Used Faults &Number of  &Number of  \\
-                         &              &          &        &           &            &MRs        &Partitions\\ \hline
-  \texttt{CUBS}          &Laboratory    &Java      &107     &187        &4           &184        &8 \\ \hline
-  \texttt{ACMS}          &Laboratory    &Java      &128     &210        &9           &142        &4 \\ \hline
-  \texttt{ERS}           &Laboratory    &Java      &117     &180        &4           &1130       &12 \\ \hline
-  \texttt{grep}          &GUN           &c         &10,068  &20         &20          &12         &-- \\ \hline
-  \texttt{printtokens}   &SIR           &c         &483     &7          &7           &3          &-- \\ \hline
-  \texttt{printtokens2}  &SIR           &c         &402     &10         &10          &3          &-- \\ \hline
-  \texttt{replace}       &SIR           &c         &516     &31         &31          &3          &-- \\ \hline
-  \texttt{schedule}      &SIR           &c         &299     &9          &9           &3          &-- \\ \hline
-  \texttt{schedule2}     &SIR           &c         &297     &9          &9           &3          &-- \\ \hline
-  \texttt{tcas}          &SIR           &c         &138     &41         &41          &3          &-- \\ \hline
-  \texttt{totinfo}       &SIR           &c         &346     &23         &23          &3          &-- \\ \hline
-  \texttt{FastJson}      &Alibaba       &Java      &204125  &6          &6           &--         &-- \\ \hline
+  \begin{tabular}{llllllll} \toprule
+  \multirow{2}{*}{Source}&\multirow{2}{*}{Programs}&\multirow{2}{*}{Language}&\multirow{2}{*}{LOC}&\multirow{2}{*}{All Faults}
+  &\multirow{2}{*}{Used Faults} &Number of  &Number of  \\
+  & & & &          &            &MRs        &Partitions\\ \midrule
+                                &\texttt{CUBS}        &Java      &107     &187        &4           &184        &8 \\ 
+  \multirow{2}{*}{Laboratory}   &\texttt{ACMS}        &Java      &128     &210        &9           &142        &4 \\ 
+								&\texttt{ERS}         &Java      &117     &180        &4           &1130       &12 \\ 
+								&\texttt{MOS}         &Java      &135     &215        &1           &3512       &9  \\ \midrule
+  \multirow{7}{*}{SIR}          &\texttt{printtokens} &C         &483     &7          &7           &3          &-- \\ 
+    							&\texttt{printtokens2}&C         &402     &10         &10          &3          &-- \\ 
+         						&\texttt{replace}     &C         &516     &31         &31          &3          &-- \\ 
+        						&\texttt{schedule}    &C         &299     &9          &9           &3          &-- \\ 
+       							&\texttt{schedule2}   &C         &297     &9          &9           &3          &-- \\ 
+            					&\texttt{tcas}        &C         &138     &41         &41          &3          &-- \\ 
+         						&\texttt{totinfo}     &C         &346     &23         &23          &3          &552 \& 3380 \\\midrule
+  GUN                           &\texttt{grep}        &C         &10,068  &20         &20          &12         &-- \\ \midrule
+  Alibaba                       &\texttt{FastJson}    &Java      &204125  &6          &6           &--         &-- \\ \bottomrule
   \end{tabular}
 \end{table*}
+
+
 
 There four sets of programs present complementary strengths and weaknesses as experiment objects. The Laboratorial programs implement simple functions and their interfaces are easy to understand. The test engineers can easily generate source test cases, and identify MRs for testing laboratorial programs. However, these programs are small and there are a limited number of faulty versions available for each programs. The SIR repositories provides object programs, including a number of pre-existing versions with seeded faults, as well as a test suite in which test cases were randomly generated. It is a challenge task to partition the input domain of those programs. The \texttt{grep} program is a much larger system for which mutation faults could be generated. The \texttt{FastJson} is also a much larger system, and the faults of that are obtained on GitHub.
 We provide further details on each of those sets of object programs next.
@@ -816,21 +822,19 @@ The independent variable in our experiment is the different strategies that impr
   \caption{The Details of Independent Variables}
   \centering
   \label{table:independent}
-  \resizebox{0.49\textwidth}{!}{
-  \begin{tabular}{|c|c|c|c|} \hline
-  \multicolumn{2}{|c|}{\multirow{3}{*}{Techniques}}          &The strategy of    &The strategy of \\
-  \multicolumn{2}{|c|}{}                                     &selecting Source   &selecting MRs   \\
-  \multicolumn{2}{|c|}{}                                     &Test Case          &                 \\ \hline
-  \multicolumn{1}{|c|}{}                                     &PP-AMT             &partition               &RMRS             \\ \cline{2-4}
-  \multicolumn{1}{|c|}{}                                     &PP-AMT*            &partition               &PBMR     \\ \cline{2-4}
-  \multicolumn{1}{|c|}{\multirow{1}{*}{Proposed}}            &MP-AMT             &partition               &RMRS              \\ \cline{2-4}
-  \multicolumn{1}{|c|}{\multirow{1}{*}{Techniques}}          &MP-AMT*            &partition               &PBMR              \\ \cline{2-4}
-  \multicolumn{1}{|c|}{}                                     &R-AMT              &ARTsum                  &RMRS              \\ \cline{2-4}
-  \multicolumn{1}{|c|}{}                                     &R-AMT*             &ARTsum                  &PBMR              \\ \hline
-  \multicolumn{1}{|c|}{\multirow{1}{*}{Baseline}}            &MT                 &Random                  &--        \\ \cline{2-4}
-  \multicolumn{1}{|c|}{\multirow{1}{*}{Techniques}}          &MT-ARTsum          &ARTsum                  &--                  \\ \hline
+  \begin{tabular}{llll} \toprule
+  \multicolumn{2}{l}{\multirow{3}{*}{Techniques}}                          &The strategy of         &The strategy of \\
+  \multicolumn{2}{l}{}                                                     &selecting Source        &selecting MRs   \\
+  \multicolumn{2}{l}{}                                                     &Test Case               &             \\ \midrule
+  \multicolumn{1}{l}{}                                 &PP-AMT             &MAPT                    &Random        \\ 
+  \multicolumn{1}{l}{\multirow{1}{*}{Proposed}}        &PP-AMT*            &MAPT                    &PBMR          \\ 
+  \multicolumn{1}{l}{\multirow{1}{*}{Techniques}}      &MP-AMT             &RAPT                    &Random        \\ 
+  \multicolumn{1}{l}{}                                 &MP-AMT*            &RAPT                    &PBMR          \\ \midrule
+  \multicolumn{1}{l}{}                                 &MT                 &Random                  &Random        \\ 
+  \multicolumn{1}{l}{Baselines}                        &MT-ARTsum          &ARTsum                  &Random         \\ 
+  \multicolumn{1}{l}}                                  &MT-DRT             &DRT                     &Random         \\
+  \bottomrule
   \end{tabular}
-  }
 \end{table}
 
 Table \ref{table:independent} summarizes the details information of selecting source test cases and MRs of different techniques. Traditional MT is a natural baseline choice, because all proposed techniques is designed as an enhancement to MT, and assessing whether proposed techniques including PP-AMT, MP-AMT, and R-AMT is more cost-effective than MT is important.
