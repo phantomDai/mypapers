@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2019.7.30)  22 AUG 2019 09:48
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  22 AUG 2019 01:57
 entering extended mode
-**AMT
-(C:\Users\phant\Documents\mypapers\AMT\AMT\AMT.tex
+**F:/mypapers/AMT/AMT/AMT.tex
+(F:/mypapers/AMT/AMT/AMT.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for loaded.
-(C:\Users\phant\Documents\mypapers\AMT\AMT\IEEEtran.cls
+(F:\mypapers\AMT\AMT\IEEEtran.cls
 Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 -- See the "IEEEtran_HOWTO" manual for usage information.
 -- http://www.michaelshell.org/tex/ieeetran/
@@ -17,7 +17,7 @@ Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
 \@IEEEtrantmptoksA=\toks14
 LaTeX Font Info:    Try loading font information for OT1+ppl on input line 503.
 
-(C:\software\CTEX\MiKTeX\tex\latex\psnfss\ot1ppl.fd
+(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1ppl.fd
 File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
 )
 -- Using IEEE Computer Society mode.
@@ -114,33 +114,33 @@ LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24.09> not available
 \IEEEPARstartletwidth=\dimen125
 \c@IEEEbiography=\count93
 \@IEEEtranrubishbin=\box27
-) (C:\software\CTEX\MiKTeX\tex\latex\tools\enumerate.sty
+) (G:\latex\CTEX\MiKTeX\tex\latex\tools\enumerate.sty
 Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
 \@enLab=\toks15
 )
-(C:\software\CTEX\MiKTeX\tex\latex\cite\cite.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\cite\cite.sty
 LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
-(C:\software\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip44
 
 For additional information on amsmath, use the `?' option.
-(C:\software\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(C:\software\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks16
 \ex@=\dimen126
 ))
-(C:\software\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen127
 )
-(C:\software\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count94
@@ -181,11 +181,11 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-(C:\software\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-(C:\software\CTEX\MiKTeX\tex\latex\float\float.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\float\float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count106
 \float@exts=\toks21
@@ -193,16 +193,16 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@everytoks=\toks22
 \@floatcapt=\box31
 )
-(C:\software\CTEX\MiKTeX\tex\latex\base\ifthen.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\base\ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks23
 \c@algorithm=\count107
 )
-(C:\software\CTEX\MiKTeX\tex\latex\algorithms\algorithmic.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\algorithms\algorithmic.sty
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 
-(C:\software\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks24
 )
@@ -213,27 +213,27 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \ALC@tlm=\skip47
 \algorithmicindent=\skip48
 )
-(C:\software\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(C:\software\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(C:\software\CTEX\MiKTeX\tex\latex\graphics\trig.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(C:\software\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
+(G:\latex\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-(C:\software\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
+(G:\latex\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-(C:\software\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+(G:\latex\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-(C:\software\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+(G:\latex\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
 Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count112
@@ -241,10 +241,10 @@ Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen135
 \Gin@req@width=\dimen136
 )
-(C:\software\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
 \bigstrutjot=\dimen137
 )
-(C:\software\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty
 Package: subfigure 2002/07/30 v2.1.4 subfigure package
 \subfigtopskip=\skip49
 \subfigcapskip=\skip50
@@ -260,21 +260,21 @@ Package: subfigure 2002/07/30 v2.1.4 subfigure package
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(C:\software\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg)
+(G:\latex\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg)
 \subfig@top=\skip53
 \subfig@bottom=\skip54
 )
-(C:\software\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 
-(C:\software\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
 Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
 ))
-(C:\software\CTEX\MiKTeX\tex\latex\ulem\ulem.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\ulem\ulem.sty
 \UL@box=\box32
 \UL@hyphenbox=\box33
 \UL@skip=\skip55
@@ -286,15 +286,15 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 Package: ulem 2011/03/18
 \ULdepth=\dimen142
 )
-(C:\software\CTEX\MiKTeX\tex\latex\graphics\color.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(C:\software\CTEX\MiKTeX\tex\latex\00miktex\color.cfg
+(G:\latex\CTEX\MiKTeX\tex\latex\00miktex\color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 )
-(C:\software\CTEX\MiKTeX\tex\latex\tools\array.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\tools\array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen143
 \extrarowheight=\dimen144
@@ -302,7 +302,7 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip56
 \backup@length=\skip57
 )
-(C:\software\CTEX\MiKTeX\tex\latex\booktabs\booktabs.sty
+(G:\latex\CTEX\MiKTeX\tex\latex\booktabs\booktabs.sty
 Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \heavyrulewidth=\dimen145
 \lightrulewidth=\dimen146
@@ -322,7 +322,19 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \@lastruleclass=\count121
 \@thisrulewidth=\dimen157
 )
-No file AMT.aux.
+(F:\mypapers\AMT\AMT\AMT.aux)
+Runaway argument?
+{\contentsline {subsubsection}{\numberline {3.4.2}Properties-Based 
+! File ended while scanning use of \@writefile.
+<inserted text> 
+                \par 
+l.20 \begin{document}
+                     
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
@@ -336,7 +348,7 @@ LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 -- Lines per column: 61 (exact).
-(C:\software\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
+(G:\latex\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count122
 \scratchdimen=\dimen158
@@ -351,7 +363,7 @@ LaTeX Font Info:    ... okay on input line 20.
 \everyMPtoPDFconversion=\toks28
 )
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 48.
- (C:\software\CTEX\MiKTeX\tex\latex\psnfss\ot1phv.fd
+ (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <11.04124> not available
@@ -362,17 +374,17 @@ LaTeX Font Info:    Calculating math sizes for size <11.04124> on input line 48
 .
 LaTeX Font Info:    Try loading font information for U+msa on input line 48.
 
-(C:\software\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 48.
 
-(C:\software\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for U+pzd on input line 48.
 
-(C:\software\CTEX\MiKTeX\tex\latex\psnfss\upzd.fd
+(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\upzd.fd
 File: upzd.fd 2001/06/04 font definitions for U/pzd.
 )
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <11.04124> not available
@@ -499,7 +511,7 @@ LaTeX Warning: Citation `cai2009random' on page 1 undefined on input line 70.
 LaTeX Warning: Citation `sun2018adaptive' on page 1 undefined on input line 70.
 
 
-[1{C:/software/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
+[1{G:/latex/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}}
 
 
 ]
@@ -534,10 +546,6 @@ LaTeX Warning: Citation `chen2014metric' on page 2 undefined on input line 72.
 LaTeX Warning: Citation `chen2003choice' on page 2 undefined on input line 72.
 
 
-LaTeX Warning: Reference `sec:background' on page 2 undefined on input line 96.
-
-
-
 LaTeX Warning: Reference `sec:DRTforwebserivce' on page 2 undefined on input li
 ne 97.
 
@@ -563,7 +571,7 @@ LaTeX Font Info:    Calculating math sizes for size <9.53561> on input line 116
 .
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 126.
 
- (C:\software\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
+ (G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 
@@ -582,50 +590,7 @@ LaTeX Warning: Citation `chen2014metric' on page 3 undefined on input line 146.
 
 LaTeX Warning: Citation `cai2009random' on page 3 undefined on input line 163.
 
-
-LaTeX Warning: Reference `alg:drt' on page 3 undefined on input line 201.
-
-
-LaTeX Warning: Reference `eq:DRThitJ' on page 3 undefined on input line 201.
-
-
-LaTeX Warning: Reference `eq:DRThitI' on page 3 undefined on input line 201.
-
-
-LaTeX Warning: Reference `eq:DRTmissI' on page 3 undefined on input line 201.
-
-
-LaTeX Warning: Reference `eq:DRTmissJ' on page 3 undefined on input line 201.
-
 [3]
-
-LaTeX Warning: Reference `eq:DRThitJ' on page 4 undefined on input line 203.
-
-
-LaTeX Warning: Reference `eq:DRThitI' on page 4 undefined on input line 203.
-
-
-LaTeX Warning: Reference `eq:DRTmissI' on page 4 undefined on input line 203.
-
-
-LaTeX Warning: Reference `eq:DRTmissJ' on page 4 undefined on input line 203.
-
-
-LaTeX Warning: Reference `sec:updatingTestProfile' on page 4 undefined on input
- line 203.
-
-
-LaTeX Warning: Reference `eq:DRThitJ' on page 4 undefined on input line 219.
-
-
-LaTeX Warning: Reference `eq:DRThitI' on page 4 undefined on input line 219.
-
-
-LaTeX Warning: Reference `eq:DRTmissI' on page 4 undefined on input line 221.
-
-
-LaTeX Warning: Reference `eq:DRTmissJ' on page 4 undefined on input line 221.
-
 
 LaTeX Warning: Citation `chen2004adaptive' on page 4 undefined on input line 23
 0.
@@ -686,13 +651,7 @@ ine 235.
 
 LaTeX Warning: Citation `barus2016cost' on page 4 undefined on input line 235.
 
-
-LaTeX Warning: Reference `sec:cpm' on page 4 undefined on input line 237.
-
 [4]
-
-LaTeX Warning: Reference `theorem' on page 5 undefined on input line 263.
-
 \c@theo=\count128
 
 Underfull \hbox (badness 10000) in paragraph at lines 267--268
@@ -711,23 +670,6 @@ Underfull \hbox (badness 1694) in paragraph at lines 267--268
 \OT1/ppl/m/n/9.53561 where $\OML/cmm/m/it/10 g$ \OT1/ppl/m/n/9.53561 is the to-
 tal num-ber of cat-e-gories, $\OML/cmm/m/it/10 h[]$ \OT1/ppl/m/n/9.53561 is
  []
-
-
-LaTeX Warning: Reference `theorem' on page 5 undefined on input line 274.
-
-
-LaTeX Warning: Reference `equa:sumdistance' on page 5 undefined on input line 2
-74.
-
-
-LaTeX Warning: Reference `alg:artsum' on page 5 undefined on input line 274.
-
-
-LaTeX Warning: Reference `theorem' on page 5 undefined on input line 284.
-
-
-LaTeX Warning: Reference `equa:sumdistance' on page 5 undefined on input line 2
-94.
 
 
 Underfull \hbox (badness 1603) in paragraph at lines 296--297
@@ -766,9 +708,8 @@ LaTeX Warning: Citation `finelli1991nasa' on page 5 undefined on input line 318
 
 
 
-pdfTeX warning: pdflatex.EXE (file C:/Users/phant/Documents/mypapers/AMT/AMT/fi
-g//generateframework.pdf): PDF inclusion: found PDF version <1.7>, but at most 
-version <1.5> allowed
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/AMT/AMT/fig//generateframework.p
+df): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <fig//generateframework.pdf, id=30, 590.70688pt x 331.73938pt>
 File: fig//generateframework.pdf Graphic file (type pdf)
 
@@ -780,55 +721,10 @@ Overfull \hbox (6.0225pt too wide) in paragraph at lines 326--327
  [][] 
  []
 
-[5 <C:/Users/phant/Documents/mypapers/AMT/AMT/fig//generateframework.pdf>]
-
-LaTeX Warning: Reference `alg:mdrt' on page 6 undefined on input line 401.
-
-
-LaTeX Warning: Reference `alg:drt' on page 6 undefined on input line 401.
-
-
-LaTeX Warning: Reference `eq:MDRThitJ' on page 6 undefined on input line 401.
-
-
-LaTeX Warning: Reference `eq:MDRThitI' on page 6 undefined on input line 401.
-
-
-LaTeX Warning: Reference `eq:MDRThitF' on page 6 undefined on input line 401.
-
-
-LaTeX Warning: Reference `eq:MDRTmissI' on page 6 undefined on input line 401.
-
-
-LaTeX Warning: Reference `eq:MDRTmissF' on page 6 undefined on input line 401.
-
-
-LaTeX Warning: Reference `eq:MDRTmissJ' on page 6 undefined on input line 401.
-
-
-LaTeX Warning: Reference `eq:MDRThitJ' on page 6 undefined on input line 420.
-
-
-LaTeX Warning: Reference `eq:MDRThitI' on page 6 undefined on input line 420.
-
-
-LaTeX Warning: Reference `eq:MDRThitF' on page 6 undefined on input line 420.
-
-
-LaTeX Warning: Reference `eq:MDRTmissI' on page 6 undefined on input line 423.
-
-
-LaTeX Warning: Reference `eq:MDRTmissF' on page 6 undefined on input line 423.
-
-
-LaTeX Warning: Reference `eq:MDRTmissJ' on page 6 undefined on input line 423.
-
+[5 <F:/mypapers/AMT/AMT/fig//generateframework.pdf>]
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9.53561> not available
 (Font)              Font shape `OT1/phv/m/sl' tried instead on input line 437.
-
-LaTeX Warning: Reference `sec:cpm' on page 6 undefined on input line 446.
-
-[6]
+ [6]
 Underfull \hbox (badness 1472) in paragraph at lines 453--454
 \OT1/ppl/m/n/9.53561 whose source test case could be $\OML/cmm/m/it/10 stc[]$\O
 T1/ppl/m/n/9.53561 ), PBM-R gen-er-
@@ -851,9 +747,9 @@ $ \OT1/ppl/m/n/9.53561 ($\OML/cmm/m/it/10 max \OMS/cmsy/m/n/10 2$
 
 
 
-pdfTeX warning: pdflatex.EXE (file C:/Users/phant/Documents/mypapers/AMT/AMT/fi
-g//pcenterpartitionframework.pdf): PDF inclusion: found PDF version <1.7>, but 
-at most version <1.5> allowed
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/AMT/AMT/fig//pcenterpartitionfra
+mework.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> 
+allowed
 <fig//pcenterpartitionframework.pdf, id=77, 761.34438pt x 381.92688pt>
 File: fig//pcenterpartitionframework.pdf Graphic file (type pdf)
 
@@ -867,173 +763,22 @@ Overfull \hbox (6.0225pt too wide) in paragraph at lines 485--486
  []
 
 
-LaTeX Warning: Reference `eq:DRThitJ' on page 7 undefined on input line 507.
 
-
-LaTeX Warning: Reference `eq:DRThitI' on page 7 undefined on input line 507.
-
-
-LaTeX Warning: Reference `eq:MDRThitJ' on page 7 undefined on input line 509.
-
-
-LaTeX Warning: Reference `eq:MDRThitI' on page 7 undefined on input line 509.
-
-
-LaTeX Warning: Reference `eq:MDRThitF' on page 7 undefined on input line 509.
-
-
-LaTeX Warning: Reference `eq:DRTmissI' on page 7 undefined on input line 513.
-
-
-LaTeX Warning: Reference `eq:DRTmissJ' on page 7 undefined on input line 513.
-
-
-LaTeX Warning: Reference `eq:MDRTmissI' on page 7 undefined on input line 515.
-
-
-LaTeX Warning: Reference `eq:MDRTmissF' on page 7 undefined on input line 515.
-
-
-LaTeX Warning: Reference `eq:MDRTmissJ' on page 7 undefined on input line 515.
-
-
-LaTeX Warning: Reference `eq:DRThitJ' on page 7 undefined on input line 524.
-
-
-LaTeX Warning: Reference `eq:DRThitI' on page 7 undefined on input line 524.
-
-
-LaTeX Warning: Reference `eq:MDRThitJ' on page 7 undefined on input line 526.
-
-
-LaTeX Warning: Reference `eq:MDRThitI' on page 7 undefined on input line 526.
-
-
-LaTeX Warning: Reference `eq:MDRThitF' on page 7 undefined on input line 526.
-
-
-LaTeX Warning: Reference `eq:DRTmissI' on page 7 undefined on input line 530.
-
-
-LaTeX Warning: Reference `eq:DRTmissJ' on page 7 undefined on input line 530.
-
-
-LaTeX Warning: Reference `eq:MDRTmissI' on page 7 undefined on input line 532.
-
-
-LaTeX Warning: Reference `eq:MDRTmissF' on page 7 undefined on input line 532.
-
-
-LaTeX Warning: Reference `eq:MDRTmissJ' on page 7 undefined on input line 532.
-
-
-
-pdfTeX warning: pdflatex.EXE (file C:/Users/phant/Documents/mypapers/AMT/AMT/fi
-g//mrscentricframework.pdf): PDF inclusion: found PDF version <1.7>, but at mos
-t version <1.5> allowed
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/AMT/AMT/fig//mrscentricframework
+.pdf): PDF inclusion: found PDF version <1.7>, but at most version <1.5> allowe
+d
 <fig//mrscentricframework.pdf, id=78, 762.85pt x 380.92313pt>
 File: fig//mrscentricframework.pdf Graphic file (type pdf)
 
 <use fig//mrscentricframework.pdf>
 Package pdftex.def Info: fig//mrscentricframework.pdf used on input line 549.
 (pdftex.def)             Requested size: 243.43007pt x 121.55495pt.
- [7 <C:/Users/phant/Documents/mypapers/AMT/AMT/fig//pcenterpartitionframework.p
-df>]
+ [7 <F:/mypapers/AMT/AMT/fig//pcenterpartitionframework.pdf>]
 
 LaTeX Warning: Reference `alg:pm-pfmt' on page 8 undefined on input line 556.
 
 
 LaTeX Warning: Reference `alg:pm-pfmt' on page 8 undefined on input line 556.
-
-
-LaTeX Warning: Reference `eq:DRThitJ' on page 8 undefined on input line 559.
-
-
-LaTeX Warning: Reference `eq:DRThitI' on page 8 undefined on input line 559.
-
-
-LaTeX Warning: Reference `eq:MDRThitJ' on page 8 undefined on input line 561.
-
-
-LaTeX Warning: Reference `eq:MDRThitI' on page 8 undefined on input line 561.
-
-
-LaTeX Warning: Reference `eq:MDRThitF' on page 8 undefined on input line 561.
-
-
-LaTeX Warning: Reference `eq:DRTmissI' on page 8 undefined on input line 567.
-
-
-LaTeX Warning: Reference `eq:DRTmissJ' on page 8 undefined on input line 567.
-
-
-LaTeX Warning: Reference `eq:MDRTmissI' on page 8 undefined on input line 570.
-
-
-LaTeX Warning: Reference `eq:MDRTmissF' on page 8 undefined on input line 570.
-
-
-LaTeX Warning: Reference `eq:MDRTmissJ' on page 8 undefined on input line 570.
-
-
-LaTeX Warning: Reference `eq:DRThitJ' on page 8 undefined on input line 595.
-
-
-LaTeX Warning: Reference `eq:DRThitI' on page 8 undefined on input line 595.
-
-
-LaTeX Warning: Reference `eq:MDRThitJ' on page 8 undefined on input line 597.
-
-
-LaTeX Warning: Reference `eq:MDRThitI' on page 8 undefined on input line 597.
-
-
-LaTeX Warning: Reference `eq:MDRThitF' on page 8 undefined on input line 597.
-
-
-LaTeX Warning: Reference `eq:DRTmissI' on page 8 undefined on input line 601.
-
-
-LaTeX Warning: Reference `eq:DRTmissJ' on page 8 undefined on input line 601.
-
-
-LaTeX Warning: Reference `eq:MDRTmissI' on page 8 undefined on input line 603.
-
-
-LaTeX Warning: Reference `eq:MDRTmissF' on page 8 undefined on input line 603.
-
-
-LaTeX Warning: Reference `eq:MDRTmissJ' on page 8 undefined on input line 603.
-
-
-LaTeX Warning: Reference `eq:DRThitJ' on page 8 undefined on input line 612.
-
-
-LaTeX Warning: Reference `eq:DRThitI' on page 8 undefined on input line 612.
-
-
-LaTeX Warning: Reference `eq:MDRThitJ' on page 8 undefined on input line 614.
-
-
-LaTeX Warning: Reference `eq:MDRThitI' on page 8 undefined on input line 614.
-
-
-LaTeX Warning: Reference `eq:MDRThitF' on page 8 undefined on input line 614.
-
-
-LaTeX Warning: Reference `eq:DRTmissI' on page 8 undefined on input line 618.
-
-
-LaTeX Warning: Reference `eq:DRTmissJ' on page 8 undefined on input line 618.
-
-
-LaTeX Warning: Reference `eq:MDRTmissI' on page 8 undefined on input line 620.
-
-
-LaTeX Warning: Reference `eq:MDRTmissF' on page 8 undefined on input line 620.
-
-
-LaTeX Warning: Reference `eq:MDRTmissJ' on page 8 undefined on input line 620.
 
 
 LaTeX Warning: Citation `bourque2014guide' on page 8 undefined on input line 63
@@ -1049,9 +794,8 @@ LaTeX Warning: Reference `fig:rtframework' on page 8 undefined on input line 63
 
 
 
-pdfTeX warning: pdflatex.EXE (file C:/Users/phant/Documents/mypapers/AMT/AMT/fi
-g//rtframework.pdf): PDF inclusion: found PDF version <1.7>, but at most versio
-n <1.5> allowed
+pdfTeX warning: pdflatex.EXE (file F:/mypapers/AMT/AMT/fig//rtframework.pdf): P
+DF inclusion: found PDF version <1.7>, but at most version <1.5> allowed
 <fig//rtframework.pdf, id=124, 762.85pt x 380.92313pt>
 File: fig//rtframework.pdf Graphic file (type pdf)
 
@@ -1061,12 +805,93 @@ Package pdftex.def Info: fig//rtframework.pdf used on input line 634.
 
 Underfull \vbox (badness 2547) has occurred while \output is active []
 
- [8 <C:/Users/phant/Documents/mypapers/AMT/AMT/fig//mrscentricframework.pdf>]
+ [8 <F:/mypapers/AMT/AMT/fig//mrscentricframework.pdf>]
 
 LaTeX Warning: Reference `alg:R-pfmt' on page 9 undefined on input line 639.
 
 
-LaTeX Warning: Reference `alg:artsum' on page 9 undefined on input line 651.
+LaTeX Warning: Citation `do2005supporting' on page 9 undefined on input line 68
+3.
 
 
-LaTeX Warning: Citation `do2005supporting' on page 9 undefined on in
+LaTeX Warning: Reference `table:objects' on page 9 undefined on input line 683.
+
+
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 690.
+
+LaTeX Warning: Reference `table:chinaA' on page 9 undefined on input line 718.
+
+
+LaTeX Warning: Reference `table:chinaB' on page 9 undefined on input line 718.
+
+
+LaTeX Warning: Reference `table:acms' on page 9 undefined on input line 718.
+
+[9 <F:/mypapers/AMT/AMT/fig//rtframework.pdf>]
+Overfull \vbox (2.87064pt too high) detected at line 733
+ []
+
+
+Overfull \vbox (3.49689pt too high) detected at line 733
+ []
+
+
+Overfull \vbox (2.87064pt too high) detected at line 748
+ []
+
+
+Overfull \vbox (3.49689pt too high) detected at line 748
+ []
+
+
+LaTeX Warning: Citation `hutchins1994experiments' on page 10 undefined on input
+ line 768.
+
+
+LaTeX Warning: Citation `xie2013metamorphic' on page 10 undefined on input line
+ 777.
+
+
+LaTeX Warning: Citation `grep' on page 10 undefined on input line 786.
+
+[10]
+! Argument of \multicolumn has an extra }.
+<inserted text> 
+                \par 
+l.835   \multicolumn{1}{l}}
+                                                             &MT-DRT        ...
+I've run across a `}' that doesn't seem to match anything.
+For example, `\def\a#1{...}' and `\a}' would produce
+this error. If you simply proceed now, the `\par' that
+I've just inserted will cause me to report a runaway
+argument that might be the root of the problem. But if
+your `}' was spurious, just type `2' and it will go away.
+
+Runaway argument?
+! Paragraph ended before \multicolumn was complete.
+<to be read again> 
+                   \par 
+l.835   \multicolumn{1}{l}}
+                                                             &MT-DRT        ...
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Misplaced alignment tab character &.
+l.835 ...1}{l}}                                  &
+                                                  MT-DRT             &DRT   ...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error messages, and you
+might try typing `S' now just to see what is salvageable.
+
+! Misplaced alignment tab character &.
+l.835 ...                    &MT-DRT             &
+                                                  DRT                     &R...
+I can't figure out why you would want to use a tab mark
+here. If you just want an ampersand, the remedy is
+simple: Just type `I\&' now. But if some right brace
+up above has ended a previous alignment prematurely,
+you're probably due for more error
