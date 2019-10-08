@@ -1,4 +1,5 @@
 \documentclass[10pt,journal,compsoc]{IEEEtran}
+\UseRawInputEncoding
 \usepackage{enumerate}
 \usepackage{cite}
 \usepackage{amsmath}
@@ -548,7 +549,7 @@ The details of PBMR is given in Algorithm \ref{alg:pbmr}.
   \centering
   \includegraphics[width = 0.47\textwidth]{fig//mrscentricframework}
   \caption{The Framework of MP-AMT}
-  \label{fig:framework}
+  \label{fig:mrscentricframework}
 \end{figure}
 
 MRs-centric adaptive metamorphic testing (MP-AMT) adds a feedback mechanism to control the execution process of traditional MT. First, MP-AMT randomly selects an MR and a source test case belonging to a partition that is selected according to the test profile, generating the follow-up test case depend on the source test case, and then updates the test profile according to the result of test execution. Second, a partition is selected according to updated test profile, and an MR is randomly selected from the set of MRs whose source test case belong to selected partition.
@@ -695,14 +696,7 @@ In order to evaluate the fault-detection effectiveness of proposed methods in di
   \multirow{2}{*}{Laboratory}   &\texttt{ACMS}        &Java      &128     &210        &9           &142        &4 \\ 
 								&\texttt{ERS}         &Java      &117     &180        &4           &1130       &12 \\ 
 								&\texttt{MOS}         &Java      &135     &215        &1           &3512       &9  \\ \midrule
-  \multirow{7}{*}{SIR}          &\texttt{printtokens} &C         &483     &7          &7           &3          &-- \\ 
-    							&\texttt{printtokens2}&C         &402     &10         &10          &3          &-- \\ 
-         						&\texttt{replace}     &C         &516     &31         &31          &3          &-- \\ 
-        						&\texttt{schedule}    &C         &299     &9          &9           &3          &-- \\ 
-       							&\texttt{schedule2}   &C         &297     &9          &9           &3          &-- \\ 
-            					&\texttt{tcas}        &C         &138     &41         &41          &3          &-- \\ 
-         						&\texttt{totinfo}     &C         &346     &23         &23          &3          &552 \& 3380 \\\midrule
-  GUN                           &\texttt{grep}        &C         &10,068  &20         &20          &12         &-- \\ \midrule
+  GUN                           &\texttt{grep}        &C         &10,068  &20         &20          &12         &552 \& 3380\\ \midrule
   Alibaba                       &\texttt{FastJson}    &Java      &204125  &6          &6           &--         &-- \\ \bottomrule
   \end{tabular}
 \end{table*}
@@ -818,24 +812,44 @@ The scope of functionality of this program is larger, which leads to construct t
 
 The independent variable in our experiment is the different strategies that improve the fault-detection efficiency. As choices for this variable, we include, of course, proposed PP-AMT, MP-AMT, and R-AMT. As baseline techniques for use in comparison, we selected two additional techniques, traditional MT and MT-ARTsum.
 
-\begin{table}[htb]
-  \caption{The Details of Independent Variables}
-  \centering
-  \label{table:independent}
-  \begin{tabular}{llll} \toprule
-  \multicolumn{2}{l}{\multirow{3}{*}{Techniques}}                          &The strategy of         &The strategy of \\
-  \multicolumn{2}{l}{}                                                     &selecting Source        &selecting MRs   \\
-  \multicolumn{2}{l}{}                                                     &Test Case               &             \\ \midrule
-  \multicolumn{1}{l}{}                                 &PP-AMT             &MAPT                    &Random        \\ 
-  \multicolumn{1}{l}{\multirow{1}{*}{Proposed}}        &PP-AMT*            &MAPT                    &PBMR          \\ 
-  \multicolumn{1}{l}{\multirow{1}{*}{Techniques}}      &MP-AMT             &RAPT                    &Random        \\ 
-  \multicolumn{1}{l}{}                                 &MP-AMT*            &RAPT                    &PBMR          \\ \midrule
-  \multicolumn{1}{l}{}                                 &MT                 &Random                  &Random        \\ 
-  \multicolumn{1}{l}{Baselines}                        &MT-ARTsum          &ARTsum                  &Random         \\ 
-  \multicolumn{1}{l}}                                  &MT-DRT             &DRT                     &Random         \\
-  \bottomrule
-  \end{tabular}
+
+\begin{table}
+	\caption{The Details of Independent Variables}
+	\centering
+	\label{table:independent}
+	\begin{tabular}{llll} \toprule
+	\multicolumn{2}{l}{\multirow{2}{*}{Techniques}}     &Test case             &MRs selection  \\
+	                      &                             &selection strategy    &strategy \\ \midrule
+	                      &\multirow{2}{*}{M-AMT}       &MAPT                  &RT  \\
+	Proposed              &                             &MAPT                  &PBMR \\ \cmidrule(lr){2-4}
+	Techniques            &\multirow{2}{*}{R-AMT}       &RAPT                  &RT \\
+	                      &                             &RAPT                  &PBMR \\ \midrule
+	                      &MT                           &RT                    &RT \\
+	Baselines             &MT-ARTsum                    &ARTsum                &RT \\
+	                      &MT-DRT                       &DRT                   &RT \\
+	\bottomrule
+	\end{tabular}
 \end{table}
+
+
+% \begin{table}[htb]
+%   \caption{The Details of Independent Variables}
+%   \centering
+%   \label{table:independent}
+%   \begin{tabular}{llll} \toprule
+%   \multicolumn{2}{l}{\multirow{3}{*}{Techniques}}                          &The strategy of         &The strategy of \\
+%   \multicolumn{2}{l}{}                                                     &selecting Source        &selecting MRs   \\
+%   \multicolumn{2}{l}{}                                                     &Test Case               &             \\ \midrule
+%   \multicolumn{1}{l}{}                                 &PP-AMT             &MAPT                    &Random        \\ 
+%   \multicolumn{1}{l}{\multirow{1}{*}{Proposed}}        &PP-AMT*            &MAPT                    &PBMR          \\ 
+%   \multicolumn{1}{l}{\multirow{1}{*}{Techniques}}      &MP-AMT             &RAPT                    &Random        \\ 
+%   \multicolumn{1}{l}{}                                 &MP-AMT*            &RAPT                    &PBMR          \\ \midrule
+%   \multicolumn{1}{l}{}                                 &MT                 &Random                  &Random        \\ 
+%   \multicolumn{1}{l}{Baselines}                        &MT-ARTsum          &ARTsum                  &Random         \\ 
+%   \multicolumn{1}{l}}                                  &MT-DRT             &DRT                     &Random         \\
+%   \bottomrule
+%   \end{tabular}
+% \end{table}
 
 Table \ref{table:independent} summarizes the details information of selecting source test cases and MRs of different techniques. Traditional MT is a natural baseline choice, because all proposed techniques is designed as an enhancement to MT, and assessing whether proposed techniques including PP-AMT, MP-AMT, and R-AMT is more cost-effective than MT is important.
 
@@ -970,7 +984,7 @@ The categories and choices used for the laboratorial programs and Real-World Pop
   \#               &Category                                                   &Choice      \\ \hline
   1                &\multicolumn{1}{c|}{\multirow{4}{*}{class}}                &first calss        \\ \cline{3-3}
                    &\multicolumn{1}{c|}{}                                      &Business class     \\ \cline{3-3}
-                   &\multicolumn{1}{c|}{}                                      &Economy class       \\ \cline{3-3}
+                   &\multicolumn{1}{c|}{}                                      &Economy class       \\ \hline
                    &\multicolumn{1}{c|}{}                                      &infant               \\ \cline{3-3}
   2                &\multicolumn{1}{c|}{\multirow{2}{*}{region}}               &Domestic flights     \\ \cline{3-3}
                    &\multicolumn{1}{c|}{}                                      &International flights    \\ \hline
@@ -1170,8 +1184,6 @@ The details of mutants for \texttt{grep} can be found in \cite{barus2010depth}.
 \subsubsection{The faults of Alibaba program}
 
 The faults can be found on the GitHub at https://github.com/alibaba/fastjson.
-
-
 
 \subsection{Experimental Environment}
 Our experiments were conducted on a virtual machine running the Ubuntu 18.04 64-bit operating system. In this system, there were two CPUs and a memory of 2GB. The test scripts were generated using Java, bash shell, and Python. In the experiments, we repeatedly ran the testing using each technique 30 times \cite{arcuri2011practical} with different random seeds to guarantee the statistically reliable mean values of the metrics.
