@@ -1,0 +1,467 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  3 AUG 2019 23:18
+entering extended mode
+**F:/mypapers/DRT/DRTPaper/DRT4WS(V22)/AppendixB.tex
+(F:/mypapers/DRT/DRTPaper/DRT4WS(V22)/AppendixB.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for loaded.
+(F:\mypapers\DRT\DRTPaper\DRT4WS(V22)\IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpdimenC=\dimen104
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmpcountC=\count81
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ppl on input line 503.
+
+(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+-- Using IEEE Computer Society mode.
+** ATTENTION: Single column mode is not typically used with IEEE publications.
+-- Using 7.875in x 10.75in (ieeecs) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen105
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen106
+\CLASSINFOnormalsizeunitybaselineskip=\dimen107
+\IEEEnormaljot=\dimen108
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <5.01874> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <5.01874> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <7.02625> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <7.02625> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <8.03> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <8.03> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9.03374> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <9.03374> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <9.53561> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <9.53561> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <11.04124> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <11.04124> not available
+
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <12.045> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <12.045> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <17.06374> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <17.06374> not available
+
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <20.075> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <20.075> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+LaTeX Font Info:    Font shape `OT1/ppl/bx/n' in size <24.09> not available
+(Font)              Font shape `OT1/ppl/b/n' tried instead on input line 1090.
+LaTeX Font Info:    Font shape `OT1/ppl/bx/it' in size <24.09> not available
+(Font)              Font shape `OT1/ppl/b/it' tried instead on input line 1090.
+
+\IEEEquantizedlength=\dimen109
+\IEEEquantizedlengthdiff=\dimen110
+\IEEEquantizedtextheightdiff=\dimen111
+\IEEEilabelindentA=\dimen112
+\IEEEilabelindentB=\dimen113
+\IEEEilabelindent=\dimen114
+\IEEEelabelindent=\dimen115
+\IEEEdlabelindent=\dimen116
+\IEEElabelindent=\dimen117
+\IEEEiednormlabelsep=\dimen118
+\IEEEiedmathlabelsep=\dimen119
+\IEEEiedtopsep=\skip41
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@IEEEsubequation=\count86
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count87
+\c@table=\count88
+\@IEEEeqnnumcols=\count89
+\@IEEEeqncolcnt=\count90
+\@IEEEsubeqnnumrollback=\count91
+\@IEEEquantizeheightA=\dimen120
+\@IEEEquantizeheightB=\dimen121
+\@IEEEquantizeheightC=\dimen122
+\@IEEEquantizeprevdepth=\dimen123
+\@IEEEquantizemultiple=\count92
+\@IEEEquantizeboxA=\box26
+\@IEEEtmpitemindent=\dimen124
+\IEEEPARstartletwidth=\dimen125
+\c@IEEEbiography=\count93
+\@IEEEtranrubishbin=\box27
+) (G:\latex\CTEX\MiKTeX\tex\latex\tools\enumerate.sty
+Package: enumerate 1999/03/05 v3.00 enumerate extensions (DPC)
+\@enLab=\toks15
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\cite\cite.sty
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen126
+))
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen127
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\ams\math\amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count94
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count95
+\leftroot@=\count96
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count97
+\DOTSCASE@=\count98
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen128
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count99
+\c@MaxMatrixCols=\count100
+\dotsspace@=\muskip10
+\c@parentequation=\count101
+\dspbrk@lvl=\count102
+\tag@help=\toks17
+\row@=\count103
+\column@=\count104
+\maxfields@=\count105
+\andhelp@=\toks18
+\eqnshift@=\dimen129
+\alignsep@=\dimen130
+\tagshift@=\dimen131
+\tagwidth@=\dimen132
+\totwidth@=\dimen133
+\lineht@=\dimen134
+\@envbody=\toks19
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\algorithms\algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+(G:\latex\CTEX\MiKTeX\tex\latex\float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count106
+\float@exts=\toks21
+\float@box=\box30
+\@float@everytoks=\toks22
+\@floatcapt=\box31
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\base\ifthen.sty
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks23
+\c@algorithm=\count107
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\algorithms\algorithmic.sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks24
+)
+\c@ALC@unique=\count108
+\c@ALC@line=\count109
+\c@ALC@rem=\count110
+\c@ALC@depth=\count111
+\ALC@tlm=\skip47
+\algorithmicindent=\skip48
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\00miktex\graphics.cfg
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+(G:\latex\CTEX\MiKTeX\tex\latex\pdftex-def\pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(G:\latex\CTEX\MiKTeX\tex\generic\oberdiek\infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
+)
+(G:\latex\CTEX\MiKTeX\tex\generic\oberdiek\ltxcmds.sty
+Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count112
+))
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\multirow\multirow.sty
+\bigstrutjot=\dimen137
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\subfigure\subfigure.sty
+Package: subfigure 2002/07/30 v2.1.4 subfigure package
+\subfigtopskip=\skip49
+\subfigcapskip=\skip50
+\subfigcaptopadj=\dimen138
+\subfigbottomskip=\skip51
+\subfigcapmargin=\dimen139
+\subfiglabelskip=\skip52
+\c@subfigure=\count113
+\c@lofdepth=\count114
+\c@subtable=\count115
+\c@lotdepth=\count116
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(G:\latex\CTEX\MiKTeX\tex\latex\subfigure\subfigure.cfg)
+\subfig@top=\skip53
+\subfig@bottom=\skip54
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amssymb.sty
+Package: amssymb 2009/06/22 v3.00
+
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\amsfonts.sty
+Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+))
+(G:\latex\CTEX\MiKTeX\tex\latex\ulem\ulem.sty
+\UL@box=\box32
+\UL@hyphenbox=\box33
+\UL@skip=\skip55
+\UL@hook=\toks25
+\UL@height=\dimen140
+\UL@pe=\count117
+\UL@pixel=\dimen141
+\ULC@box=\box34
+Package: ulem 2011/03/18
+\ULdepth=\dimen142
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\graphics\color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(G:\latex\CTEX\MiKTeX\tex\latex\00miktex\color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+)
+(G:\latex\CTEX\MiKTeX\tex\latex\booktabs\booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen143
+\lightrulewidth=\dimen144
+\cmidrulewidth=\dimen145
+\belowrulesep=\dimen146
+\belowbottomsep=\dimen147
+\aboverulesep=\dimen148
+\abovetopsep=\dimen149
+\cmidrulesep=\dimen150
+\cmidrulekern=\dimen151
+\defaultaddspace=\dimen152
+\@cmidla=\count118
+\@cmidlb=\count119
+\@aboverulesep=\dimen153
+\@belowrulesep=\dimen154
+\@thisruleclass=\count120
+\@lastruleclass=\count121
+\@thisrulewidth=\dimen155
+)
+(F:\mypapers\DRT\DRTPaper\DRT4WS(V22)\AppendixB.aux)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+
+-- Lines per column: 61 (exact).
+(G:\latex\CTEX\MiKTeX\tex\context\base\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count122
+\scratchdimen=\dimen156
+\scratchbox=\box35
+\nofMPsegments=\count123
+\nofMParguments=\count124
+\everyMPshowfont=\toks26
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen157
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
+\everyMPtoPDFconversion=\toks27
+)
+LaTeX Font Info:    Calculating math sizes for size <12.045> on input line 26.
+LaTeX Font Info:    Try loading font information for U+msa on input line 26.
+ (G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 26.
+
+(G:\latex\CTEX\MiKTeX\tex\latex\amsfonts\umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+<fig/drtresultbox/aviaresultf.pdf, id=1, 1220.56pt x 517.935pt>
+File: fig/drtresultbox/aviaresultf.pdf Graphic file (type pdf)
+
+<use fig/drtresultbox/aviaresultf.pdf>
+Package pdftex.def Info: fig/drtresultbox/aviaresultf.pdf used on input line 30
+.
+(pdftex.def)             Requested size: 466.14565pt x 177.82632pt.
+
+<fig/drtresultbox/chinaresultf.pdf, id=2, 1224.575pt x 517.935pt>
+File: fig/drtresultbox/chinaresultf.pdf Graphic file (type pdf)
+
+<use fig/drtresultbox/chinaresultf.pdf>
+Package pdftex.def Info: fig/drtresultbox/chinaresultf.pdf used on input line 3
+1.
+(pdftex.def)             Requested size: 466.12813pt x 176.40378pt.
+
+<fig/drtresultbox/parkingresultf.pdf, id=3, 1224.575pt x 529.98pt>
+File: fig/drtresultbox/parkingresultf.pdf Graphic file (type pdf)
+
+<use fig/drtresultbox/parkingresultf.pdf>
+Package pdftex.def Info: fig/drtresultbox/parkingresultf.pdf used on input line
+ 32.
+(pdftex.def)             Requested size: 466.12813pt x 196.32404pt.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 33.
+
+(G:\latex\CTEX\MiKTeX\tex\latex\psnfss\ot1phv.fd
+File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
+)
+<fig/drtresultbox/aviaresultf2.pdf, id=4, 1224.575pt x 517.935pt>
+File: fig/drtresultbox/aviaresultf2.pdf Graphic file (type pdf)
+
+<use fig/drtresultbox/aviaresultf2.pdf>
+Package pdftex.def Info: fig/drtresultbox/aviaresultf2.pdf used on input line 3
+9.
+(pdftex.def)             Requested size: 466.12813pt x 170.7136pt.
+
+<fig/drtresultbox/chinaresultf2.pdf, id=5, 1234.6125pt x 529.98pt>
+File: fig/drtresultbox/chinaresultf2.pdf Graphic file (type pdf)
+
+<use fig/drtresultbox/chinaresultf2.pdf>
+Package pdftex.def Info: fig/drtresultbox/chinaresultf2.pdf used on input line 
+40.
+(pdftex.def)             Requested size: 466.14345pt x 170.71304pt.
+
+<fig/drtresultbox/parkingresultf2.pdf, id=6, 1224.575pt x 517.935pt>
+File: fig/drtresultbox/parkingresultf2.pdf Graphic file (type pdf)
+
+<use fig/drtresultbox/parkingresultf2.pdf>
+Package pdftex.def Info: fig/drtresultbox/parkingresultf2.pdf used on input lin
+e 41.
+(pdftex.def)             Requested size: 466.12813pt x 170.7136pt.
+
+<fig/drtresultbox/aviaresultt.pdf, id=7, 1234.6125pt x 529.98pt>
+File: fig/drtresultbox/aviaresultt.pdf Graphic file (type pdf)
+
+<use fig/drtresultbox/aviaresultt.pdf>
+Package pdftex.def Info: fig/drtresultbox/aviaresultt.pdf used on input line 48
+.
+(pdftex.def)             Requested size: 466.14345pt x 170.71304pt.
+
+<fig/drtresultbox/chinaresultt.pdf, id=8, 1252.68pt x 529.98pt>
+File: fig/drtresultbox/chinaresultt.pdf Graphic file (type pdf)
+
+<use fig/drtresultbox/chinaresultt.pdf>
+Package pdftex.def Info: fig/drtresultbox/chinaresultt.pdf used on input line 4
+9.
+(pdftex.def)             Requested size: 466.14124pt x 170.71304pt.
+
+<fig/drtresultbox/parkingresultt.pdf, id=9, 1234.6125pt x 529.98pt>
+File: fig/drtresultbox/parkingresultt.pdf Graphic file (type pdf)
+
+<use fig/drtresultbox/parkingresultt.pdf>
+Package pdftex.def Info: fig/drtresultbox/parkingresultt.pdf used on input line
+ 50.
+(pdftex.def)             Requested size: 466.14345pt x 170.71304pt.
+LaTeX Font Info:    Calculating math sizes for size <8.03> on input line 63.
+ [1{G:/latex/CTEX/UserData/pdftex/config/pdftex.map{Unicode.sfd}{UGBK.sfd}} <F:
+/mypapers/DRT/DRTPaper/DRT4WS(V22)/fig/drtresultbox/aviaresultf.pdf> <F:/mypape
+rs/DRT/DRTPaper/DRT4WS(V22)/fig/drtresultbox/chinaresultf.pdf> <F:/mypapers/DRT
+/DRTPaper/DRT4WS(V22)/fig/drtresultbox/parkingresultf.pdf>] [2 <F:/mypapers/DRT
+/DRTPaper/DRT4WS(V22)/fig/drtresultbox/aviaresultf2.pdf> <F:/mypapers/DRT/DRTPa
+per/DRT4WS(V22)/fig/drtresultbox/chinaresultf2.pdf> <F:/mypapers/DRT/DRTPaper/D
+RT4WS(V22)/fig/drtresultbox/parkingresultf2.pdf>] [3 <F:/mypapers/DRT/DRTPaper/
+DRT4WS(V22)/fig/drtresultbox/aviaresultt.pdf> <F:/mypapers/DRT/DRTPaper/DRT4WS(
+V22)/fig/drtresultbox/chinaresultt.pdf> <F:/mypapers/DRT/DRTPaper/DRT4WS(V22)/f
+ig/drtresultbox/parkingresultt.pdf>]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[4] [5] (F:\mypapers\DRT\DRTPaper\DRT4WS(V22)\AppendixB.aux) ) 
+Here is how much of TeX's memory you used:
+ 3681 strings out of 495354
+ 53344 string characters out of 3183523
+ 135854 words of memory out of 3000000
+ 6787 multiletter control sequences out of 15000+200000
+ 33711 words of font info for 92 fonts, out of 3000000 for 9000
+ 17 hyphenation exceptions out of 8191
+ 27i,10n,24p,395b,280s stack positions out of 5000i,500n,10000p,200000b,50000s
+{G:/latex/CTEX/Mi
+KTeX/fonts/enc/dvips/fontname/8r.enc}<G:/latex/CTEX/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmmi12.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi
+8.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><G:/latex/
+CTEX/MiKTeX/fonts/type1/urw/helvetic/uhvr8a.pfb><G:/latex/CTEX/MiKTeX/fonts/typ
+e1/urw/palatino/uplb8a.pfb><G:/latex/CTEX/MiKTeX/fonts/type1/urw/palatino/uplr8
+a.pfb>
+Output written on AppendixB.pdf (5 pages, 170737 bytes).
+PDF statistics:
+ 199 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
+
