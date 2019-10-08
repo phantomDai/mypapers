@@ -518,7 +518,9 @@ In our experiments, we focused on addressing the following three research questi
 We selected three web services as the subject programs for our study, and implemented them ourselves, based on real-life specification:
 \texttt{Aviation Consignment Management Service (ACMS)};
 \texttt{China Unicom billing service (CUBS)}; and
-\texttt{Parking billing service (PBS)}. We used the tool MuJava \cite{ma2005mujava} to conduct mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity}, generating a total of 1563 mutants. Each mutant was created by applying a syntactic change (using one of all applicable mutation operators provided by MuJava) to the original program. Equivalent mutants, and those that were too easily detected
+\texttt{Parking billing service (PBS)}\textcolor{red}{,
+all of them can be found at the repository: https://github.com/phantomDai/subjects4tsc.git. 
+}We used the tool MuJava \cite{ma2005mujava} to conduct mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity}, generating a total of 1563 mutants. Each mutant was created by applying a syntactic change (using one of all applicable mutation operators provided by MuJava) to the original program. Equivalent mutants, and those that were too easily detected
 (requiring less than 20 randomly generated test cases), were removed.
 To ensure the statistical reliability, we obtained 50 different test suites using different random seeds, then tested all mutants with all test suites, calculating the average number of test cases needed to kill (detect) a mutant. Based on this, those mutants that could be detected too easily were removed. Table~\ref{tab:objects} summarizes the basic information of the used web services and their mutants.
 A detailed description of each web service is given in the following.
@@ -869,11 +871,12 @@ However, our code was cross-checked by different individuals, and we are confide
 \subsubsection{External Validity}
 \label{sec:externalthreats}
 
-The possible threat to external validity is related to the subject programs and seeded faults under evaluation.
+The possible threat to external validity is related to the subject programs, seeded faults under evaluation, \textcolor{red}{partition scheme, and the value of adjusting factor.}
 Although the three subject web services are not very complex, they do implement real-life business scenarios of diverse application domains.
-Furthermore, 18 distinct faults were used to evaluate the performance.
-These faults cover different types of mutation operators and require an average of more than 20 randomly generated test cases to be detected.
-Although we have tried to improve the generalisability of the findings by applying different partitioning granularities, and 13 kinds of parameters, we cannot be certain that similar results would be observed in other types of web services.
+\textcolor{red}{Besides}, 18 distinct faults were used to evaluate the performance.These faults cover different types of mutation operators and require an average of more than 20 randomly generated test cases to be detected.
+\textcolor{red}{Furthermore, the performance of DRT can be affected by some factors such as partition scheme and probability adjusting factor. It is difficult and unrealistic to demand that DRT always performances better than RT or PT in any scenario for every web service. We, therefore, want to verify the performance of DRT in different scenarios. Accordingly, we created 2 partition schemes and set 13 kinds of adjusting factors to improve the generalisability for the findings.
+Note that the tool we developed cannot affect the performance of DRT, which just makes it easier for testers to use our method and improves test efficiency.}
+\sout{Although we have tried to improve the generalisability of the findings by applying different partitioning granularities, and 13 kinds of parameters, we cannot be certain that similar results would be observed in other types of web services.}
 
 \subsubsection{Construct Validity}
 \label{sec:construct}
