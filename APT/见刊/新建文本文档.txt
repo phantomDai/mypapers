@@ -1,0 +1,7 @@
+RE: TC-2018-02-0064.R2, ¡°Adaptive Partition Testing¡±
+Manuscript Type: Regular
+13-Aug-2018
+Dear Dr. Sun,
+Congratulations! I am pleased to inform you that your paper has been accepted with no further changes as a regular paper in an upcoming issue of the IEEE Transactions on Computers.
+COMMENTS BY THE EIC: I fully concur with the recommendation of the Associate Editor. Authors are requested to do NO further modifications, otherwise the paper will be withdrawn and a full new review cycle re-started from scratch as if the the paper was (re)submitted. I take this opportunity to thank the Authors for their manuscript as well as the Associate Editor & Referees for their collaboration and time while handling and reviewing this submission.
+Please submit all final files through the Awaiting Final Files queue in your Author Center on ScholarOne Manuscripts. Please upload all files in a single session, and make sure your final package is correct and complete upon submission. Once you have completed the submission of your final files you will not be able to make any changes until you have received the page proofs from IEEE. A detailed list of the required files is below.

@@ -28,7 +28,7 @@
         Guan~Wang,
         Dave~Towey,~\IEEEmembership{Member,~IEEE,}
         Tsong Yueh~Chen,~\IEEEmembership{Member,~IEEE,}
-        and~Kai-Yuan~Cai,~\IEEEmembership{Member,~IEEE,}
+        and~Kai-Yuan~Cai
 \thanks{A preliminary version of this paper was presented at the 36th Annual IEEE Computer Software and Applications Conference (COMPSAC 2012)~\cite{sun2012towards}.}
 \thanks{C.-A. Sun, H. Dai, and G. Wang are with the School of Computer and Communication Engineering, University of Science and Technology Beijing, Beijing 100083, China. E-mail: casun@ustb.edu.cn.}% <-this % stops a space
 \thanks{D. Towey is with the School of Computer Science, University of Nottingham Ningbo China, Ningbo 315100, China. E-mail: dave.towey@nottingham.edu.cn.}
@@ -445,24 +445,24 @@ For a given partition scheme, with a total of $m$ partitions, identification of 
 \subsection{Prototype}
 \label{sec:prototype}
 
-This section describes a tool that partially automates DRT for web services, called DRTester. DRTester supports the following tasks in testing web services: a) WSDL parsing; b) partition construction; c) DRT parameters (probability adjusting factor $\varepsilon$ and test profiles) setting; and d) test case preparation and execution. The details of DRTester are as follows:
+This section describes a tool that partially automates DRT for web services, called DRTester \textcolor{red}{(https://github.com/phantomDai/DRTester.git)}. DRTester supports the following tasks in testing web services: a) WSDL parsing; b) partition construction; c) DRT parameters (probability adjusting factor $\varepsilon$ and test profiles) setting; and d) test case preparation and execution. The details of DRTester are as follows:
 
 \begin{enumerate}[1)]
   \item
   \emph{Guidance}. This feature describes the steps the tester should follow when testing a web service.
 
   \item
-  \emph{Configuration}. This feature interacts \textcolor{red}{(as shown in Figure \ref{fig:configuration})} with the te{}sters to obtain and set the information related to testing the web service, including: the address of the web servic{}e under test; the DRT parameters and partition details; and the test case preparation. The detailed steps are as follows:
+  \emph{Configuration}. This feature interacts with the te{}sters to obtain and set the information related to testing the web service, including: the address of the web servic{}e under test; the DRT parameters and partition details; and the test case preparation. The detailed steps are as follows:
 
   \begin{itemize}
     \item
-    \emph{Inputting and parsing the URL}: We integrate the WSDL parsing functionality provided by MT4WS \cite{sun2016mt4ws}. This enables all the (WSDL) parameters and their types to be automatically obtained.
+    \emph{Inputting and parsing the URL \textcolor{red}{(as shown in Figure \ref{fig:configuration}.a)}}: We integrate the WSDL parsing functionality provided by MT4WS \cite{sun2016mt4ws}. This enables all the (WSDL) parameters and their types to be automatically obtained.
     \item
-    \emph{Parameter setting}: The tester is responsible for selecting which operations of the current web service under test are to be tested, and for partitioning each parameter into disjoint choices.
+    \emph{Parameter setting \textcolor{red}{(as shown in Figure \ref{fig:configuration}.a)}}: The tester is responsible for selecting which operations of the current web service under test are to be tested, and for partitioning each parameter into disjoint choices.
     \item
-    \emph{Partition setting}: The tester is responsible for specifying the partitions by combining the choices associated with each parameter.
+    \emph{Partition setting \textcolor{red}{(as shown in Figure \ref{fig:configuration}.b)}}: The tester is responsible for specifying the partitions by combining the choices associated with each parameter.
     \item
-    \emph{Test case generation}: The tester is responsible for specifying the mode of test case generation (either randomly generating test cases based on the parameters, or uploading test cases generated using other techniques).
+    \emph{Test case generation \textcolor{red}{(as shown in Figure \ref{fig:configuration}.b)}}: The tester is responsible for specifying the mode of test case generation (either randomly generating test cases based on the parameters, or uploading test cases generated using other techniques).
   \end{itemize}
   \item
   \emph{Execution}. This feature presents a summary of the testing results, including details of the test case execution (input, expected output, partition, and result (pass or fail)). For randomly generated tests, the tester has to check each individual result. Otherwise, when all tests have been completed, a report is generated in a downloadable file.
@@ -519,7 +519,7 @@ We selected three web services as the subject programs for our study, and implem
 \texttt{Aviation Consignment Management Service (ACMS)};
 \texttt{China Unicom billing service (CUBS)}; and
 \texttt{Parking billing service (PBS)}\textcolor{red}{,
-all of them can be found at the repository: https://github.com/phantomDai/subjects4tsc.git. 
+for details, please visit the following linkage: https://github.com/phantomDai/subjects4tsc.git. 
 }We used the tool MuJava \cite{ma2005mujava} to conduct mutation analysis \cite{demillo1978hints, chen2018test, mao2017out, chen2017similarity}, generating a total of 1563 mutants. Each mutant was created by applying a syntactic change (using one of all applicable mutation operators provided by MuJava) to the original program. Equivalent mutants, and those that were too easily detected
 (requiring less than 20 randomly generated test cases), were removed.
 To ensure the statistical reliability, we obtained 50 different test suites using different random seeds, then tested all mutants with all test suites, calculating the average number of test cases needed to kill (detect) a mutant. Based on this, those mutants that could be detected too easily were removed. Table~\ref{tab:objects} summarizes the basic information of the used web services and their mutants.
@@ -705,7 +705,7 @@ With DT, it is possible to obtain partition schemes with different granularities
 For fine-grain partition schemes, each \emph{CE} of a DT \emph{rule} corresponds to a partition;
 while for coarse-grained schemes, a partition corresponds to the union of a group of partitions for which all \emph{CE} of DT \emph{rules} have the same \emph{AE}.
 The decision tables for \texttt{ACMS}, \texttt{CUBS}, and \texttt{PBS} are shown in Tables \ref{tab:ds-acms} to \ref{tab:ds-pbs}, respectively. In the tables, $R_i$ $(i = 1, 2, \ldots, n)$ denotes the identified $i^{th}$ \emph{rule}; $n$ is the total number of \emph{rules}; and the checkmark (\checkmark) under each \emph{rule} indicates that the corresponding action should be taken.
-The details of actions are provided in Table \ref{tab:formulas}, where $w$ is the weight of baggage; $price^*$ means economy class fare; $op^*$ means the month charge; $call$ and $data$ mean the call duration and data usage, respectively; $freeCall$ and $freeData$ mean the free calls and free data, respectively; and $baseFee$ means the cost before the discount. In Table \ref{tab:ds-acms}, the condition for calculating the cost of the baggage include \emph{class} (0: First class; 1: Business class; and 2: Economy class), \emph{isStudent} (Y: The passenger is a student; and N: The passenger is not a student), \emph{isOverload} (Y: The baggage exceeds the free carry-on weight limit; and N: The baggage does not exceed the free carry-on weight limit.), and \emph{Destination} (0: Domestic flight; and 1: International flight). In Table \ref{tab:ds-cubs}, conditions that influence cell-phone bills include \emph{plan} (A: Plan A; B: Plan B; and C: Plan C) and \emph{option} $y$ under \emph{plan} $x$, represented as $op_x^y$, where $x \in \{A, B, C\}$, and $y \in \{\mathcal{Z} |1 \le y \le 11\}$. In Table \ref{tab:ds-pbs}, conditions that affect the parking fee include the type of \emph{vehicle} (0: Motorcycle; 1: 2-door coupe; and 2: Others), \emph{day of week} (0: Weekday; and 1: Saturday or Sunday), and \emph{discount information} (0: Customers provide a discount coupon; 1: The estimated hours of parking and the actual hours of parking fall into the same time range; and 2: Estimated hours and the actual hours are in different time ranges).
+The details of actions are provided in Table \ref{tab:formulas}, where $w$ is the weight of baggage; $price^*$ means economy class fare; $op^*$ means the month charge; $call$ and $data$ mean the call duration and data usage, respectively; $freeCall$ and $freeData$ mean the free calls and free data, respectively; and $baseFee$ means the cost before the discount. In Table \ref{tab:ds-acms}, the condition for calculating the cost of the baggage include \emph{class} (0: First class; 1: Business class; and 2: Economy class), \emph{isStudent} (Y: The passenger is a student; and N: The passenger is not a student), \emph{isOverload} (Y: The baggage exceeds the free carry-on weight limit; and N: The baggage does not exceed the free carry-on weight limit.), and \emph{Destination} (0: Domestic flight; and 1: International flight). In Table \ref{tab:ds-cubs}, conditions that influence cell-phone bills include \emph{plan} (A: Plan A; B: Plan B; and C: Plan C) and \emph{option} $y$ under \emph{plan} $x$, represented as $op_x^y$, where $x \in \{A, B, C\}$, and $y \in \mathcal{Y} = \{y|1 \le y \le 11, y \in \mathcal{Z}\} $ . In Table \ref{tab:ds-pbs}, conditions that affect the parking fee include the type of \emph{vehicle} (0: Motorcycle; 1: 2-door coupe; and 2: Others), \emph{day of week} (0: Weekday; and 1: Saturday or Sunday), and \emph{discount information} (0: Customers provide a discount coupon; 1: The estimated hours of parking and the actual hours of parking fall into the same time range; and 2: Estimated hours and the actual hours are in different time ranges).
 
 \begin{table*}
   \caption{Decision Table for \texttt{ACMS}}
@@ -873,10 +873,7 @@ However, our code was cross-checked by different individuals, and we are confide
 
 The possible threat to external validity is related to the subject programs, seeded faults under evaluation, \textcolor{red}{partition scheme, and the value of adjusting factor.}
 Although the three subject web services are not very complex, they do implement real-life business scenarios of diverse application domains.
-\textcolor{red}{Besides}, 18 distinct faults were used to evaluate the performance.These faults cover different types of mutation operators and require an average of more than 20 randomly generated test cases to be detected.
-\textcolor{red}{Furthermore, the performance of DRT can be affected by some factors such as partition scheme and probability adjusting factor. It is difficult and unrealistic to demand that DRT always performances better than RT or PT in any scenario for every web service. We, therefore, want to verify the performance of DRT in different scenarios. Accordingly, we created 2 partition schemes and set 13 kinds of adjusting factors to improve the generalisability for the findings.
-Note that the tool we developed cannot affect the performance of DRT, which just makes it easier for testers to use our method and improves test efficiency.}
-\sout{Although we have tried to improve the generalisability of the findings by applying different partitioning granularities, and 13 kinds of parameters, we cannot be certain that similar results would be observed in other types of web services.}
+\textcolor{red}{Besides}, 18 distinct faults were used to evaluate the performance.These faults cover different types of mutation operators and require an average of more than 20 randomly generated test cases to be detected.Although we have tried to improve the generalisability of the findings by applying different partitioning granularities, and 13 kinds of parameters, we cannot be certain that similar results would be observed in other types of web services.
 
 \subsubsection{Construct Validity}
 \label{sec:construct}
