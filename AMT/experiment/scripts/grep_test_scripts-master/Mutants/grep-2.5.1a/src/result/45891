@@ -1,0 +1,5 @@
+Hello Word!(Introduction); 
+&&The file is \only fo"r test purpose;
+)
+\
+Min_ART_Grep: line 3: `$rng=gsl_rng::gsl_rng_alloc($gsl_rng::gsl_rng_mt19937);^M'

@@ -1,0 +1,34 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: CMT.aux
+The style file: IEEEtran.bst
+Database file #1: CMT.bib
+Repeated entry---line 181 of file CMT.bib
+ : @inproceedings{chen2004case
+ :                            ,
+I'm skipping whatever remains of this entry
+You're missing a field name---line 230 of file CMT.bib
+ :   
+ :   %organization={IEEE}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Repeated entry---line 415 of file CMT.bib
+ : @inproceedings{chen2004case
+ :                            ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 436 of file CMT.bib
+ : @inproceedings{batra2011efficient
+ :                                  ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 586 of file CMT.bib
+ : @article{ma2005mujava
+ :                      ,
+I'm skipping whatever remains of this entry
+Repeated entry---line 596 of file CMT.bib
+ : @article{demillo1978hints
+ :                          ,
+I'm skipping whatever remains of this entry
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+(There were 6 error messages)

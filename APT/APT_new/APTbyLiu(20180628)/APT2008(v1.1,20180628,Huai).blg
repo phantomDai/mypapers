@@ -1,5 +1,46 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: APT2008(v1.1,20180628,Huai).aux
-I found no \citation commands---while reading file APT2008(v1.1,20180628,Huai).aux
-I found no \bibdata command---while reading file APT2008(v1.1,20180628,Huai).aux
-I found no \bibstyle command---while reading file APT2008(v1.1,20180628,Huai).aux
-(There were 3 error messages)
+The style file: IEEEtran.bst
+I couldn't open database file APT.bib
+---line 138 of file APT2008(v1.1,20180628,Huai).aux
+ : \bibdata{APT
+ :             }
+I'm skipping whatever remains of this command
+I found no database files---while reading file APT2008(v1.1,20180628,Huai).aux
+Warning--I didn't find a database entry for "Hamlet02"
+Warning--I didn't find a database entry for "Weyuker91"
+Warning--I didn't find a database entry for "Hamlet90"
+Warning--I didn't find a database entry for "ChenTSE94"
+Warning--I didn't find a database entry for "ChenTSE96"
+Warning--I didn't find a database entry for "Gutjahr99"
+Warning--I didn't find a database entry for "Cai05"
+Warning--I didn't find a database entry for "Cai07"
+Warning--I didn't find a database entry for "Ammann88"
+Warning--I didn't find a database entry for "Finelli91"
+Warning--I didn't find a database entry for "Cai09"
+Warning--I didn't find a database entry for "Cai02"
+Warning--I didn't find a database entry for "Lv11"
+Warning--I didn't find a database entry for "Yang14"
+Warning--I didn't find a database entry for "Li15"
+Warning--I didn't find a database entry for "Do05"
+Warning--I didn't find a database entry for "Ostrand88"
+Warning--I didn't find a database entry for "Holm79"
+Warning--I didn't find a database entry for "LvTSE14"
+Warning--I didn't find a database entry for "Lv14"
+Warning--I didn't find a database entry for "Sun12"
+Warning--I didn't find a database entry for "White80"
+Warning--I didn't find a database entry for "Bishop93"
+Warning--I didn't find a database entry for "Koru08"
+Warning--I didn't find a database entry for "Chen10"
+Warning--I didn't find a database entry for "Barus16"
+Warning--I didn't find a database entry for "Chen09"
+Warning--I didn't find a database entry for "Liu11"
+Warning--I didn't find a database entry for "Chen07"
+Warning--I didn't find a database entry for "Liu16"
+Warning--I didn't find a database entry for "Liu12"
+Warning--I didn't find a database entry for "Zhou09"
+-- IEEEtran.bst version 1.14 (2015/08/26) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+
+Done.
+(There were 2 error messages)

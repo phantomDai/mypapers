@@ -1,0 +1,10 @@
+File name : >/home/ssi/abarus/source/grep_Mutation/grep_mutant3/ReadMe
+ Modified file# : /home/ssi/abarus/source/grep-2.5.1a/src/dfa.c
+Category : ==
+Modified line# : 943
+
+Before Modified : 	  if (backslash != ((syntax_bits & RE_NO_BK_PARENS) == 0))
+
+After Modified : 	  if (backslash != ((syntax_bits & RE_NO_BK_PARENS) != 0))
+
+Created by : Arlinta Christy Barus

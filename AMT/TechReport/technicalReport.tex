@@ -1,0 +1,85 @@
+\documentclass[CJK,a4paper,13pt]{article}
+\usepackage{CJK}  
+\usepackage{ctex} 
+\usepackage{cite} 
+\usepackage{graphicx} 
+\usepackage{amsmath} 
+\usepackage{enumitem} 
+\usepackage{url} 
+\usepackage{algorithm} 
+\usepackage{algorithmic} 
+\usepackage{multirow} 
+\usepackage{graphicx} 
+\usepackage{courier}  
+\usepackage{color}  
+\usepackage{booktabs}  
+
+
+\begin{document}
+\begin{CJK}{GBK}{song}
+\renewcommand\figurename{图}
+\renewcommand\tablename{表}
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\center %本页面的内容居中
+\textsc{\Large university of science and technology beijing}\\[0.5cm] % 学校的名字
+\textsc{\Large software testing and service computing lab}\\[4cm] %实验室的名字
+\textsc{\LARGE Adaptive Metamorphic Testing \\[0.5cm]
+\emph{technical report}}\\[8cm]
+ \begin{tabular}{c c c} %创建一个3列的表格
+   Name&:&Hepeng Dai\\
+   Version&:&1.0
+\end{tabular}\\[1cm]
+{\large \today}\\[3cm] %日期
+\vfill%剩下的页面用空白填充
+\end{titlepage}
+
+\renewcommand{\contentsname}{目录} 
+\tableofcontents %目录
+
+\newpage 
+\section{问题阐述}
+
+
+
+\section{相关理论}
+
+\subsection{经验研究}
+本文通过经验研究的方式评估提出技术的有效性。
+
+\subsubsection{实验对象}
+
+\subsubsection{grep}
+
+\textbf{衍生测试用例与原始测试用例的差异}
+
+\begin{table}[h]
+\caption{原始测试用例与衍生测试用例的选项差异}
+\label{ta:source_follow_diferrence}
+\centering
+\begin{tabular}{ccc} \toprule
+蜕变关系        & 原始测试减少的选项    & 衍生测试用例增加的选项 \\ \midrule
+MR1            & $NR_A/UR_A/LR_A$    & $NA_A$ \\
+MR2            & $NR_A/UR_A/LR_A$    & $NA_A; AL_B$ \\
+MR3            & $NULL$              & $AL_B$ \\
+MR4            & $NULL$              & $AL_B$ \\
+MR5            & $NULL$              & $NB_B$ \\
+MR6            & $NULL$              & $AL_B$ \\
+MR7            & $NULL$              & $NULL$ \\
+MR8            & $NULL$              & $NULL$ \\
+MR9            & $NULL$              & $YW_A/NW_A/N3_A/(N3_A,CB_B); AL_B$ \\
+MR10           & $NULL$              & $PL_B/RM_B$ \\
+MR11           & $NULL$              & $NULL$ \\
+MR12           & $NULL$              & $Dot_A$ \\ \bottomrule
+\end{tabular}
+\end{table}
+
+
+
+
+\renewcommand\refname{参考文献} 
+\bibliographystyle{plain}
+\bibliography{references}
+\end{CJK}
+\end{document}

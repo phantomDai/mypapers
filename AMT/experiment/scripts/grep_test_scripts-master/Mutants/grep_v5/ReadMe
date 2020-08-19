@@ -1,0 +1,9 @@
+File name : > /home/ssi/abarus/source/grep_Mutation/grep_mutant87/ReadMe
+ Modified file# : /home/ssi/abarus/source/grep-2.5.1a/src/dfa.c
+Category : --
+Modified line# : 1791
+Before Modified : 	--nfirstpos;
+
+After Modified : 	++nfirstpos;
+
+Created by : Arlinta Christy Barus

@@ -1,0 +1,10 @@
+文档内容说明：
+    partition_scheme_testframes_1.1将group　B中的选项进行了忽略，partition_scheme_testcases_1.1是对应的测试用例
+    partition_grep_no_repeat_1.1是对应的完整测试帧；
+
+
+    partition_scheme_testframes_1.2是将完全由group B中的选项组成的测试帧删除后得到的文件，
+    partition_scheme_testcases_1.2是对应的测试用例，partition_grep_no_repeat_1.２是对应的完整测试帧；
+
+
+    partition_scheme_testcases_file是分区与测试用力之间的映射

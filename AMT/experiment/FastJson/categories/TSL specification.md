@@ -16,7 +16,7 @@ Parameters:
 
 ​					存在，数值在精度范围                      [property NonEmpty]
 
-​					不存在，数值不在精度范围              [property NonEmpty]
+​					存在，数值不在精度范围                 [property NonEmptyOut]
 
 ​		double：
 
@@ -24,7 +24,7 @@ Parameters:
 
 ​					存在，数值在精度范围                       [if NonEmpty]
 
-​					不存在，数值不在精度范围               [if NonEmpty]
+​					存在，数值不在精度范围                   [if NonEmptyOut]
 
 ​		short：
 
@@ -32,7 +32,7 @@ Parameters:
 
 ​					存在，数值在精度范围                       [if NonEmpty]
 
-​					不存在，数值不在精度范围               [if NonEmpty]
+​					存在，数值不在精度范围               [if NonEmptyOut]
 
 ​		byte：
 
@@ -40,7 +40,7 @@ Parameters:
 
 ​					存在，数值在精度范围                       [if NonEmpty]
 
-​					不存在，数值不在精度范围               [if NonEmpty]
+​					存在，数值不在精度范围                   [if NonEmptyOut]
 
 ​		int：
 
@@ -48,7 +48,7 @@ Parameters:
 
 ​					存在，数值在精度范围                       [if NonEmpty]
 
-​					不存在，数值不在精度范围               [if NonEmpty]
+​					存在，数值不在精度范围                   [if NonEmptyOut]
 
 ​		long：
 
@@ -56,57 +56,59 @@ Parameters:
 
 ​					存在，数值在精度范围                       [if NonEmpty]
 
-​					不存在，数值不在精度范围               [if NonEmpty]
+​					存在，数值不在精度范围                   [if NonEmptyOut]
 
 ​		boolean：
 
-​					不存在                                                    [if Empty]
+​					不存在                                                    
 
-​					存在，数值在精度范围                       [if NonEmpty]
+​					存在                                                        
 
 ​		char:
 
-​					不存在                                                    [if Empty]
+​					不存在                                                    
 
-​					存在，数值在精度范围                       [if NonEmpty]
+​					存在，数值在精度范围                       
 
 ​		date:
 
 ​					不存在
 
-​					yyyy-MM-dd HH:mm:ss                    [property Exist]
+​					 存在
 
-​					yyyy/MM/dd HH:mm:ss                     [if Exist]
+​					yyyy-MM-dd HH:mm:ss                    
 
-​					yyyy年M月d日 HH:mm:ss                  [if Exist]
+​					yyyy/MM/dd HH:mm:ss                     
 
-​					yyyy年M月d日 H时m分s秒                 [if Exist]
+​					yyyy年M月d日 HH:mm:ss                  
 
-​					yyyy년M월d일 HH:mm:ss                  [if Exist]
+​					yyyy年M月d日 H时m分s秒                 
 
-​					MM/dd/yyyy HH:mm:ss                      [if Exist]
+​					yyyy년M월d일 HH:mm:ss                  
 
-​					dd/MM/yyyy HH:mm:ss                      [if Exist] 
+​					MM/dd/yyyy HH:mm:ss                      
 
-​					dd.MM.yyyy HH:mm:ss                       [if Exist]
+​					dd/MM/yyyy HH:mm:ss                      
 
-​					dd-MM-yyyy HH:mm:ss                      [if Exist]
+​					dd.MM.yyyy HH:mm:ss                       
 
-​					yyyyMMdd                                              [if Exist]
+​					dd-MM-yyyy HH:mm:ss                      
 
-​					yyyy/MM/dd                                           [if Exist]
+​					yyyyMMdd                                              
 
-​					yyyy年M月d日                                       [if Exist]
+​					yyyy/MM/dd                                           
 
-​					yyyy년M월d일                                       [if Exist]
+​					yyyy年M月d日                                       
 
-​					MM/dd/yyyy                                          [if Exist]
+​					yyyy년M월d일                                       
 
-​					dd/MM/yyyy                                          [if Exist]
+​					MM/dd/yyyy                                          
 
-​					dd.MM.yyyy                                          [if Exist]
+​					dd/MM/yyyy                                          
 
-​					dd-MM-yyyy                                         [if Exist]
+​					dd.MM.yyyy                                          
+
+​					dd-MM-yyyy                                         
 
 ​		string：
 
@@ -124,26 +126,26 @@ Parameters:
 
 ​		map：
 
-​					不存在                              [if Empty]
+​					不存在                              
 
-​					HashMap                          [if NonEmpty] [property hasHashMap]
+​					HashMap                          [property hasHashMap]
 
-​					LinkedHashMap              [if NonEmpty] [property hasLinkedMap]
+​					LinkedHashMap              [property hasLinkedMap]
 
-​					dentityHashMap              [if NonEmpty]
+​					dentityHashMap              
 
 ​		list：
 
-​					不存在                                 [if Empty]
+​					不存在                                 
 
-​					ArrayList                             [if NonEmpty and hasHashMap]
+​					ArrayList                             
 
-​					LinkedList                           [if NonEmpty and hasLinkedMap]
+​					LinkedList                           [if hasLinkedMap]
 
 ​		set：
 
 ​					不存在                                   [if Empty]
 
-​					HashSet                                 [if NonEmpty and hasHashMap]
+​					HashSet                                 [hasHashMap]
 
-​					LinkedHashSet                     [if NonEmpty and hasLinkedMap]
+​					LinkedHashSet                     [hasLinkedMap]

@@ -1,0 +1,65 @@
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2018.4.15)  11 APR 2019 22:01
+entering extended mode
+**F:/mypapers/AMT/experiment/grep/Mutants/grep-2.5.1a/doc/texinfo.tex
+(F:/mypapers/AMT/experiment/grep/Mutants/grep-2.5.1a/doc/texinfo.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for loaded.
+Loading texinfo [version 2000-12-12.07]: Basics,
+\bindingoffset=\dimen102
+\normaloffset=\dimen103
+\pagewidth=\dimen104
+\pageheight=\dimen105
+\outerhsize=\dimen106
+\outervsize=\dimen107
+\cornerlong=\dimen108
+\cornerthick=\dimen109
+\topandbottommargin=\dimen110
+\headlinebox=\box26
+\footlinebox=\box27
+\margin=\insert233
+\EMsimple=\toks14
+\singlespaceskip=\skip41
+\groupinvalidhelp=\toks15
+\mil=\dimen111
+\exdentamount=\skip42
+\inmarginspacing=\skip43
+ pdf,
+\tempnum=\count79
+\lnkcount=\count80
+\filename=\toks16
+\filenamelength=\count81
+\pgn=\count82
+\toksA=\toks17
+\toksB=\toks18
+\toksC=\toks19
+\toksD=\toks20
+\boxA=\box28
+\countA=\count83
+
+(G:\latex\CTEX\MiKTeX\tex\plain\misc\pdfcolor.tex) fonts,
+\sffam=\mathgroup4
+\mainmagstep=\count84
+
+! Undefined control sequence.
+\resetmathfonts ...nt 2 = \tensy \textfont \itfam 
+                                                  = \tenit \textfont \slfam ...
+l.1265 \textfonts
+                 
+? 
+! Emergency stop.
+\resetmathfonts ...nt 2 = \tensy \textfont \itfam 
+                                                  = \tenit \textfont \slfam ...
+l.1265 \textfonts
+                 
+End of file on the terminal!
+
+ 
+Here is how much of TeX's memory you used:
+ 535 strings out of 495354
+ 5268 string characters out of 3183523
+ 47361 words of memory out of 3000000
+ 3773 multiletter control sequences out of 15000+200000
+ 20188 words of font info for 72 fonts, out of 3000000 for 9000
+ 19 hyphenation exceptions out of 8191
+ 5i,0n,10p,231b,18s stack positions out of 5000i,500n,10000p,200000b,50000s
+!  ==> Fatal error occurred, no output PDF file produced!

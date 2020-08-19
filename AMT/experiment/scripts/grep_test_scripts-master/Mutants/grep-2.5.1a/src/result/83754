@@ -1,0 +1,11 @@
+&&The file is \only fo"r test purpose;
+A
+R
+L
+I
+N
+T
+A
+f
+Min_ART_Grep: line 2: ^M: command not found
+Min_ART_Grep: line 3: `$rng=gsl_rng::gsl_rng_alloc($gsl_rng::gsl_rng_mt19937);^M'

@@ -1,0 +1,10 @@
+File name : >ReadMe
+ Modified file# : /home/ssi/abarus/source/grep-2.5.1a/src/dfa.c
+Category : +=
+Modified line# : 434
+
+Before Modified :   lexptr += cur_mb_len;
+
+After Modified :   lexptr -= cur_mb_len;
+
+Created by : Arlinta Christy Barus

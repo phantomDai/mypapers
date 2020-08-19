@@ -1,0 +1,15 @@
+&&The file is \only fo"r test purpose;
+This +is the 3rd line; "alin"
+@This file !is /intentionally made simple,
+so that @it #will^ be easy to test.
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+Name "main::seed" used only once: possible typo at /home/research/abarus/grep/Code/CatPartition/Min_ART_Grep line 375.
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Single_Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Single_Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Single_Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Single_Min_ART_Grep: not found

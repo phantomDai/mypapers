@@ -1,0 +1,4 @@
+78898
+002232
+CORRECT
+Min_ART_Grep: line 3: syntax error near unexpected token `$gsl_rng::gsl_rng_mt19937'

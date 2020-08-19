@@ -1,0 +1,22 @@
+grep_v1 failure rate: 0.8296028381409781
+grep_v2 failure rate: 0.08033164349312699
+grep_v3 failure rate: 0.8009447293785144
+grep_v4 failure rate: 0.08041070034488551
+grep_v5 failure rate: 0.73265432896736752
+grep_v6 failure rate: 0.08045022877076477
+grep_v7 failure rate: 0.17083197454369373
+grep_v8 failure rate: 0.594230826249219
+grep_v9 failure rate: 0.1831253149921437
+grep_v10 failure rate: 0.8295731918215686
+grep_v11 failure rate: 0.1349599280582649
+grep_v12 failure rate: 0.11113416935954068
+grep_v13 failure rate: 0.07890862016147362
+grep_v14 failure rate: 0.8461948949037977
+grep_v15 failure rate: 0.08043046455782514
+grep_v16 failure rate: 0.8323678492389726
+grep_v17 failure rate: 0.0800055339796231
+grep_v18 failure rate: 0.06824582728054313
+grep_v19 failure rate: 0.08258476376824483
+grep_v20 failure rate: 0.8458193748579447
+
+used mutants:grep_v2, grep_v4, grep_v6, grep_v13, grep_v15, grep_v17, grep_v18, grep_v19

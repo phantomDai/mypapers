@@ -1,0 +1,19 @@
+&&The file is \only fo"r test purpose;
+12345
+78898
+43543543
+4545
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+Name "main::seed" used only once: possible typo at /home/research/abarus/grep/Code/CatPartition/Min_ART_Grep line 375.
+Name "main::max" used only once: possible typo at /home/research/abarus/grep/Code/CatPartition/Min_ART_Grep line 374.
+Min_ART_Grep: line 3: syntax error near unexpected token `$gsl_rng::gsl_rng_mt19937'
+Min_ART_Grep: line 3: `$rng=gsl_rng::gsl_rng_alloc($gsl_rng::gsl_rng_mt19937);^M'
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Single_Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Single_Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Single_Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Single_Min_ART_Grep: not found

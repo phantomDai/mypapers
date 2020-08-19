@@ -1,0 +1,7 @@
+Hello Word!(Introduction); 
+@This file !is /intentionally made simple,
+78898
+002232
+HELLO
+Min_ART_Grep: line 3: syntax error near unexpected token `$gsl_rng::gsl_rng_mt19937'
+Min_ART_Grep: line 3: `$rng=gsl_rng::gsl_rng_alloc($gsl_rng::gsl_rng_mt19937);^M'

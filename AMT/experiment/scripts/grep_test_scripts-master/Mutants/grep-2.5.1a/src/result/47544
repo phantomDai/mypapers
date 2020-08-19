@@ -1,0 +1,21 @@
+&&The file is \only fo"r test purpose;
+@This file !is /intentionally made simple,
+so that @it #will^ be easy to test.
+arlinta christy febrina barus
+ARLINTA
+12345
+78898
+002232
+43543543
+4545
+CORRECT
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Single_Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Single_Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Single_Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Min_ART_Grep: not found
+/usr/bin/nohup: line 79: exec: Single_Min_ART_Grep: not found
